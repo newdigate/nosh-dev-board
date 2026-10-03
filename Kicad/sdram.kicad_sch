@@ -465,7 +465,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Nosh:IS42S16320F-7TLI"
+		(symbol "Nosh:IS42S16320F-6TL"
 			(pin_names
 				(offset 1.016)
 			)
@@ -485,7 +485,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "IS42S16320F-7TLI"
+			(property "Value" "IS42S16320F-6TL"
 				(at -10.16 -36.83 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -518,7 +518,7 @@
 					)
 				)
 			)
-			(property "Description" "512Mbit (32Mx16) 3.3V SDR SDRAM, 143MHz, TSOP-II-54, JEDEC x16 pinout (drop-in for EVKB W9825G6KH-5I). JLCPCB C1348819"
+			(property "Description" "512Mbit (32Mx16) 3.3V SDR SDRAM, 166MHz, TSOP-II-54, JEDEC x16 pinout (drop-in for EVKB W9825G6KH-5I). JLCPCB C17672183 (Extended)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -540,7 +540,7 @@
 					)
 				)
 			)
-			(symbol "IS42S16320F-7TLI_0_1"
+			(symbol "IS42S16320F-6TL_0_1"
 				(rectangle
 					(start -10.16 22.86)
 					(end 10.16 -35.56)
@@ -553,7 +553,7 @@
 					)
 				)
 			)
-			(symbol "IS42S16320F-7TLI_1_1"
+			(symbol "IS42S16320F-6TL_1_1"
 				(pin power_in line
 					(at -7.62 25.4 270)
 					(length 2.54)
@@ -1657,7 +1657,7 @@
 		)
 		(uuid "1f1063f4-3ec8-4230-9353-6a3d90f9f9bf")
 	)
-	(text "Layout: length-match CLK/addr/data within the SEMC group, keep both chips close to the BGA, 0.1uF at every VDD/VDDQ pin. JLCPCB: C1348819 (Extended)."
+	(text "Layout: length-match CLK/addr/data within the SEMC group, keep both chips close to the BGA, 0.1uF at every VDD/VDDQ pin. JLCPCB: C17672183 (Extended part: one-time loading fee per PCBA order)."
 		(exclude_from_sim no)
 		(at 25.4 225.8 0)
 		(effects
@@ -1691,7 +1691,7 @@
 		)
 		(uuid "d6b46973-c298-4d0b-8e2b-89a2b6900da9")
 	)
-	(text "Drop-in: JEDEC x16 TSOP-II-54 pinout; the 512Mb part uses a 10-bit column (SEMC SDRAMCR0[COL]=10) with the same A0..A12. -7 grade = 143MHz: run SEMC at 133MHz. Second source: Alliance AS4C32M16SB-7TIN."
+	(text "Drop-in: JEDEC x16 TSOP-II-54 pinout; the 512Mb part uses a 10-bit column (SEMC SDRAMCR0[COL]=10) with the same A0..A12. -6 grade = 166MHz (CL3), matching the EVKB SEMC clock. Alternates: IS42S16320F-7TLI (143MHz, C1348819), AS4C32M16SB-7TIN."
 		(exclude_from_sim no)
 		(at 25.4 219.2 0)
 		(effects
@@ -1714,7 +1714,7 @@
 		)
 		(uuid "e9fdd91d-fbdc-4427-9fd3-c3b5aef51f37")
 	)
-	(text "2x IS42S16320F-7TLI (512Mb, 32Mx16) on SEMC as a 32-bit SDRAM, 128 MB total. Same arrangement as the MIMXRT1170-EVKB (U13 = D0..15, U25 = D16..31, 2x W9825G6KH-5I 256Mb = 64 MB)."
+	(text "2x IS42S16320F-6TL (512Mb, 32Mx16) on SEMC as a 32-bit SDRAM, 128 MB total. Same arrangement as the MIMXRT1170-EVKB (U13 = D0..15, U25 = D16..31, 2x W9825G6KH-5I 256Mb = 64 MB)."
 		(exclude_from_sim no)
 		(at 25.4 215.9 0)
 		(effects
@@ -5720,7 +5720,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Nosh:IS42S16320F-7TLI")
+		(lib_id "Nosh:IS42S16320F-6TL")
 		(at 269.24 96.52 0)
 		(unit 1)
 		(body_style 1)
@@ -5741,7 +5741,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IS42S16320F-7TLI"
+		(property "Value" "IS42S16320F-6TL"
 			(at 281.94 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6119,7 +6119,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Nosh:IS42S16320F-7TLI")
+		(lib_id "Nosh:IS42S16320F-6TL")
 		(at 76.2 96.52 0)
 		(unit 1)
 		(body_style 1)
@@ -6140,7 +6140,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IS42S16320F-7TLI"
+		(property "Value" "IS42S16320F-6TL"
 			(at 88.9 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)

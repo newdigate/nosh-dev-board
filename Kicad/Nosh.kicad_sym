@@ -2,7 +2,7 @@
 	(version 20251024)
 	(generator "kicad_symbol_editor")
 	(generator_version "10.0")
-	(symbol "IS42S16320F-7TLI"
+	(symbol "IS42S16320F-6TL"
 		(pin_names
 			(offset 1.016)
 		)
@@ -22,7 +22,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IS42S16320F-7TLI"
+		(property "Value" "IS42S16320F-6TL"
 			(at -10.16 -36.83 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -55,7 +55,7 @@
 				)
 			)
 		)
-		(property "Description" "512Mbit (32Mx16) 3.3V SDR SDRAM, 143MHz, TSOP-II-54, JEDEC x16 pinout (drop-in for EVKB W9825G6KH-5I). JLCPCB C1348819"
+		(property "Description" "512Mbit (32Mx16) 3.3V SDR SDRAM, 166MHz, TSOP-II-54, JEDEC x16 pinout (drop-in for EVKB W9825G6KH-5I). JLCPCB C17672183 (Extended)"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -77,7 +77,7 @@
 				)
 			)
 		)
-		(symbol "IS42S16320F-7TLI_0_1"
+		(symbol "IS42S16320F-6TL_0_1"
 			(rectangle
 				(start -10.16 22.86)
 				(end 10.16 -35.56)
@@ -90,7 +90,7 @@
 				)
 			)
 		)
-		(symbol "IS42S16320F-7TLI_1_1"
+		(symbol "IS42S16320F-6TL_1_1"
 			(pin power_in line
 				(at -7.62 25.4 270)
 				(length 2.54)
