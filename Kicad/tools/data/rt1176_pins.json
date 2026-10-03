@@ -1,0 +1,2373 @@
+[
+ {
+  "name": "GPIO_SNVS_00",
+  "ball": "R10",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "VDD_SNVS_ANA",
+  "ball": "U14",
+  "unit": 1,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VDD_SNVS_DIG",
+  "ball": "T14",
+  "unit": 1,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "RTC_XTALI",
+  "ball": "T13",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "t": "IN"
+ },
+ {
+  "name": "RTC_XTALO",
+  "ball": "U13",
+  "unit": 1,
+  "OUTPUT_LOAD": "(*)",
+  "t": "OUT"
+ },
+ {
+  "name": "GPIO_SNVS_05",
+  "ball": "P9",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "WAKEUP",
+  "ball": "T8",
+  "unit": 1,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "GPIO_SNVS_06",
+  "ball": "M9",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "PMIC_STBY_REQ",
+  "ball": "T9",
+  "unit": 1,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "PMIC_ON_REQ",
+  "ball": "U9",
+  "unit": 1,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "GPIO_SNVS_08",
+  "ball": "N9",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "VDD_SNVS_IN",
+  "ball": "U12",
+  "unit": 1,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "GPIO_SNVS_01",
+  "ball": "P10",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SNVS_02",
+  "ball": "L9",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SNVS_03",
+  "ball": "M10",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SNVS_04",
+  "ball": "N10",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "ONOFF",
+  "ball": "U10",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "t": "IN"
+ },
+ {
+  "name": "P\\O\\R\\",
+  "ball": "T10",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "t": "IN"
+ },
+ {
+  "name": "NVCC_SNVS",
+  "ball": "U11",
+  "unit": 1,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "TEST_MODE",
+  "ball": "T11",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "t": "IN"
+ },
+ {
+  "name": "GPIO_SNVS_09",
+  "ball": "R11",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SNVS_07",
+  "ball": "R9",
+  "unit": 1,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "VDD_LPSR_IN",
+  "ball": "R12",
+  "unit": 2,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VDD_LPSR_ANA",
+  "ball": "P12",
+  "unit": 2,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VDD_LPSR_DIG",
+  "ball": "P11",
+  "unit": 2,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VDDA_ADC_3P3",
+  "ball": "J13",
+  "unit": 2,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VDDA_ADC_1P8",
+  "ball": "K15",
+  "unit": 2,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VDDA_1P8_IN",
+  "ball": "M11",
+  "unit": 2,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VDDA_1P0",
+  "ball": "N11",
+  "unit": 2,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VDD_SOC_IN_3",
+  "ball": "H10",
+  "unit": 2,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "VDD_SOC_IN_1",
+  "ball": "H8",
+  "unit": 2,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "VDD_SOC_IN_2",
+  "ball": "H9",
+  "unit": 2,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "VDD_SOC_IN_6",
+  "ball": "J10",
+  "unit": 2,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "VDD_SOC_IN_4",
+  "ball": "J8",
+  "unit": 2,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "VDD_SOC_IN_5",
+  "ball": "J9",
+  "unit": 2,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "VDD_SOC_IN_7",
+  "ball": "K10",
+  "unit": 2,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "ADC_VREFH",
+  "ball": "G16",
+  "unit": 2,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_IN_1",
+  "ball": "M5",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_IN_2",
+  "ball": "N5",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_IN_Q",
+  "ball": "L5",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_PSWITCH",
+  "ball": "P3",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_LP_1",
+  "ball": "T3",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_LP_2",
+  "ball": "U3",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_LN_1",
+  "ball": "T4",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_LN_2",
+  "ball": "U4",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_MODE",
+  "ball": "N4",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_ANA_1",
+  "ball": "M7",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_ANA_2",
+  "ball": "M8",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_ANA_SENSE",
+  "ball": "M6",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_DIG_1",
+  "ball": "K8",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_DIG_2",
+  "ball": "K9",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_DIG_3",
+  "ball": "L8",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_DIG_SENSE",
+  "ball": "L7",
+  "unit": 3,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "DCDC_GND_1",
+  "ball": "K6",
+  "unit": 3,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "DCDC_GND_2",
+  "ball": "K7",
+  "unit": 3,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "DCDC_GND_3",
+  "ball": "L6",
+  "unit": 3,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_1",
+  "ball": "A1",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_2",
+  "ball": "A17",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_3",
+  "ball": "B7",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_4",
+  "ball": "C8",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_5",
+  "ball": "C10",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_6",
+  "ball": "C12",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_7",
+  "ball": "C14",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_8",
+  "ball": "D4",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_9",
+  "ball": "F11",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_10",
+  "ball": "F12",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_11",
+  "ball": "F13",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_12",
+  "ball": "G3",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_13",
+  "ball": "G7",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_14",
+  "ball": "G8",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_15",
+  "ball": "G9",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_16",
+  "ball": "G10",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_18",
+  "ball": "G15",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_19",
+  "ball": "H7",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_20",
+  "ball": "H11",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_21",
+  "ball": "J7",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_22",
+  "ball": "J11",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_23",
+  "ball": "K11",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_24",
+  "ball": "L3",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_25",
+  "ball": "L10",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_26",
+  "ball": "L11",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_27",
+  "ball": "L15",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_28",
+  "ball": "P4",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_29",
+  "ball": "P14",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_30",
+  "ball": "R7",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_31",
+  "ball": "T12",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_32",
+  "ball": "U1",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_33",
+  "ball": "U17",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_34",
+  "ball": "R4",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VSS_17",
+  "ball": "G11",
+  "unit": 4,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "DAC_OUT",
+  "ball": "H16",
+  "unit": 5,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "XTALI",
+  "ball": "U16",
+  "unit": 5,
+  "INPUT_LOAD": "(*)",
+  "t": "IN"
+ },
+ {
+  "name": "XTALO",
+  "ball": "T16",
+  "unit": 5,
+  "OUTPUT_LOAD": "(*)",
+  "t": "OUT"
+ },
+ {
+  "name": "CLK1_P",
+  "ball": "U15",
+  "unit": 5,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "CLK1_N",
+  "ball": "T15",
+  "unit": 5,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "NVCC_LPSR",
+  "ball": "P7",
+  "unit": 6,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "GPIO_LPSR_03",
+  "ball": "T7",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_06",
+  "ball": "P8",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_09",
+  "ball": "P5",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_12",
+  "ball": "U5",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_00",
+  "ball": "N6",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_02",
+  "ball": "P6",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_05",
+  "ball": "N8",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_08",
+  "ball": "U8",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_11",
+  "ball": "T5",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_13",
+  "ball": "U6",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_14",
+  "ball": "T6",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_15",
+  "ball": "U7",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_01",
+  "ball": "R6",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_04",
+  "ball": "N7",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_07",
+  "ball": "R8",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_LPSR_10",
+  "ball": "R5",
+  "unit": 6,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "NVCC_SD1",
+  "ball": "D14",
+  "unit": 7,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "NVCC_SD2",
+  "ball": "G13",
+  "unit": 7,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "GPIO_SD_B1_04",
+  "ball": "B15",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B1_05",
+  "ball": "A16",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B1_00",
+  "ball": "B16",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B1_01",
+  "ball": "D15",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B1_02",
+  "ball": "C15",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B1_03",
+  "ball": "B17",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_07",
+  "ball": "G14",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_03",
+  "ball": "E15",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_00",
+  "ball": "J15",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_01",
+  "ball": "J14",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_02",
+  "ball": "H13",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_10",
+  "ball": "H14",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_04",
+  "ball": "F14",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_05",
+  "ball": "E14",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_08",
+  "ball": "F15",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_09",
+  "ball": "H15",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_06",
+  "ball": "F17",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_SD_B2_11",
+  "ball": "F16",
+  "unit": 7,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "NVCC_GPIO",
+  "ball": "M12",
+  "unit": 8,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "GPIO_AD_00",
+  "ball": "N12",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_03",
+  "ball": "P15",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_13",
+  "ball": "L12",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_12",
+  "ball": "P17",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_01",
+  "ball": "R14",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_04",
+  "ball": "M13",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_15",
+  "ball": "M14",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_14",
+  "ball": "N14",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_02",
+  "ball": "R13",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_17",
+  "ball": "N15",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_16",
+  "ball": "N17",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_10",
+  "ball": "R17",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_07",
+  "ball": "T17",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_19",
+  "ball": "L16",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_18",
+  "ball": "M16",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_34",
+  "ball": "J16",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_08",
+  "ball": "R15",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_21",
+  "ball": "K14",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_20",
+  "ball": "K13",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_35",
+  "ball": "G17",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_33",
+  "ball": "H17",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_11",
+  "ball": "P16",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_09",
+  "ball": "R16",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_23",
+  "ball": "J12",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_22",
+  "ball": "K12",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_32",
+  "ball": "K16",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_29",
+  "ball": "M17",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_27",
+  "ball": "N16",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_25",
+  "ball": "M15",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_24",
+  "ball": "L13",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_31",
+  "ball": "J17",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_30",
+  "ball": "K17",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_28",
+  "ball": "L17",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_26",
+  "ball": "L14",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_05",
+  "ball": "P13",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_AD_06",
+  "ball": "N13",
+  "unit": 8,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "NVCC_DISP1",
+  "ball": "D12",
+  "unit": 9,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "NVCC_DISP2",
+  "ball": "E7",
+  "unit": 9,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "GPIO_DISP_B1_11",
+  "ball": "A14",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B1_08",
+  "ball": "A15",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B1_10",
+  "ball": "B14",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B1_07",
+  "ball": "E12",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B1_06",
+  "ball": "D10",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B1_09",
+  "ball": "C13",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B1_05",
+  "ball": "C11",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B1_04",
+  "ball": "E10",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B1_03",
+  "ball": "E11",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B1_02",
+  "ball": "D11",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B1_01",
+  "ball": "D13",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B1_00",
+  "ball": "E13",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_02",
+  "ball": "E9",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_00",
+  "ball": "E8",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_01",
+  "ball": "F8",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_03",
+  "ball": "D7",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_12",
+  "ball": "B6",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_06",
+  "ball": "C6",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_04",
+  "ball": "C7",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_13",
+  "ball": "A5",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_09",
+  "ball": "D8",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_07",
+  "ball": "D6",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_05",
+  "ball": "C9",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_14",
+  "ball": "A7",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_10",
+  "ball": "D9",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_08",
+  "ball": "B5",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_15",
+  "ball": "A4",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_DISP_B2_11",
+  "ball": "A6",
+  "unit": 9,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "NVCC_EMC1_1",
+  "ball": "F7",
+  "unit": 10,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "NVCC_EMC1_2",
+  "ball": "F6",
+  "unit": 10,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "NVCC_EMC1_3",
+  "ball": "G6",
+  "unit": 10,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "GPIO_EMC_B1_17",
+  "ball": "B3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_15",
+  "ball": "C1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_12",
+  "ball": "C5",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_09",
+  "ball": "A3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_05",
+  "ball": "F4",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_00",
+  "ball": "F3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_18",
+  "ball": "B4",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_16",
+  "ball": "D3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_14",
+  "ball": "B1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_11",
+  "ball": "C2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_08",
+  "ball": "F5",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_04",
+  "ball": "H5",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_13",
+  "ball": "D5",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_33",
+  "ball": "E2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_07",
+  "ball": "H3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_03",
+  "ball": "E4",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_21",
+  "ball": "G2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_22",
+  "ball": "H2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_06",
+  "ball": "H4",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_02",
+  "ball": "G4",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_24",
+  "ball": "J5",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_25",
+  "ball": "J4",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_26",
+  "ball": "J3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_01",
+  "ball": "F2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_10",
+  "ball": "A2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_27",
+  "ball": "G5",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_23",
+  "ball": "B2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_39",
+  "ball": "J2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_40",
+  "ball": "K1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_41",
+  "ball": "L1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_00",
+  "ball": "K2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_01",
+  "ball": "K4",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_19",
+  "ball": "C4",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_20",
+  "ball": "C3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_28",
+  "ball": "E5",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_29",
+  "ball": "E6",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_30",
+  "ball": "E3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_31",
+  "ball": "D2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_32",
+  "ball": "D1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_34",
+  "ball": "E1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_35",
+  "ball": "F1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_36",
+  "ball": "G1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_37",
+  "ball": "H1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B1_38",
+  "ball": "J1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_02",
+  "ball": "K3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_12",
+  "ball": "M2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_11",
+  "ball": "L4",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_13",
+  "ball": "K5",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_16",
+  "ball": "P2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_07",
+  "ball": "M3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_14",
+  "ball": "M4",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_15",
+  "ball": "L2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_04",
+  "ball": "M1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_05",
+  "ball": "N1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_09",
+  "ball": "N2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_08",
+  "ball": "P1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_03",
+  "ball": "R1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_06",
+  "ball": "T1",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_10",
+  "ball": "R2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_17",
+  "ball": "T2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_18",
+  "ball": "N3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_19",
+  "ball": "U2",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "GPIO_EMC_B2_20",
+  "ball": "R3",
+  "unit": 10,
+  "INPUT_LOAD": "(*)",
+  "OUTPUT_LOAD": "(*)",
+  "BIDIRECTIONAL": "TRUE",
+  "t": "BI"
+ },
+ {
+  "name": "NVCC_EMC2_1",
+  "ball": "H6",
+  "unit": 10,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "NVCC_EMC2_2",
+  "ball": "J6",
+  "unit": 10,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VDD_MIPI_1P8",
+  "ball": "F9",
+  "unit": 11,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VDD_MIPI_1P0",
+  "ball": "F10",
+  "unit": 11,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "MIPI_CSI_DP1",
+  "ball": "B13",
+  "unit": 11,
+  "INPUT_LOAD": "(*)",
+  "t": "IN"
+ },
+ {
+  "name": "MIPI_CSI_CKP",
+  "ball": "B12",
+  "unit": 11,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "MIPI_CSI_DP0",
+  "ball": "B11",
+  "unit": 11,
+  "INPUT_LOAD": "(*)",
+  "t": "IN"
+ },
+ {
+  "name": "MIPI_CSI_DN1",
+  "ball": "A13",
+  "unit": 11,
+  "INPUT_LOAD": "(*)",
+  "t": "IN"
+ },
+ {
+  "name": "MIPI_CSI_CKN",
+  "ball": "A12",
+  "unit": 11,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "MIPI_CSI_DN0",
+  "ball": "A11",
+  "unit": 11,
+  "INPUT_LOAD": "(*)",
+  "t": "IN"
+ },
+ {
+  "name": "MIPI_DSI_DP0",
+  "ball": "B8",
+  "unit": 11,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "MIPI_DSI_DP1",
+  "ball": "B10",
+  "unit": 11,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "MIPI_DSI_CKP",
+  "ball": "B9",
+  "unit": 11,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "MIPI_DSI_DN0",
+  "ball": "A8",
+  "unit": 11,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "MIPI_DSI_DN1",
+  "ball": "A10",
+  "unit": 11,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "MIPI_DSI_CKN",
+  "ball": "A9",
+  "unit": 11,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "VDD_USB_3P3",
+  "ball": "G12",
+  "unit": 12,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "VDD_USB_1P8",
+  "ball": "H12",
+  "unit": 12,
+  "PINUSE": "POWER",
+  "t": "PWR"
+ },
+ {
+  "name": "USB1_DN",
+  "ball": "E16",
+  "unit": 12,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "USB1_DP",
+  "ball": "E17",
+  "unit": 12,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "USB2_VBUS",
+  "ball": "D16",
+  "unit": 12,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "USB1_VBUS",
+  "ball": "D17",
+  "unit": 12,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "USB2_DP",
+  "ball": "C17",
+  "unit": 12,
+  "PINUSE": "UNSPEC",
+  "t": "UNSPEC"
+ },
+ {
+  "name": "USB2_DN",
+  "ball": "C16",
+  "unit": 12,
+  "PINUSE": "UNSPEC",
+  "PART_NAME": "MIMXRT1176DVMAA_BGA_289P",
+  "JEDEC_TYPE": "bga289_0p8_14x14_1p52mm",
+  "CLASS": "IC",
+  "HEIGHT": "1.52mm",
+  "PART_NUMBER": "TMP-CIP-19751",
+  "VALUE": "MIMXRT1176DVMAB",
+  "t": "UNSPEC"
+ }
+]

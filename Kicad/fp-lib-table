@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Nosh")(type "KiCad")(uri "${KIPRJMOD}/Nosh.pretty")(options "")(descr "Nosh project footprints"))
+)
