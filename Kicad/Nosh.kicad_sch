@@ -235,6 +235,22 @@
 			)
 		)
 	)
+  (sheet (at 208.28 95.25) (size 63.5 38.1) (fields_autoplaced yes)
+    (stroke (width 0.0006) (type default))
+    (fill (color 0 0 0 0.0000))
+    (uuid "762d4c7d-1f2d-4512-9145-83d13d1277ef")
+    (property "Sheetname" "SDRAM" (at 210.82 93.98 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "sdram.kicad_sch" (at 210.82 134.62 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7" (page "7"))
+      )
+    )
+  )
 	(sheet_instances
 		(path "/"
 			(page "1")
