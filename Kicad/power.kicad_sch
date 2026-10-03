@@ -7663,7 +7663,7 @@
 		)
 		(uuid "036b1240-4b72-4bea-ab63-5285858a2b30")
 	)
-	(text "R2134/R2106 (0402) close the DCDC feedback at the rail side. EVKB 5m-ohm current-sense shunts"
+	(text "R5 (R1851, DCDC_ANA -> +1V8) is DNP: +1V8 comes from the AMS1117 on the Supply sheet (EVKB J56 1-2)."
 		(exclude_from_sim no)
 		(at 304.8 69.85 0)
 		(effects
@@ -7674,7 +7674,7 @@
 		)
 		(uuid "05530aff-e5b7-42bc-af9f-12480e7bffc8")
 	)
-	(text "ANA->+1V8"
+	(text "ANA->+1V8 (DNP)"
 		(exclude_from_sim no)
 		(at 304.8 24.13 0)
 		(effects
@@ -7954,7 +7954,7 @@
 		)
 		(uuid "b25399aa-02c1-416e-b26d-a98ce7055317")
 	)
-	(text "and bypass/measurement headers (J14, J23, J77) are omitted."
+	(text "EVKB 5m-ohm current-sense shunts and bypass/measurement headers (J14, J23, J77) are omitted."
 		(exclude_from_sim no)
 		(at 304.8 73.66 0)
 		(effects
@@ -7999,7 +7999,7 @@
 		)
 		(uuid "c94ef343-13fb-4e41-bc36-690ef1ddcb92")
 	)
-	(text "0R links per EVKB: R1851/R1853 (0805) route the DCDC outputs to the +1V8 and VDD_SOC_IN rails;"
+	(text "0R links per EVKB: R6 (R1853) DCDC_DIG -> VDD_SOC_IN; R7/R8 (R2134/R2106) close the DCDC feedback."
 		(exclude_from_sim no)
 		(at 304.8 66.04 0)
 		(effects
@@ -11507,29 +11507,6 @@
 			)
 		)
 	)
-	(global_label "+1V8"
-		(shape passive)
-		(at 246.38 160.02 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "bf4811f0-a0a3-4d8e-9fdd-bf184852ccd7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 246.38 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "VDDA_ADC_3P3"
 		(shape passive)
 		(at 106.68 125.73 90)
@@ -12348,29 +12325,6 @@
 		(uuid "ecf9eb87-2db8-4124-8613-e99800eb83cd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 143.51 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+3V3"
-		(shape passive)
-		(at 241.3 160.02 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ed943a82-128c-4dd9-bc06-73724a97ba42")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 241.3 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18806,10 +18760,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "bf77fc41-eb74-4aa8-b366-0f2832d13f74")
 		(property "Reference" "R5"
 			(at 309.37 39.37 0)
@@ -21033,164 +20987,6 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/539ad118-2dc0-4db2-94ce-7f260505cd91"
 					(reference "C20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 246.38 160.02 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ee2b2508-5537-4854-b329-90659bf44322")
-		(property "Reference" "#FLG03"
-			(at 246.38 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 248.41 157.48 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 246.38 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 246.38 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 246.38 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "92ae21ae-3787-46bc-87da-5e058e94a08c")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/539ad118-2dc0-4db2-94ce-7f260505cd91"
-					(reference "#FLG03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 241.3 160.02 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "efd319f3-ca2d-4e17-9821-b1b6f0974b9a")
-		(property "Reference" "#FLG02"
-			(at 241.3 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 243.33 157.48 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 241.3 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 241.3 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 241.3 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bad3938b-3686-4f47-b4ac-fd1d8b7131f1")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/539ad118-2dc0-4db2-94ce-7f260505cd91"
-					(reference "#FLG02")
 					(unit 1)
 				)
 			)
