@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "81b6f17f-fdb2-4193-ae94-3a8d8d5fc6ca")
-	(paper "A4")
+	(paper "A3")
 	(lib_symbols
 		(symbol "Device:C"
 			(pin_numbers
@@ -7287,6 +7287,17 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "DIG"
+		(exclude_from_sim no)
+		(at 350.52 24.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "00fae601-2efc-40c0-9f71-ff50eee5f014")
+	)
 	(text "SNVS"
 		(exclude_from_sim no)
 		(at 22.86 109.22 0)
@@ -7298,6 +7309,28 @@
 			(justify left bottom)
 		)
 		(uuid "036b1240-4b72-4bea-ab63-5285858a2b30")
+	)
+	(text "R2134/R2106 (0402) close the DCDC feedback at the rail side. EVKB 5m-ohm current-sense shunts"
+		(exclude_from_sim no)
+		(at 304.8 69.85 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "05530aff-e5b7-42bc-af9f-12480e7bffc8")
+	)
+	(text "ANA->+1V8"
+		(exclude_from_sim no)
+		(at 304.8 24.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "0f51a700-82c0-4471-a9b9-1ad9d33cd89a")
 	)
 	(text "PWR_FLAG: remove once a regulator output drives the rail."
 		(exclude_from_sim no)
@@ -7380,7 +7413,19 @@
 		)
 		(uuid "6708bc66-d565-4df6-a04e-da94c74cdaa8")
 	)
-	(text "Still to add: DCDC_ANA->+1V8 and DCDC_DIG->VDD_SOC_IN 0R links + SENSE 0R links, DCDC bypass header."
+	(text "SENSE"
+		(exclude_from_sim no)
+		(at 335.28 20.32 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "6a94b8eb-8a5c-494e-a52b-604dd88605d4")
+	)
+	(text "Still to add: DCDC bypass header (EVKB J77), external-PMIC option."
 		(exclude_from_sim no)
 		(at 22.86 195.43 0)
 		(effects
@@ -7390,6 +7435,18 @@
 			(justify left bottom)
 		)
 		(uuid "6df4fe35-7b79-4353-9207-60d8597a2278")
+	)
+	(text "DCDC outputs"
+		(exclude_from_sim no)
+		(at 304.8 20.32 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "71ce1fae-19cd-4b16-813e-c1a32493595a")
 	)
 	(text "DCDC_DIG"
 		(exclude_from_sim no)
@@ -7463,6 +7520,17 @@
 		)
 		(uuid "94e54750-ad3f-4f9a-a2c8-cb550cb4241a")
 	)
+	(text "ANA"
+		(exclude_from_sim no)
+		(at 335.28 24.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "9df9f346-32ae-4d83-92b7-98822f9f23ee")
+	)
 	(text "MODE"
 		(exclude_from_sim no)
 		(at 256.54 109.22 0)
@@ -7474,6 +7542,17 @@
 			(justify left bottom)
 		)
 		(uuid "9fa027af-a157-4c21-9fce-1c3b00c80981")
+	)
+	(text "and bypass/measurement headers (J14, J23, J77) are omitted."
+		(exclude_from_sim no)
+		(at 304.8 73.66 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "b912799f-ac60-48a9-9405-8f6d7249f0b7")
 	)
 	(text "PWR_FLAG"
 		(exclude_from_sim no)
@@ -7497,6 +7576,17 @@
 			(justify left bottom)
 		)
 		(uuid "c94ef343-13fb-4e41-bc36-690ef1ddcb92")
+	)
+	(text "0R links per EVKB: R1851/R1853 (0805) route the DCDC outputs to the +1V8 and VDD_SOC_IN rails;"
+		(exclude_from_sim no)
+		(at 304.8 66.04 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "ca1a71a9-b87c-466e-949a-9bbe3ecf05a7")
 	)
 	(text "VDD_SOC_IN"
 		(exclude_from_sim no)
@@ -7533,6 +7623,17 @@
 		)
 		(uuid "e2b992ff-f8d6-4311-a990-e99266738f80")
 	)
+	(text "DIG->VDD_SOC_IN"
+		(exclude_from_sim no)
+		(at 320.04 24.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "e782de52-22d4-440c-92c0-69bc6595b98d")
+	)
 	(junction
 		(at 259.08 128.27)
 		(diameter 0)
@@ -7568,6 +7669,29 @@
 			(type default)
 		)
 		(uuid "7a2e78ce-9b76-444b-802b-51f3f5b9575c")
+	)
+	(global_label "+1V8"
+		(shape passive)
+		(at 307.34 44.45 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0056e206-c441-4ed4-9ec7-fdb333c90d7b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 307.34 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 	)
 	(global_label "DCDC_LP"
 		(shape passive)
@@ -7628,6 +7752,29 @@
 		(uuid "02b4ca0b-7a7d-4d5f-a89e-eb5b6aca4aed")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 193.04 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "DCDC_DIG_SENSE"
+		(shape passive)
+		(at 353.06 44.45 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "039e141b-5ff2-423c-9f8c-b5d8cb1d0e00")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 353.06 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7743,6 +7890,29 @@
 		(uuid "05d728ce-7311-4ba2-a017-8e96f453ec65")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 35.56 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "DCDC_ANA_SENSE"
+		(shape passive)
+		(at 337.82 44.45 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "09d41122-5702-4ee1-ab67-778ee265bc89")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 337.82 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8088,6 +8258,29 @@
 		(uuid "1b768c4c-56e6-425a-bba2-d24b4332c525")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 143.51 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "DCDC_ANA_SENSE"
+		(shape passive)
+		(at 143.51 93.98 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1c05fb25-c0d6-4e7b-aa00-ec928acfd5d5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 143.51 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8765,6 +8958,29 @@
 			)
 		)
 	)
+	(global_label "DCDC_DIG"
+		(shape passive)
+		(at 322.58 36.83 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4f9724d4-2580-4d4e-89b0-cd3d134ef657")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "DCDC_IN"
 		(shape passive)
 		(at 143.51 83.82 180)
@@ -8857,6 +9073,29 @@
 			)
 		)
 	)
+	(global_label "DCDC_ANA"
+		(shape passive)
+		(at 307.34 36.83 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "586d2b3b-854a-4847-9f9e-8d710e8841d5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 307.34 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "VDD_SNVS_IN"
 		(shape passive)
 		(at 251.46 160.02 270)
@@ -8893,6 +9132,29 @@
 		(uuid "5a2c1e56-3f1c-4233-a06b-0fed290e1adf")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 55.88 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "DCDC_ANA"
+		(shape passive)
+		(at 337.82 36.83 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5b8bd981-085c-40b3-bbdb-00f0e62e77bd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 337.82 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9422,6 +9684,29 @@
 		(uuid "7edd01a4-936a-4a26-a774-96168caca334")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 186.69 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "VDD_SOC_IN"
+		(shape passive)
+		(at 353.06 36.83 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8194c8d4-5997-4653-901d-1915273651d3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 353.06 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10766,6 +11051,29 @@
 			)
 		)
 	)
+	(global_label "DCDC_DIG_SENSE"
+		(shape passive)
+		(at 186.69 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d8754398-c9bb-4780-bf8f-7cfceb588cbc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 186.69 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "GND"
 		(shape passive)
 		(at 116.84 133.35 270)
@@ -10986,6 +11294,29 @@
 		(uuid "e9ae88f3-4c11-498d-9e13-56b3fbd26ac5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 242.57 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "VDD_SOC_IN"
+		(shape passive)
+		(at 322.58 44.45 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "eac7bd4c-2d57-43e9-b2de-bfaddb89af6f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11383,6 +11714,87 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/539ad118-2dc0-4db2-94ce-7f260505cd91"
 					(reference "C29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 322.58 40.64 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "051a8ce8-d659-4e0e-82aa-5776150a6551")
+		(property "Reference" "R6"
+			(at 324.61 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0R"
+			(at 324.61 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 322.58 40.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 322.58 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 322.58 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e89dc173-9cfc-45d2-8aa2-3b1b4397944a")
+		)
+		(pin "2"
+			(uuid "ce2e7007-1635-4950-9140-96ad9003cce5")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/539ad118-2dc0-4db2-94ce-7f260505cd91"
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -14885,6 +15297,87 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 353.06 40.64 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6e9cae6a-f6dc-4ac5-852e-9a0ae4b0c94c")
+		(property "Reference" "R8"
+			(at 355.09 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0R"
+			(at 355.09 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 353.06 40.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 353.06 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 353.06 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2ac5146c-df20-4359-b6bb-061ddd221ea1")
+		)
+		(pin "2"
+			(uuid "5e2b6222-0b27-445d-87b3-a70e3c9faa4e")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/539ad118-2dc0-4db2-94ce-7f260505cd91"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 55.88 129.54 0)
 		(unit 1)
@@ -16872,6 +17365,87 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 307.34 40.64 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bf77fc41-eb74-4aa8-b366-0f2832d13f74")
+		(property "Reference" "R5"
+			(at 309.37 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0R"
+			(at 309.37 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 307.34 40.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 307.34 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 307.34 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cae7f674-f0d5-4c20-b343-3d10d4c1b3bb")
+		)
+		(pin "2"
+			(uuid "f13879c5-bf7d-4223-b40d-8649a7ca2f58")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/539ad118-2dc0-4db2-94ce-7f260505cd91"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 269.24 132.08 0)
 		(unit 1)
@@ -17109,6 +17683,87 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/539ad118-2dc0-4db2-94ce-7f260505cd91"
 					(reference "FB1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 337.82 40.64 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cb6bc6c4-add5-48db-bfcc-e267668cd68d")
+		(property "Reference" "R7"
+			(at 339.85 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0R"
+			(at 339.85 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 337.82 40.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 337.82 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 337.82 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "24c2c966-5239-4693-a21e-407e507f2ec8")
+		)
+		(pin "2"
+			(uuid "55f649e1-9bd8-48f6-9656-e9dd298e917e")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/539ad118-2dc0-4db2-94ce-7f260505cd91"
+					(reference "R7")
 					(unit 1)
 				)
 			)
