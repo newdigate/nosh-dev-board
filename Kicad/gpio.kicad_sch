@@ -6533,6 +6533,162 @@
     		)
     		(embedded_fonts no)
     	)
+  
+        	(symbol "Device:C"
+    		(pin_numbers
+    			(hide yes)
+    		)
+    		(pin_names
+    			(offset 0.254)
+    		)
+    		(exclude_from_sim no)
+    		(in_bom yes)
+    		(on_board yes)
+    		(in_pos_files yes)
+    		(duplicate_pin_numbers_are_jumpers no)
+    		(property "Reference" "C"
+    			(at 0.635 2.54 0)
+    			(show_name no)
+    			(do_not_autoplace no)
+    			(effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    		)
+    		(property "Value" "C"
+    			(at 0.635 -2.54 0)
+    			(show_name no)
+    			(do_not_autoplace no)
+    			(effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    		)
+    		(property "Footprint" ""
+    			(at 0.9652 -3.81 0)
+    			(show_name no)
+    			(do_not_autoplace no)
+    			(hide yes)
+    			(effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    		)
+    		(property "Datasheet" ""
+    			(at 0 0 0)
+    			(show_name no)
+    			(do_not_autoplace no)
+    			(hide yes)
+    			(effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    		)
+    		(property "Description" "Unpolarized capacitor"
+    			(at 0 0 0)
+    			(show_name no)
+    			(do_not_autoplace no)
+    			(hide yes)
+    			(effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    		)
+    		(property "ki_keywords" "cap capacitor"
+    			(at 0 0 0)
+    			(show_name no)
+    			(do_not_autoplace no)
+    			(hide yes)
+    			(effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    		)
+    		(property "ki_fp_filters" "C_*"
+    			(at 0 0 0)
+    			(show_name no)
+    			(do_not_autoplace no)
+    			(hide yes)
+    			(effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    		)
+    		(symbol "C_0_1"
+    			(polyline
+    				(pts
+    					(xy -2.032 0.762) (xy 2.032 0.762)
+    				)
+    				(stroke
+    					(width 0.508)
+    					(type default)
+    				)
+    				(fill
+    					(type none)
+    				)
+    			)
+    			(polyline
+    				(pts
+    					(xy -2.032 -0.762) (xy 2.032 -0.762)
+    				)
+    				(stroke
+    					(width 0.508)
+    					(type default)
+    				)
+    				(fill
+    					(type none)
+    				)
+    			)
+    		)
+    		(symbol "C_1_1"
+    			(pin passive line
+    				(at 0 3.81 270)
+    				(length 2.794)
+    				(name ""
+    					(effects
+    						(font
+    							(size 1.27 1.27)
+    						)
+    					)
+    				)
+    				(number "1"
+    					(effects
+    						(font
+    							(size 1.27 1.27)
+    						)
+    					)
+    				)
+    			)
+    			(pin passive line
+    				(at 0 -3.81 90)
+    				(length 2.794)
+    				(name ""
+    					(effects
+    						(font
+    							(size 1.27 1.27)
+    						)
+    					)
+    				)
+    				(number "2"
+    					(effects
+    						(font
+    							(size 1.27 1.27)
+    						)
+    					)
+    				)
+    			)
+    		)
+    		(embedded_fonts no)
+    	)
   )
 	  (symbol (lib_id "Nosh:MIMXRT1176DVMAA") (at 69.85 69.85 0) (unit 10)
     (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
@@ -7041,6 +7197,1290 @@
       )
     )
   )
+    (symbol (lib_id "Device:C") (at 152.4 175.26 0) (unit 1)
+    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
+    (uuid "79b06d29-ee25-48a1-8824-900b22d76a82")
+    (property "Reference" "C34"
+      (at 154.43 173.99 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Value" "2.2uF"
+      (at 154.43 176.53 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+      (at 153.365 171.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Datasheet" ""
+      (at 152.4 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 152.4 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (pin "1" (uuid "eed85817-2463-4637-9dcf-25f2b61172e7"))
+    (pin "2" (uuid "f2ddc16a-9f74-4d24-a686-a9ea42ce3c85"))
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+          (reference "C34")
+          (unit 1)
+        )
+      )
+    )
+  )
+    (symbol (lib_id "Device:C") (at 167.64 175.26 0) (unit 1)
+    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
+    (uuid "b91c6541-5b80-467d-9439-38b2502c9802")
+    (property "Reference" "C35"
+      (at 169.67 173.99 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Value" "2.2uF"
+      (at 169.67 176.53 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+      (at 168.605 171.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Datasheet" ""
+      (at 167.64 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 167.64 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (pin "1" (uuid "dda64d4e-cb2c-4cae-bd43-ba4154e256f5"))
+    (pin "2" (uuid "5eb33b36-fcfa-4145-8d0b-f47f314de6ae"))
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+          (reference "C35")
+          (unit 1)
+        )
+      )
+    )
+  )
+    (symbol (lib_id "Device:C") (at 182.88 175.26 0) (unit 1)
+    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
+    (uuid "684471c3-b9ed-4e43-90cc-00c133126acc")
+    (property "Reference" "C36"
+      (at 184.91 173.99 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Value" "2.2uF"
+      (at 184.91 176.53 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+      (at 183.845 171.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Datasheet" ""
+      (at 182.88 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 182.88 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (pin "1" (uuid "4cf971e9-c0be-49fc-888d-1c99d237c684"))
+    (pin "2" (uuid "9f19294a-c248-4d44-944c-14b40e4de7a0"))
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+          (reference "C36")
+          (unit 1)
+        )
+      )
+    )
+  )
+    (symbol (lib_id "Device:C") (at 198.12 175.26 0) (unit 1)
+    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
+    (uuid "9d369f9e-948c-4d06-b9d1-568db6a0f4db")
+    (property "Reference" "C37"
+      (at 200.15 173.99 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Value" "4.7uF"
+      (at 200.15 176.53 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+      (at 199.085 171.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Datasheet" ""
+      (at 198.12 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 198.12 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (pin "1" (uuid "8c3493bb-1e41-4331-acd7-92fb3d08b60e"))
+    (pin "2" (uuid "af0b2644-9ec2-4b5c-bcc2-cc85de2a3624"))
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+          (reference "C37")
+          (unit 1)
+        )
+      )
+    )
+  )
+    (symbol (lib_id "Device:C") (at 208.28 175.26 0) (unit 1)
+    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
+    (uuid "cc2cf962-97b2-4b1c-a36d-f3dc1e67c0c0")
+    (property "Reference" "C38"
+      (at 210.31 173.99 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Value" "2.2uF"
+      (at 210.31 176.53 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+      (at 209.245 171.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Datasheet" ""
+      (at 208.28 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 208.28 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (pin "1" (uuid "e97ca606-53fb-4ee6-bc82-30bbb9464090"))
+    (pin "2" (uuid "afb0788c-d058-4261-a044-946ac4be1b02"))
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+          (reference "C38")
+          (unit 1)
+        )
+      )
+    )
+  )
+    (symbol (lib_id "Device:C") (at 223.52 175.26 0) (unit 1)
+    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
+    (uuid "2c464feb-09e7-411d-9a74-742d734248f5")
+    (property "Reference" "C39"
+      (at 225.55 173.99 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Value" "2.2uF"
+      (at 225.55 176.53 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+      (at 224.485 171.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Datasheet" ""
+      (at 223.52 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 223.52 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (pin "1" (uuid "1bd1dc74-9823-4a35-a5d6-a9545946c98e"))
+    (pin "2" (uuid "d668725f-9727-4dc5-b19e-ea7fa8fa8857"))
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+          (reference "C39")
+          (unit 1)
+        )
+      )
+    )
+  )
+    (symbol (lib_id "Device:C") (at 238.76 175.26 0) (unit 1)
+    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
+    (uuid "ccffc5a6-6d10-4955-a8d1-ddd3dc42766a")
+    (property "Reference" "C40"
+      (at 240.79 173.99 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Value" "2.2uF"
+      (at 240.79 176.53 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+      (at 239.725 171.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Datasheet" ""
+      (at 238.76 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 238.76 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (pin "1" (uuid "5f75016c-12f5-4c22-8799-baeb62aa7921"))
+    (pin "2" (uuid "b6d1a2d8-4fa5-4492-9fd1-a28f948873d9"))
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+          (reference "C40")
+          (unit 1)
+        )
+      )
+    )
+  )
+    (symbol (lib_id "Device:C") (at 254 175.26 0) (unit 1)
+    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
+    (uuid "c736be73-3ec7-46d5-8e3c-8ac2ab5afff6")
+    (property "Reference" "C41"
+      (at 256.03 173.99 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Value" "4.7uF"
+      (at 256.03 176.53 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+      (at 254.965 171.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Datasheet" ""
+      (at 254 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 254 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (pin "1" (uuid "403df0ee-6ea5-4d8d-8b02-b4cc9eefc927"))
+    (pin "2" (uuid "46ab3038-93d0-41f6-a750-321f07330c5f"))
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+          (reference "C41")
+          (unit 1)
+        )
+      )
+    )
+  )
+    (symbol (lib_id "Device:C") (at 264.16 175.26 0) (unit 1)
+    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
+    (uuid "71b7445f-19db-483a-8a54-0f9cdeb22146")
+    (property "Reference" "C42"
+      (at 266.19 173.99 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Value" "2.2uF"
+      (at 266.19 176.53 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+      (at 265.125 171.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Datasheet" ""
+      (at 264.16 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 264.16 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (pin "1" (uuid "e4347775-5c0c-41e7-a244-4a4b9457dad1"))
+    (pin "2" (uuid "434da43d-28e8-443e-851c-9ca44f54e06e"))
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+          (reference "C42")
+          (unit 1)
+        )
+      )
+    )
+  )
+    (symbol (lib_id "Device:C") (at 279.4 175.26 0) (unit 1)
+    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
+    (uuid "7c4b90da-c7c1-40d9-b57a-4acb64b7df46")
+    (property "Reference" "C43"
+      (at 281.43 173.99 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Value" "4.7uF"
+      (at 281.43 176.53 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+      (at 280.365 171.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Datasheet" ""
+      (at 279.4 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 279.4 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (pin "1" (uuid "acda3d66-bc6b-4618-866c-d595eaa2c4af"))
+    (pin "2" (uuid "1324aee2-51ba-46e0-ac4a-582890a0a4c2"))
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+          (reference "C43")
+          (unit 1)
+        )
+      )
+    )
+  )
+    (symbol (lib_id "Device:C") (at 289.56 175.26 0) (unit 1)
+    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
+    (uuid "0af24ec3-d9c2-414c-9eea-9ee0ccd60162")
+    (property "Reference" "C44"
+      (at 291.59 173.99 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Value" "2.2uF"
+      (at 291.59 176.53 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    				(justify left)
+    			)
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+      (at 290.525 171.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Datasheet" ""
+      (at 289.56 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 289.56 175.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+    				(font
+    					(size 1.27 1.27)
+    				)
+    			)
+    )
+    (pin "1" (uuid "b99b26be-afe9-46e7-9b45-39ea5cd4be06"))
+    (pin "2" (uuid "e9326397-f20d-43a4-afdc-2afec87c50c2"))
+    (instances
+      (project "Nosh"
+        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+          (reference "C44")
+          (unit 1)
+        )
+      )
+    )
+  )
+	(global_label "NVCC_LPSR"
+		(shape passive)
+		(at 20.32 139.70 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "27c5ecb8-7e42-4bf6-b6fc-edd2c76bd603")
+	)
+	(global_label "NVCC_SD1"
+		(shape passive)
+		(at 20.32 184.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d6a83c1b-4793-4984-927e-7ca0b9577dcb")
+	)
+	(global_label "NVCC_SD2"
+		(shape passive)
+		(at 20.32 186.69 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5e9daa8f-83c2-4b75-b61c-93aa0399e406")
+	)
+	(global_label "NVCC_GPIO"
+		(shape passive)
+		(at 147.32 26.67 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "185d4d5f-5501-4960-94d3-768fa89c51ce")
+	)
+	(global_label "NVCC_DISP1"
+		(shape passive)
+		(at 149.86 97.79 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e0e2d272-5fb6-47e2-81f9-c69b85060459")
+	)
+	(global_label "NVCC_DISP2"
+		(shape passive)
+		(at 149.86 100.33 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "536f59f4-e2f5-4ba0-9336-67bf0de2a8a1")
+	)
+	(global_label "NVCC_EMC1"
+		(shape passive)
+		(at 22.86 27.94 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "888e9471-d988-4fbc-94f6-44014ecfe02b")
+	)
+	(global_label "NVCC_EMC1"
+		(shape passive)
+		(at 22.86 30.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b490fe9c-4f92-453f-9c22-72ebf76212c5")
+	)
+	(global_label "NVCC_EMC1"
+		(shape passive)
+		(at 22.86 33.02 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9a41baf9-ef28-4b48-b16d-b2890516e31c")
+	)
+	(global_label "NVCC_EMC2"
+		(shape passive)
+		(at 22.86 35.56 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5630b909-5773-4067-b922-ade8a2aec3d9")
+	)
+	(global_label "NVCC_EMC2"
+		(shape passive)
+		(at 22.86 38.10 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "41a63345-549a-4020-999e-dd4760981ccd")
+	)
+	(text "LPSR"
+		(exclude_from_sim no)
+		(at 149.86 154.94 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "d9211b1c-9124-45ea-93ce-e88fa8c13311")
+	)
+	(text "SD1"
+		(exclude_from_sim no)
+		(at 165.10 154.94 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "5db09c90-3a89-4948-bea0-79c0c20b2bf5")
+	)
+	(text "SD2"
+		(exclude_from_sim no)
+		(at 180.34 154.94 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "7ef9546c-416e-4910-b449-4ea02cfd0006")
+	)
+	(text "GPIO"
+		(exclude_from_sim no)
+		(at 195.58 154.94 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "b2877f46-f3a4-4d90-b0c2-a5bc85e01e13")
+	)
+	(text "DISP1"
+		(exclude_from_sim no)
+		(at 220.98 154.94 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "010fa552-5f06-4a78-98fc-06d29da7b56a")
+	)
+	(text "DISP2"
+		(exclude_from_sim no)
+		(at 236.22 154.94 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "968fdae1-613c-40dc-b1e0-8f5cb52307dc")
+	)
+	(text "EMC1"
+		(exclude_from_sim no)
+		(at 251.46 154.94 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "19f9c356-7ad0-45ec-a153-680678f18db9")
+	)
+	(text "EMC2"
+		(exclude_from_sim no)
+		(at 276.86 154.94 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "e3d9c317-156e-465d-bdde-f7de96797075")
+	)
+	(text "I/O rail decoupling (NVCC_*) per MIMXRT1170-EVKB RevC3 sheets 7-8, one group per bank."
+		(exclude_from_sim no)
+		(at 149.86 190.50 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "66f100be-5e94-45d2-a31a-11fba440c8ee")
+	)
+	(text "Rails are left as per-bank nets (NVCC_GPIO, NVCC_EMC1 ...) to be assigned to 1.8V/3.3V on the power-distribution sheet."
+		(exclude_from_sim no)
+		(at 149.86 194.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bd4f9689-657c-4c93-9b6f-9b0912c21d1a")
+	)
+	(text "EVKB: NVCC_GPIO/EMC/LPSR/DISP2 = 3.3V, NVCC_DISP1 = 1.8V, NVCC_SD1/SD2 selectable via 0R."
+		(exclude_from_sim no)
+		(at 149.86 198.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6d57d057-a5de-4d38-81df-5165f36f6bea")
+	)
+	(global_label "NVCC_LPSR"
+		(shape passive)
+		(at 152.40 171.45 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7468dd45-f851-491d-bc21-d839ef3c7c34")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 152.40 179.07 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "470990f2-855a-45b1-adfb-44d7092ece37")
+	)
+	(global_label "NVCC_SD1"
+		(shape passive)
+		(at 167.64 171.45 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "49c0c2f0-c023-4119-b997-3f6b2586446d")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 167.64 179.07 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8ec638c6-58af-4c0c-9b8f-1e469c3cfbeb")
+	)
+	(global_label "NVCC_SD2"
+		(shape passive)
+		(at 182.88 171.45 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b07cc775-364a-4789-9f47-d5b3d040ca44")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 182.88 179.07 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7c111c8c-4d78-4b4d-ac45-6244db68e36e")
+	)
+	(global_label "NVCC_GPIO"
+		(shape passive)
+		(at 198.12 171.45 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cfe7f003-550a-4234-9c80-b4db55c8a1de")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 198.12 179.07 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c2f72103-16f2-4f2a-a466-1603b441fac4")
+	)
+	(global_label "NVCC_GPIO"
+		(shape passive)
+		(at 208.28 171.45 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d4601979-1b84-4d8f-a1b3-3aa7ea4494a8")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 208.28 179.07 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0d0cf2ae-a5f7-4950-aa82-ba08b3ebd6cd")
+	)
+	(global_label "NVCC_DISP1"
+		(shape passive)
+		(at 223.52 171.45 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7a844b70-19c7-466c-8a52-71f619fa87bb")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 223.52 179.07 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "13bd93e3-7cd0-4338-8a12-03b4ffe86b40")
+	)
+	(global_label "NVCC_DISP2"
+		(shape passive)
+		(at 238.76 171.45 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9b8843e7-12ad-4541-9bcb-0547c7f76bb8")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 238.76 179.07 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b3172e9a-bd00-4608-993e-e229d44dd605")
+	)
+	(global_label "NVCC_EMC1"
+		(shape passive)
+		(at 254.00 171.45 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e75ccdec-9084-4d8e-b77d-2f85b9ca6ef8")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 254.00 179.07 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6bf10007-608e-4268-ab84-d6335d90b3fc")
+	)
+	(global_label "NVCC_EMC1"
+		(shape passive)
+		(at 264.16 171.45 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "111fda24-c176-458f-a7ec-fdb24f1c6cd0")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 264.16 179.07 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b464fd35-0055-42e8-8d32-827ac3cc5648")
+	)
+	(global_label "NVCC_EMC2"
+		(shape passive)
+		(at 279.40 171.45 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4981a135-fab3-4090-80b5-99259f61dc04")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 279.40 179.07 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d146e3f5-6f4a-4c73-a85a-5eb30c90224f")
+	)
+	(global_label "NVCC_EMC2"
+		(shape passive)
+		(at 289.56 171.45 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "131eba71-ee6e-427e-9caf-fd3275228ceb")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 289.56 179.07 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5c08922d-5dea-4894-a466-4c56abe570b2")
+	)
   (sheet_instances
 		(path "/"
 			(page "1")
