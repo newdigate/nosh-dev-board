@@ -716,6 +716,171 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:FerriteBead"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "FB"
+				(at -3.81 0.635 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "FerriteBead"
+				(at 3.81 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Ferrite bead"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "L ferrite bead inductor filter"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Inductor_* L_* *Ferrite*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "FerriteBead_0_1"
+				(polyline
+					(pts
+						(xy -2.7686 0.4064) (xy -1.7018 2.2606) (xy 2.7686 -0.3048) (xy 1.6764 -2.159) (xy -2.7686 0.4064)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 1.2954)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 -1.2192)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "FerriteBead_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -7384,6 +7549,266 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Nosh:W25Q512NWEIQ"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -6.35 11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "W25Q512NWEIQ"
+				(at 7.62 11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_SON:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.winbond.com/hq/product/code-storage-flash-memory/serial-nor-flash/?__locale=en&partNo=W25Q512NW"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "512Mbit 1.8V Quad-SPI NOR flash, WSON-8 8x6mm (as on MIMXRT1170-EVKB U23)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flash memory SPI"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "WSON*8*1EP*8x6mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "W25Q512NWEIQ_0_1"
+				(rectangle
+					(start -7.62 10.16)
+					(end 10.16 -10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "W25Q512NWEIQ_1_1"
+				(pin input line
+					(at -10.16 7.62 0)
+					(length 2.54)
+					(name "~{CS}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "DO/IO_{1}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "~{WP}/IO_{2}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -12.7 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "DI/IO_{0}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(name "CLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "~{HOLD}/~{RESET}/IO_{3}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 12.7 270)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(name "EP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Switch:SW_DIP_x02"
 			(pin_names
 				(offset 0)
@@ -7802,6 +8227,30 @@
 		)
 		(uuid "19f9c356-7ad0-45ec-a153-680678f18db9")
 	)
+	(text "NVCC_SD2 = +1V8"
+		(exclude_from_sim no)
+		(at 368.3 86.36 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "1b629d28-a8f1-424f-9a59-7ca6cedbeb54")
+	)
+	(text "FlexSPI1 NOR flash (QSPI)"
+		(exclude_from_sim no)
+		(at 317.5 38.1 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "41a9e54c-a7ea-4963-8491-4e0c2f0298c8")
+	)
 	(text "nRESET -> POR_B via D1 (EVKB D2 RB521S30): the board reset cannot back-drive the probe."
 		(exclude_from_sim no)
 		(at 300 249.44 0)
@@ -7836,7 +8285,7 @@
 		)
 		(uuid "66f100be-5e94-45d2-a31a-11fba440c8ee")
 	)
-	(text "EVKB: NVCC_GPIO/EMC/LPSR/DISP2 = 3.3V, NVCC_DISP1 = 1.8V, NVCC_SD1/SD2 selectable via 0R."
+	(text "EVKB: NVCC_GPIO/EMC/LPSR/DISP2 = 3.3V, NVCC_DISP1 = 1.8V, NVCC_SD1 selectable; NVCC_SD2 = 1.8V (flash)."
 		(exclude_from_sim no)
 		(at 149.86 198.12 0)
 		(effects
@@ -7928,6 +8377,28 @@
 		)
 		(uuid "bd4f9689-657c-4c93-9b6f-9b0912c21d1a")
 	)
+	(text "EVKB 0R option links (R380/R399/R386/R390/R392/R385) and the octal-flash option (U21) are omitted."
+		(exclude_from_sim no)
+		(at 300 127.76 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "c0b07a56-c691-4b20-9059-8b096194ce9e")
+	)
+	(text "WP/HOLD are IO2/IO3 in quad mode (EVKB pull-ups R176/R171 DNP). NVCC_SD2 bank runs at 1.8V: FB6 + 10uF (EVKB L1/C349)."
+		(exclude_from_sim no)
+		(at 300 131.06 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "c3c5c02c-5ea2-471b-a71f-635ac22533db")
+	)
 	(text "BOOT_MODE[1:0]"
 		(exclude_from_sim no)
 		(at 320.04 152.4 0)
@@ -7986,6 +8457,17 @@
 			(justify left bottom)
 		)
 		(uuid "eeb4774a-2bf6-4dcc-b36e-fac02f12d634")
+	)
+	(text "U2: W25Q512NWEIQ 512Mb 1.8V QSPI (EVKB U23) on FlexSPI1 port A, GPIO_SD_B2_06..11. CS pull-up 10k (EVKB R165)."
+		(exclude_from_sim no)
+		(at 300 124.46 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "f5773bed-9b91-4138-b8fc-7d3b06722838")
 	)
 	(text "SWO/TDO=LPSR_11 (T5), TDI=LPSR_12 (U5). VTref = NVCC_LPSR. JTAG_MOD 10k pull-down (EVKB R403)."
 		(exclude_from_sim no)
@@ -8054,6 +8536,29 @@
 	)
 	(global_label "GND"
 		(shape passive)
+		(at 381 110.49 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0057c580-4b9e-4abe-ad77-76e326845aea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 381 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
 		(at 208.28 179.07 270)
 		(fields_autoplaced yes)
 		(effects
@@ -8111,6 +8616,29 @@
 		(uuid "0eb9aad2-f6f3-4aa4-b809-83c2e04bc4c8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 129.54 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "NVCC_SD2"
+		(shape passive)
+		(at 355.6 52.07 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "10fa254a-af7f-4881-89f9-d6d9007dbcb2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 355.6 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8236,6 +8764,29 @@
 			)
 		)
 	)
+	(global_label "FLEXSPI_A_D0"
+		(shape passive)
+		(at 320.04 63.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1f26e3cb-9b2e-44a3-ad3b-e1e33fbd67de")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "NVCC_LPSR"
 		(shape passive)
 		(at 152.4 215.9 270)
@@ -8259,6 +8810,29 @@
 			)
 		)
 	)
+	(global_label "FLEXSPI_A_CLK"
+		(shape passive)
+		(at 320.04 60.96 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "259e2a60-35d9-4ded-9f96-92f2e4e8b2b8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "NVCC_LPSR"
 		(shape passive)
 		(at 30.48 139.7 180)
@@ -8272,6 +8846,52 @@
 		(uuid "27c5ecb8-7e42-4bf6-b6fc-edd2c76bd603")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 20.32 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "FLEXSPI_A_D0"
+		(shape passive)
+		(at 119.38 199.39 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2eefd8dd-2f92-43c0-8b01-b1d3144a202e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.38 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "FLEXSPI_A_D2"
+		(shape passive)
+		(at 320.04 68.58 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3850e6e3-2bb2-4672-8022-a02ae8b5d8cd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8318,6 +8938,29 @@
 		(uuid "3e8b5e6c-0dc3-464f-9cb7-187c2a4daf5f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 129.54 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "FLEXSPI_A_D2"
+		(shape passive)
+		(at 119.38 204.47 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3eab6ac4-4e70-43ee-a063-6d390f1c58f0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.38 204.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8433,6 +9076,29 @@
 		(uuid "43e059f6-7de1-464b-bb55-d6f02be082b8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 375.92 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "FLEXSPI_A_D3"
+		(shape passive)
+		(at 320.04 71.12 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "44d65e55-d7d9-42c4-96d9-0a6f9803b0e5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8719,6 +9385,29 @@
 			)
 		)
 	)
+	(global_label "NVCC_SD2"
+		(shape passive)
+		(at 381 62.23 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "694aac0c-8bb6-46c7-add1-c4963c38a911")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 381 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "GND"
 		(shape passive)
 		(at 254 179.07 270)
@@ -8742,6 +9431,98 @@
 			)
 		)
 	)
+	(global_label "FLEXSPI_A_CLK"
+		(shape passive)
+		(at 119.38 196.85 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6d75e4b0-5b50-4075-acfa-f57468ccd255")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.38 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "NVCC_SD2"
+		(shape passive)
+		(at 370.84 110.49 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6dea57ac-625e-4c3b-8bad-a72c1a6acee2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 370.84 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "FLEXSPI_A_D1"
+		(shape passive)
+		(at 320.04 66.04 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "70fa03d3-2076-438d-9f34-721fd24529a9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "FLEXSPI_A_SS0"
+		(shape passive)
+		(at 320.04 58.42 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "729c06c1-54da-40c1-9561-e261a6147681")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "NVCC_LPSR"
 		(shape passive)
 		(at 152.4 171.45 90)
@@ -8755,6 +9536,29 @@
 		(uuid "7468dd45-f851-491d-bc21-d839ef3c7c34")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 152.4 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 332.74 78.74 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "78be911b-9cad-46e8-84ac-15a352207e75")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 332.74 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8801,6 +9605,29 @@
 		(uuid "7c111c8c-4d78-4b4d-ac45-6244db68e36e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 182.88 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "FLEXSPI_A_D1"
+		(shape passive)
+		(at 119.38 201.93 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8560cd42-72d6-4ff1-9f35-ed0efa839605")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.38 201.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8926,6 +9753,29 @@
 			)
 		)
 	)
+	(global_label "GND"
+		(shape passive)
+		(at 370.84 69.85 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9297e6c0-1441-48fd-8a9a-3f829d288ce5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 370.84 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "NVCC_EMC1"
 		(shape passive)
 		(at 22.86 33.02 180)
@@ -8985,6 +9835,52 @@
 		(uuid "9b8843e7-12ad-4541-9bcb-0547c7f76bb8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 238.76 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+1V8"
+		(shape passive)
+		(at 370.84 102.87 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a03546b4-385a-45d9-9cf8-635974d0a478")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 370.84 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "FLEXSPI_A_SS0"
+		(shape passive)
+		(at 355.6 59.69 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ae38470d-cecf-4389-95f5-437017db0a4c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 355.6 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9386,6 +10282,75 @@
 			)
 		)
 	)
+	(global_label "NVCC_SD2"
+		(shape passive)
+		(at 381 102.87 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d75fddae-1430-4c1c-832c-60eb7e116f5f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 381 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "NVCC_SD2"
+		(shape passive)
+		(at 330.2 53.34 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d8ab4fca-feff-4170-93d4-f95c6314365c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "NVCC_SD2"
+		(shape passive)
+		(at 370.84 62.23 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dc707732-76c0-4dd8-8b20-ac81cc789ebe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 370.84 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "NVCC_DISP1"
 		(shape passive)
 		(at 149.86 97.79 180)
@@ -9422,6 +10387,52 @@
 		(uuid "e75ccdec-9084-4d8e-b77d-2f85b9ca6ef8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 254 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "FLEXSPI_A_SS0"
+		(shape passive)
+		(at 119.38 194.31 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "eb299f6e-5fe9-4280-8ef7-a2dcee2333e5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.38 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 381 69.85 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "eb88fbd4-e6bf-4e46-882b-e6c0aaf23aa8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 381 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9478,6 +10489,29 @@
 			)
 		)
 	)
+	(global_label "GND"
+		(shape passive)
+		(at 330.2 78.74 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f3bf8479-bb81-472a-a01b-96f7d30b1ec7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "NVCC_DISP1"
 		(shape passive)
 		(at 172.72 215.9 270)
@@ -9491,6 +10525,29 @@
 		(uuid "f6720041-9cf5-49a5-a9de-c3c9da7bc22a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 172.72 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "FLEXSPI_A_D3"
+		(shape passive)
+		(at 119.38 207.01 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fca3e87b-277a-45a4-9cca-b9ecc58fdccb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.38 207.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10525,6 +11582,87 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 355.6 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1a1743ef-14d8-4211-97bb-38ba3cf1e713")
+		(property "Reference" "R14"
+			(at 357.63 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 357.63 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 355.6 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 355.6 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 355.6 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "892e2500-2f37-416d-ae7b-a3abb82a29fc")
+		)
+		(pin "2"
+			(uuid "6d5c7f45-c81a-430a-8fc4-eb7d60df1989")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 172.72 215.9 0)
 		(unit 1)
@@ -10598,6 +11736,108 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
 					(reference "#FLG15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Nosh:W25Q512NWEIQ")
+		(at 330.2 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "29c1d265-4658-4fb1-9d59-4a10da2bd279")
+		(property "Reference" "U2"
+			(at 320.04 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "W25Q512NWEIQ"
+			(at 335.28 81.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm"
+			(at 330.2 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 330.2 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b9d6efe3-2b95-4e11-81ec-c1b734a9493a")
+		)
+		(pin "2"
+			(uuid "eade1ea5-8fff-4bec-ad87-f7f6021a61e6")
+		)
+		(pin "3"
+			(uuid "6dbbf839-deb2-44c9-99ea-c48e6ea722a7")
+		)
+		(pin "4"
+			(uuid "30b8220e-8288-4a24-9490-623d1a5ca335")
+		)
+		(pin "5"
+			(uuid "b72c3a09-0c45-4e91-9ff1-29be6fd0f938")
+		)
+		(pin "6"
+			(uuid "092d55c5-c952-4e13-9e34-5651f92e7dd6")
+		)
+		(pin "7"
+			(uuid "6f1ca6fa-b4d7-43d7-bd3f-533e67471187")
+		)
+		(pin "8"
+			(uuid "5df9b848-7b83-4d02-b9af-9dd6e12e9c5f")
+		)
+		(pin "9"
+			(uuid "3651193c-cfc6-4da8-9914-f19606288b7a")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -12731,6 +13971,87 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:FerriteBead")
+		(at 370.84 106.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "66750e7b-3f32-4ea7-9902-e5b534715835")
+		(property "Reference" "FB6"
+			(at 372.87 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "120R"
+			(at 372.87 107.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0402_1005Metric"
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0d31013a-c4e7-483f-beb5-f995640ea102")
+		)
+		(pin "2"
+			(uuid "49bf1122-6622-408d-8f15-4c0eabbcfb7d")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+					(reference "FB6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 350.52 180.34 90)
 		(unit 1)
@@ -13288,6 +14609,87 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
 					(reference "#FLG16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 370.84 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "92488297-78c8-4c8e-86a7-71a809ee9e2c")
+		(property "Reference" "C58"
+			(at 372.87 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 372.87 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 370.84 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 370.84 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 370.84 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8885f5be-3710-4055-b1a8-3c376eca7e52")
+		)
+		(pin "2"
+			(uuid "9364e9c6-03ec-4168-9eb4-7d4185b1084c")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+					(reference "C58")
 					(unit 1)
 				)
 			)
@@ -14717,6 +16119,87 @@
 	)
 	(symbol
 		(lib_id "Device:C")
+		(at 381 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c40a3e12-cc4c-4cab-8e8a-40511f563d65")
+		(property "Reference" "C59"
+			(at 383.03 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 383.03 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 381 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 381 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 381 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2285dbe1-80d4-4338-a956-02dbc2af04f3")
+		)
+		(pin "2"
+			(uuid "33c11a67-1417-48d9-ae6c-3ecbcb84ef82")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+					(reference "C59")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
 		(at 254 175.26 0)
 		(unit 1)
 		(body_style 1)
@@ -16000,6 +17483,87 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
 					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 381 106.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e2fea35e-43d5-4708-a3b8-1cbf74f8c235")
+		(property "Reference" "C60"
+			(at 383.03 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 383.03 107.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 381 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 381 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 381 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e4702b53-07bf-4659-861a-e9110d475fe9")
+		)
+		(pin "2"
+			(uuid "2edc0635-d44f-4421-bb79-e5574ebe9c18")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+					(reference "C60")
 					(unit 1)
 				)
 			)
