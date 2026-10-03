@@ -7354,7 +7354,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin input line
 					(at 17.78 -3.81 180)
 					(length 2.54)
 					(name "USB2_VBUS"
@@ -7372,7 +7372,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin input line
 					(at 17.78 3.81 180)
 					(length 2.54)
 					(name "USB1_VBUS"
@@ -8023,6 +8023,29 @@
 			)
 		)
 	)
+	(global_label "USB2_DP"
+		(shape passive)
+		(at 237.49 50.8 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "571226cb-18bf-480a-bb3b-0a03579ab9c1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 237.49 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "+1V8"
 		(shape passive)
 		(at 76.2 105.41 90)
@@ -8197,6 +8220,29 @@
 		(uuid "938e34f1-e615-4cfc-ad02-cdde1fab5348")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 142.24 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "USB2_DN"
+		(shape passive)
+		(at 237.49 48.26 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "94fbbfc3-d881-4075-8e96-cd0c4504a2d3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 237.49 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8414,6 +8460,29 @@
 			)
 		)
 	)
+	(global_label "USB1_DN"
+		(shape passive)
+		(at 201.93 50.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c56951ab-56ce-41e6-a05c-b7a05c4cfbf0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 201.93 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "VDD_MIPI_1P0"
 		(shape passive)
 		(at 40.64 149.86 270)
@@ -8519,6 +8588,29 @@
 		(uuid "e88d566f-a8cf-4f69-a065-3883107edb39")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 127 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "USB1_DP"
+		(shape passive)
+		(at 201.93 53.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f1e1ec57-991a-4557-bb94-539f854f3e07")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 201.93 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

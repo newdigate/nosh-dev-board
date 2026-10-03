@@ -98,6 +98,8 @@ POWER_OUT = {"VDD_SNVS_ANA", "VDD_SNVS_DIG", "VDD_LPSR_ANA", "VDD_LPSR_DIG", "VD
 def etype(p):
     if p["name"] in POWER_OUT:
         return "power_out"
+    if p["name"] in ("USB1_VBUS", "USB2_VBUS"):   # VBUS sense inputs (5V tolerant)
+        return "input"
     return base_etype(p)
 
 
@@ -204,5 +206,23 @@ for u in sorted(by_unit):
     w('    )')
 w('  )')
 w(')')
-open(OUT, "w").write("\n".join(out) + "\n")
+new_lib = "\n".join(out) + "\n"
+if OUT.exists():
+    # Preserve every other symbol already in the library: replace only the MCU block.
+    cur = OUT.read_text()
+    others = []
+    for m in re.finditer(r'^\t?\s*\(symbol "([^"]+)"', cur, re.M):
+        name = m.group(1)
+        if name == "MIMXRT1176DVMAA" or re.search(r"_\d+_\d+$", name):
+            continue
+        depth = 0
+        for j in range(m.start(), len(cur)):
+            if cur[j] == "(": depth += 1
+            elif cur[j] == ")":
+                depth -= 1
+                if depth == 0:
+                    others.append(cur[m.start():j + 1]); break
+    if others:
+        new_lib = new_lib.rstrip()[:-1].rstrip() + "\n" + "\n".join(others) + "\n)\n"
+OUT.write_text(new_lib)
 print(f"wrote {OUT}: {len(pins)} pins in {len(by_unit)} units")

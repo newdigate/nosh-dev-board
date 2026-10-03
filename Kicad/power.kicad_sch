@@ -7249,7 +7249,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin input line
 					(at 17.78 -3.81 180)
 					(length 2.54)
 					(name "USB2_VBUS"
@@ -7267,7 +7267,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin input line
 					(at 17.78 3.81 180)
 					(length 2.54)
 					(name "USB1_VBUS"

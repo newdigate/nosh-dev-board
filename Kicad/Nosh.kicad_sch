@@ -52,6 +52,52 @@
 		)
 	)
 	(sheet
+		(at 25.4 95.25)
+		(size 63.5 38.1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.0006)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "673c32ea-7602-41d8-9d30-6b4783b9a0e9")
+		(property "Sheetname" "USB"
+			(at 27.94 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb.kicad_sch"
+			(at 27.94 134.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 208.28 38.1)
 		(size 63.5 38.1)
 		(exclude_from_sim no)

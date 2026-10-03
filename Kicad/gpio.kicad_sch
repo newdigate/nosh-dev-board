@@ -7438,7 +7438,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin input line
 					(at 17.78 -3.81 180)
 					(length 2.54)
 					(name "USB2_VBUS"
@@ -7456,7 +7456,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin input line
 					(at 17.78 3.81 180)
 					(length 2.54)
 					(name "USB1_VBUS"
@@ -9845,6 +9845,29 @@
 			)
 		)
 	)
+	(global_label "USB_OTG2_ID"
+		(shape passive)
+		(at 147.32 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9ce4c437-66c3-4d51-9870-1f0f0fdd8cb8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "+1V8"
 		(shape passive)
 		(at 370.84 102.87 90)
@@ -9858,6 +9881,29 @@
 		(uuid "a03546b4-385a-45d9-9cf8-635974d0a478")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 370.84 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "USB_OTG2_OC"
+		(shape passive)
+		(at 147.32 44.45 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a9cb7b45-17d0-4bd7-a28c-b6023c83486c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

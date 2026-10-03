@@ -1,0 +1,100 @@
+(footprint "slp1616p6"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "769cc92b-2345-4d97-a6b5-3e975998b136")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "slp1616p6"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "a2b06907-ab66-4023-8def-adc5abe3dba1")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "64d32580-73e7-4d58-92fa-7f19976e9bb9")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1cef2dd0-38ae-4261-88d5-2f1b702908d9")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(pad "1" smd rect
+		(at 0 0)
+		(size 0.6 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "5f53cc2f-51dd-48d6-9c0c-67a736fffdd8")
+	)
+	(pad "2" smd rect
+		(at 1.2 0)
+		(size 0.6 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "4e260cd5-e749-4595-8bc2-6dbdcccc8a7e")
+	)
+	(pad "3" smd rect
+		(at 2.4 0)
+		(size 0.6 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "9199c121-fdf3-4f93-bce6-d0e1562b6090")
+	)
+	(pad "4" smd rect
+		(at 0 1.2)
+		(size 0.6 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "46ad2da4-2b9b-40f1-ac93-861d8433f174")
+	)
+	(pad "5" smd rect
+		(at 1.2 1.2)
+		(size 0.6 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "0e8c2f60-a7dd-44eb-8d39-69e565b5ec03")
+	)
+	(pad "6" smd rect
+		(at 2.4 1.2)
+		(size 0.6 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "2d6e31df-38a8-465d-ae9b-d9b4996de9cc")
+	)
+	(pad "7" smd rect
+		(at 0 2.4)
+		(size 0.6 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "76dbc7fb-8b15-43c0-9ef9-5b5237fc2246")
+	)
+	(embedded_fonts no)
+)
