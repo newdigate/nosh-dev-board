@@ -381,7 +381,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin power_out line
 					(at -50.8 7.62 0)
 					(length 2.54)
 					(name "VDD_SNVS_DIG"
@@ -489,7 +489,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin power_out line
 					(at -50.8 10.16 0)
 					(length 2.54)
 					(name "VDD_SNVS_ANA"
@@ -726,7 +726,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin power_out line
 					(at -19.05 6.35 0)
 					(length 2.54)
 					(name "VDDA_1P0"
@@ -744,7 +744,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin power_out line
 					(at -19.05 -6.35 0)
 					(length 2.54)
 					(name "VDD_LPSR_DIG"
@@ -762,7 +762,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin power_out line
 					(at -19.05 -3.81 0)
 					(length 2.54)
 					(name "VDD_LPSR_ANA"
@@ -855,7 +855,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin power_out line
 					(at -21.59 -11.43 0)
 					(length 2.54)
 					(name "DCDC_DIG_1"
@@ -999,7 +999,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin power_out line
 					(at -21.59 -3.81 0)
 					(length 2.54)
 					(name "DCDC_ANA_1"

@@ -88,7 +88,20 @@ UNIT_NAMES = {
     9: "GPIO_DISP", 10: "GPIO_EMC", 11: "MIPI", 12: "USB",
 }
 
+# Internal LDO / DCDC outputs (EVKB sheet 6 marks these "internal LDO output").
+# Only one ball of each multi-ball DCDC output is power_out; the rest stay passive
+# so ERC does not flag output-to-output on the shared net.
+POWER_OUT = {"VDD_SNVS_ANA", "VDD_SNVS_DIG", "VDD_LPSR_ANA", "VDD_LPSR_DIG", "VDDA_1P0",
+             "DCDC_ANA_1", "DCDC_DIG_1"}
+
+
 def etype(p):
+    if p["name"] in POWER_OUT:
+        return "power_out"
+    return base_etype(p)
+
+
+def base_etype(p):
     n = p["name"]
     if re.match(r"(VDD|VDDA|NVCC|VSS|DCDC_GND|DCDC_IN|ADC_VREFH)", n):
         return "power_in"
@@ -138,8 +151,10 @@ PINLEN = 2.54
 CHAR_W = 1.1  # approx mm per char at 1.27 text
 
 def unit_geom(ps):
-    rails = [p for p in ps if etype(p) == "power_in"]
-    io = [p for p in ps if etype(p) != "power_in"]
+    # Pin ORDER is fixed by the base classification so that changing a pin's
+    # electrical type (e.g. to power_out) never moves pins on existing schematics.
+    rails = [p for p in ps if base_etype(p) == "power_in"]
+    io = [p for p in ps if base_etype(p) != "power_in"]
     ordered = rails + io
     nl = (len(ordered) + 1) // 2
     left, right = ordered[:nl], ordered[nl:]
