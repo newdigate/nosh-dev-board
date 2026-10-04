@@ -8789,6 +8789,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C5250251"
+			(at 87.63 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "XRCGB24M000F2P91R0"
+			(at 87.63 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b64657fa-6a56-4ca6-bd84-43552a6944df")
 		)
@@ -8866,6 +8888,28 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 111.76 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 111.76 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
 			(at 111.76 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -8957,6 +9001,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C17168"
+			(at 101.6 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF0000TCE"
+			(at 101.6 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2de0b4f4-6fe4-4cdb-8363-57b77620a64c")
 		)
@@ -9028,6 +9094,28 @@
 			)
 		)
 		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB)"
+			(at 219.71 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1020237"
+			(at 219.71 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "MIMXRT1176DVMAA"
 			(at 219.71 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -9980,6 +10068,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C325453"
+			(at 78.74 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0402BRNPO9BN4R7"
+			(at 78.74 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d63f4aa3-f331-40c4-98ee-e4fce7e25249")
 		)
@@ -10051,6 +10161,28 @@
 			)
 		)
 		(property "Description" "Ferrite bead"
+			(at 25.4 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C85812"
+			(at 25.4 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BLM15AG121SN1D"
 			(at 25.4 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -10142,6 +10274,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C85812"
+			(at 50.8 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BLM15AG121SN1D"
+			(at 50.8 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "fee264bd-aa76-4a96-a3dd-41c05b728e1e")
 		)
@@ -10213,6 +10367,28 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 127 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 127 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
 			(at 127 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -10304,6 +10480,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C52923"
+			(at 60.96 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
+			(at 60.96 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "8c0a5cf6-b8a2-4c3b-bec1-e6a5c609521e")
 		)
@@ -10375,6 +10573,28 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 86.36 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 86.36 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
 			(at 86.36 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -10535,6 +10755,28 @@
 			)
 		)
 		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB)"
+			(at 139.7 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1020237"
+			(at 139.7 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "MIMXRT1176DVMAA"
 			(at 139.7 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -11487,6 +11729,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C52923"
+			(at 35.56 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
+			(at 35.56 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b47c4fd5-18f1-4623-8cd5-4c9944d2b7a4")
 		)
@@ -11558,6 +11822,28 @@
 			)
 		)
 		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB)"
+			(at 59.69 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1020237"
+			(at 59.69 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "MIMXRT1176DVMAA"
 			(at 59.69 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -12510,6 +12796,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C325453"
+			(at 96.52 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0402BRNPO9BN4R7"
+			(at 96.52 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "6f3f95e8-f1ec-40d5-82a6-f56b369b85e2")
 		)
@@ -12670,6 +12978,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C85812"
+			(at 76.2 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BLM15AG121SN1D"
+			(at 76.2 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f46316ac-3452-4ff8-9b12-ea298b198956")
 		)
@@ -12820,6 +13150,28 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 142.24 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 142.24 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
 			(at 142.24 109.22 0)
 			(hide yes)
 			(show_name no)
