@@ -17,7 +17,7 @@ Schematic capture is done in KiCad 10 (`Kicad/`). PCB layout has not started.
 | USB1 (OTG1) | USB-C **device** port | Rd-only UFP (500 mA) |
 | M.2 Key E | uSDHC1 @ 1.8 V + LPUART2 | for u-blox MAYA-W1 / NXP IW416; 74AVC8T245 level shifters; TE 2199230-4 socket |
 | microSD | uSDHC2 @ 3.3 V | separate bus from the M.2 slot |
-| LCD + touch | 40-pin 0.5 mm FPC (Würth 68714014022), MIPI DSI 2 lanes | Rocktech RK055HDMIPI4MA0 (720×1280, HX8394, GT911 touch on LPI2C5), EVKB J48 pinout and GPIO map. The EVKB-style backlight boost and 2.8 V LDO are present but DNP: the adapter board (NXP SPF-39012) generates its own rails and drives its own backlight from the 5 V on pins 39/40, with jumpers J3/J5/J6/J7/J8 defaulting to on-board |
+| LCD + touch | 40-pin 0.5 mm FPC (Würth 68714014022), MIPI DSI 2 lanes | Rocktech RK055HDMIPI4MA0 (720×1280, HX8394, GT911 touch on LPI2C5), EVKB J48 pinout and GPIO map. No on-board backlight boost or 2.8 V LDO: the adapter board (NXP SPF-39012) generates its own rails and drives its own backlight from the 5 V on pins 39/40 (keep its jumpers J3/J5/J6 at the default 1-2) |
 | Power | 5 V barrel jack or USB-C → MP2143 3.3 V buck → AMS1117 1.8 V; AP2112K SNVS LDO | EVKB-style rail tree, on-chip DCDC for the core |
 | Debug | 10-pin 1.27 mm SWD header, reset / ONOFF / WAKEUP buttons, 2-way boot-mode DIP |
 
