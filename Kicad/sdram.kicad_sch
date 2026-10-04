@@ -465,7 +465,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Nosh:IS42S16320F-6TL"
+		(symbol "Nosh:W9825G6KH-6"
 			(pin_names
 				(offset 1.016)
 			)
@@ -485,7 +485,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "IS42S16320F-6TL"
+			(property "Value" "W9825G6KH-6"
 				(at -10.16 -36.83 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -507,7 +507,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.issi.com/WW/pdf/42-45R-S_86400F-16320F.pdf"
+			(property "Datasheet" "https://www.winbond.com/resource-files/w9825g6kh_a03.pdf"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -518,7 +518,7 @@
 					)
 				)
 			)
-			(property "Description" "512Mbit (32Mx16) 3.3V SDR SDRAM, 166MHz, TSOP-II-54, JEDEC x16 pinout (drop-in for EVKB W9825G6KH-5I). JLCPCB C17672183 (Extended)"
+			(property "Description" "256Mbit (16Mx16) 3.3V SDR SDRAM, 166MHz CL3, TSOP-II-54, JEDEC x16 pinout; same family as the EVKB W9825G6KH-5I. JLCPCB C62246 (Extended)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -540,7 +540,7 @@
 					)
 				)
 			)
-			(symbol "IS42S16320F-6TL_0_1"
+			(symbol "W9825G6KH-6_0_1"
 				(rectangle
 					(start -10.16 22.86)
 					(end 10.16 -35.56)
@@ -553,7 +553,7 @@
 					)
 				)
 			)
-			(symbol "IS42S16320F-6TL_1_1"
+			(symbol "W9825G6KH-6_1_1"
 				(pin power_in line
 					(at -7.62 25.4 270)
 					(length 2.54)
@@ -1691,7 +1691,7 @@
 		)
 		(uuid "d6b46973-c298-4d0b-8e2b-89a2b6900da9")
 	)
-	(text "Drop-in: JEDEC x16 TSOP-II-54 pinout; the 512Mb part uses a 10-bit column (SEMC SDRAMCR0[COL]=10) with the same A0..A12. -6 grade = 166MHz (CL3), matching the EVKB SEMC clock. Alternates: IS42S16320F-7TLI (143MHz, C1348819), AS4C32M16SB-7TIN."
+	(text "JEDEC x16 TSOP-II-54 pinout, A0..A12 + BA0/1: the 256Mb part is 13 row x 9 column bits (SEMC SDRAMCR0[COL]=9, as on the EVKB). -6 grade = 166MHz (CL3), matching the EVKB SEMC clock. Pin-compatible upgrade: W9825G6KH-6 (512Mb, COL=10, C17672183 - low JLCPCB stock)."
 		(exclude_from_sim no)
 		(at 25.4 219.2 0)
 		(effects
@@ -1714,7 +1714,7 @@
 		)
 		(uuid "e9fdd91d-fbdc-4427-9fd3-c3b5aef51f37")
 	)
-	(text "2x IS42S16320F-6TL (512Mb, 32Mx16) on SEMC as a 32-bit SDRAM, 128 MB total. Same arrangement as the MIMXRT1170-EVKB (U13 = D0..15, U25 = D16..31, 2x W9825G6KH-5I 256Mb = 64 MB)."
+	(text "2x W9825G6KH-6 (256Mb, 16Mx16) on SEMC as a 32-bit SDRAM, 64 MB total. Same arrangement and part family as the MIMXRT1170-EVKB (U13 = D0..15, U25 = D16..31, W9825G6KH-5I)."
 		(exclude_from_sim no)
 		(at 25.4 215.9 0)
 		(effects
@@ -5874,7 +5874,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Nosh:IS42S16320F-6TL")
+		(lib_id "Nosh:W9825G6KH-6")
 		(at 269.24 96.52 0)
 		(unit 1)
 		(body_style 1)
@@ -5895,7 +5895,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IS42S16320F-6TL"
+		(property "Value" "W9825G6KH-6"
 			(at 281.94 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5939,7 +5939,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C17672183"
+		(property "LCSC" "C62246"
 			(at 269.24 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -5950,7 +5950,7 @@
 				)
 			)
 		)
-		(property "MPN" "IS42S16320F-6TL"
+		(property "MPN" "W9825G6KH-6"
 			(at 269.24 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6339,7 +6339,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Nosh:IS42S16320F-6TL")
+		(lib_id "Nosh:W9825G6KH-6")
 		(at 76.2 96.52 0)
 		(unit 1)
 		(body_style 1)
@@ -6360,7 +6360,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IS42S16320F-6TL"
+		(property "Value" "W9825G6KH-6"
 			(at 88.9 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6404,7 +6404,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C17672183"
+		(property "LCSC" "C62246"
 			(at 76.2 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6415,7 +6415,7 @@
 				)
 			)
 		)
-		(property "MPN" "IS42S16320F-6TL"
+		(property "MPN" "W9825G6KH-6"
 			(at 76.2 96.52 0)
 			(hide yes)
 			(show_name no)
