@@ -1877,7 +1877,7 @@
 				)
 			)
 		)
-		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB)"
+		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB). Fit MIMXRT1176DVMAA (rev A, JLCPCB C1020237, NRND) or the pin-identical rev-B MIMXRT1176DVMAB (C44999798) - accepted alternate"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

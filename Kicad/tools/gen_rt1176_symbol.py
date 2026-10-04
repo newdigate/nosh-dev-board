@@ -178,7 +178,7 @@ w(f'    (property "Reference" "U" (at {-max_half:.2f} {max_top + 1.27:.2f} 0) (e
 w(f'    (property "Value" "MIMXRT1176DVMAA" (at {-max_half:.2f} {-max_top - 1.27:.2f} 0) (effects (font (size 1.27 1.27)) (justify left)))')
 w('    (property "Footprint" "Nosh:bga289_0p8_14x14_1p52mm" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))')
 w('    (property "Datasheet" "https://www.nxp.com/docs/en/data-sheet/IMXRT1170CEC.pdf" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))')
-w('    (property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB)" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))')
+w('    (property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB). Fit MIMXRT1176DVMAA (rev A, JLCPCB C1020237, NRND) or the pin-identical rev-B MIMXRT1176DVMAB (C44999798) - accepted alternate" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))')
 w('    (property "ki_keywords" "NXP i.MX RT1170 RT1176 Cortex-M7 Cortex-M4" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))')
 w('    (property "ki_fp_filters" "BGA*289*" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))')
 

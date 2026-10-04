@@ -990,7 +990,7 @@
 					)
 				)
 			)
-			(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB)"
+			(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB). Fit MIMXRT1176DVMAA (rev A, JLCPCB C1020237, NRND) or the pin-identical rev-B MIMXRT1176DVMAB (C44999798) - accepted alternate"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -9093,7 +9093,7 @@
 				)
 			)
 		)
-		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB)"
+		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB). Fit MIMXRT1176DVMAA (rev A, JLCPCB C1020237, NRND) or the pin-identical rev-B MIMXRT1176DVMAB (C44999798) - accepted alternate"
 			(at 219.71 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -9116,6 +9116,28 @@
 			)
 		)
 		(property "MPN" "MIMXRT1176DVMAA"
+			(at 219.71 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN_Alt" "MIMXRT1176DVMAB"
+			(at 219.71 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC_Alt" "C44999798"
 			(at 219.71 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -10754,7 +10776,7 @@
 				)
 			)
 		)
-		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB)"
+		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB). Fit MIMXRT1176DVMAA (rev A, JLCPCB C1020237, NRND) or the pin-identical rev-B MIMXRT1176DVMAB (C44999798) - accepted alternate"
 			(at 139.7 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -10777,6 +10799,28 @@
 			)
 		)
 		(property "MPN" "MIMXRT1176DVMAA"
+			(at 139.7 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN_Alt" "MIMXRT1176DVMAB"
+			(at 139.7 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC_Alt" "C44999798"
 			(at 139.7 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -11821,7 +11865,7 @@
 				)
 			)
 		)
-		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB)"
+		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB). Fit MIMXRT1176DVMAA (rev A, JLCPCB C1020237, NRND) or the pin-identical rev-B MIMXRT1176DVMAB (C44999798) - accepted alternate"
 			(at 59.69 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -11844,6 +11888,28 @@
 			)
 		)
 		(property "MPN" "MIMXRT1176DVMAA"
+			(at 59.69 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN_Alt" "MIMXRT1176DVMAB"
+			(at 59.69 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC_Alt" "C44999798"
 			(at 59.69 49.53 0)
 			(hide yes)
 			(show_name no)
