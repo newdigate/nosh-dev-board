@@ -52,6 +52,52 @@
 		)
 	)
 	(sheet
+		(at 25.4 152.4)
+		(size 63.5 38.1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.0006)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "54b8ddd8-5a5c-41b4-9116-56d21efe6119")
+		(property "Sheetname" "M.2"
+			(at 27.94 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "m2.kicad_sch"
+			(at 27.94 191.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 25.4 95.25)
 		(size 63.5 38.1)
 		(exclude_from_sim no)
@@ -93,6 +139,52 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7"
 					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 208.28 95.25)
+		(size 63.5 38.1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.0006)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "762d4c7d-1f2d-4512-9145-83d13d1277ef")
+		(property "Sheetname" "SDRAM"
+			(at 210.82 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sdram.kicad_sch"
+			(at 210.82 134.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7"
+					(page "7")
 				)
 			)
 		)
@@ -190,6 +282,98 @@
 		)
 	)
 	(sheet
+		(at 208.28 152.4)
+		(size 63.5 38.1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.0006)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "b32e0a29-65bf-4695-b3c6-79257b1bba82")
+		(property "Sheetname" "LCD"
+			(at 210.82 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "lcd.kicad_sch"
+			(at 210.82 191.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 116.84 152.4)
+		(size 63.5 38.1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.0006)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "bbda4d18-65a9-4917-98c1-6b9b7039c356")
+		(property "Sheetname" "SD card"
+			(at 119.38 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sdcard.kicad_sch"
+			(at 119.38 191.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 116.84 38.1)
 		(size 63.5 38.1)
 		(exclude_from_sim no)
@@ -235,54 +419,6 @@
 			)
 		)
 	)
-  (sheet (at 208.28 95.25) (size 63.5 38.1) (fields_autoplaced yes)
-    (stroke (width 0.0006) (type default))
-    (fill (color 0 0 0 0.0000))
-    (uuid "762d4c7d-1f2d-4512-9145-83d13d1277ef")
-    (property "Sheetname" "SDRAM" (at 210.82 93.98 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "sdram.kicad_sch" (at 210.82 134.62 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "Nosh"
-        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7" (page "7"))
-      )
-    )
-  )
-  (sheet (at 25.4 152.4) (size 63.5 38.1) (fields_autoplaced yes)
-    (stroke (width 0.0006) (type default))
-    (fill (color 0 0 0 0.0000))
-    (uuid "54b8ddd8-5a5c-41b4-9116-56d21efe6119")
-    (property "Sheetname" "M.2" (at 27.94 151.13 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "m2.kicad_sch" (at 27.94 191.77 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "Nosh"
-        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7" (page "8"))
-      )
-    )
-  )
-  (sheet (at 116.84 152.4) (size 63.5 38.1) (fields_autoplaced yes)
-    (stroke (width 0.0006) (type default))
-    (fill (color 0 0 0 0.0000))
-    (uuid "bbda4d18-65a9-4917-98c1-6b9b7039c356")
-    (property "Sheetname" "SD card" (at 119.38 151.13 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "sdcard.kicad_sch" (at 119.38 191.77 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "Nosh"
-        (path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7" (page "9"))
-      )
-    )
-  )
 	(sheet_instances
 		(path "/"
 			(page "1")
