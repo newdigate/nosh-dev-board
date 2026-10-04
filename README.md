@@ -24,10 +24,11 @@ has not started. Full-hierarchy ERC is clean apart from the expected unconnected
 | LCD + touch | 40-pin 0.5 mm FPC (Würth 68714014022), MIPI DSI 2 lanes | Rocktech RK055HDMIPI4MA0 (720×1280, HX8394, GT911 touch on LPI2C5), EVKB J48 pinout and GPIO map |
 | Audio | Cirrus WM8962 codec on SAI1 + LPI2C5, 3.5 mm line-out and line-in jacks | EVKB U368 circuit on the EVKB pins; headphone-capable line out, IN2L/R line in |
 | Power | 5 V barrel jack or USB-C → MP2143 3.3 V buck → AMS1117 1.8 V; AP2112K SNVS LDO | EVKB-style rail tree, on-chip DCDC for the core; 2 A polyfuse, reverse-polarity diode |
-| Debug | 10-pin 1.27 mm SWD/JTAG header, reset / ONOFF / WAKEUP buttons, 2-way boot-mode DIP | JTAG on GPIO_LPSR_10..15, VTref = NVCC_LPSR (3.3 V) |
+| Debug | 10-pin 1.27 mm SWD/JTAG header, reset / ONOFF / WAKEUP buttons, 2-way boot-mode DIP, 72 test points | JTAG on GPIO_LPSR_10..15, VTref = NVCC_LPSR (3.3 V); LPUART1 console on TP62/TP63 |
 
 Sheets: `power` (MCU supplies, DCDC, reset/boot), `core` (crystals, USB/MIPI supplies),
-`gpio` (GPIO banks, flash, SWD, boot), `usb`, `supply`, `sdram`, `m2`, `sdcard`, `lcd`, `audio`.
+`gpio` (GPIO banks, flash, SWD, boot), `usb`, `supply`, `sdram`, `m2`, `sdcard`, `lcd`, `audio`,
+`testpoints`.
 
 ## Pin map (for software)
 
@@ -46,6 +47,7 @@ All assignments are the EVKB's unless marked.
 | Touch + codec I2C (LPI2C5) | GPIO_LPSR_04 SDA / GPIO_LPSR_05 SCL; touch INT GPIO_AD_00, touch RST GPIO_AD_01 |
 | Audio (SAI1) | MCLK GPIO_AD_17, RX_SYNC/RX_BCLK GPIO_AD_18/19 (DNP links), RXD0 GPIO_AD_20, TXD0 GPIO_AD_21, TX_BCLK GPIO_AD_22, TX_SYNC GPIO_AD_23 |
 | Boot mode | GPIO_LPSR_02/03 (DIP switch), internal boot from FlexSPI1 NOR by default |
+| Debug console (LPUART1) — *Nosh: test points only* | GPIO_AD_24 TXD / GPIO_AD_25 RXD on TP62 / TP63 (no header fitted) |
 
 ## Differences from the MIMXRT1170-EVKB
 
@@ -160,12 +162,32 @@ blhost -u 0x15a2,0x0073 -- write-memory 0x30000000 app.bin
 NXP's MCUXpresso Secure Provisioning Tool does the same through a GUI. This is also the
 recovery path if a bad image ever makes an SWD attach awkward.
 
+### Test points
+
+The `testpoints` sheet carries 72 test points, each a global label onto an existing net. They are
+bare copper pads (KiCad `TestPoint` footprints, flagged exclude-from-BOM / exclude-from-POS and
+`in_bom = no` on the symbols), so they add nothing to the JLCPCB order.
+
+| Refs | Group | Nets |
+|---|---|---|
+| TP1–TP6 | Ground | GND; 2.0 mm plated holes, solder a wire loop for the scope ground lead |
+| TP7–TP21 | Supply rails | DC_IN_F, +5V, +3V3, +1V8, VLDO_3V3, VSD_3V3, WL_3V3, SDRAM_3V3, CODEC_1V8, VMIDC, LCD_5V, LCD_IOVCC_1V8, CTP_3V3, USB1_VBUS, USB2_VBUS |
+| TP22–TP35 | MCU power domains | DCDC_IN, DCDC_DIG, DCDC_ANA, VDD_SOC_IN, VDDA_1P8, VDD_SNVS_IN, VDD_LPSR_IN, NVCC_LPSR, NVCC_GPIO, NVCC_SD1, NVCC_SD2, NVCC_EMC1, VDD_USB_3P3, VDDA_ADC_3P3 |
+| TP36–TP49 | Reset / boot / power control | POR_B, ONOFF, WAKEUP, PMIC_ON_REQ, PMIC_STBY_REQ, BOOT_MODE0, BOOT_MODE1, DCDC_PSWITCH, DCDC_MODE, BUCK_EN, OTG2_VBUS_EN, USB_OTG2_OC, SD_PWREN_B, SD_CD_B |
+| TP50–TP61 | Peripheral control (MCU side, 3.3 V) | LCM_PWR_EN, BACKLIGHT_CTL, LCD_RST_B, LCD_TE, CTP_RST_B, CTP_INT, WL_RST_B, BT_RST_B, WIFI_WAKE_B, BT_WAKE_B, WL_DEV_WAKE, BT_DEV_WAKE |
+| TP62–TP72 | Buses | LPUART1_TXD / LPUART1_RXD (TP62 / TP63), LPI2C5_SDA / SCL, SAI1_MCLK, SAI1_TX_BCLK, SAI1_TX_SYNC, SAI1_TXD0, SAI1_RXD0, BT_UART_TXD / RXD |
+
+TP62/TP63 are the only connection to LPUART1 (GPIO_AD_24/25, the SDK's default debug console,
+3.3 V): solder wires or a 3-pin header there, plus a ground, for a serial console. Nothing is
+probed on the SDRAM, FlexSPI, USB data, MIPI DSI or crystal nets, where a pad stub would degrade
+the signal; SWD/SWO are on J1.
+
 ## Repository layout
 
 ```
 Kicad/
   Nosh.kicad_pro / Nosh.kicad_sch        project and root sheet (A3, one block per sub-sheet)
-  power core gpio usb supply sdram m2 sdcard lcd audio .kicad_sch
+  power core gpio usb supply sdram m2 sdcard lcd audio testpoints .kicad_sch
   Nosh.kicad_sym                         project symbols (MCU, flash, SDRAM, codec, sockets, …)
   Nosh.pretty/                           project footprints:
     bga289_0p8_14x14_1p52mm              MCU (from the EVKB footprint)

@@ -10696,6 +10696,29 @@
 			)
 		)
 	)
+	(global_label "LPUART1_TXD"
+		(shape passive)
+		(at 251.46 41.91 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "78de918a-9eb7-4210-a2ab-98cebe6ab17d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "NVCC_DISP1"
 		(shape passive)
 		(at 223.52 171.45 90)
@@ -10755,6 +10778,29 @@
 		(uuid "7c111c8c-4d78-4b4d-ac45-6244db68e36e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 182.88 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "LPUART1_RXD"
+		(shape passive)
+		(at 251.46 44.45 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7db37a81-612a-4081-827e-c809784b7c70")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
