@@ -3060,7 +3060,7 @@
 		)
 		(uuid "602ec379-6191-49fc-9655-7762ceef651a")
 	)
-	(text "USB-C device port: 5.1k CC pull-downs (UFP), VBUS -> 300R bead -> USB1_VBUS sense + 4.7uF, 90R common-mode choke (Coilcraft 0805USB-901ML, windings 1-2 / 3-4), RClamp0854P ESD (ID pin NC),"
+	(text "USB-C device port: 5.1k CC pull-downs (UFP), VBUS -> 300R bead -> USB1_VBUS sense + 4.7uF, 90R common-mode choke (Murata DLW21HN900SQ2L as EVKB L12/L13, windings 1-2 / 3-4), RClamp0854P ESD (ID pin NC),"
 		(exclude_from_sim no)
 		(at 231.14 185.42 0)
 		(effects
@@ -6433,7 +6433,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0805USB-901ML"
+		(property "Value" "DLW21HN900SQ2L"
 			(at 91.44 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6444,7 +6444,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_CommonModeChoke_Coilcraft_0805USB"
+		(property "Footprint" "Nosh:L_CommonModeChoke_Murata_DLW21"
 			(at 96.52 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6455,7 +6455,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/products/productdata/8796757491742/EFLC0005.pdf"
 			(at 96.52 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6466,7 +6466,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Murata DLW21HN900SQ2L USB 2.0 common mode choke, 90R@100MHz, 330mA (as on MIMXRT1170-EVKB L12/L13). JLCPCB C80529"
 			(at 96.52 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6477,7 +6477,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C5441587"
+		(property "LCSC" "C80529"
 			(at 96.52 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6488,7 +6488,7 @@
 				)
 			)
 		)
-		(property "MPN" "0805USB-901MLC"
+		(property "MPN" "DLW21HN900SQ2L"
 			(at 96.52 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6926,7 +6926,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0805USB-901ML"
+		(property "Value" "DLW21HN900SQ2L"
 			(at 317.5 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6937,7 +6937,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_CommonModeChoke_Coilcraft_0805USB"
+		(property "Footprint" "Nosh:L_CommonModeChoke_Murata_DLW21"
 			(at 322.58 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -6948,7 +6948,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/products/productdata/8796757491742/EFLC0005.pdf"
 			(at 322.58 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -6959,7 +6959,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Murata DLW21HN900SQ2L USB 2.0 common mode choke, 90R@100MHz, 330mA (as on MIMXRT1170-EVKB L12/L13). JLCPCB C80529"
 			(at 322.58 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -6970,7 +6970,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C5441587"
+		(property "LCSC" "C80529"
 			(at 322.58 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -6981,7 +6981,7 @@
 				)
 			)
 		)
-		(property "MPN" "0805USB-901MLC"
+		(property "MPN" "DLW21HN900SQ2L"
 			(at 322.58 101.6 0)
 			(hide yes)
 			(show_name no)

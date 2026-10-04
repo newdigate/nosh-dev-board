@@ -1,0 +1,156 @@
+(footprint "L_CommonModeChoke_Murata_DLW21"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Murata DLW21SN/DLW21HN common mode choke, 2.0x1.2mm 4-terminal; land pattern taken from MIMXRT1170-EVKB L12 (IPC-D-356). Windings 1-2 and 4-3. https://www.murata.com/products/productdata/8796757491742/EFLC0005.pdf")
+	(tags "common mode choke filter USB DLW21")
+	(property "Reference" "REF**"
+		(at 0 -1.4 0)
+		(layer "F.SilkS")
+		(uuid "d60fd5f4-b71a-4d28-ba77-38e2241d92d2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "L_CommonModeChoke_Murata_DLW21"
+		(at 0 1.5 0)
+		(layer "F.Fab")
+		(uuid "9c058ef4-7dd2-4444-ac13-35a46d5af6fb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ac25f6b5-41af-419a-861c-75a5e4ec8177")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0fe6cb9a-0e5a-4006-bbad-f49b7b3044fb")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.5 -0.75)
+		(end -1.5 -0.1)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "aef1273a-34a6-4411-85fc-444558815f9c")
+	)
+	(fp_line
+		(start -0.3 -0.78)
+		(end 0.3 -0.78)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "169b57cb-5b9f-41ce-83fa-56247fc56b1d")
+	)
+	(fp_line
+		(start -0.3 0.78)
+		(end 0.3 0.78)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "b58078d2-b72c-4f03-a459-525fd3ed91d6")
+	)
+	(fp_rect
+		(start -1.55 -0.85)
+		(end 1.55 0.85)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "e9f5bb6f-465c-49f1-8ec5-5214e396d577")
+	)
+	(fp_line
+		(start -1 -0.3)
+		(end -0.7 -0.6)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "f2b1b1c6-c771-4448-a082-db7d81b541d3")
+	)
+	(fp_rect
+		(start -1 -0.6)
+		(end 1 0.6)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "6d62fc9e-b245-4237-a4d6-35eae953494b")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "d48a48e0-f940-4221-9e46-f0e412d7ba36")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.08)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.85 -0.4)
+		(size 0.914 0.406)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "3eb6cdb1-bb86-4fd9-b64a-08e95dc1b396")
+	)
+	(pad "2" smd roundrect
+		(at 0.85 -0.4)
+		(size 0.914 0.406)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "aba50589-a426-4038-a3e6-0138b170c73a")
+	)
+	(pad "3" smd roundrect
+		(at 0.85 0.4)
+		(size 0.914 0.406)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "d4e9dd55-dbef-4f06-8ab7-3890d80ba971")
+	)
+	(pad "4" smd roundrect
+		(at -0.85 0.4)
+		(size 0.914 0.406)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "83a98421-d59c-4bb3-8d58-fa8a4a9bfbed")
+	)
+	(embedded_fonts no)
+)
