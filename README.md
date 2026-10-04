@@ -96,6 +96,70 @@ python3 Kicad/tools/lcsc_table.py
 Fine-pitch note: the MCU is 0.8 mm BGA, the codec 0.5 mm W-CSP; everything else is 0.4 mm
 QFN or coarser.
 
+## Flashing and debugging
+
+The RT1176 has no internal flash: the ROM boots from the W25Q512 on FlexSPI1, so "flashing"
+means writing the QSPI NOR through the MCU. A debug tool needs an RT1170 FlexSPI flash
+algorithm (it loads a small loader into OCRAM that uses the ROM's FlexSPI API); pyOCD gets it
+from the NXP CMSIS pack, J-Link has it built in. Images must start with the FCB + IVT + boot
+data at `0x30000000` — any SDK `flexspi_nor` link target does this, and the EVKB FCB (written
+for the 1.8 V W25Q512NW) drives our 3.3 V W25Q512JV unchanged (same command set, same QE bit).
+
+### SWD header J1 (standard Cortex 10-pin, 1.27 mm)
+
+| Pin | Signal | Pin | Signal |
+|---|---|---|---|
+| 1 | VTref = NVCC_LPSR (3.3 V) | 2 | SWDIO (GPIO_LPSR_15) |
+| 3 | GND | 4 | SWCLK (GPIO_LPSR_14) |
+| 5 | GND | 6 | SWO (GPIO_LPSR_11) |
+| 7 | key | 8 | TDI (GPIO_LPSR_12) |
+| 9 | GND | 10 | nRESET → POR_B via D1 |
+
+JTAG_MOD is pulled low (SWD mode) and the debug domain is 3.3 V, so any 3.3 V SWD probe
+connects directly.
+
+### Probes
+
+- Any **CMSIS-DAP** probe: NXP MCU-Link (the EVKB's own probe as a dongle; also works with
+  LinkServer/MCUXpresso), Raspberry Pi Debug Probe (CMSIS-DAP v2, fast), Atmel-ICE (its EDBG
+  firmware exposes a standard CMSIS-DAP interface; use the 10-pin "SAM" header), or a SAMD21
+  board such as a MKR ZERO running [free-dap](https://github.com/ataradov/free-dap) (slow HID
+  probe, fine for bring-up; wire SWCLK, SWDIO, GND and optionally nRESET).
+- **J-Link**: `-device MIMXRT1176xxxA_M7 -if SWD`; the most robust RT1170 flash loader.
+- AVR-only programmers (AVRISP mkII, STK500, UPDI) cannot do SWD.
+
+### pyOCD (generic CMSIS-DAP probes)
+
+```bash
+pip install pyocd
+pyocd pack install mimxrt1176          # NXP MIMXRT1176 DFP incl. the FlexSPI NOR algorithm
+pyocd list --targets | grep -i 1176    # pick the ..._cm7 target the pack installed
+pyocd flash -t <target> -f 4m app.elf  # or app.bin -a 0x30000000
+pyocd gdbserver -t <target>
+```
+
+If the flash is blank or holds a bad image the ROM may sit in its serial-downloader loop; add
+`--connect under-reset` if a plain attach fails. OpenOCD has no mainline RT1170 FlexSPI
+driver, so pyOCD is the practical choice for generic probes.
+
+### No probe: the ROM serial downloader over USB-C
+
+Set the boot DIP to `01` (serial downloader) and plug the USB-C port — it is USB1/OTG1, the
+port the RT1170 ROM uses for SDP. Then with NXP's SPSDK:
+
+```bash
+pip install spsdk
+nxpdevscan                                                   # ROM enumerates as 1fc9:013d
+blhost -u 0x1fc9,0x013d -- load-image ivt_flashloader.bin    # from the RT1170 SDK / SPT package
+blhost -u 0x15a2,0x0073 -- fill-memory 0x2000 4 0xC0000007   # QuadSPI NOR config option
+blhost -u 0x15a2,0x0073 -- configure-memory 9 0x2000
+blhost -u 0x15a2,0x0073 -- flash-erase-region 0x30000000 0x100000 9
+blhost -u 0x15a2,0x0073 -- write-memory 0x30000000 app.bin
+```
+
+NXP's MCUXpresso Secure Provisioning Tool does the same through a GUI. This is also the
+recovery path if a bad image ever makes an SWD attach awkward.
+
 ## Repository layout
 
 ```
