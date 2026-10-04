@@ -1509,7 +1509,7 @@
 		)
 		(uuid "4ba6151b-2c8c-4642-83bb-d8aff42764a8")
 	)
-	(text "CTP I2C on LPI2C5 with 4.7k pull-ups to +3V3 (NVCC_LPSR = 3.3V on both boards). LCM_PWR_EN 10k pull-up to +3V3 (EVKB R1825); R67/R64/R72/R76/R77 are the EVKB 0R isolation links."
+	(text "CTP I2C on LPI2C5 with 2.2k pull-ups to +3V3 (EVKB: two 4.7k pairs in parallel, R1026/R1027 + R1323/R1324) (NVCC_LPSR = 3.3V on both boards). LCM_PWR_EN 10k pull-up to +3V3 (EVKB R1825); R67/R64/R72/R76/R77 are the EVKB 0R isolation links."
 		(exclude_from_sim no)
 		(at 90.17 257.81 0)
 		(effects
@@ -3059,7 +3059,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "2.2k"
 			(at 121.41 222.25 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3103,7 +3103,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25900"
+		(property "LCSC" "C25879"
 			(at 119.38 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -3114,7 +3114,7 @@
 				)
 			)
 		)
-		(property "MPN" "0402WGF4701TCE"
+		(property "MPN" "0402WGF2201TCE"
 			(at 119.38 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -3986,7 +3986,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "2.2k"
 			(at 134.11 222.25 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4030,7 +4030,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25900"
+		(property "LCSC" "C25879"
 			(at 132.08 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -4041,7 +4041,7 @@
 				)
 			)
 		)
-		(property "MPN" "0402WGF4701TCE"
+		(property "MPN" "0402WGF2201TCE"
 			(at 132.08 220.98 0)
 			(hide yes)
 			(show_name no)
