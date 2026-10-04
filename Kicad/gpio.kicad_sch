@@ -7549,7 +7549,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Nosh:W25Q512NWEIQ"
+		(symbol "Nosh:W25Q512JVEIQ"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -7565,7 +7565,7 @@
 					)
 				)
 			)
-			(property "Value" "W25Q512NWEIQ"
+			(property "Value" "W25Q512JVEIQ"
 				(at 7.62 11.43 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7586,7 +7586,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.winbond.com/hq/product/code-storage-flash-memory/serial-nor-flash/?__locale=en&partNo=W25Q512NW"
+			(property "Datasheet" "https://www.winbond.com/hq/product/code-storage-flash-memory/serial-nor-flash/?__locale=en&partNo=W25Q512JV"
 				(at 0 -2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7597,7 +7597,7 @@
 					)
 				)
 			)
-			(property "Description" "512Mbit 1.8V Quad-SPI NOR flash, WSON-8 8x6mm (as on MIMXRT1170-EVKB U23)"
+			(property "Description" "512Mbit 3.3V Quad-SPI NOR flash, WSON-8 8x6mm (as on MIMXRT1170-EVKB U23)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7630,7 +7630,7 @@
 					)
 				)
 			)
-			(symbol "W25Q512NWEIQ_0_1"
+			(symbol "W25Q512JVEIQ_0_1"
 				(rectangle
 					(start -7.62 10.16)
 					(end 10.16 -10.16)
@@ -7643,7 +7643,7 @@
 					)
 				)
 			)
-			(symbol "W25Q512NWEIQ_1_1"
+			(symbol "W25Q512JVEIQ_1_1"
 				(pin input line
 					(at -10.16 7.62 0)
 					(length 2.54)
@@ -8227,7 +8227,7 @@
 		)
 		(uuid "19f9c356-7ad0-45ec-a153-680678f18db9")
 	)
-	(text "NVCC_SD2 = +1V8"
+	(text "NVCC_SD2 = +3V3"
 		(exclude_from_sim no)
 		(at 368.3 86.36 0)
 		(effects
@@ -8285,7 +8285,7 @@
 		)
 		(uuid "66f100be-5e94-45d2-a31a-11fba440c8ee")
 	)
-	(text "EVKB: NVCC_GPIO/EMC/LPSR/DISP2 = 3.3V, NVCC_DISP1 = 1.8V, NVCC_SD1 selectable; NVCC_SD2 = 1.8V (flash)."
+	(text "EVKB: NVCC_GPIO/EMC/LPSR/DISP2 = 3.3V, NVCC_DISP1 = 1.8V, NVCC_SD1 = 1.8V (M.2 SDIO); NVCC_SD2 = 3.3V (flash + microSD)."
 		(exclude_from_sim no)
 		(at 149.86 198.12 0)
 		(effects
@@ -8388,7 +8388,7 @@
 		)
 		(uuid "c0b07a56-c691-4b20-9059-8b096194ce9e")
 	)
-	(text "WP/HOLD are IO2/IO3 in quad mode (EVKB pull-ups R176/R171 DNP). NVCC_SD2 bank runs at 1.8V: FB6 + 10uF (EVKB L1/C349)."
+	(text "WP/HOLD are IO2/IO3 in quad mode (EVKB pull-ups R176/R171 DNP). NVCC_SD2 bank runs at 3.3V (shared with the microSD on uSDHC2): FB6 + 10uF from +3V3."
 		(exclude_from_sim no)
 		(at 300 131.06 0)
 		(effects
@@ -8458,7 +8458,7 @@
 		)
 		(uuid "eeb4774a-2bf6-4dcc-b36e-fac02f12d634")
 	)
-	(text "U2: W25Q512NWEIQ 512Mb 1.8V QSPI (EVKB U23) on FlexSPI1 port A, GPIO_SD_B2_06..11. CS pull-up 10k (EVKB R165)."
+	(text "U2: W25Q512JVEIQ 512Mb 3.3V QSPI (EVKB U23 is the 1.8V NW part) on FlexSPI1 port A, GPIO_SD_B2_06..11. CS pull-up 10k (EVKB R165)."
 		(exclude_from_sim no)
 		(at 300 124.46 0)
 		(effects
@@ -8603,6 +8603,29 @@
 			)
 		)
 	)
+	(global_label "BT_UART_CTS"
+		(shape passive)
+		(at 269.24 125.73 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "03c6c787-4848-43e6-aa1f-d48db9694d04")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 269.24 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "SEMC_D18"
 		(shape passive)
 		(at 116.84 66.04 0)
@@ -8639,6 +8662,29 @@
 		(uuid "0d0cf2ae-a5f7-4950-aa82-ba08b3ebd6cd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 208.28 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "SD_PWREN_B"
+		(shape passive)
+		(at 251.46 69.85 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0e43056d-005c-43d2-a312-e29b518048ab")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8925,6 +8971,29 @@
 			)
 		)
 	)
+	(global_label "M2_SDIO_D0"
+		(shape passive)
+		(at 30.48 194.31 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1a97a5f5-a010-4fd5-8eaf-1d116d77440c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 20.32 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "SEMC_D3"
 		(shape passive)
 		(at 22.86 48.26 180)
@@ -9134,7 +9203,7 @@
 	)
 	(global_label "FLEXSPI_A_D0"
 		(shape passive)
-		(at 119.38 199.39 0)
+		(at 129.54 199.39 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9145,6 +9214,29 @@
 		(uuid "2eefd8dd-2f92-43c0-8b01-b1d3144a202e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 119.38 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "BT_DEV_WAKE"
+		(shape passive)
+		(at 251.46 52.07 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "318c9c4b-2f42-4b6e-8db1-4d232a0b1e42")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9168,6 +9260,29 @@
 		(uuid "32033716-f186-4f08-a408-89a603fea661")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 22.86 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "BT_UART_RXD"
+		(shape passive)
+		(at 269.24 123.19 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "33c1b721-9781-4e4a-ae6d-7f432b63af04")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 269.24 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9295,7 +9410,7 @@
 	)
 	(global_label "FLEXSPI_A_D2"
 		(shape passive)
-		(at 119.38 204.47 0)
+		(at 129.54 204.47 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9477,6 +9592,29 @@
 			)
 		)
 	)
+	(global_label "SD_DAT2"
+		(shape passive)
+		(at 30.48 207.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "44489aad-4369-4248-ac0b-8276bc8bd38f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 20.32 207.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "SEMC_D17"
 		(shape passive)
 		(at 116.84 63.5 0)
@@ -9536,6 +9674,29 @@
 		(uuid "470990f2-855a-45b1-adfb-44d7092ece37")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 152.4 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "WL_RST_B"
+		(shape passive)
+		(at 251.46 59.69 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "47e6aac4-8c26-42ff-b02a-2eb73a3ac89c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9730,6 +9891,29 @@
 			)
 		)
 	)
+	(global_label "WIFI_WAKE_B"
+		(shape passive)
+		(at 251.46 54.61 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "53a46453-eca5-4145-9034-2063f85fa934")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "SEMC_D19"
 		(shape passive)
 		(at 116.84 68.58 0)
@@ -9766,6 +9950,29 @@
 		(uuid "5630b909-5773-4067-b922-ade8a2aec3d9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 22.86 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "M2_SDIO_D1"
+		(shape passive)
+		(at 30.48 196.85 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "573b375f-684e-4a57-a68d-8a3f035c61e1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 20.32 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9847,7 +10054,7 @@
 	)
 	(global_label "NVCC_SD2"
 		(shape passive)
-		(at 20.32 186.69 180)
+		(at 30.48 186.69 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10008,7 +10215,7 @@
 	)
 	(global_label "FLEXSPI_A_CLK"
 		(shape passive)
-		(at 119.38 196.85 0)
+		(at 129.54 196.85 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10042,6 +10249,29 @@
 		(uuid "6dea57ac-625e-4c3b-8bad-a72c1a6acee2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 370.84 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "BT_UART_TXD"
+		(shape passive)
+		(at 269.24 120.65 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6df7532d-ca6e-45f0-a178-a93278a9f3dc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 269.24 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10098,6 +10328,29 @@
 			)
 		)
 	)
+	(global_label "BT_UART_RTS"
+		(shape passive)
+		(at 269.24 128.27 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7395283c-727d-40c7-81e8-1d73749867f4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 269.24 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "NVCC_LPSR"
 		(shape passive)
 		(at 152.4 171.45 90)
@@ -10134,6 +10387,29 @@
 		(uuid "768f3154-d867-4099-9e9c-7069253df205")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 22.86 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "SD_DAT0"
+		(shape passive)
+		(at 129.54 186.69 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7873e2e5-4cb7-4232-84b2-226258b03500")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.38 186.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10226,6 +10502,29 @@
 		(uuid "7c111c8c-4d78-4b4d-ac45-6244db68e36e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 182.88 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "WL_DEV_WAKE"
+		(shape passive)
+		(at 147.32 46.99 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7f07df9b-df9a-4eab-b831-1a652f6e76ba")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10330,7 +10629,7 @@
 	)
 	(global_label "FLEXSPI_A_D1"
 		(shape passive)
-		(at 119.38 201.93 0)
+		(at 129.54 201.93 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10341,6 +10640,52 @@
 		(uuid "8560cd42-72d6-4ff1-9f35-ed0efa839605")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 119.38 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "SD_CD_B"
+		(shape passive)
+		(at 251.46 67.31 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "85689739-5f07-4154-baca-10c42c2b72be")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "BT_RST_B"
+		(shape passive)
+		(at 147.32 67.31 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "871367a2-f530-445c-9798-e34e86b05730")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10433,6 +10778,29 @@
 		(uuid "8b0b5ff8-bd4a-4635-8244-5f274b201e67")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 22.86 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "M2_SDIO_CLK"
+		(shape passive)
+		(at 30.48 191.77 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8b794fc4-9817-47ff-b530-3752f741ddff")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 20.32 191.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10627,6 +10995,29 @@
 			)
 		)
 	)
+	(global_label "SD_CMD"
+		(shape passive)
+		(at 129.54 191.77 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "99ee5075-4581-45de-b522-1cd4069b2bbe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.38 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "NVCC_EMC1"
 		(shape passive)
 		(at 22.86 33.02 180)
@@ -10719,6 +11110,29 @@
 			)
 		)
 	)
+	(global_label "BT_WAKE_B"
+		(shape passive)
+		(at 251.46 49.53 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9cba767f-687e-4a74-ae0a-bd9059997618")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "USB_OTG2_ID"
 		(shape passive)
 		(at 147.32 49.53 180)
@@ -10742,7 +11156,7 @@
 			)
 		)
 	)
-	(global_label "+1V8"
+	(global_label "+3V3"
 		(shape passive)
 		(at 370.84 102.87 90)
 		(fields_autoplaced yes)
@@ -10755,6 +11169,29 @@
 		(uuid "a03546b4-385a-45d9-9cf8-635974d0a478")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 370.84 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "M2_SDIO_D3"
+		(shape passive)
+		(at 30.48 201.93 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a162924e-48bd-4b39-b320-81417ee67b45")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 20.32 201.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10972,6 +11409,29 @@
 			)
 		)
 	)
+	(global_label "M2_SDIO_D2"
+		(shape passive)
+		(at 30.48 199.39 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b3d6d4bb-9a89-460e-b6c8-c0cf53eb6dc3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 20.32 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "GND"
 		(shape passive)
 		(at 264.16 179.07 270)
@@ -11179,6 +11639,52 @@
 			)
 		)
 	)
+	(global_label "SD_DAT3"
+		(shape passive)
+		(at 30.48 204.47 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c5206a19-51bd-4d2c-bfeb-36443f00e099")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 20.32 204.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "M2_SDIO_CMD"
+		(shape passive)
+		(at 30.48 189.23 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c541e1a9-1e16-4260-a5a6-6ea20a4d05d3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 20.32 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "NVCC_LPSR"
 		(shape passive)
 		(at 325.12 226.06 180)
@@ -11192,6 +11698,52 @@
 		(uuid "c5da056d-c92a-4efa-95c4-bd959e815864")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 325.12 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "SD_CLK"
+		(shape passive)
+		(at 129.54 189.23 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ccee1062-7391-4fba-9c88-4b608764b8de")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.38 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "SD_DAT1"
+		(shape passive)
+		(at 129.54 184.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ce2db070-a68e-4160-bba4-a2309a5f8570")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.38 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11411,7 +11963,7 @@
 	)
 	(global_label "NVCC_SD1"
 		(shape passive)
-		(at 20.32 184.15 180)
+		(at 30.48 184.15 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11664,7 +12216,7 @@
 	)
 	(global_label "FLEXSPI_A_SS0"
 		(shape passive)
-		(at 119.38 194.31 0)
+		(at 129.54 194.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11721,6 +12273,29 @@
 		(uuid "ecaa22f7-97ff-4461-8f7f-cc0f117aa657")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 177.8 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "WIFI_RST_B"
+		(shape passive)
+		(at 147.32 69.85 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f2aca5e6-e1e6-4516-8378-0b32e7205758")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11871,7 +12446,7 @@
 	)
 	(global_label "FLEXSPI_A_D3"
 		(shape passive)
-		(at 119.38 207.01 0)
+		(at 129.54 207.01 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11917,7 +12492,7 @@
 	)
 	(symbol
 		(lib_id "Nosh:MIMXRT1176DVMAA")
-		(at 69.85 195.58 0)
+		(at 80.01 195.58 0)
 		(unit 7)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11927,7 +12502,7 @@
 		(dnp no)
 		(uuid "075b1925-bbf2-462f-aee9-e45cdeb1dc94")
 		(property "Reference" "U1"
-			(at 22.86 180.34 0)
+			(at 33.02 180.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11938,7 +12513,7 @@
 			)
 		)
 		(property "Value" "MIMXRT1176DVMAA"
-			(at 22.86 210.82 0)
+			(at 33.02 210.82 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11949,7 +12524,7 @@
 			)
 		)
 		(property "Footprint" "Nosh:bga289_0p8_14x14_1p52mm"
-			(at 69.85 195.58 0)
+			(at 80.01 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11960,7 +12535,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.nxp.com/docs/en/data-sheet/IMXRT1170CEC.pdf"
-			(at 69.85 195.58 0)
+			(at 80.01 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11971,7 +12546,7 @@
 			)
 		)
 		(property "Description" "i.MX RT1176 crossover MCU, Cortex-M7 @1GHz + Cortex-M4 @400MHz, MAPBGA-289 14x14mm 0.8mm pitch (as on MIMXRT1170-EVKB)"
-			(at 69.85 195.58 0)
+			(at 80.01 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13099,7 +13674,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Nosh:W25Q512NWEIQ")
+		(lib_id "Nosh:W25Q512JVEIQ")
 		(at 330.2 66.04 0)
 		(unit 1)
 		(body_style 1)
@@ -13120,7 +13695,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "W25Q512NWEIQ"
+		(property "Value" "W25Q512JVEIQ"
 			(at 335.28 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
