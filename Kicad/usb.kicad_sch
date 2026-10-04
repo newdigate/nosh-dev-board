@@ -2036,314 +2036,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Nosh:NX5P3090UK"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at -7.62 8.89 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "NX5P3090UK"
-				(at -7.62 -8.89 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Nosh:wlcsp12_0p4_1p38x1p68mm_smdp"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" "https://www.nxp.com/docs/en/data-sheet/NX5P3090.pdf"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "USB VBUS load switch with OVP/OCP, 2A, WLCSP12 (as on MIMXRT1170-EVKB U18/U26)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "USB VBUS switch OTG"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "NX5P3090UK_0_1"
-				(rectangle
-					(start -7.62 7.62)
-					(end 7.62 -7.62)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "NX5P3090UK_1_1"
-				(pin input line
-					(at -10.16 -2.54 0)
-					(length 2.54)
-					(name "EN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "A1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin open_collector line
-					(at 10.16 -2.54 180)
-					(length 2.54)
-					(name "~{FAULT}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "A2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -10.16 -5.08 0)
-					(length 2.54)
-					(name "ILIM"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "A3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 5.08 0)
-					(length 2.54)
-					(name "VINT1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "B1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "VINT2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "B2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 -10.16 90)
-					(length 2.54)
-					(name "GND1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "B3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 0 0)
-					(length 2.54)
-					(name "VINT3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "C1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 5.08 180)
-					(length 2.54)
-					(name "VBUS1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "C2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -10.16 90)
-					(length 2.54)
-					(name "GND2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "C3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 10.16 2.54 180)
-					(length 2.54)
-					(name "VBUS2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "D1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 10.16 0 180)
-					(length 2.54)
-					(name "VBUS3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "D2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 2.54 -10.16 90)
-					(length 2.54)
-					(name "GND3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "D3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Nosh:RClamp0854P"
 			(pin_names
 				(offset 1.016)
@@ -2552,6 +2244,217 @@
 						)
 					)
 					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Nosh:TPS2553DBVR"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -7.62 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "TPS2553DBVR"
+				(at -7.62 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps2553.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "TI TPS2553 precision adjustable current-limited USB power switch, 85mR, 75mA-1.7A via RILIM, active-high EN, open-drain FAULT, reverse-voltage protection, SOT-23-6 (replaces EVKB NX5P3090UK). JLCPCB C55266"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "USB power switch load switch current limit"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23?6*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TPS2553DBVR_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "TPS2553DBVR_1_1"
+				(pin power_in line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "~{FAULT}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "ILIM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3083,7 +2986,7 @@
 		)
 		(uuid "8a5b4cfe-fc64-4332-8c0a-472c0c0c1ed4")
 	)
-	(text "USB_OTG2_ID -> GPIO_AD_08 (R15) and USB_OTG2_OC -> GPIO_AD_06 (N13), as on the EVKB (R1814/R1999). ILIM 100k (EVKB R142). EVKB D43 VBUS->5V_SYS ORing diode omitted."
+	(text "USB_OTG2_ID -> GPIO_AD_08 (R15) and USB_OTG2_OC -> GPIO_AD_06 (N13), as on the EVKB (R1814/R1999). U3 is a TPS2553 (EVKB: NX5P3090UK, WLCSP); RILIM 22k -> limit 1.09 A min / 1.17 A nom / 1.26 A max, FAULT deglitched 7.5 ms, reverse-voltage shutoff. EVKB D43 VBUS->5V_SYS ORing diode omitted."
 		(exclude_from_sim no)
 		(at 25.4 196.85 0)
 		(effects
@@ -3188,29 +3091,6 @@
 		(uuid "06c8d175-de53-4026-a22a-1c3564f769e6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 48.26 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+5V"
-		(shape passive)
-		(at 60.96 147.32 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "08d8e4b6-24d7-476f-aaaa-b1af55b07537")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3395,29 +3275,6 @@
 		(uuid "35f0e65e-7e93-4d14-b415-4f0b1758a9e3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 281.94 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+5V"
-		(shape passive)
-		(at 60.96 152.4 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "38e296a7-a8b1-48b9-af59-f320372a6516")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3694,75 +3551,6 @@
 		(uuid "55f7dc85-11ed-4441-94b5-d1c48f6d41fd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 312.42 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape passive)
-		(at 71.12 162.56 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "58151f26-7b5c-45e9-8c64-e60e6c2f4d9d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 71.12 162.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "OTG2_ILIM"
-		(shape passive)
-		(at 60.96 157.48 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "5920e93d-6fc7-4d7f-9712-118d5d49dbe0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 157.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+5V"
-		(shape passive)
-		(at 60.96 149.86 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "5b6a4f3b-abdf-4934-b4d4-7365579e3c34")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4233,29 +4021,6 @@
 			)
 		)
 	)
-	(global_label "USB2_VBUS"
-		(shape passive)
-		(at 81.28 149.86 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "8aa802d6-b5db-4193-a662-ec10bcb49793")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 81.28 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "GND"
 		(shape passive)
 		(at 144.78 71.12 270)
@@ -4292,6 +4057,52 @@
 		(uuid "8d791229-70c2-48e1-9dc3-707ca8401a82")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 281.94 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 71.12 160.02 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "906fed6f-12b2-4724-af19-7f0996363641")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 71.12 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "OTG2_VBUS_EN"
+		(shape passive)
+		(at 60.96 152.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "93aacc79-f030-4400-ab50-a85185c220a3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 60.96 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4394,6 +4205,29 @@
 			)
 		)
 	)
+	(global_label "USB_OTG2_OC"
+		(shape passive)
+		(at 81.28 152.4 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9a46fe47-38f8-42f7-ab2a-8f79ee34b60e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.28 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "GND"
 		(shape passive)
 		(at 40.64 71.12 270)
@@ -4407,29 +4241,6 @@
 		(uuid "9bcdf490-6993-410f-8c99-c929912e50d8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 40.64 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape passive)
-		(at 68.58 162.56 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9c94e114-29a3-4d01-84af-da2985009515")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 68.58 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4532,6 +4343,52 @@
 			)
 		)
 	)
+	(global_label "+5V"
+		(shape passive)
+		(at 60.96 149.86 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b50534de-f4ac-45b4-93dd-425cb8dc1c48")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 60.96 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "USB2_VBUS"
+		(shape passive)
+		(at 81.28 149.86 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ba33a1d1-82ed-4975-965d-fc25ebaa55e1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.28 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "USB_OTG2_ID"
 		(shape passive)
 		(at 40.64 113.03 270)
@@ -4591,29 +4448,6 @@
 		(uuid "c1ac3951-fc0b-4665-9e8f-0da6f858c1bc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 337.82 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "OTG2_VBUS_EN"
-		(shape passive)
-		(at 60.96 154.94 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c1bb8ba1-e28b-43a0-a206-adde08f8c3e6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4762,29 +4596,6 @@
 			)
 		)
 	)
-	(global_label "USB2_VBUS"
-		(shape passive)
-		(at 81.28 147.32 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "cb1fd378-2781-4fbf-a403-64754d5af3f8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 81.28 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "GND"
 		(shape passive)
 		(at 83.82 114.3 270)
@@ -4844,29 +4655,6 @@
 		(uuid "da7a02da-06f3-49ba-8a80-e9c91dad3545")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 165.1 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "USB2_VBUS"
-		(shape passive)
-		(at 81.28 152.4 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e09721bc-a83d-4e9e-87a8-098934c007dc")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 81.28 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5084,9 +4872,9 @@
 			)
 		)
 	)
-	(global_label "GND"
+	(global_label "OTG2_ILIM"
 		(shape passive)
-		(at 73.66 162.56 270)
+		(at 60.96 154.94 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5094,32 +4882,9 @@
 			)
 			(justify right)
 		)
-		(uuid "fbcf90dd-eb3f-4ede-a939-87d158a79996")
+		(uuid "fb03504e-bef0-4d58-81c1-acfd86a874ba")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 73.66 162.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "USB_OTG2_OC"
-		(shape passive)
-		(at 81.28 154.94 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fe08015d-60d7-4992-9a77-74ef4e5033cd")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 81.28 154.94 0)
+			(at 60.96 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5449,6 +5214,121 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/673c32ea-7602-41d8-9d30-6b4783b9a0e9"
 					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Nosh:TPS2553DBVR")
+		(at 71.12 152.4 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "458fa7e0-82f1-4be1-9bfc-a16450ddee87")
+		(property "Reference" "U3"
+			(at 63.5 145.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TPS2553DBVR"
+			(at 73.66 162.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+			(at 71.12 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps2553.pdf"
+			(at 71.12 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "TI TPS2553 precision adjustable current-limited USB power switch, 85mR, 75mA-1.7A via RILIM, active-high EN, open-drain FAULT, reverse-voltage protection, SOT-23-6 (replaces EVKB NX5P3090UK). JLCPCB C55266"
+			(at 71.12 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C55266"
+			(at 71.12 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TPS2553DBVR"
+			(at 71.12 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "49f1164b-ac9e-434a-8b31-605336f45608")
+		)
+		(pin "2"
+			(uuid "4a596d5d-f8f1-4bc1-a249-baca4f55b738")
+		)
+		(pin "3"
+			(uuid "b661db60-a263-478f-bae5-9fc95d726082")
+		)
+		(pin "4"
+			(uuid "cea4fb72-f4a3-46df-9d52-336a9109fd7a")
+		)
+		(pin "5"
+			(uuid "0d4ff2d8-c777-4ad5-a6dd-418180416e36")
+		)
+		(pin "6"
+			(uuid "e3394b49-d1c3-418b-ae66-bfbd29707eec")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/673c32ea-7602-41d8-9d30-6b4783b9a0e9"
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -6227,7 +6107,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "22k"
 			(at 103.63 153.67 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6271,7 +6151,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25741"
+		(property "LCSC" "C25768"
 			(at 101.6 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -6282,7 +6162,7 @@
 				)
 			)
 		)
-		(property "MPN" "0402WGF1003TCE"
+		(property "MPN" "0402WGF2202TCE"
 			(at 101.6 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -6663,139 +6543,6 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/673c32ea-7602-41d8-9d30-6b4783b9a0e9"
 					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Nosh:NX5P3090UK")
-		(at 71.12 152.4 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "922ce2bd-7850-47b7-a3a1-f4d1ad31d3ad")
-		(property "Reference" "U3"
-			(at 63.5 143.51 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NX5P3090UK"
-			(at 63.5 172.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Nosh:wlcsp12_0p4_1p38x1p68mm_smdp"
-			(at 71.12 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 71.12 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 71.12 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C3215603"
-			(at 71.12 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "NX5P3090UKZ"
-			(at 71.12 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "B1"
-			(uuid "b303bfe6-74a2-41e9-aa62-129fdf645f0b")
-		)
-		(pin "B2"
-			(uuid "a87b06cb-418d-4578-ae77-3c663b7904a7")
-		)
-		(pin "C1"
-			(uuid "23a14e78-ea06-4eae-a27f-aac2d6abf57e")
-		)
-		(pin "A1"
-			(uuid "6cf85c13-eff1-4db7-9f01-21ea0b89e288")
-		)
-		(pin "A3"
-			(uuid "b6b72259-db16-4cd8-a274-314c750456bc")
-		)
-		(pin "C2"
-			(uuid "cabf4ae5-161d-4376-9cc2-7ddd962b28e2")
-		)
-		(pin "D1"
-			(uuid "1f8f3495-104a-4223-8926-f9b23df5cbfc")
-		)
-		(pin "D2"
-			(uuid "6e87005d-65e7-4ce7-a39e-364a82f8bbf9")
-		)
-		(pin "A2"
-			(uuid "558df70f-35cb-4961-842f-abc2083bbeaf")
-		)
-		(pin "B3"
-			(uuid "b5ed7fba-e3e9-4bd7-b5f0-6e245e39f42e")
-		)
-		(pin "C3"
-			(uuid "c3556ec7-dfa2-44e9-94b1-a6e43994de76")
-		)
-		(pin "D3"
-			(uuid "55e5bf4b-314e-4d13-9eca-5d514f15df21")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/673c32ea-7602-41d8-9d30-6b4783b9a0e9"
-					(reference "U3")
 					(unit 1)
 				)
 			)
