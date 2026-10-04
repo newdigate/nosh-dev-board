@@ -57,11 +57,23 @@ All assignments are the EVKB's unless marked.
 | USB ports | two micro-AB OTG ports | micro-AB host + USB-C device | one port is enough for the host library; USB-C for programming |
 | USB VBUS switch | NX5P3090UK (0.4 mm WLCSP) | TPS2553DBVR (SOT-23-6), RILIM 22 k ≈ 1.1 A | no stock, hard package; same EN/FAULT/ILIM topology |
 | SD card bus | shared with the M.2 slot | separate uSDHC2 | independent Wi-Fi and SD |
+| M.2 BT HCI UART | needs NXP's "HCI UART rework" (mount the shifter-output 0 R links, cut the shared Arduino / Ethernet-PHY loads, set a jumper) | hard-wired, no rework | see below |
 | QSPI flash | W25Q512NWEIQ (1.8 V) | W25Q512JVEIQ (3.3 V) | NVCC_SD2 at 3.3 V keeps the SD bus simple |
 | LCD backlight / 2.8 V | on-board boost and LDO | none | the RK055HDMIPI4MA0 adapter (NXP SPF-39012) generates its own rails and drives its own backlight from the 5 V on FPC pins 39/40 — keep its jumpers J3/J5/J6 at the default 1-2 |
 | LCD TE | 74AVC8T245 level shifter to GPIO_AD_05 | DNP 0 R | DSI video mode never uses TE; add a shifter if needed |
 | Audio | codec + speaker outputs + electret mic + headphone jack with detect | codec + line out + line in | no mic/speakers wanted; the CUI jack's switch would bias the ground-referenced HPOUT, so no jack detect |
 | Not fitted at all | Ethernet (1G + 100M), CAN, camera, Arduino headers, PMIC, LPC55 debug probe, PDM mics, accelerometer | — | use an external SWD probe |
+
+**No M.2 HCI UART rework.** NXP's EdgeFast Bluetooth
+[hardware rework guide](https://mcuxpresso.nxp.com/mcuxsdk/25.09.00/html/middleware/edgefast_bluetooth/docs/HWRGEFBTPALUG/topics/RT1170EVKB_Murata_M2.html)
+makes the EVKB + Murata M.2 combination work by mounting resistors, removing one and setting jumpers
+(its designators are from an earlier EVKB build; on the RevC3 files the module-to-MCU UART_RXD/UART_CTS
+links are R1901/R1902, 0 R DNP, and LPUART2's pins are shared with the Arduino header, the J57 FFC and
+the Ethernet PHY reset/interrupt). Nosh needs none of it: GPIO_DISP_B2_10..13 run point-to-point through
+U11/U12 (OE grounded, DIR fixed) to M.2 pins 32/22/36/34 with no 0 R links, no DNP parts and no other
+loads, with the EVKB's pin mapping, so the SDK's LPUART2 flow-control setup applies unchanged. The guide's
+PCM rework does not apply either: the M.2 PCM/I2S pins (8, 10, 12, 14) are not connected, so A2DP over
+HCI works but HFP voice over the PCM path is not possible without a board change.
 
 ## Sourcing / BOM
 
