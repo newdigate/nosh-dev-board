@@ -5,6 +5,193 @@
 	(uuid "ff027343-9b7c-4bcf-85b3-aba15b738754")
 	(paper "A3")
 	(lib_symbols
+		(symbol "Connector_Generic:Conn_01x03"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x03"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x03_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_02x05_Odd_Even"
 			(pin_names
 				(offset 1.016)
@@ -9142,6 +9329,17 @@
 		)
 		(uuid "1b629d28-a8f1-424f-9a59-7ca6cedbeb54")
 	)
+	(text "LPUART1 = SDK debug console (GPIO_AD_24/25); same nets as J10 pins 5/6, TP62/TP63"
+		(exclude_from_sim no)
+		(at 300 31.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "2c88ee8e-a286-472d-8f5b-3110664cc4b3")
+	)
 	(text "15-18 GPIO_AD_10..13: ADC1 CH2A/2B/3A/3B (0-1.8 V), FLEXPWM2 X"
 		(exclude_from_sim no)
 		(at 63.5 284.48 0)
@@ -9416,6 +9614,17 @@
 		)
 		(uuid "ca894cd3-2ef0-4ae1-bc3e-e63487aa6c92")
 	)
+	(text "1 GND, 2 TXD (board out, to adapter RX), 3 RXD (board in, from adapter TX)"
+		(exclude_from_sim no)
+		(at 300 29.21 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "d34bd79d-96d4-41e6-9e35-0ee59ac9ba8c")
+	)
 	(text "LPSR"
 		(exclude_from_sim no)
 		(at 149.86 154.94 0)
@@ -9427,6 +9636,18 @@
 			(justify left bottom)
 		)
 		(uuid "d9211b1c-9124-45ea-93ce-e88fa8c13311")
+	)
+	(text "DEBUG UART  J11  (0.1 in 1x3, 3.3 V)"
+		(exclude_from_sim no)
+		(at 300 15.24 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "de6781b7-1bab-472a-a20a-f1e6ad8b75d1")
 	)
 	(text "9-12 LPSPI3 SCK/SOUT/SIN = GPIO_DISP_B1_04/06/05, CS = GPIO_DISP_B1_03"
 		(exclude_from_sim no)
@@ -9592,10 +9813,6 @@
 		(uuid "d833f792-007d-487f-9129-54b9c29776bf")
 	)
 	(no_connect
-		(at 116.84 53.34)
-		(uuid "dba6daf1-3efb-4d84-a3b0-571960d23208")
-	)
-	(no_connect
 		(at 147.32 52.07)
 		(uuid "e454c641-2cd5-4e27-a2cb-602250873d72")
 	)
@@ -9670,6 +9887,29 @@
 		(uuid "0057c580-4b9e-4abe-ad77-76e326845aea")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 381 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "SEMC_DQS"
+		(shape passive)
+		(at 116.84 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "01cc01a6-be1c-41d8-839f-a28f16549657")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 116.84 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10406,6 +10646,29 @@
 		(uuid "1f482914-716d-473e-85fd-afb665588424")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 152.4 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 320.04 20.32 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1fe2d801-7716-4dd3-814d-f1e3deda935e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11625,6 +11888,29 @@
 		(uuid "4aa87cfc-dfb1-4bf3-8c60-95a243b6b793")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 269.24 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "LPUART1_RXD"
+		(shape passive)
+		(at 320.04 25.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4b44302a-9810-4f7f-bb21-8858425ed1d9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12867,6 +13153,29 @@
 		(uuid "81c5f609-33a5-4712-88f7-cf02b05ffb73")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 114.3 248.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "LPUART1_TXD"
+		(shape passive)
+		(at 320.04 22.86 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8212ef6e-f448-40cb-ad2c-e44b4200ced1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24984,6 +25293,112 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
 					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x03")
+		(at 325.12 22.86 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e01337f5-80a3-4e08-9e73-e696bfa788ab")
+		(property "Reference" "J11"
+			(at 328.93 21.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DEBUG UART"
+			(at 328.93 24.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 325.12 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 325.12 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x3 2.54 mm pin header, debug UART (LPUART1)"
+			(at 325.12 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2937625"
+			(at 325.12 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "PZ254V-11-03P"
+			(at 325.12 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a299e793-7376-41c7-ac05-4337234c9391")
+		)
+		(pin "2"
+			(uuid "26a63e35-0d90-40d1-bbdd-8375c88e39ed")
+		)
+		(pin "3"
+			(uuid "d1a0ef8b-9a4f-468d-9e35-acf0e0466d97")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/90ed7957-c18b-4127-9095-cb2559954907"
+					(reference "J11")
 					(unit 1)
 				)
 			)

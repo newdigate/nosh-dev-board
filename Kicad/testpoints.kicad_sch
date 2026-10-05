@@ -404,7 +404,7 @@
 			)
 		)
 	)
-	(global_label "VMIDC"
+	(global_label "AUD_VDDA"
 		(shape passive)
 		(at 81.28 147.32 0)
 		(fields_autoplaced yes)

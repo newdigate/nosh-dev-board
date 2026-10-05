@@ -700,6 +700,207 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:LED"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LED"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Light emitting diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "LED diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LED_0_1"
+				(polyline
+					(pts
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LED_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:Polyfuse"
 			(pin_numbers
 				(hide yes)
@@ -1589,7 +1790,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text " - +5V from the barrel jack (F1 2A polyfuse, D2 B340A) ORed with both USB VBUS inputs (D3/D4, EVKB D42/D43). EVKB FDMA530 reverse/OVP stage and UM805RE supervisor omitted."
+	(text " - +5V from the barrel jack (F1 3A polyfuse, D2 SS54 5A Schottky, J4 PJ-063AH rated 8A) ORed with both USB VBUS inputs (D3/D4, EVKB D42/D43). EVKB FDMA530 reverse/OVP stage and UM805RE supervisor omitted."
 		(exclude_from_sim no)
 		(at 25.4 243.33 0)
 		(effects
@@ -1634,6 +1835,17 @@
 			(justify left bottom)
 		)
 		(uuid "4755f616-8104-41c1-9936-66b20c1a19ef")
+	)
+	(text "D2 drops ~0.45 V and dissipates ~1 W at 2.5 A: give both SMA pads generous copper."
+		(exclude_from_sim no)
+		(at 25.4 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "50463d8f-39c4-4af4-850e-ada4b8c013d7")
 	)
 	(text "RAIL ASSIGNMENT  (0R links in place of the EVKB jumpers)"
 		(exclude_from_sim no)
@@ -1691,6 +1903,18 @@
 			(justify left bottom)
 		)
 		(uuid "a2d9aef6-e658-45d7-903c-ddb078fa6b14")
+	)
+	(text "POWER LED  (+3V3: lit while the main rail is up)"
+		(exclude_from_sim no)
+		(at 162.56 190.5 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "a8bb8cc3-d700-4e6a-9053-df02288c90c2")
 	)
 	(text "1.8V LDO  (AMS1117-1.8, 1A)"
 		(exclude_from_sim no)
@@ -2193,6 +2417,29 @@
 			)
 		)
 	)
+	(global_label "+3V3"
+		(shape passive)
+		(at 165.1 207.01 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "25d49094-f8c6-40dc-a3bb-bc9463a55e7e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 165.1 207.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "+5V"
 		(shape passive)
 		(at 95.25 50.8 0)
@@ -2676,6 +2923,29 @@
 			)
 		)
 	)
+	(global_label "GND"
+		(shape passive)
+		(at 177.8 214.63 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "81778b00-e8fa-4a4e-aad3-091048d20d4c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 177.8 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "+3V3"
 		(shape passive)
 		(at 106.68 207.01 90)
@@ -2758,6 +3028,29 @@
 		(uuid "8ef2933b-be7c-4c43-8121-9184c4de5e4e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 116.84 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PWR_LED_A"
+		(shape passive)
+		(at 165.1 214.63 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "90725aa3-7ad4-4e82-98ac-039521a5f76b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 165.1 214.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3011,6 +3304,29 @@
 		(uuid "a4153781-7506-4b3d-a262-1376e1d76111")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 142.24 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PWR_LED_A"
+		(shape passive)
+		(at 177.8 207.01 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a617e1e0-b13a-4932-8fa1-19fd471a2edc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 177.8 207.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3882,7 +4198,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2A"
+		(property "Value" "3A"
 			(at 68.07 52.07 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3915,7 +4231,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "PPTC resettable fuse 3 A hold / 6 A trip, 24 V, 1812"
 			(at 66.04 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -3926,7 +4242,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C210837"
+		(property "LCSC" "C2892380"
 			(at 66.04 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -3937,7 +4253,7 @@
 				)
 			)
 		)
-		(property "MPN" "MF-MSMF200-2"
+		(property "MPN" "SMD1812P300SLR/24"
 			(at 66.04 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -4997,6 +5313,109 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 177.8 210.82 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "472657e9-b1ca-4752-8589-1e8cc04de374")
+		(property "Reference" "D11"
+			(at 180.34 209.55 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RED"
+			(at 180.34 212.09 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+			(at 177.8 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Red LED 0603, power indicator on +3V3"
+			(at 177.8 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2286"
+			(at 177.8 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "KT-0603R"
+			(at 177.8 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4ce363e2-304e-4d02-a5ec-6dd4df3bfefb")
+		)
+		(pin "2"
+			(uuid "1ec11c0d-49f9-4e65-a601-2225742e6c54")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f"
+					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 330.2 60.96 0)
 		(unit 1)
@@ -5718,6 +6137,109 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 165.1 210.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "647b8ba4-8ee8-4b3b-a9e9-957aa5d3caab")
+		(property "Reference" "R104"
+			(at 167.13 209.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 167.13 212.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 165.1 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 165.1 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C11702"
+			(at 165.1 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 165.1 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "618a93d7-32c6-4e9f-a8a0-6050f271afdc")
+		)
+		(pin "2"
+			(uuid "7265be6a-61aa-4002-af4e-17270df20d34")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f"
+					(reference "R104")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 127 210.82 0)
 		(unit 1)
@@ -5842,7 +6364,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "B340A"
+		(property "Value" "SS54"
 			(at 87.63 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5875,7 +6397,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Schottky diode 40 V 5 A, SMA"
 			(at 91.44 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -5886,7 +6408,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C64982"
+		(property "LCSC" "C22452"
 			(at 91.44 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -5897,7 +6419,7 @@
 				)
 			)
 		)
-		(property "MPN" "B340A"
+		(property "MPN" "SS54"
 			(at 91.44 50.8 0)
 			(hide yes)
 			(show_name no)

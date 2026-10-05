@@ -22,11 +22,11 @@ has not started. Full-hierarchy ERC is clean apart from the expected unconnected
 | M.2 Key E | uSDHC1 @ 1.8 V + LPUART2 | for u-blox MAYA-W1 / NXP IW416; 74AVC8T245 level shifters; TE 2199230-4 socket (EVKB part) |
 | microSD | uSDHC2 @ 3.3 V | its own bus — the EVKB shares one with the M.2 slot |
 | LCD + touch | 40-pin 0.5 mm FPC (Würth 68714014022), MIPI DSI 2 lanes | Rocktech RK055HDMIPI4MA0 (720×1280, HX8394, GT911 touch on LPI2C5), EVKB J48 pinout and GPIO map |
-| Audio | Cirrus WM8962 codec on SAI1 + LPI2C5, 3.5 mm line-out and line-in jacks | EVKB U368 circuit on the EVKB pins; headphone-capable line out, IN2L/R line in |
-| Power | 5 V barrel jack or USB-C → MP2143 3.3 V buck → AMS1117 1.8 V; AP2112K SNVS LDO | EVKB-style rail tree, on-chip DCDC for the core; 2 A polyfuse, reverse-polarity diode |
-| Debug | 10-pin 1.27 mm SWD/JTAG header, reset / ONOFF / WAKEUP buttons, 2-way boot-mode DIP, user LED on GPIO_AD_04, 72 test points | JTAG on GPIO_LPSR_10..15, VTref = NVCC_LPSR (3.3 V); LPUART1 console on J10 pins 5/6 and TP62/TP63 |
+| Audio | NXP SGTL5000 codec (QFN-20) on SAI1 + LPI2C5, 3.5 mm line-out and line-in jacks | the Teensy Audio Shield codec: Teensy Audio library `AudioControlSGTL5000` and the NXP SDK `sgtl5000` driver both apply; I2C 0x0A; same SAI1 pins as the EVKB codec |
+| Power | 5 V barrel jack or USB-C → MP2143 3.3 V buck → AMS1117 1.8 V; AP2112K SNVS LDO | EVKB-style rail tree, on-chip DCDC for the core; 3 A polyfuse, SS54 reverse-polarity diode, jack rated 8 A; red power LED on +3V3 |
+| Debug | 10-pin 1.27 mm SWD/JTAG header, reset / ONOFF / WAKEUP buttons, 2-way boot-mode DIP, user LED on GPIO_AD_04, 3-pin debug UART header J11, 72 test points | JTAG on GPIO_LPSR_10..15, VTref = NVCC_LPSR (3.3 V); LPUART1 console on J11, J10 pins 5/6 and TP62/TP63 |
 | Expansion | 2×10 2.54 mm header J10 | LPUART1 console, LPI2C5, LPSPI3, FLEXCAN3 / LPUART12 pins, 4 ADC / PWM pins, 1 PWM pin, +3V3, +5V, 3 × GND; see [Expansion header J10](#expansion-header-j10) |
-| Mechanical | board outline = the RK055HDMIPI4MA0 adapter outline; 4 × M3 mounting holes H1–H4 on the adapter's standoff positions | 3.53 mm plated holes with 5.6 mm GND pads (NXP's .635" M3 standoff land, as on the EVKB); hole coordinates from the adapter design files or measurement before layout |
+| Mechanical | board outline = the RK055HDMIPI4MA0 adapter outline; 4 × M3 mounting holes H1–H4 on the adapter's standoff positions; 3 fiducials FID1–FID3 on the top side | 3.53 mm plated holes with 5.6 mm GND pads (NXP's .635" M3 standoff land, as on the EVKB); hole coordinates from the adapter design files or measurement before layout |
 
 Sheets: `power` (MCU supplies, DCDC, reset/boot), `core` (crystals, USB/MIPI supplies),
 `gpio` (GPIO banks, flash, SWD, boot), `usb`, `supply`, `sdram`, `m2`, `sdcard`, `lcd`, `audio`,
@@ -49,7 +49,7 @@ All assignments are the EVKB's unless marked.
 | Touch + codec I2C (LPI2C5) | GPIO_LPSR_04 SDA / GPIO_LPSR_05 SCL; touch INT GPIO_AD_00, touch RST GPIO_AD_01 |
 | Audio (SAI1) | MCLK GPIO_AD_17, RX_SYNC/RX_BCLK GPIO_AD_18/19 (DNP links), RXD0 GPIO_AD_20, TXD0 GPIO_AD_21, TX_BCLK GPIO_AD_22, TX_SYNC GPIO_AD_23 |
 | Boot mode | GPIO_LPSR_02/03 (DIP switch, 100 k pull-downs); BOOT_CFG pins GPIO_DISP_B1_06..11 / GPIO_DISP_B2_00..05 pulled down (100 k), so internal boot is from FlexSPI1 QSPI NOR |
-| Debug console (LPUART1) | GPIO_AD_24 TXD / GPIO_AD_25 RXD on J10 pins 5 / 6 and TP62 / TP63 |
+| Debug console (LPUART1) | GPIO_AD_24 TXD / GPIO_AD_25 RXD on J11 (1 GND, 2 TXD, 3 RXD), J10 pins 5 / 6 and TP62 / TP63 |
 | Expansion SPI (LPSPI3) — *Nosh* | SCK GPIO_DISP_B1_04, SOUT GPIO_DISP_B1_06, SIN GPIO_DISP_B1_05, CS GPIO_DISP_B1_03 (GPIO-driven) |
 | User LED | GPIO_AD_04 (GPIO9_IO03, the SDK's BOARD_USER_LED), high = on; direct drive, 1 k series, red 0603 (the EVKB buffers it with a BC817) |
 
@@ -98,7 +98,7 @@ through-hole assembly like the other THT connectors. All signals are **3.3 V and
 | Arduino headers | four Arduino Uno R3 headers | one 2×10 expansion header J10 | the Arduino SPI pins (GPIO_AD_28..31) carry the M.2 and backlight signals here |
 | LCD backlight / 2.8 V | on-board boost and LDO | none | the RK055HDMIPI4MA0 adapter (NXP SPF-39012) generates its own rails and drives its own backlight from the 5 V on FPC pins 39/40 — keep its jumpers J3/J5/J6 at the default 1-2 |
 | LCD TE | 74AVC8T245 level shifter to GPIO_AD_05 | DNP 0 R | DSI video mode never uses TE; add a shifter if needed |
-| Audio | codec + speaker outputs + electret mic + headphone jack with detect | codec + line out + line in | no mic/speakers wanted; the CUI jack's switch would bias the ground-referenced HPOUT, so no jack detect |
+| Audio | WM8962 (0.5 mm WLCSP-49) with speaker outputs, electret mic and headphone jack with detect | SGTL5000 (QFN-20) with line out and line in | Teensy Audio library support; the QFN routes on standard 6-layer rules where the WLCSP needed via-in-pad; no mic, speakers or jack detect wanted |
 | Not fitted at all | Ethernet (1G + 100M), CAN transceivers, camera, PMIC, LPC55 debug probe, PDM mics, accelerometer | — | use an external SWD probe; FLEXCAN3 and PDM pins are on J10 |
 
 **No M.2 HCI UART rework.** NXP's EdgeFast Bluetooth
@@ -139,13 +139,12 @@ python3 Kicad/tools/lcsc_table.py
 
 | Part | JLCPCB | Oct 2026 stock | Alternative |
 |---|---|---|---|
-| WM8962BECSN/R codec | C5184531 | ~300 | WM8904 (QFN, NXP SDK driver) needs a new symbol/footprint |
+| SGTL5000XNLA3R2 codec | C2651833 | ~1.1 k | CS4272 (TSSOP-28, Teensy driver, line level only, 5 V analog) |
 | Würth 68714014022 LCD FPC | C6264899 | ~75 | any 40-pin 0.5 mm top-contact ZIF with the same land pattern |
 | CUI SJ-3523-SMT jacks | C4991872 | ~800 | — |
 | TE 2199230-4 M.2 socket | C2977809 | ~5 k | — |
 
-Fine-pitch note: the MCU is 0.8 mm BGA, the codec 0.5 mm W-CSP; everything else is 0.4 mm
-QFN or coarser.
+Fine-pitch note: the MCU is 0.8 mm BGA; everything else is 0.4 mm QFN or coarser.
 
 ## Flashing and debugging
 
@@ -168,6 +167,17 @@ for the 1.8 V W25Q512NW) drives our 3.3 V W25Q512JV unchanged (same command set,
 
 JTAG_MOD is pulled low (SWD mode) and the debug domain is 3.3 V, so any 3.3 V SWD probe
 connects directly.
+
+### Serial console J11 (0.1" 1x3)
+
+| Pin | Signal | Connect to |
+|---|---|---|
+| 1 | GND | adapter GND |
+| 2 | LPUART1_TXD (GPIO_AD_24), board output | adapter RX |
+| 3 | LPUART1_RXD (GPIO_AD_25), board input | adapter TX |
+
+3.3 V levels, so use a 3.3 V USB-serial adapter. LPUART1 is the SDK's default debug console,
+usually 115200 8N1.
 
 ### Probes
 
@@ -220,14 +230,14 @@ bare copper pads (KiCad `TestPoint` footprints, flagged exclude-from-BOM / exclu
 | Refs | Group | Nets |
 |---|---|---|
 | TP1–TP6 | Ground | GND; 2.0 mm plated holes, solder a wire loop for the scope ground lead |
-| TP7–TP21 | Supply rails | DC_IN_F, +5V, +3V3, +1V8, VLDO_3V3, VSD_3V3, WL_3V3, SDRAM_3V3, CODEC_1V8, VMIDC, LCD_5V, LCD_IOVCC_1V8, CTP_3V3, USB1_VBUS, USB2_VBUS |
+| TP7–TP21 | Supply rails | DC_IN_F, +5V, +3V3, +1V8, VLDO_3V3, VSD_3V3, WL_3V3, SDRAM_3V3, CODEC_1V8, AUD_VDDA, LCD_5V, LCD_IOVCC_1V8, CTP_3V3, USB1_VBUS, USB2_VBUS |
 | TP22–TP35 | MCU power domains | DCDC_IN, DCDC_DIG, DCDC_ANA, VDD_SOC_IN, VDDA_1P8, VDD_SNVS_IN, VDD_LPSR_IN, NVCC_LPSR, NVCC_GPIO, NVCC_SD1, NVCC_SD2, NVCC_EMC1, VDD_USB_3P3, VDDA_ADC_3P3 |
 | TP36–TP49 | Reset / boot / power control | POR_B, ONOFF, WAKEUP, PMIC_ON_REQ, PMIC_STBY_REQ, BOOT_MODE0, BOOT_MODE1, DCDC_PSWITCH, DCDC_MODE, BUCK_EN, OTG2_VBUS_EN, USB_OTG2_OC, SD_PWREN_B, SD_CD_B |
 | TP50–TP61 | Peripheral control (MCU side, 3.3 V) | LCM_PWR_EN, BACKLIGHT_CTL, LCD_RST_B, LCD_TE, CTP_RST_B, CTP_INT, WL_RST_B, BT_RST_B, WIFI_WAKE_B, BT_WAKE_B, WL_DEV_WAKE, BT_DEV_WAKE |
 | TP62–TP72 | Buses | LPUART1_TXD / LPUART1_RXD (TP62 / TP63), LPI2C5_SDA / SCL, SAI1_MCLK, SAI1_TX_BCLK, SAI1_TX_SYNC, SAI1_TXD0, SAI1_RXD0, BT_UART_TXD / RXD |
 
-LPUART1 (GPIO_AD_24/25, the SDK's default debug console, 3.3 V) is on TP62/TP63 and on J10
-pins 5/6, with ground on J10 pin 3 or 4. Nothing is probed on the SDRAM, FlexSPI, USB data,
+LPUART1 (GPIO_AD_24/25, the SDK's default debug console, 3.3 V) has its own header J11 and is
+also on J10 pins 5/6 and TP62/TP63. Nothing is probed on the SDRAM, FlexSPI, USB data,
 MIPI DSI or crystal nets, where a pad stub would degrade the signal; SWD/SWO are on J1.
 
 ## Repository layout
@@ -236,14 +246,13 @@ MIPI DSI or crystal nets, where a pad stub would degrade the signal; SWD/SWO are
 Kicad/
   Nosh.kicad_pro / Nosh.kicad_sch        project and root sheet (A3, one block per sub-sheet)
   power core gpio usb supply sdram m2 sdcard lcd audio testpoints .kicad_sch
-  Nosh.kicad_sym                         project symbols (MCU, flash, SDRAM, codec, sockets, …)
+  Nosh.kicad_sym                         project symbols (MCU, flash, SDRAM, level shifters, sockets, …)
   Nosh.pretty/                           project footprints:
     bga289_0p8_14x14_1p52mm              MCU (from the EVKB footprint)
     slp1616p6                            RClamp0854P
     M2_KeyE_67pin_RA                     TE 2199230-4 — pads from the EVKB IPC-D-356 data, pegs/tabs from the TE drawing
     FPC40_0p5_Wuerth_68714014022         LCD FPC — EVKB IPC-D-356 land (= Würth recommended pattern)
     L_CommonModeChoke_Murata_DLW21       USB chokes — EVKB IPC-D-356 land
-    WCSP-49_3.6x4.0mm_P0.5mm             WM8962 — EVKB IPC-D-356 ball map + datasheet outline
     MountingHole_3.53mm_M3_Pad           M3 standoff hole, NXP spacer_139t land (EVKB IPC-D-356)
   tools/
     gen_rt1176_symbol.py                 regenerates the MIMXRT1176DVMAA symbol from data/rt1176_{pins,mux}.json
