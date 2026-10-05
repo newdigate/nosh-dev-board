@@ -1739,7 +1739,7 @@
 		)
 		(uuid "f8437072-875e-4107-bcf3-671d52bf22fa")
 	)
-	(text " - Rails: VDD_LPSR_IN, DCDC_IN, NVCC_GPIO/EMC/LPSR/DISP2 = +3V3; NVCC_DISP1, ADC_VREFH, NVCC_SD1 (M.2 SDIO) = +1V8; NVCC_SD2 (flash + microSD) = +3V3 via FB6 (GPIO sheet); VDDA_ADC_3P3/VDDA_1P8 via FB1/FB2 (Power sheet)."
+	(text " - Rails: VDD_LPSR_IN, DCDC_IN, NVCC_GPIO/EMC/LPSR/DISP1/DISP2 = +3V3; ADC_VREFH, NVCC_SD1 (M.2 SDIO) = +1V8; NVCC_SD2 (flash + microSD) = +3V3 via FB6 (GPIO sheet); VDDA_ADC_3P3/VDDA_1P8 via FB1/FB2 (Power sheet)."
 		(exclude_from_sim no)
 		(at 25.4 259.83 0)
 		(effects
@@ -1871,9 +1871,9 @@
 			)
 		)
 	)
-	(global_label "+1V8"
+	(global_label "+3V3"
 		(shape passive)
-		(at 241.3 105.41 90)
+		(at 330.2 57.15 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1883,7 +1883,7 @@
 		)
 		(uuid "05d8ed07-e116-466b-afde-6fe44780eb64")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 241.3 105.41 0)
+			(at 330.2 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2034,7 +2034,7 @@
 	)
 	(global_label "NVCC_DISP1"
 		(shape passive)
-		(at 241.3 113.03 270)
+		(at 330.2 64.77 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2044,7 +2044,7 @@
 		)
 		(uuid "1493d05c-fa0a-40dc-9d60-d6fb963fd896")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 241.3 113.03 0)
+			(at 330.2 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2310,7 +2310,7 @@
 	)
 	(global_label "NVCC_SD1"
 		(shape passive)
-		(at 266.7 113.03 270)
+		(at 254 113.03 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2320,7 +2320,7 @@
 		)
 		(uuid "3dd66b39-9553-4d43-a729-23ab63e5a963")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 330.2 64.77 0)
+			(at 317.5 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2724,7 +2724,7 @@
 	)
 	(global_label "+1V8"
 		(shape passive)
-		(at 266.7 105.41 90)
+		(at 254 105.41 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2734,7 +2734,7 @@
 		)
 		(uuid "8ec6688d-57fc-467a-a06e-dd9f2755e86a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 330.2 57.15 0)
+			(at 317.5 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2816,7 +2816,7 @@
 	)
 	(global_label "+1V8"
 		(shape passive)
-		(at 254 105.41 90)
+		(at 241.3 105.41 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2826,7 +2826,7 @@
 		)
 		(uuid "968b9232-e46a-46c8-b997-22c6d98d345b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 254 105.41 0)
+			(at 241.3 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3207,7 +3207,7 @@
 	)
 	(global_label "ADC_VREFH"
 		(shape passive)
-		(at 254 113.03 270)
+		(at 241.3 113.03 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3217,7 +3217,7 @@
 		)
 		(uuid "b64fea57-cbd4-4ca6-8c5f-12cd35064263")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 254 113.03 0)
+			(at 241.3 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4998,7 +4998,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 241.3 109.22 0)
+		(at 330.2 60.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5008,7 +5008,7 @@
 		(dnp no)
 		(uuid "4b3a058b-775d-4ca9-bf65-de52eb5ba32b")
 		(property "Reference" "R39"
-			(at 243.33 107.95 0)
+			(at 332.23 59.69 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5019,7 +5019,7 @@
 			)
 		)
 		(property "Value" "0R"
-			(at 243.33 110.49 0)
+			(at 332.23 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5030,7 +5030,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 241.3 109.22 0)
+			(at 330.2 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5041,7 +5041,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 241.3 109.22 0)
+			(at 330.2 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5052,7 +5052,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 241.3 109.22 0)
+			(at 330.2 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5063,7 +5063,7 @@
 			)
 		)
 		(property "LCSC" "C21189"
-			(at 241.3 109.22 0)
+			(at 330.2 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5074,7 +5074,7 @@
 			)
 		)
 		(property "MPN" "0603WAF0000T5E"
-			(at 241.3 109.22 0)
+			(at 330.2 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5513,7 +5513,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 254 109.22 0)
+		(at 241.3 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5523,7 +5523,7 @@
 		(dnp no)
 		(uuid "614ef752-d37a-48fd-8f35-774d1a808155")
 		(property "Reference" "R40"
-			(at 256.03 107.95 0)
+			(at 243.33 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5534,7 +5534,7 @@
 			)
 		)
 		(property "Value" "0R"
-			(at 256.03 110.49 0)
+			(at 243.33 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5545,7 +5545,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 254 109.22 0)
+			(at 241.3 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5556,7 +5556,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 254 109.22 0)
+			(at 241.3 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5567,7 +5567,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 254 109.22 0)
+			(at 241.3 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5578,7 +5578,7 @@
 			)
 		)
 		(property "LCSC" "C21189"
-			(at 254 109.22 0)
+			(at 241.3 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5589,7 +5589,7 @@
 			)
 		)
 		(property "MPN" "0603WAF0000T5E"
-			(at 254 109.22 0)
+			(at 241.3 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7806,7 +7806,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 266.7 109.22 0)
+		(at 254 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7816,7 +7816,7 @@
 		(dnp no)
 		(uuid "fbaaf1ac-2807-4912-a440-73bc1574dc9b")
 		(property "Reference" "R38"
-			(at 268.73 107.95 0)
+			(at 256.03 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7827,7 +7827,7 @@
 			)
 		)
 		(property "Value" "0R"
-			(at 268.73 110.49 0)
+			(at 256.03 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7838,7 +7838,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 266.7 109.22 0)
+			(at 254 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7849,7 +7849,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 266.7 109.22 0)
+			(at 254 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7860,7 +7860,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 266.7 109.22 0)
+			(at 254 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7871,7 +7871,7 @@
 			)
 		)
 		(property "LCSC" "C21189"
-			(at 266.7 109.22 0)
+			(at 254 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7882,7 +7882,7 @@
 			)
 		)
 		(property "MPN" "0603WAF0000T5E"
-			(at 266.7 109.22 0)
+			(at 254 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
