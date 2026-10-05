@@ -488,6 +488,129 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Nosh:LCD_FPC40"
 			(pin_names
 				(offset 1.016)
@@ -1520,6 +1643,17 @@
 		)
 		(uuid "52431a74-2937-4ae8-a432-94d200e2dae9")
 	)
+	(text "(UNICORP MSS251-R-1-A-16), 3.53 mm plated hole with a 5.6 mm GND pad, the same land as the EVKB (spacer_139t)."
+		(exclude_from_sim no)
+		(at 198.12 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7298054d-e4d1-46ca-8aeb-fb28ef42b9bb")
+	)
 	(text "CONTROL LINES  (EVKB R405/R847, R848/R1825, R1849+D32, R414, R1026/R1027, R2031/R2032)"
 		(exclude_from_sim no)
 		(at 25.4 198.12 0)
@@ -1531,6 +1665,17 @@
 			(justify left bottom)
 		)
 		(uuid "76b737ae-a061-4b44-aca8-1c8108b29fdb")
+	)
+	(text "Hole coordinates: from the adapter design files (NXP login) or measure the board before layout."
+		(exclude_from_sim no)
+		(at 198.12 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8844fb2b-33a8-4090-ac94-296bb2f698a7")
 	)
 	(text "RAIL LINKS  (EVKB R1827/R1826/R846)"
 		(exclude_from_sim no)
@@ -1555,6 +1700,18 @@
 		)
 		(uuid "a10ea242-11d2-4b5f-944b-b75e7725c7a4")
 	)
+	(text "MOUNTING HOLES  (RK055HDMIPI4MA0 adapter pattern)"
+		(exclude_from_sim no)
+		(at 198.12 88.9 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "cf98030a-9128-4e0a-9d65-e4887a131505")
+	)
 	(text "Pins 1/2 (LEDK/LEDA) and 23 (2.8V) are not driven - leave the adapter jumpers J5/J3 and J6 at their default 1-2 (on-board boost / LDO). 1.8V and 3.3V are still fed (pins 25/30) for the J8/J7 2-3 option."
 		(exclude_from_sim no)
 		(at 25.4 151.13 0)
@@ -1565,6 +1722,17 @@
 			(justify left bottom)
 		)
 		(uuid "d29095b2-0452-4edc-b432-a5d9b3b8fd86")
+	)
+	(text "Board outline = the display adapter outline; H1-H4 sit on its SS1-SS4 standoff holes: NXP 0.635 in M3 brass standoff"
+		(exclude_from_sim no)
+		(at 198.12 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "db18d86b-6c6d-4122-b75f-7f0e83bbb227")
 	)
 	(text "GPIO map (NXP board.h / MipiDisplay panel_gpio.h): LCD reset GPIO_AD_02, backlight GPIO_AD_30, panel power GPIO_DISP_B2_15, touch INT GPIO_AD_00, touch RST GPIO_AD_01,"
 		(exclude_from_sim no)
@@ -1797,6 +1965,29 @@
 		(uuid "2122899c-6e82-441f-9313-282a2e2e7a04")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 87.63 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 266.7 114.3 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2413bab2-cd89-4376-8769-e2b70189c95a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 266.7 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2269,6 +2460,29 @@
 	)
 	(global_label "GND"
 		(shape passive)
+		(at 246.38 114.3 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "784c6acb-55c5-4f9d-98ab-a96948c12618")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 246.38 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
 		(at 77.47 134.62 270)
 		(fields_autoplaced yes)
 		(effects
@@ -2520,6 +2734,29 @@
 			)
 		)
 	)
+	(global_label "GND"
+		(shape passive)
+		(at 226.06 114.3 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b1239e0e-ae2f-4eb7-9b8c-c0f28fea1d9c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 226.06 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "CTP_3V3"
 		(shape passive)
 		(at 50.8 267.97 270)
@@ -2533,6 +2770,29 @@
 		(uuid "b1d6c806-b433-43c2-8456-464ae1d7e91d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 50.8 267.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 205.74 114.3 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b3ba7d51-d3b8-40b9-9c4c-8f96dfb2bd31")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 205.74 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3244,6 +3504,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 266.7 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "39c7c20c-c8c3-444a-afd2-9691d7b54fd0")
+		(property "Reference" "H4"
+			(at 269.24 111.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M3 3.53mm"
+			(at 269.24 113.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Nosh:MountingHole_3.53mm_M3_Pad"
+			(at 266.7 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 266.7 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting hole, M3, on the RK055HDMIPI4MA0 adapter standoff SS4"
+			(at 266.7 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fe087fca-0628-48ab-b8fe-60448d9488aa")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 50.8 220.98 0)
 		(unit 1)
@@ -3547,6 +3885,84 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
 					(reference "R73")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 246.38 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6b9a9e6f-55d2-4a28-8baf-f84b9bfb142e")
+		(property "Reference" "H3"
+			(at 248.92 111.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M3 3.53mm"
+			(at 248.92 113.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Nosh:MountingHole_3.53mm_M3_Pad"
+			(at 246.38 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting hole, M3, on the RK055HDMIPI4MA0 adapter standoff SS3"
+			(at 246.38 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1f23f0fa-bf5c-43d1-a537-f97d260f7281")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -4165,6 +4581,162 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
 					(reference "R66")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 226.06 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ce051c03-2637-433b-9895-96dbc907eb35")
+		(property "Reference" "H2"
+			(at 228.6 111.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M3 3.53mm"
+			(at 228.6 113.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Nosh:MountingHole_3.53mm_M3_Pad"
+			(at 226.06 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 226.06 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting hole, M3, on the RK055HDMIPI4MA0 adapter standoff SS2"
+			(at 226.06 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cdc7cac8-1a8e-4d2f-b289-ab305f4eb084")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 205.74 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d9e79878-8d82-4728-9161-a48b34f2a0c6")
+		(property "Reference" "H1"
+			(at 208.28 111.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M3 3.53mm"
+			(at 208.28 113.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Nosh:MountingHole_3.53mm_M3_Pad"
+			(at 205.74 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting hole, M3, on the RK055HDMIPI4MA0 adapter standoff SS1"
+			(at 205.74 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c1f68426-84ce-4ca2-8012-0826e27fccec")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
+					(reference "H1")
 					(unit 1)
 				)
 			)

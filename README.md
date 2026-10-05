@@ -24,7 +24,8 @@ has not started. Full-hierarchy ERC is clean apart from the expected unconnected
 | LCD + touch | 40-pin 0.5 mm FPC (Würth 68714014022), MIPI DSI 2 lanes | Rocktech RK055HDMIPI4MA0 (720×1280, HX8394, GT911 touch on LPI2C5), EVKB J48 pinout and GPIO map |
 | Audio | Cirrus WM8962 codec on SAI1 + LPI2C5, 3.5 mm line-out and line-in jacks | EVKB U368 circuit on the EVKB pins; headphone-capable line out, IN2L/R line in |
 | Power | 5 V barrel jack or USB-C → MP2143 3.3 V buck → AMS1117 1.8 V; AP2112K SNVS LDO | EVKB-style rail tree, on-chip DCDC for the core; 2 A polyfuse, reverse-polarity diode |
-| Debug | 10-pin 1.27 mm SWD/JTAG header, reset / ONOFF / WAKEUP buttons, 2-way boot-mode DIP, 72 test points | JTAG on GPIO_LPSR_10..15, VTref = NVCC_LPSR (3.3 V); LPUART1 console on TP62/TP63 |
+| Debug | 10-pin 1.27 mm SWD/JTAG header, reset / ONOFF / WAKEUP buttons, 2-way boot-mode DIP, user LED on GPIO_AD_04, 72 test points | JTAG on GPIO_LPSR_10..15, VTref = NVCC_LPSR (3.3 V); LPUART1 console on TP62/TP63 |
+| Mechanical | board outline = the RK055HDMIPI4MA0 adapter outline; 4 × M3 mounting holes H1–H4 on the adapter's standoff positions | 3.53 mm plated holes with 5.6 mm GND pads (NXP's .635" M3 standoff land, as on the EVKB); hole coordinates from the adapter design files or measurement before layout |
 
 Sheets: `power` (MCU supplies, DCDC, reset/boot), `core` (crystals, USB/MIPI supplies),
 `gpio` (GPIO banks, flash, SWD, boot), `usb`, `supply`, `sdram`, `m2`, `sdcard`, `lcd`, `audio`,
@@ -48,6 +49,7 @@ All assignments are the EVKB's unless marked.
 | Audio (SAI1) | MCLK GPIO_AD_17, RX_SYNC/RX_BCLK GPIO_AD_18/19 (DNP links), RXD0 GPIO_AD_20, TXD0 GPIO_AD_21, TX_BCLK GPIO_AD_22, TX_SYNC GPIO_AD_23 |
 | Boot mode | GPIO_LPSR_02/03 (DIP switch), internal boot from FlexSPI1 NOR by default |
 | Debug console (LPUART1) — *Nosh: test points only* | GPIO_AD_24 TXD / GPIO_AD_25 RXD on TP62 / TP63 (no header fitted) |
+| User LED | GPIO_AD_04 (GPIO9_IO03, the SDK's BOARD_USER_LED), high = on; direct drive, 1 k series, red 0603 (the EVKB buffers it with a BC817) |
 
 ## Differences from the MIMXRT1170-EVKB
 
@@ -208,6 +210,7 @@ Kicad/
     FPC40_0p5_Wuerth_68714014022         LCD FPC — EVKB IPC-D-356 land (= Würth recommended pattern)
     L_CommonModeChoke_Murata_DLW21       USB chokes — EVKB IPC-D-356 land
     WCSP-49_3.6x4.0mm_P0.5mm             WM8962 — EVKB IPC-D-356 ball map + datasheet outline
+    MountingHole_3.53mm_M3_Pad           M3 standoff hole, NXP spacer_139t land (EVKB IPC-D-356)
   tools/
     gen_rt1176_symbol.py                 regenerates the MIMXRT1176DVMAA symbol from data/rt1176_{pins,mux}.json
     lcsc_table.py                        regenerates data/lcsc_parts.csv from the schematic fields
