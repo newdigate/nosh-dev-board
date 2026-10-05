@@ -863,7 +863,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Nosh:bga289_0p8_14x14_1p52mm"
+			(property "Footprint" "Package_BGA:MAPBGA-289_14x14mm_Layout17x17_P0.8mm"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -13246,7 +13246,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:bga289_0p8_14x14_1p52mm"
+		(property "Footprint" "Package_BGA:MAPBGA-289_14x14mm_Layout17x17_P0.8mm"
 			(at 165.1 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -16299,7 +16299,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:bga289_0p8_14x14_1p52mm"
+		(property "Footprint" "Package_BGA:MAPBGA-289_14x14mm_Layout17x17_P0.8mm"
 			(at 69.85 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -18267,7 +18267,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:bga289_0p8_14x14_1p52mm"
+		(property "Footprint" "Package_BGA:MAPBGA-289_14x14mm_Layout17x17_P0.8mm"
 			(at 180.34 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -20647,7 +20647,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:bga289_0p8_14x14_1p52mm"
+		(property "Footprint" "Package_BGA:MAPBGA-289_14x14mm_Layout17x17_P0.8mm"
 			(at 229.87 69.85 0)
 			(hide yes)
 			(show_name no)

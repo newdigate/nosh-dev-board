@@ -14,7 +14,7 @@ has not started. Full-hierarchy ERC is clean apart from the expected unconnected
 
 | Block | Choice | Notes |
 |---|---|---|
-| MCU | MIMXRT1176DVMAA (rev-B DVMAB accepted alternate), MAPBGA-289 | 12-unit symbol generated from `tools/data/*.json` |
+| MCU | MIMXRT1176DVMAA (rev-B DVMAB accepted alternate), MAPBGA-289 | 12-unit symbol generated from `tools/data/*.json`; KiCad stock footprint `Package_BGA:MAPBGA-289_14x14mm_Layout17x17_P0.8mm` (0.32 mm pads, EVKB uses 0.33 mm) |
 | SDRAM | 2 × Winbond W9825G6KH-6 (256 Mb) on SEMC, 32-bit, **64 MB** | same part family and arrangement as the EVKB (13 row × 9 column) |
 | Flash | Winbond W25Q512JVEIQ, 512 Mb QSPI, 3.3 V | FlexSPI1 port A (GPIO_SD_B2_06..11) |
 | USB2 (OTG2) | micro-AB **host/OTG** port | the port `USBHost_t36` drives; TPS2553 VBUS switch (~1.1 A) with hardware ID gating, RClamp0854P ESD |
@@ -245,11 +245,11 @@ MIPI DSI or crystal nets, where a pad stub would degrade the signal; SWD/SWO are
 ```
 Kicad/
   Nosh.kicad_pro / Nosh.kicad_sch        project and root sheet (A3, one block per sub-sheet)
+  Nosh.kicad_dru                         JLCPCB design rules, loaded automatically (see below)
   power core gpio usb supply sdram m2 sdcard lcd audio testpoints .kicad_sch
   Nosh.kicad_sym                         project symbols (MCU, flash, SDRAM, level shifters, sockets, …)
   Nosh.pretty/                           project footprints:
-    bga289_0p8_14x14_1p52mm              MCU (from the EVKB footprint)
-    slp1616p6                            RClamp0854P
+    slp1616p6                            RClamp0854P — EVKB IPC-D-356 land (U20/U28)
     M2_KeyE_67pin_RA                     TE 2199230-4 — pads from the EVKB IPC-D-356 data, pegs/tabs from the TE drawing
     FPC40_0p5_Wuerth_68714014022         LCD FPC — EVKB IPC-D-356 land (= Würth recommended pattern)
     L_CommonModeChoke_Murata_DLW21       USB chokes — EVKB IPC-D-356 land
@@ -270,3 +270,23 @@ Kicad/
   `kicad-cli sch erc --severity-all` and `kicad-cli sch export netlist`.
 - The EVKB reference design files (schematic, Allegro netlist, Excel BOM with MPNs,
   Gerber/IPC-356) and the part datasheets are not part of this repository.
+
+## PCB design rules (JLCPCB)
+
+`Kicad/Nosh.kicad_dru` holds JLCPCB's manufacturing limits as KiCad custom DRC rules, copied
+unchanged from [kicad-druid](https://github.com/Cimos/kicad-druid) (MIT licence, notice kept
+in the file header; `JLCPCB/JLCPCB-6L-1oz.kicad_dru`, upstream commit `8af046d`). The 4-layer
+1 oz file there has identical rules, so this file holds for either layer count. Main limits:
+
+| Rule | Minimum |
+|---|---|
+| Track width / spacing | 0.09 mm / 0.09 mm |
+| Via hole / annular ring | 0.15 mm / 0.05 mm; hole < 0.3 mm with diameter < 0.45 mm is flagged as extra cost |
+| Via to track, PTH to track | 0.2 mm |
+| Pad or via to pad or via, different nets | 0.127 mm |
+| Track to board edge | 0.2 mm |
+
+KiCad loads `<project>.kicad_dru` automatically. After editing it, open
+*Board Setup → Design Rules → Custom Rules* and check for errors: a broken rule file makes KiCad
+drop every rule, and `kicad-cli pcb drc` reports nothing when that happens. Update by copying a
+newer upstream file over it and keeping the header.
