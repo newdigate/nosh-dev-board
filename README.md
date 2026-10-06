@@ -26,7 +26,7 @@ has not started. Full-hierarchy ERC is clean apart from the expected unconnected
 | Power | 5 V barrel jack or USB-C → MP2143 3.3 V buck → AMS1117 1.8 V; AP2112K SNVS LDO | EVKB-style rail tree, on-chip DCDC for the core; 3 A polyfuse, SS54 reverse-polarity diode, jack rated 8 A; red power LED on +3V3 |
 | Debug | 10-pin 1.27 mm SWD/JTAG header, reset / ONOFF / WAKEUP buttons, 2-way boot-mode DIP, user LED on GPIO_AD_04, 3-pin debug UART header J11, 72 test points | JTAG on GPIO_LPSR_10..15, VTref = NVCC_LPSR (3.3 V); LPUART1 console on J11, J10 pins 5/6 and TP62/TP63 |
 | Expansion | 2×10 2.54 mm header J10 | LPUART1 console, LPI2C5, LPSPI3, FLEXCAN3 / LPUART12 pins, 4 ADC / PWM pins, 1 PWM pin, +3V3, +5V, 3 × GND; see [Expansion header J10](#expansion-header-j10) |
-| Mechanical | board outline = the RK055HDMIPI4MA0 adapter outline; 4 × M3 mounting holes H1–H4 on the adapter's standoff positions; 3 fiducials FID1–FID3 on the top side | 3.53 mm plated holes with 5.6 mm GND pads (NXP's .635" M3 standoff land, as on the EVKB); hole coordinates from the adapter design files or measurement before layout |
+| Mechanical | board outline = the RK055HDMIPI4MA0 adapter outline; 4 × M3 mounting holes H1–H4 on the adapter's standoff positions; 6 fiducials, FID1–FID3 on the top side and FID4–FID6 on the bottom for the bottom-side assembly pass | 3.53 mm plated holes with 5.6 mm GND pads (NXP's .635" M3 standoff land, as on the EVKB); hole coordinates from the adapter design files or measurement before layout |
 
 Sheets: `power` (MCU supplies, DCDC, reset/boot), `core` (crystals, USB/MIPI supplies),
 `gpio` (GPIO banks, flash, SWD, boot), `usb`, `supply`, `sdram`, `m2`, `sdcard`, `lcd`, `audio`,
