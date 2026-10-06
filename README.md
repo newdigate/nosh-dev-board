@@ -19,7 +19,7 @@ has not started. Full-hierarchy ERC is clean apart from the expected unconnected
 | Flash | Winbond W25Q512JVEIQ, 512 Mb QSPI, 3.3 V | FlexSPI1 port A (GPIO_SD_B2_06..11) |
 | USB2 (OTG2) | micro-AB **host/OTG** port | the port `USBHost_t36` drives; TPS2553 VBUS switch (~1.1 A) with hardware ID gating, RClamp0854P ESD |
 | USB1 (OTG1) | USB-C **device** port | Rd-only UFP (500 mA), RClamp0854P ESD |
-| M.2 Key E | uSDHC1 @ 1.8 V + LPUART2 | for u-blox MAYA-W1 / NXP IW416; 74AVC8T245 level shifters; TE 2199230-4 socket (EVKB part) |
+| M.2 Key E | uSDHC1 @ 1.8 V + LPUART2 | for u-blox MAYA-W1 / NXP IW416; 74AVC8T245 level shifters; TE 2199230-4 socket (EVKB part); retention nut H5, M2.5 SMT 2 mm (EVKB BH1) |
 | microSD | uSDHC2 @ 3.3 V | its own bus — the EVKB shares one with the M.2 slot |
 | LCD + touch | 40-pin 0.5 mm FPC (Würth 68714014022), MIPI DSI 2 lanes | Rocktech RK055HDMIPI4MA0 (720×1280, HX8394, GT911 touch on LPI2C5), EVKB J48 pinout and GPIO map |
 | Audio | NXP SGTL5000 codec (QFN-20) on SAI1 + LPI2C5, 3.5 mm line-out and line-in jacks | the Teensy Audio Shield codec: Teensy Audio library `AudioControlSGTL5000` and the NXP SDK `sgtl5000` driver both apply; I2C 0x0A; same SAI1 pins as the EVKB codec |
@@ -143,6 +143,7 @@ python3 Kicad/tools/lcsc_table.py
 | Würth 68714014022 LCD FPC | C6264899 | ~75 | any 40-pin 0.5 mm top-contact ZIF with the same land pattern |
 | CUI SJ-3523-SMT jacks | C4991872 | ~800 | — |
 | TE 2199230-4 M.2 socket | C2977809 | ~5 k | — |
+| YIYUAN SMTSOM2.520BTR M.2 nut H5, 2 mm | C5301776 | 0 | SMTSOM2.525BTR, 2.5 mm (C49236513, ~4.7 k): same land, the card end sits 0.5 mm higher |
 
 Fine-pitch note: the MCU is 0.8 mm BGA; everything else is 0.4 mm QFN or coarser.
 
@@ -254,6 +255,7 @@ Kicad/
     FPC40_0p5_Wuerth_68714014022         LCD FPC — EVKB IPC-D-356 land (= Würth recommended pattern)
     L_CommonModeChoke_Murata_DLW21       USB chokes — EVKB IPC-D-356 land
     MountingHole_3.53mm_M3_Pad           M3 standoff hole, NXP spacer_139t land (EVKB IPC-D-356)
+    SMTSO_M2.5_Hole4.22mm_Pad6.2mm       M.2 retention nut H5 — YIYUAN SMTSO land = EVKB BH1, 4-segment paste ring
   tools/
     gen_rt1176_symbol.py                 regenerates the MIMXRT1176DVMAA symbol from data/rt1176_{pins,mux}.json
     lcsc_table.py                        regenerates data/lcsc_parts.csv from the schematic fields

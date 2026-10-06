@@ -666,6 +666,129 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Nosh:74AVC8T245PW"
 			(pin_names
 				(offset 1.016)
@@ -2639,6 +2762,28 @@
 		)
 		(uuid "0e0ddaf0-ad43-4c3d-8729-bee48c2d74fc")
 	)
+	(text "If C5301776 has no stock at order time, fit the 2.5 mm SMTSOM2.525BTR (LCSC C49236513): same land, the card end sits 0.5 mm higher."
+		(exclude_from_sim no)
+		(at 246.38 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "11fe7eb8-b755-463d-a219-d2bdeda6167c")
+	)
+	(text "Place it 30 mm from the centre of J6's signal pads, on J6's centre line (EVKB: BH1 to J54)."
+		(exclude_from_sim no)
+		(at 246.38 140.97 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "233c0802-8904-408e-a46d-fc844461b920")
+	)
 	(text "so the card runs at its native 1.8V with no VSELECT mux and no shared microSD slot. M2Radio (SdioHost: uSDHC1, SDIO_RST = GPIO_AD_16, WL_RST/PDn = GPIO_AD_31, BT HCI on LPUART2) works unchanged."
 		(exclude_from_sim no)
 		(at 25.4 219.2 0)
@@ -2660,6 +2805,18 @@
 			(justify left bottom)
 		)
 		(uuid "26d10228-93f1-4d1e-b70c-6a3ae8ae21ff")
+	)
+	(text "M.2 RETENTION STANDOFF  H5  (2230 card, as EVKB BH1)"
+		(exclude_from_sim no)
+		(at 246.38 116.84 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "3d7c5a7a-47f7-4749-92f3-e0783b84f892")
 	)
 	(text "U12: module (1.8V) -> MCU (3.3V)"
 		(exclude_from_sim no)
@@ -2729,6 +2886,17 @@
 			(justify left bottom)
 		)
 		(uuid "8c707bc8-4e35-4bfa-883c-ac56561daeb3")
+	)
+	(text "H5: M2.5 SMT round nut, 2 mm high, YIYUAN SMTSOM2.520BTR (LCSC C5301776). Land: 4.22 mm plated hole, 6.2 mm GND pad, EVKB BH1 paste ring."
+		(exclude_from_sim no)
+		(at 246.38 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9d0d6eab-39cd-403e-b50c-a77f8f146fad")
 	)
 	(text "MCU pins: SDIO_RST = GPIO_AD_16, WL_DEV_WAKE = GPIO_AD_07, BT_DEV_WAKE = GPIO_AD_28, UART_WAKE -> BT_WAKE_B = GPIO_AD_27, SDIO_WAKE -> WIFI_WAKE_B = GPIO_AD_29 (EVKB: header J104). UART = LPUART2 (GPIO_DISP_B2_10..13)."
 		(exclude_from_sim no)
@@ -3546,6 +3714,29 @@
 		(uuid "4b416821-9ac2-4086-8052-6e7868ecb576")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 208.28 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 251.46 128.27 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4c70c4cc-d988-41a6-bfc9-f006b413b2cf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8728,6 +8919,106 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/54b8ddd8-5a5c-41b4-9116-56d21efe6119"
 					(reference "C103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 251.46 125.73 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f1429157-f07d-469b-a8ad-988d9384d168")
+		(property "Reference" "H5"
+			(at 254 125.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M2.5 nut 2mm"
+			(at 254 127.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Nosh:SMTSO_M2.5_Hole4.22mm_Pad6.2mm"
+			(at 251.46 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 251.46 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "M.2 2230 card retention: M2.5 SMT round nut, 2 mm high (EVKB BH1)"
+			(at 251.46 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C5301776"
+			(at 251.46 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SMTSOM2.520BTR"
+			(at 251.46 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cb403e62-a5cf-47aa-89cb-855be6f39b53")
+		)
+		(instances
+			(project "Nosh"
+				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/54b8ddd8-5a5c-41b4-9116-56d21efe6119"
+					(reference "H5")
 					(unit 1)
 				)
 			)

@@ -10,7 +10,8 @@ for sh in ['power', 'core', 'gpio', 'usb', 'supply', 'sdram', 'm2', 'sdcard', 'l
     for m in re.finditer(r'\n\t\(symbol\n\t\t\(lib_id "[^"]+"\)', S):
         e = re.compile(r'\n\t\(').search(S, m.start() + 3).start(); blk = S[m.start():e]
         ref = re.search(r'\(property "Reference" "([^"]+)"', blk).group(1)
-        if ref.startswith('#') or '(lib_id "Connector:TestPoint")' in blk or '(lib_id "Mechanical:' in blk: continue   # power symbols, test points, mounting holes, fiducials (no part)
+        no_part = '(lib_id "Connector:TestPoint")' in blk or '(lib_id "Mechanical:' in blk
+        if ref.startswith('#') or (no_part and not re.search(r'\(property "LCSC" "C\d+"', blk)): continue   # power symbols; test points, holes, fiducials unless they carry an LCSC part (H5 nut)
         val = re.search(r'\(property "Value" "([^"]*)"', blk).group(1)
         fp = re.search(r'\(property "Footprint" "([^"]*)"', blk).group(1).split(':')[-1]
         l = re.search(r'\(property "LCSC" "([^"]*)"', blk); p = re.search(r'\(property "MPN" "([^"]*)"', blk)
