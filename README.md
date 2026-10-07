@@ -15,7 +15,7 @@ has not started. Full-hierarchy ERC is clean apart from the expected unconnected
 | Block | Choice | Notes |
 |---|---|---|
 | MCU | MIMXRT1176DVMAA (rev-B DVMAB accepted alternate), MAPBGA-289 | 12-unit symbol generated from `tools/data/*.json`; KiCad stock footprint `Package_BGA:MAPBGA-289_14x14mm_Layout17x17_P0.8mm` (0.32 mm pads, EVKB uses 0.33 mm) |
-| SDRAM | 2 × Winbond W9825G6KH-6 (256 Mb) on SEMC, 32-bit, **64 MB** | same part family and arrangement as the EVKB (13 row × 9 column) |
+| SDRAM | 2 × Alliance AS4C32M16SB-6TIN (512 Mb) on SEMC, 32-bit, **128 MB** | same JEDEC x16 TSOP-54 footprint and arrangement as the EVKB; 13 row × 10 column, so the firmware SEMC setup changes: 10 column bits and 128 MB on chip select 0, see "SDRAM configuration" below |
 | Flash | Winbond W25Q512JVEIQ, 512 Mb QSPI, 3.3 V | FlexSPI1 port A (GPIO_SD_B2_06..11) |
 | USB2 (OTG2) | micro-AB **host/OTG** port | the port `USBHost_t36` drives; TPS2553 VBUS switch (~1.1 A) with hardware ID gating, RClamp0854P ESD |
 | USB1 (OTG1) | USB-C **device** port | Rd-only UFP (500 mA), RClamp0854P ESD |
@@ -87,7 +87,7 @@ through-hole assembly like the other THT connectors. All signals are **3.3 V and
 
 | Block | EVKB | Nosh | Why |
 |---|---|---|---|
-| SDRAM | 2 × W9825G6KH-5I | 2 × W9825G6KH-6 | -5I not stocked; -6 is the 166 MHz commercial bin |
+| SDRAM | 2 × W9825G6KH-5I, 64 MB | 2 × AS4C32M16SB-6TIN, 128 MB | pin-compatible 512 Mb parts, 166 MHz; four pre-ordered at JLCPCB (C1351095, Oct 2026). W9825G6KH-6 (C62246, in stock) drops in for 64 MB |
 | USB ports | two micro-AB OTG ports | micro-AB host + USB-C device | one port is enough for the host library; USB-C for programming |
 | USB VBUS switch | NX5P3090UK (0.4 mm WLCSP) | TPS2553DBVR (SOT-23-6), RILIM 22 k ≈ 1.1 A | no stock, hard package; same EN/FAULT/ILIM topology |
 | SD card bus | shared with the M.2 slot | separate uSDHC2 | independent Wi-Fi and SD |
@@ -143,6 +143,7 @@ python3 Kicad/tools/lcsc_table.py
 | Würth 68714014022 LCD FPC | C6264899 | ~75 | any 40-pin 0.5 mm top-contact ZIF with the same land pattern |
 | CUI SJ-3523-SMT jacks | C4991872 | ~800 | — |
 | TE 2199230-4 M.2 socket | C2977809 | ~5 k | — |
+| AS4C32M16SB-6TIN SDRAM U9/U10 | C1351095 | 0, four pre-ordered | W9825G6KH-6 (C62246, ~8.8 k): 256 Mb, 64 MB total, SEMC COL=9 |
 | YIYUAN SMTSOM2.520BTR M.2 nut H5, 2 mm | C5301776 | 0 | SMTSOM2.525BTR, 2.5 mm (C49236513, ~4.7 k): same land, the card end sits 0.5 mm higher |
 
 Fine-pitch note: the MCU is 0.8 mm BGA; everything else is 0.4 mm QFN or coarser.
@@ -240,6 +241,29 @@ bare copper pads (KiCad `TestPoint` footprints, flagged exclude-from-BOM / exclu
 LPUART1 (GPIO_AD_24/25, the SDK's default debug console, 3.3 V) has its own header J11 and is
 also on J10 pins 5/6 and TP62/TP63. Nothing is probed on the SDRAM, FlexSPI, USB data,
 MIPI DSI or crystal nets, where a pad stub would degrade the signal; SWD/SWO are on J1.
+
+### SDRAM configuration: 10 column address bits, not 9
+
+The EVKB's W9825G6KH (256 Mb, 16M × 16) has 13 row × 9 column bits per bank. Nosh's AS4C32M16SB
+(512 Mb, 32M × 16) has 13 row × **10** column bits per bank, the same 4 banks and the same A0–A12
+pins (A12 on pin 36). The hardware is identical; only the SEMC setup differs. Every EVKB-derived
+SDRAM init must change in two places, or the upper half of each chip is unreachable and addresses
+alias:
+
+| Setting | EVKB (2 × 256 Mb, 64 MB) | Nosh (2 × 512 Mb, 128 MB) |
+|---|---|---|
+| Column address bits | 9 | 10 |
+| `SEMC_SDRAMCR0[COL]` (bits 9:8) | `11b` | `10b` |
+| SDK `semc_sdram_config_t.columnAddrBitNum` | `kSEMC_SdramColunm_9bit` | `kSEMC_SdramColunm_10bit` |
+| Memory on chip select 0 (32-bit array = 2 chips) | 64 MB | 128 MB |
+| `SEMC_BR0[MS]` (memory size) | `0_1110b`, BR0 = `0x8000001D` | `0_1111b`, BR0 = `0x8000001F` |
+| SDK `memsize_kbytes` | 64 × 1024 | 128 × 1024 |
+| SDRAM region | 0x8000_0000–0x83FF_FFFF | 0x8000_0000–0x87FF_FFFF |
+
+Row bits (13), bank bits (2), bus width (32 bit, `PS=2`), CAS latency 3 and the 166 MHz SEMC clock
+stay as on the EVKB. Change it in the SDK board init (`BOARD_InitSemc`), in the DCD used for XIP boot
+(the `SEMC->SDRAMCR0` and `SEMC->BR[0]` writes), and in the linker script's SDRAM region length. If
+the Winbond fallback (W9825G6KH-6) is ever fitted, use the EVKB values again.
 
 ## Repository layout
 

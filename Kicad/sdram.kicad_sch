@@ -465,7 +465,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Nosh:W9825G6KH-6"
+		(symbol "Nosh:SDRAM_x16_TSOP54"
 			(pin_names
 				(offset 1.016)
 			)
@@ -485,7 +485,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "W9825G6KH-6"
+			(property "Value" "SDRAM_x16_TSOP54"
 				(at -10.16 -36.83 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -507,7 +507,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.winbond.com/resource-files/w9825g6kh_a03.pdf"
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C1351095.pdf"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -518,7 +518,7 @@
 					)
 				)
 			)
-			(property "Description" "256Mbit (16Mx16) 3.3V SDR SDRAM, 166MHz CL3, TSOP-II-54, JEDEC x16 pinout; same family as the EVKB W9825G6KH-5I. JLCPCB C62246 (Extended)"
+			(property "Description" "SDR SDRAM x16, JEDEC TSOP-II-54 pinout (A0..A12, BA0/1). Fitted: Alliance AS4C32M16SB-6TIN 512Mb (32Mx16, 13 row x 10 col, 166MHz CL3, JLCPCB C1351095). Pin-compatible: Winbond W9825G6KH-6 256Mb (C62246), ISSI IS42S16320F-6TL 512Mb"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -540,7 +540,7 @@
 					)
 				)
 			)
-			(symbol "W9825G6KH-6_0_1"
+			(symbol "SDRAM_x16_TSOP54_0_1"
 				(rectangle
 					(start -10.16 22.86)
 					(end 10.16 -35.56)
@@ -553,7 +553,7 @@
 					)
 				)
 			)
-			(symbol "W9825G6KH-6_1_1"
+			(symbol "SDRAM_x16_TSOP54_1_1"
 				(pin power_in line
 					(at -7.62 25.4 270)
 					(length 2.54)
@@ -1669,7 +1669,7 @@
 		)
 		(uuid "2ed0ad1d-2b15-4bad-9478-e9a00aa66b44")
 	)
-	(text "Layout: length-match CLK/addr/data within the SEMC group, keep both chips close to the BGA, 0.1uF at every VDD/VDDQ pin. JLCPCB: C17672183 (Extended part: one-time loading fee per PCBA order)."
+	(text "Layout: length-match CLK/addr/data within the SEMC group, keep both chips close to the BGA, 0.1uF at every VDD/VDDQ pin. JLCPCB: C1351095 (Extended part: one-time loading fee per PCBA order; 4 pre-ordered Oct 2026)."
 		(exclude_from_sim no)
 		(at 25.4 225.8 0)
 		(effects
@@ -1703,7 +1703,7 @@
 		)
 		(uuid "d6b46973-c298-4d0b-8e2b-89a2b6900da9")
 	)
-	(text "JEDEC x16 TSOP-II-54 pinout, A0..A12 + BA0/1: the 256Mb part is 13 row x 9 column bits (SEMC SDRAMCR0[COL]=9, as on the EVKB). -6 grade = 166MHz (CL3), matching the EVKB SEMC clock. Pin-compatible upgrade: W9825G6KH-6 (512Mb, COL=10, C17672183 - low JLCPCB stock)."
+	(text "JEDEC x16 TSOP-II-54 pinout, A0..A12 + BA0/1: the 512Mb AS4C32M16SB is 13 row x 10 column bits, so set SEMC SDRAMCR0[COL]=10b (10 bits; the EVKB's 256Mb parts use 11b = 9 bits) and 128 MB on CS0 (BR0 = 0x8000001F, EVKB 0x8000001D) in the SDK board init, DCD and linker script. See README, SDRAM configuration. -6 grade = 166MHz (CL3), matching the EVKB SEMC clock. Pin-compatible: W9825G6KH-6 (256Mb, C62246), IS42S16320F-6TL (512Mb)."
 		(exclude_from_sim no)
 		(at 25.4 219.2 0)
 		(effects
@@ -1726,7 +1726,7 @@
 		)
 		(uuid "e9fdd91d-fbdc-4427-9fd3-c3b5aef51f37")
 	)
-	(text "2x W9825G6KH-6 (256Mb, 16Mx16) on SEMC as a 32-bit SDRAM, 64 MB total. Same arrangement and part family as the MIMXRT1170-EVKB (U13 = D0..15, U25 = D16..31, W9825G6KH-5I)."
+	(text "2x AS4C32M16SB-6TIN (512Mb, 32Mx16, JLCPCB C1351095) on SEMC as a 32-bit SDRAM, 128 MB total. Same arrangement as the MIMXRT1170-EVKB (U13 = D0..15, U25 = D16..31), which fits 2x W9825G6KH-5I (256Mb, 64 MB)."
 		(exclude_from_sim no)
 		(at 25.4 215.9 0)
 		(effects
@@ -5943,7 +5943,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Nosh:W9825G6KH-6")
+		(lib_id "Nosh:SDRAM_x16_TSOP54")
 		(at 269.24 96.52 0)
 		(unit 1)
 		(body_style 1)
@@ -5964,7 +5964,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "W9825G6KH-6"
+		(property "Value" "AS4C32M16SB-6TIN"
 			(at 281.94 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5986,7 +5986,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C1351095.pdf"
 			(at 269.24 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -5997,7 +5997,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "512Mb (32Mx16) SDR SDRAM, 166MHz CL3, TSOP-II-54"
 			(at 269.24 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6008,7 +6008,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C62246"
+		(property "LCSC" "C1351095"
 			(at 269.24 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6019,7 +6019,7 @@
 				)
 			)
 		)
-		(property "MPN" "W9825G6KH-6"
+		(property "MPN" "AS4C32M16SB-6TIN"
 			(at 269.24 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6408,7 +6408,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Nosh:W9825G6KH-6")
+		(lib_id "Nosh:SDRAM_x16_TSOP54")
 		(at 76.2 96.52 0)
 		(unit 1)
 		(body_style 1)
@@ -6429,7 +6429,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "W9825G6KH-6"
+		(property "Value" "AS4C32M16SB-6TIN"
 			(at 88.9 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6451,7 +6451,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C1351095.pdf"
 			(at 76.2 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6462,7 +6462,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "512Mb (32Mx16) SDR SDRAM, 166MHz CL3, TSOP-II-54"
 			(at 76.2 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6473,7 +6473,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C62246"
+		(property "LCSC" "C1351095"
 			(at 76.2 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6484,7 +6484,7 @@
 				)
 			)
 		)
-		(property "MPN" "W9825G6KH-6"
+		(property "MPN" "AS4C32M16SB-6TIN"
 			(at 76.2 96.52 0)
 			(hide yes)
 			(show_name no)
