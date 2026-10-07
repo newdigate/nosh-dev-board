@@ -344,8 +344,17 @@ west edge with the supply chain beside it; SW1–SW3 in the south-west corner; S
 Bottom side: J7 display FPC at the north edge (opening north, pin 1 west as on the EVKB J48), the MCU
 decoupling under the BGA, FID4–FID6.
 
-Still to do: refine placement, BGA fan-out and routing, outer-layer pours, split the PWR layer, tidy
-reference labels. DRC leftovers that are footprint quirks rather than layout faults: J3's NPTH-to-copper
+**Stage 2 (in progress):** `tools/write_project_rules.py` rewrites the design rules and net classes
+into `Nosh.kicad_pro` (KiCad overwrites that file whenever it saves the project, so close the project
+before running it). The MCU has a dog-bone fan-out: 145 vias (0.45/0.3 mm, no extra JLCPCB cost) for
+every connected ball from the third ring inwards, the outer two rings escape on the top layer, and the
+bottom-side decoupling sits in a ring around the via field. The PWR layer carries a +3V3 plane with
++5V (supply corner), SDRAM_3V3 (under U9/U10), WL_3V3 (M.2) and VDD_SOC_IN (MCU core) islands; GND1 and
+GND2 are solid. The fan-out vias and islands are not yet joined to anything, so DRC reports them as
+dangling or isolated until routing starts.
+
+Still to do: routing (the SDRAM bus, MIPI DSI and USB pairs by hand with length matching; the rest
+can be autorouted and cleaned up), outer-layer pours, reference-label tidy-up. DRC leftovers that are footprint quirks rather than layout faults: J3's NPTH-to-copper
 gap is 0.19 mm against the JLC 0.2 mm rule; J2's slotted shield pads trip the JLC slot-ratio check; J2
 reports a library mismatch because the Molex footprint's suggested board-edge lines were dropped on import.
 
