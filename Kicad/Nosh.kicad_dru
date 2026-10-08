@@ -311,3 +311,11 @@
 	(condition "A.Type == 'Zone' && (B.NetClass == 'USB_90' || B.NetClass == 'MIPI_100')")
 	(constraint clearance (min 0.5mm))
 )
+
+# Tracks threading between the MCU fan-out vias (0.2 mm hole, 0.45 mm pad, 0.8 mm pitch): JLCPCB's
+# copper-to-copper minimum is 0.09 mm; the 0.127 mm net-class figure is their pad-to-pad rule. With 0.1 mm
+# here a 0.1 mm track fits between two vias with 0.025 mm to spare; the 0.2 mm track-to-hole rule still applies.
+(rule "Nosh: Track to fan-out via (hole < 0.3 mm)"
+	(condition "A.Type == 'Track' && B.Type == 'Via' && B.Hole < 0.3mm && A.Net != B.Net")
+	(constraint clearance (min 0.1mm))
+)
