@@ -227,7 +227,9 @@ recovery path if a bad image ever makes an SWD attach awkward.
 
 The `testpoints` sheet carries 72 test points, each a global label onto an existing net. They are
 bare copper pads (KiCad `TestPoint` footprints, flagged exclude-from-BOM / exclude-from-POS and
-`in_bom = no` on the symbols), so they add nothing to the JLCPCB order.
+`in_bom = no` on the symbols), so they add nothing to the JLCPCB order. The signal test points are
+1.0 mm round pads (`TestPoint_Pad_D1.0mm`, the practical minimum for a probe tip or a 1 mm pogo pin);
+the six ground ones are 2.0 mm plated holes.
 
 | Refs | Group | Nets |
 |---|---|---|
@@ -353,8 +355,11 @@ bottom-side decoupling sits in a ring around the via field. The PWR layer carrie
 GND2 are solid. The fan-out vias and islands are not yet joined to anything, so DRC reports them as
 dangling or isolated until routing starts.
 
-Still to do: routing (the SDRAM bus, MIPI DSI and USB pairs by hand with length matching; the rest
-can be autorouted and cleaned up), outer-layer pours, reference-label tidy-up. DRC leftovers that are footprint quirks rather than layout faults: J3's NPTH-to-copper
+GND pours on F.Cu and B.Cu (`tools/gnd_pours.py`: 0.25 mm clearance, 0.2 mm minimum width, islands
+removed, left unfilled until routing is done; a rule in `Nosh.kicad_dru` keeps any zone 0.5 mm from the
+USB and MIPI pairs so the pours do not lower their impedance). Still to do: routing (the SDRAM bus,
+MIPI DSI and USB pairs by hand with length matching; the rest can be autorouted and cleaned up),
+reference-label tidy-up. DRC leftovers that are footprint quirks rather than layout faults: J3's NPTH-to-copper
 gap is 0.19 mm against the JLC 0.2 mm rule; J2's slotted shield pads trip the JLC slot-ratio check; J2
 reports a library mismatch because the Molex footprint's suggested board-edge lines were dropped on import.
 
