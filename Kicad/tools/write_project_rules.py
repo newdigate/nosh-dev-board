@@ -9,9 +9,9 @@ P = json.load(open(p))
 ds = P['board'].setdefault('design_settings', {})
 ds['rules'] = {"max_error": 0.005, "min_clearance": 0.09, "min_connection": 0.09, "min_copper_edge_clearance": 0.3, "min_groove_width": 0.0, "min_hole_clearance": 0.2, "min_hole_to_hole": 0.5,
                "min_microvia_diameter": 0.2, "min_microvia_drill": 0.1, "min_resolved_spokes": 2, "min_silk_clearance": 0.0, "min_text_height": 0.8, "min_text_thickness": 0.08,
-               "min_through_hole_diameter": 0.3, "min_track_width": 0.09, "min_via_annular_width": 0.05, "min_via_diameter": 0.45, "solder_mask_to_copper_clearance": 0.0, "use_height_for_length_calcs": True}
+               "min_through_hole_diameter": 0.2, "min_track_width": 0.09, "min_via_annular_width": 0.05, "min_via_diameter": 0.45, "solder_mask_to_copper_clearance": 0.0, "use_height_for_length_calcs": True}
 ds['track_widths'] = [0.1, 0.13, 0.15, 0.2, 0.3, 0.5, 1.0]
-ds['via_dimensions'] = [{"diameter": 0.5, "drill": 0.3}, {"diameter": 0.45, "drill": 0.3}, {"diameter": 0.4, "drill": 0.2}]
+ds['via_dimensions'] = [{"diameter": 0.5, "drill": 0.3}, {"diameter": 0.45, "drill": 0.3}, {"diameter": 0.45, "drill": 0.2}]
 ds['diff_pair_dimensions'] = [{"gap": 0.11, "via_gap": 0.5, "width": 0.13}, {"gap": 0.13, "via_gap": 0.5, "width": 0.11}]
 base = P['net_settings']['classes'][0]
 common = dict(clearance=0.127, track_width=0.15, via_diameter=0.5, via_drill=0.3, diff_pair_width=0.13, diff_pair_gap=0.11, diff_pair_via_gap=0.5)

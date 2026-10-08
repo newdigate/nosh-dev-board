@@ -10,7 +10,7 @@ board = pcbnew.LoadBoard(K + 'Nosh.kicad_pcb')
 u1 = next(f for f in board.GetFootprints() if f.GetReference() == 'U1')
 assert not [t for t in board.GetTracks() if t.GetNetname() and u1.GetBoundingBox().Contains(t.GetPosition())], 'fan-out already present'
 ROWS = 'ABCDEFGHJKLMNPRTU'; PITCH = 0.8; N = 17
-VIA_D, VIA_H, TRK = 0.45, 0.3, 0.1
+VIA_D, VIA_H, TRK = 0.45, 0.2, 0.1
 cx, cy = ToMM(u1.GetPosition().x), ToMM(u1.GetPosition().y)
 pads = {}
 for p in u1.Pads():
