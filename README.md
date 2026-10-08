@@ -355,6 +355,13 @@ bottom-side decoupling sits in a ring around the via field. The PWR layer carrie
 GND2 are solid. The fan-out vias and islands are not yet joined to anything, so DRC reports them as
 dangling or isolated until routing starts.
 
+Floor-plan search (2026-10-08, `tools/floorplan/`, see its README): a simulated-annealing placer for the
+macro parts scored on airwire length plus crossing airwires. Moving the SDRAM to another side of the MCU or
+the M.2 slot west came out equal or worse than the EVKB-style plan, so the sides stay. A polish with the
+floor plan locked moved the small blocks: U2 flash north of the MCU, J5 microSD on the north edge east of
+J7, U11/U12 level shifters east, J10 header turned horizontal south-east, U15 codec beside the jacks, J1/J11
+headers south-west. Macro rats-nest 5331 -> 4677 mm, crossings 1976 -> 1507, full rats-nest 4839 -> 4683 mm.
+
 GND pours on F.Cu and B.Cu (`tools/gnd_pours.py`: 0.25 mm clearance, 0.2 mm minimum width, islands
 removed, left unfilled until routing is done; a rule in `Nosh.kicad_dru` keeps any zone 0.5 mm from the
 USB and MIPI pairs so the pours do not lower their impedance). Still to do: routing (the SDRAM bus,
