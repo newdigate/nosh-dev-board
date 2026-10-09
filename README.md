@@ -362,6 +362,28 @@ floor plan locked moved the small blocks: U2 flash north of the MCU, J5 microSD 
 J7, U11/U12 level shifters east, J10 header turned horizontal south-east, U15 codec beside the jacks, J1/J11
 headers south-west. Macro rats-nest 5331 -> 4677 mm, crossings 1976 -> 1507, full rats-nest 4839 -> 4683 mm.
 
+### SDRAM routing plan (2026-10-09)
+
+KiCad net classes have no layer preference, so the plan is enforced by rules and geometry: `Nosh.kicad_dru`
+forbids tracks on GND1, PWR and GND2 for every net, the optimiser keeps the SDRAM corridors clear of parts
+(top: x 60-64 between U9 and the BGA; bottom: x 29-65 under both chips), U10 sits at x 37.5 so the pad-to-pad
+gap to U9 is 3.0 mm, room for two via columns, and a Cmts.User note on the board repeats the plan.
+
+Both chips are rot 0, so pins 1-27 are on each chip's west side and 28-54 on its east side. U9's east side
+faces the MCU, its west side faces U10 across the gap, and U10's west side is the far edge.
+
+| Layer | Carries | Route |
+|---|---|---|
+| F.Cu | BGA outer-ring escapes; D8-D15 + DM1 (balls D1 D2 E1 E2 E3 F1 G1 H1 J1) | straight west to U9 east pins 42-53, 7-11 mm, no vias; pad stubs from the via columns |
+| SIG | A4-A12, CKE, CLK (east-side group, U9/U10 pins 29-38) and WE CAS RAS CS0 BA0 BA1 A10 A0-A3 (west-side group, pins 16-26) | east-west only: MCU -> U9 east pads -> under U9 -> gap vias -> U10 east; MCU -> gap vias -> U9 west pads -> under U10 -> far-west vias -> U10 west |
+| B.Cu | D0-D7 + DM0 (to U9 west, pins 2-15); D24-D31 + DM3 (to U10 east, pins 42-53); D16-D23 + DM2 (to U10 west, pins 2-15) | from the fan-out vias west under U9 (and U10 for the far lane) to the via columns, then short top stubs onto the pads; references GND2 across 0.1 mm |
+
+Via columns: in the gap at x about 44.6 and 46.4 (one column per direction), far west at x about 30.4; one
+via per 0.8 mm pitch. Series clock resistors R41/R42 belong between the BGA and U9 on the top.
+Targets: every net within +-5 mm of its clock branch (U9 nets to U9_CLK, U10 nets to U10_CLK), nothing over
+60 mm, at most two vias per net, daisy-chain branches under 10 mm. The D8-D15 lane will need serpentines on
+the top to reach the clock length; the far-west lanes are the longest and set the clock length.
+
 GND pours on F.Cu and B.Cu (`tools/gnd_pours.py`: 0.25 mm clearance, 0.2 mm minimum width, islands
 removed, left unfilled until routing is done; a rule in `Nosh.kicad_dru` keeps any zone 0.5 mm from the
 USB and MIPI pairs so the pours do not lower their impedance). Still to do: routing (the SDRAM bus,

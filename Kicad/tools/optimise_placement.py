@@ -31,7 +31,8 @@ for ref, (x, y) in (('L3', (136.4, 35.7)), ('L4', (136.4, 50.0))):
     px = {p.GetNumber(): ToMM(p.GetPosition().x) for p in f.Pads()}
     if px['2'] > px['1']: f.SetOrientationDegrees(180)          # pins 2/3 must be the west end
 put('U4', 141.9, 35.35, 0, True); put('U5', 141.9, 49.25, 0, True)
-put('U2', 78.5, 24.05, -90, False)                                     # flash east of the MIPI corridor
+put('U2', 78.5, 24.05, -90, False)
+put('U10', 37.5, 42.0, 0, False)                                       # 3 mm pad-to-pad gap to U9 for two via columns                                     # flash east of the MIPI corridor
 ROT_ONLY = {'U2', 'U11', 'U12', 'U15', 'U6', 'U7', 'U8', 'U3', 'L1', 'L5'}
 FREE = [r for r in fps if r not in FIXED and r not in ROT_ONLY]
 
@@ -54,8 +55,8 @@ KEEP = [(x - 2.5, y - 2.5, x + 2.5, y + 2.5) for (x, y) in ((3.3235, 4.4475), (1
 VIAFIELD = (cx - 7.2, cy - 7.2, cx + 7.2, cy + 7.2)       # bottom side: fan-out vias
 M2CARD = (112.0, 8.0, 138.0, 42.0)                         # top: under the M.2 card, no test points
 MCUZONE = (cx - 12.0, cy - 12.0, cx + 12.0, cy + 12.0)     # top: BGA escape zone, no test points
-CORRIDOR = {'top': [(61.45, 6.0, 75.45, 34.6), (79.5, 35.5, 85.5, 40.5), (137.9, 33.0, 147.4, 38.5), (137.9, 47.5, 145.9, 52.5)],   # MIPI run; USB via landings
-            'bottom': [(61.45, 5.0, 68.45, 19.0), (79.5, 33.0, 148.9, 52.5)]}              # MIPI vias/J7 approach; USB run to the connectors
+CORRIDOR = {'top': [(61.45, 6.0, 75.45, 34.6), (79.5, 35.5, 85.5, 40.5), (137.9, 33.0, 147.4, 38.5), (137.9, 47.5, 145.9, 52.5), (60.0, 29.0, 64.0, 55.0)],   # MIPI run; USB via landings; SDRAM escape between U9 and the BGA
+            'bottom': [(61.45, 5.0, 68.45, 19.0), (79.5, 33.0, 148.9, 52.5), (29.0, 29.0, 65.0, 55.0)]}              # MIPI vias/J7 approach; USB run; SDRAM data lanes on the bottom under U9/U10              # MIPI vias/J7 approach; USB run to the connectors
 def free(rect, s, ref, is_tp=False):
     x0, y0, x1, y1 = rect
     if x0 < 1.0 or y0 < 1.0 or x1 > W - 1.0 or y1 > H - 1.0: return False

@@ -319,3 +319,18 @@
 	(condition "A.Type == 'Track' && B.Type == 'Via' && B.Hole < 0.3mm && A.Net != B.Net")
 	(constraint clearance (min 0.1mm))
 )
+
+# The plane layers stay planes: no tracks on GND1, PWR or GND2 for any net (the SDRAM bus goes on SIG and B.Cu,
+# the outer layers carry escapes, stubs and the impedance-controlled pairs).
+(rule "Nosh: No tracks on the plane layers"
+	(layer "GND1")
+	(constraint disallow track)
+)
+(rule "Nosh: No tracks on the plane layers (PWR)"
+	(layer "PWR")
+	(constraint disallow track)
+)
+(rule "Nosh: No tracks on the plane layers (GND2)"
+	(layer "GND2")
+	(constraint disallow track)
+)
