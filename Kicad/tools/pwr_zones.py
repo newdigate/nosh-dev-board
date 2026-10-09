@@ -14,8 +14,8 @@ def zone(name, net, rect, prio, layer=pcbnew.In3_Cu):
     ol = z.Outline(); ol.NewOutline()
     for x, y in ((x0, y0), (x1, y0), (x1, y1), (x0, y1)): ol.Append(FromMM(x), FromMM(y))
     z.SetZoneName(name); board.Add(z); return z
-zone('PWR_3V3', '+3V3', (0.5, 0.5, 154.5, 83.0), 0)                 # base plane
-zone('PWR_5V', '+5V', (0.5, 50.0, 40.0, 83.0), 1)                  # supply corner: jack, fuse, buck input
+zone('PWR_3V3', '+3V3', (0.5, 0.5, 153.4, 81.3), 0)                 # base plane
+zone('PWR_5V', '+5V', (0.5, 50.0, 40.0, 81.3), 1)                  # supply corner: jack, fuse, buck input
 zone('PWR_SDRAM_3V3', 'SDRAM_3V3', (29.0, 28.0, 62.5, 57.0), 1)    # under U9/U10
 zone('PWR_WL_3V3', 'WL_3V3', (110.0, 6.0, 140.0, 48.0), 1)         # M.2 socket and card
 zone('PWR_VDD_SOC', 'VDD_SOC_IN', (66.5, 36.5, 77.5, 47.5), 2)     # MCU core balls, inside the fan-out field

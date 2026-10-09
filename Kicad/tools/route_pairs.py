@@ -1,4 +1,4 @@
-"""Stage 3a (run with KiCad's bundled python3; edits Kicad/Nosh.kicad_pcb in place, back it up first): hand-routed differential pairs (MIPI DSI x3, USB x2). Edits the saved board in place. Idempotent-guarded."""
+"""Stage 3a (geometry for the 153.9 x 81.8 outline of 2026-10-09) (run with KiCad's bundled python3; edits Kicad/Nosh.kicad_pcb in place, back it up first): hand-routed differential pairs (MIPI DSI x3, USB x2). Edits the saved board in place. Idempotent-guarded."""
 import math, collections, pcbnew
 from pcbnew import FromMM, ToMM, VECTOR2I
 import os
@@ -53,9 +53,9 @@ def bump(pts, ya, yb, h):
 
 # ------------------------------------------------------------------ MIPI DSI: U1 rows A (N) / B (P), north, to J7 on the back
 # pair, N ball, P ball, channel x for P between row-A balls, top run x (pair centre), jog start y, bottom run x, via y, J7 pads (N, P), bump y-range
-MIPI = [('D0', 'A8', 'B8', 71.6, 71.32, 32.0, 63.70, 12.0, '5', '6', (18.0, 16.0)),
-        ('CLK', 'A9', 'B9', 72.4, 72.12, 26.0, 66.70, 18.0, '11', '12', (30.0, 28.0)),
-        ('D1', 'A10', 'B10', 73.2, 72.92, 18.0, 65.20, 9.0, '8', '9', (24.0, 22.0))]
+MIPI = [('D0', 'A8', 'B8', 71.6, 71.32, 32.0, 63.15, 12.0, '5', '6', (18.0, 16.0)),
+        ('CLK', 'A9', 'B9', 72.4, 72.12, 26.0, 66.15, 18.0, '11', '12', (30.0, 28.0)),
+        ('D1', 'A10', 'B10', 73.2, 72.92, 18.0, 64.65, 9.0, '8', '9', (24.0, 22.0))]
 HALF = 0.12                                              # 0.24 mm pitch: 0.11 track, 0.13 gap
 for name, bn, bp, chan, xc, yjog, xb, yvia, jn, jp, (ba, bb) in MIPI:
     nN, nP = f'MIPI_DSI_{name}N', f'MIPI_DSI_{name}P'
@@ -92,16 +92,16 @@ c4dp, c4dn = P('L4', '1'), P('L4', '4')                  # (138.35, 49.6), (138.
 e5dp, e5dn = P('U5', '2'), P('U5', '1')                  # (142.24, 49.25), (142.24, 49.75)
 poly(B, [c4dp, (c4dp[0] + 0.7, c4dp[1]), (c4dp[0] + 0.7 + (c4dp[1] - e5dp[1]), e5dp[1]), e5dp], 'USB1_CON_DP', W_USB)
 poly(B, [c4dn, (c4dn[0] + 0.9, c4dn[1]), (c4dn[0] + 0.9 + (c4dn[1] - e5dn[1]), e5dn[1]), e5dn], 'USB1_CON_DN', W_USB)
-via(141.3, e5dp[1], 'USB1_CON_DP'); via(140.3, e5dn[1], 'USB1_CON_DN')
+via(140.2, e5dp[1], 'USB1_CON_DP'); via(139.2, e5dn[1], 'USB1_CON_DN')
 # top: straight to J3 B6 (DP, y 49.25) and A7 (DN, y 49.75); A6 / B7 joined through vias and short bottom links
 j = lambda n: P('J3', n)
 pad_end = lambda n: (j(n)[0] - 0.575, j(n)[1])
-poly(F, [(141.3, e5dp[1]), pad_end('B6')], 'USB1_CON_DP', W_USB)
-poly(F, [(140.3, e5dn[1]), pad_end('A7')], 'USB1_CON_DN', W_USB)
-poly(F, [pad_end('A6'), (145.8, j('A6')[1])], 'USB1_CON_DP', W_USB); via(145.8, j('A6')[1], 'USB1_CON_DP'); via(145.8, j('B6')[1], 'USB1_CON_DP')
-poly(B, [(145.8, j('A6')[1]), (145.8, j('B6')[1])], 'USB1_CON_DP', W_USB)
-poly(F, [pad_end('B7'), (145.0, j('B7')[1])], 'USB1_CON_DN', W_USB); via(145.0, j('B7')[1], 'USB1_CON_DN'); via(145.0, j('A7')[1], 'USB1_CON_DN')
-poly(B, [(145.0, j('B7')[1]), (145.0, j('A7')[1])], 'USB1_CON_DN', W_USB)
+poly(F, [(140.2, e5dp[1]), pad_end('B6')], 'USB1_CON_DP', W_USB)
+poly(F, [(139.2, e5dn[1]), pad_end('A7')], 'USB1_CON_DN', W_USB)
+poly(F, [pad_end('A6'), (144.7, j('A6')[1])], 'USB1_CON_DP', W_USB); via(144.7, j('A6')[1], 'USB1_CON_DP'); via(144.7, j('B6')[1], 'USB1_CON_DP')
+poly(B, [(144.7, j('A6')[1]), (144.7, j('B6')[1])], 'USB1_CON_DP', W_USB)
+poly(F, [pad_end('B7'), (143.9, j('B7')[1])], 'USB1_CON_DN', W_USB); via(143.9, j('B7')[1], 'USB1_CON_DN'); via(143.9, j('A7')[1], 'USB1_CON_DN')
+poly(B, [(143.9, j('B7')[1]), (143.9, j('A7')[1])], 'USB1_CON_DN', W_USB)
 
 # ------------------------------------------------------------------ USB2: U1 C17 (DP) / C16 (DN) -> bottom -> L3 -> U4 -> J2
 dp, dn = P('U1', 'C17'), P('U1', 'C16')                  # (78.4, 37.2), (77.6, 37.2)
@@ -117,11 +117,11 @@ c3dp, c3dn = P('L3', '1'), P('L3', '4')                  # (138.35, 35.3), (138.
 e4dp, e4dn = P('U4', '2'), P('U4', '1')                  # (142.24, 35.35), (142.24, 35.85)
 poly(B, [c3dp, (c3dp[0] + 0.7, c3dp[1]), (c3dp[0] + 0.7 + abs(c3dp[1] - e4dp[1]), e4dp[1]), e4dp], 'USB2_CON_DP', W_USB)
 poly(B, [c3dn, (c3dn[0] + 0.9, c3dn[1]), (c3dn[0] + 0.9 + abs(c3dn[1] - e4dn[1]), e4dn[1]), e4dn], 'USB2_CON_DN', W_USB)
-via(140.2, e4dp[1], 'USB2_CON_DP'); via(141.4, e4dn[1], 'USB2_CON_DN')
+via(139.1, e4dp[1], 'USB2_CON_DP'); via(140.3, e4dn[1], 'USB2_CON_DN')
 # top to J2 pads 2 (DN, north) / 3 (DP, south): DP dives south first, DN goes straight to its pad
 j2dn, j2dp = P('J2', '2'), P('J2', '3')                  # (148.73, 35.35), (148.73, 36.0); pads 1.35 long in x -> west end 148.055
-poly(F, [(140.2, e4dp[1]), (141.4, e4dp[1] + 1.2), (146.5, e4dp[1] + 1.2), (147.2, j2dp[1]), (j2dp[0] - 0.675, j2dp[1])], 'USB2_CON_DP', W_USB)
-poly(F, [(141.4, e4dn[1]), (147.0, j2dn[1]), (j2dn[0] - 0.675, j2dn[1])], 'USB2_CON_DN', W_USB)
+poly(F, [(139.1, e4dp[1]), (140.3, e4dp[1] + 1.2), (145.4, e4dp[1] + 1.2), (146.1, j2dp[1]), (j2dp[0] - 0.675, j2dp[1])], 'USB2_CON_DP', W_USB)
+poly(F, [(140.3, e4dn[1]), (145.9, j2dn[1]), (j2dn[0] - 0.675, j2dn[1])], 'USB2_CON_DN', W_USB)
 
 pcbnew.ZONE_FILLER(board).Fill(board.Zones())
 pcbnew.SaveBoard(K + 'Nosh.kicad_pcb', board)

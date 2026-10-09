@@ -8,7 +8,7 @@ K = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..') + '/'
 board = pcbnew.LoadBoard(K + 'Nosh.kicad_pcb')
 have = {z.GetZoneName() for z in board.Zones()}
 gnd = board.GetNetInfo().NetsByName()['GND']
-W, H, INSET = 155.0, 83.5, 0.5
+W, H, INSET = 153.9, 81.8, 0.5
 for name, layer in (('GND_F', pcbnew.F_Cu), ('GND_B', pcbnew.B_Cu)):
     if name in have: print(name, 'exists, skipped'); continue
     z = pcbnew.ZONE(board); z.SetZoneName(name); z.SetLayer(layer); z.SetNet(gnd); z.SetAssignedPriority(0)

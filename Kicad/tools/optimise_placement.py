@@ -1,26 +1,37 @@
-"""Placement optimisation on the saved board (edits Kicad/Nosh.kicad_pcb in place; back it up first).
-Run with KiCad's bundled python3 (pcbnew): .../Python.framework/Versions/Current/bin/python3 Kicad/tools/optimise_placement.py
-
+"""Stage 2d (run with KiCad's bundled python3; edits Kicad/Nosh.kicad_pcb in place, back it up first): placement optimisation on the saved board.
+Pins the USB chokes/ESD arrays on the bottom in line with the USB pairs and U2 beside the MIPI corridor, keeps routing corridors clear,
 - test points move next to the net they probe
 - free parts are re-placed near the centroid of their connections, trying 4 rotations, with wider spacing
 - improvement sweeps: rotate / nudge each free part if its rats-nest length drops
 Rats-nest length of a part = sum over its pads on non-plane nets of the distance to the nearest other pad of that net.
 """
-import math, collections, json, sys
+import os, math, collections, json, sys
 import pcbnew
 from pcbnew import FromMM, ToMM, VECTOR2I
 
-import os, tempfile
 K = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..') + '/'
-SCR = tempfile.mkdtemp() + '/'
-W, H = 155.0, 83.5
+SCR = K + 'tools/'
+W, H = 153.9, 81.8
 GAP = 0.5                                   # courtyard to courtyard
 PLANES = {'GND', '+3V3', 'SDRAM_3V3', 'WL_3V3', 'VDD_SOC_IN', '+5V'}
 board = pcbnew.LoadBoard(K + 'Nosh.kicad_pcb')
 fps = {f.GetReference(): f for f in board.GetFootprints()}
 u1 = fps['U1']; cx, cy = ToMM(u1.GetPosition().x), ToMM(u1.GetPosition().y)
+_rm = [t for t in board.GetTracks() if not (abs(ToMM(t.GetPosition().x) - cx) < 7.0 and abs(ToMM(t.GetPosition().y) - cy) < 7.0)]
+for t in _rm: board.Remove(t)
+print('removed stale stitching items:', len(_rm))
 
-FIXED = {r for r in fps if r.startswith(('J', 'SW', 'H', 'FID')) or r in ('U1', 'U9', 'U10', 'Y1', 'Y2')}
+FIXED = {r for r in fps if r.startswith(('J', 'SW', 'H', 'FID')) or r in ('U1', 'U9', 'U10', 'Y1', 'Y2', 'L3', 'L4', 'U4', 'U5', 'U2')}
+# USB chokes and ESD arrays on the bottom, in line with the pairs, MCU-side choke pins (2, 3) facing west
+def put(ref, x, y, rot, back):
+    f = fps[ref]; f.SetPosition(VECTOR2I(FromMM(x), FromMM(y))); f.SetOrientationDegrees(rot)
+    if back and f.GetLayer() != pcbnew.B_Cu: f.Flip(f.GetPosition(), pcbnew.FLIP_DIRECTION_TOP_BOTTOM)
+for ref, (x, y) in (('L3', (136.4, 35.7)), ('L4', (136.4, 50.0))):
+    put(ref, x, y, 0, True); f = fps[ref]
+    px = {p.GetNumber(): ToMM(p.GetPosition().x) for p in f.Pads()}
+    if px['2'] > px['1']: f.SetOrientationDegrees(180)          # pins 2/3 must be the west end
+put('U4', 141.9, 35.35, 0, True); put('U5', 141.9, 49.25, 0, True)
+put('U2', 78.5, 24.05, -90, False)                                     # flash east of the MIPI corridor
 ROT_ONLY = {'U2', 'U11', 'U12', 'U15', 'U6', 'U7', 'U8', 'U3', 'L1', 'L5'}
 FREE = [r for r in fps if r not in FIXED and r not in ROT_ONLY]
 
@@ -39,14 +50,16 @@ def occupy(f):
     for s in (('top', 'bottom') if tht(f) else (side(f),)): occ[s][f.GetReference()] = r
 def release(f):
     for s in occ: occ[s].pop(f.GetReference(), None)
-KEEP = [(x - 2.5, y - 2.5, x + 2.5, y + 2.5) for (x, y) in ((3.8735, 5.2975), (151.1265, 5.2975), (151.1265, 78.2025), (3.8735, 78.2025))]
+KEEP = [(x - 2.5, y - 2.5, x + 2.5, y + 2.5) for (x, y) in ((3.3235, 4.4475), (150.5765, 4.4475), (150.5765, 77.3525), (3.3235, 77.3525))]
 VIAFIELD = (cx - 7.2, cy - 7.2, cx + 7.2, cy + 7.2)       # bottom side: fan-out vias
 M2CARD = (112.0, 8.0, 138.0, 42.0)                         # top: under the M.2 card, no test points
 MCUZONE = (cx - 12.0, cy - 12.0, cx + 12.0, cy + 12.0)     # top: BGA escape zone, no test points
+CORRIDOR = {'top': [(61.45, 6.0, 75.45, 34.6), (79.5, 35.5, 85.5, 40.5), (137.9, 33.0, 147.4, 38.5), (137.9, 47.5, 145.9, 52.5)],   # MIPI run; USB via landings
+            'bottom': [(61.45, 5.0, 68.45, 19.0), (79.5, 33.0, 148.9, 52.5)]}              # MIPI vias/J7 approach; USB run to the connectors
 def free(rect, s, ref, is_tp=False):
     x0, y0, x1, y1 = rect
     if x0 < 1.0 or y0 < 1.0 or x1 > W - 1.0 or y1 > H - 1.0: return False
-    for a0, b0, a1, b1 in KEEP + ([VIAFIELD] if s == 'bottom' else []) + ([M2CARD, MCUZONE] if (is_tp and s == 'top') else []):
+    for a0, b0, a1, b1 in KEEP + CORRIDOR[s] + ([VIAFIELD] if s == 'bottom' else []) + ([M2CARD, MCUZONE] if (is_tp and s == 'top') else []):
         if x0 < a1 and x1 > a0 and y0 < b1 and y1 > b0: return False
     for r2, (a0, b0, a1, b1) in occ[s].items():
         if r2 == ref: continue

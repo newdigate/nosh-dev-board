@@ -330,7 +330,7 @@ zones. Rerunning it discards manual board edits, so from here on edit the board 
 
 | Item | Value |
 |---|---|
-| Outline | 155 × 83.5 mm, 1.5 mm corner radius; the RK055 carrier size as measured, to be confirmed from NXP's drawing |
+| Outline | 153.9 × 81.8 mm, square corners: the RK055 carrier's measured size (2026-10-09; `tools/shrink_outline.py` took it there from the earlier 155 × 83.5); the holes sit centred on the EVKB 147.253 × 72.905 mm pattern, which matches the carrier's holes (centres about 3 / 4 mm from the carrier edges). The carrier's FPC cable is 20.4 mm wide with its centre about 6 mm west of the carrier's centre line (user measurement 2026-10-09: 73 mm from the left carrier edge to the cable's left edge); J7 at x 70.65 is 6.3 mm west of Nosh's centre line, so the connectors line up to within the measurement error |
 | Origin | north-west corner (KiCad y down). North = display connector edge = EVKB LAN edge |
 | Holes H1–H4 | 147.253 × 72.905 mm pattern, centred on the outline (EVKB SS1–SS4) |
 | Layers | F.Cu signal, In1 GND1, In2 SIG, In3 PWR, In4 GND2, B.Cu signal (EVKB order) |
