@@ -21,18 +21,22 @@ _rm = [t for t in board.GetTracks() if not (abs(ToMM(t.GetPosition().x) - cx) < 
 for t in _rm: board.Remove(t)
 print('removed stale stitching items:', len(_rm))
 
-FIXED = {r for r in fps if r.startswith(('J', 'SW', 'H', 'FID')) or r in ('U1', 'U9', 'U10', 'Y1', 'Y2', 'L3', 'L4', 'U4', 'U5', 'U2')}
+FIXED = {r for r in fps if r.startswith(('J', 'SW', 'H', 'FID')) or r in ('U1', 'U9', 'U10', 'Y1', 'Y2', 'L3', 'L4', 'U4', 'U5', 'U2', 'R41', 'R42')}
 # USB chokes and ESD arrays on the bottom, in line with the pairs, MCU-side choke pins (2, 3) facing west
 def put(ref, x, y, rot, back):
     f = fps[ref]; f.SetPosition(VECTOR2I(FromMM(x), FromMM(y))); f.SetOrientationDegrees(rot)
-    if back and f.GetLayer() != pcbnew.B_Cu: f.Flip(f.GetPosition(), pcbnew.FLIP_DIRECTION_TOP_BOTTOM)
+    if (f.GetLayer() == pcbnew.B_Cu) != back: f.Flip(f.GetPosition(), pcbnew.FLIP_DIRECTION_TOP_BOTTOM)   # either way
+    f.SetOrientationDegrees(rot)
 for ref, (x, y) in (('L3', (136.4, 35.7)), ('L4', (136.4, 50.0))):
     put(ref, x, y, 0, True); f = fps[ref]
     px = {p.GetNumber(): ToMM(p.GetPosition().x) for p in f.Pads()}
     if px['2'] > px['1']: f.SetOrientationDegrees(180)          # pins 2/3 must be the west end
 put('U4', 141.9, 35.35, 0, True); put('U5', 141.9, 49.25, 0, True)
 put('U2', 78.5, 24.05, -90, False)
-put('U10', 37.5, 42.0, 0, False)                                       # 3 mm pad-to-pad gap to U9 for two via columns                                     # flash east of the MIPI corridor
+# SDRAM as on the EVKB (U13/U25 relative to U19): both TSOPs rot 270 (pins 1-27 on the north row, pin 1 at the east end),
+# stacked north-south 32 mm west of the MCU; D0-D15 chip (U9) north, D16-D31 chip (U10) south; the address bus runs in the channel between
+put('U9', 40.100, 24.850, -90, False); put('U10', 40.100, 48.850, -90, False)     # EVKB offsets rounded onto the 0.05 mm grid (pins at 29.70 + 0.8k)
+put('R41', 54.0, 36.4, 180, False); put('R42', 54.0, 38.2, 180, False)  # clock series resistors at the channel's east end, between the two data bundles (pad 1 east)
 ROT_ONLY = {'U2', 'U11', 'U12', 'U15', 'U6', 'U7', 'U8', 'U3', 'L1', 'L5'}
 FREE = [r for r in fps if r not in FIXED and r not in ROT_ONLY]
 
@@ -55,8 +59,8 @@ KEEP = [(x - 2.5, y - 2.5, x + 2.5, y + 2.5) for (x, y) in ((3.3235, 4.4475), (1
 VIAFIELD = (cx - 7.2, cy - 7.2, cx + 7.2, cy + 7.2)       # bottom side: fan-out vias
 M2CARD = (112.0, 8.0, 138.0, 42.0)                         # top: under the M.2 card, no test points
 MCUZONE = (cx - 12.0, cy - 12.0, cx + 12.0, cy + 12.0)     # top: BGA escape zone, no test points
-CORRIDOR = {'top': [(61.45, 6.0, 75.45, 34.6), (79.5, 35.5, 85.5, 40.5), (137.9, 33.0, 147.4, 38.5), (137.9, 47.5, 145.9, 52.5), (60.0, 29.0, 64.0, 55.0)],   # MIPI run; USB via landings; SDRAM escape between U9 and the BGA
-            'bottom': [(61.45, 5.0, 68.45, 19.0), (79.5, 33.0, 148.9, 52.5), (29.0, 29.0, 65.0, 55.0)]}              # MIPI vias/J7 approach; USB run; SDRAM data lanes on the bottom under U9/U10              # MIPI vias/J7 approach; USB run to the connectors
+CORRIDOR = {'top': [(61.45, 6.0, 75.45, 34.6), (79.5, 35.5, 85.5, 40.5), (137.9, 33.0, 147.4, 38.5), (137.9, 47.5, 145.9, 52.5), (28.0, 31.4, 52.5, 42.4), (51.6, 15.5, 64.0, 57.0), (28.5, 16.9, 52.0, 18.4), (28.5, 55.4, 52.0, 56.6)],   # MIPI run; USB via landings; SDRAM channel, SDRAM approach from the BGA, via strips beside both outer pin rows
+            'bottom': [(61.45, 5.0, 68.45, 19.0), (79.5, 33.0, 148.9, 52.5), (28.5, 16.9, 65.0, 56.6)]}                                                         # SDRAM: address links and outer data lanes under the chips, bottom approach              # MIPI vias/J7 approach; USB run; SDRAM data lanes on the bottom under U9/U10              # MIPI vias/J7 approach; USB run to the connectors
 def free(rect, s, ref, is_tp=False):
     x0, y0, x1, y1 = rect
     if x0 < 1.0 or y0 < 1.0 or x1 > W - 1.0 or y1 > H - 1.0: return False

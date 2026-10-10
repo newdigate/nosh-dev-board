@@ -351,7 +351,7 @@ into `Nosh.kicad_pro` (KiCad overwrites that file whenever it saves the project,
 before running it). The MCU has a dog-bone fan-out: 145 vias (0.45 mm pad on a 0.2 mm hole, the EVKB via; JLCPCB charges a small per-board extra for holes under 0.3 mm, but the 0.2 mm hole leaves 0.2 mm for an inner-layer track between two fan-out vias on the 0.8 mm pitch against 0.1 mm with the free 0.3 mm hole; everything else uses the free 0.45/0.3) for
 every connected ball from the third ring inwards, the outer two rings escape on the top layer, and the
 bottom-side decoupling sits in a ring around the via field. The PWR layer carries a +3V3 plane with
-+5V (supply corner), SDRAM_3V3 (under U9/U10), WL_3V3 (M.2) and VDD_SOC_IN (MCU core) islands; GND1 and
++5V (supply corner, y >= 58.5), SDRAM_3V3 (x 26-54.5, y 15-58 under U9/U10), WL_3V3 (M.2) and VDD_SOC_IN (MCU core) islands; GND1 and
 GND2 are solid. The fan-out vias and islands are not yet joined to anything, so DRC reports them as
 dangling or isolated until routing starts.
 
@@ -362,27 +362,40 @@ floor plan locked moved the small blocks: U2 flash north of the MCU, J5 microSD 
 J7, U11/U12 level shifters east, J10 header turned horizontal south-east, U15 codec beside the jacks, J1/J11
 headers south-west. Macro rats-nest 5331 -> 4677 mm, crossings 1976 -> 1507, full rats-nest 4839 -> 4683 mm.
 
-### SDRAM routing plan (2026-10-09)
+### SDRAM placement and routing plan (2026-10-10, EVKB arrangement)
 
-KiCad net classes have no layer preference, so the plan is enforced by rules and geometry: `Nosh.kicad_dru`
-forbids tracks on GND1, PWR and GND2 for every net, the optimiser keeps the SDRAM corridors clear of parts
-(top: x 60-64 between U9 and the BGA; bottom: x 29-65 under both chips), U10 sits at x 37.5 so the pad-to-pad
-gap to U9 is 3.0 mm, room for two via columns, and a Cmts.User note on the board repeats the plan.
+The two TSOPs sit as the EVKB's U13/U25 do relative to its MCU (positions taken from the EVKB IPC-D-356 and ODB++):
+both rot 270, so pins 1-27 are on each chip's north row with pin 1 at the east end, stacked north-south 32 mm west of
+the MCU. U9 (D0-D15) is at (40.123, 24.855), U10 (D16-D31) at (40.123, 48.858). Pin n of U9 sits at the same x as
+pin n of U10, and the 11 mm channel between the chips faces U9's south row and U10's north row. An earlier
+side-by-side arrangement left about 40 connections to change layer in a 3 mm gap between the chips; a grid router
+could not untangle it, which is what prompted the change.
 
-Both chips are rot 0, so pins 1-27 are on each chip's west side and 28-54 on its east side. U9's east side
-faces the MCU, its west side faces U10 across the gap, and U10's west side is the far edge.
-
-| Layer | Carries | Route |
+| Group | Pins | Route |
 |---|---|---|
-| F.Cu | BGA outer-ring escapes; D8-D15 + DM1 (balls D1 D2 E1 E2 E3 F1 G1 H1 J1) | straight west to U9 east pins 42-53, 7-11 mm, no vias; pad stubs from the via columns |
-| SIG | A4-A12, CKE, CLK (east-side group, U9/U10 pins 29-38) and WE CAS RAS CS0 BA0 BA1 A10 A0-A3 (west-side group, pins 16-26) | east-west only: MCU -> U9 east pads -> under U9 -> gap vias -> U10 east; MCU -> gap vias -> U9 west pads -> under U10 -> far-west vias -> U10 west |
-| B.Cu | D0-D7 + DM0 (to U9 west, pins 2-15); D24-D31 + DM3 (to U10 east, pins 42-53); D16-D23 + DM2 (to U10 west, pins 2-15) | from the fan-out vias west under U9 (and U10 for the far lane) to the via columns, then short top stubs onto the pads; references GND2 across 0.1 mm |
+| Address A: WE CAS RAS CS0 BA0 BA1 A10 A0-A3 | 16-26, north rows (outer on U9, channel side on U10) | trunk on SIG along the channel, one via onto a straight bottom-layer link at the pin's x that joins both chips |
+| Address B: A4-A12, CKE | 29-37, south rows (channel side on U9, outer on U10) | the same; the via and link sit 0.4 mm east of the pin so A and B links interleave across the channel |
+| D8-D15, DM1 | U9 south row (channel) | top layer, straight into the pads |
+| D16-D23, DM2 | U10 north row (channel) | top layer |
+| D0-D7, DM0 | U9 north row (outer) | bottom layer under U9's east half to a via beside the pad |
+| D24-D31, DM3 | U10 south row (outer) | bottom layer under U10's east half to a via beside the pad |
+| Clock | J3 -> R41 / R42 at the channel's east end -> pin 38 of each chip | top / SIG |
 
-Via columns: in the gap at x about 44.6 and 46.4 (one column per direction), far west at x about 30.4; one
-via per 0.8 mm pitch. Series clock resistors R41/R42 belong between the BGA and U9 on the top.
-Targets: every net within +-5 mm of its clock branch (U9 nets to U9_CLK, U10 nets to U10_CLK), nothing over
-60 mm, at most two vias per net, daisy-chain branches under 10 mm. The D8-D15 lane will need serpentines on
-the top to reach the clock length; the far-west lanes are the longest and set the clock length.
+Routed 2026-10-10 by `tools/busrouter/` (C search core, negotiated congestion, many seeds in parallel; see its README):
+all 60 SEMC nets including DQS, DRC clean. Length matching uses per-pin flight length (`buslength.py`: copper path
+from the MCU ball to each chip pin, 0.8 mm per via) against the clock at the same chip. The target is +-25 mm
+(about 170 ps; the SDR timing margin at 166 MHz is roughly 1 ns, so this is conservative). Address trunks join their
+chip-to-chip link in the half of the channel that balances the two pins; the clock branches were lengthened with
+meanders to the centre of each chip's window (U9 50.6 mm, U10 48.5 mm), a few short data lines were meandered up
+and D16 was routed through a waypoint. Result: every pin of both chips is within -24.3..+24.5 mm of its clock;
+the longest pin is 75 mm. To keep the bus out of the BGA interior, the router fences it off except two top-layer exit
+lanes north of row A (west of x 68.6) and a bottom window to C145.
+
+`tools/sdram_prebuild.py` builds the fixed chip-side geometry: the address links, the vias beside the outer data
+pins, and a via beside every power pin, all on the side away from the chip body (86 vias, 124 segments, DRC clean).
+The optimiser keeps the channel, the approach from the BGA, both via strips and the bottom under the chips free of
+parts. Rules in `Nosh.kicad_dru` forbid tracks on GND1, PWR and GND2. Targets: every net within +-5 mm of its chip's
+clock branch, nothing over 60 mm.
 
 GND pours on F.Cu and B.Cu (`tools/gnd_pours.py`: 0.25 mm clearance, 0.2 mm minimum width, islands
 removed, left unfilled until routing is done; a rule in `Nosh.kicad_dru` keeps any zone 0.5 mm from the

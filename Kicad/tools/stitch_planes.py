@@ -8,7 +8,7 @@ board = pcbnew.LoadBoard(K + 'Nosh.kicad_pcb')
 VIA_D, VIA_H, TRK, CLR, HOLE_CLR = 0.45, 0.3, 0.15, 0.13, 0.2
 W, H = 153.9, 81.8
 # plane net -> region (x0, y0, x1, y1) where a zone of that net exists
-PLANES = {'GND': (0, 0, W, H), '+3V3': (0, 0, W, H), '+5V': (0.5, 50.0, 40.0, 81.3), 'SDRAM_3V3': (29.0, 28.0, 62.5, 57.0),
+PLANES = {'GND': (0, 0, W, H), '+3V3': (0, 0, W, H), '+5V': (0.5, 58.5, 40.0, 81.3), 'SDRAM_3V3': (26.0, 15.0, 54.5, 58.0),
           'WL_3V3': (110.0, 6.0, 140.0, 48.0), 'VDD_SOC_IN': (66.5, 36.5, 77.5, 47.5)}
 nets = {n.GetNetname(): n for n in board.GetNetInfo().NetsByName().values()}
 

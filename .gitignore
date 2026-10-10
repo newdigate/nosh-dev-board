@@ -11,3 +11,4 @@ _autosave-*
 # VS Code Local History
 .history/
 Kicad/tools/floorplan/work/
+Kicad/tools/busrouter/libastar.dylib
