@@ -44,7 +44,7 @@ for f in board.GetFootprints():
     fx, fy = ToMM(f.GetPosition().x), ToMM(f.GetPosition().y)
     for p in f.Pads():
         net = p.GetNetname()
-        if net not in PLANES or p.GetDrillSize().x > 0 or f.GetReference() == 'U1': continue
+        if net not in PLANES or p.GetDrillSize().x > 0 or f.GetReference() in ('U1', 'U9', 'U10'): continue      # U1: fan-out; U9/U10: power vias from sdram_prebuild.py
         px, py = ToMM(p.GetPosition().x), ToMM(p.GetPosition().y)
         x0, y0, x1, y1 = PLANES[net]
         if not (x0 <= px <= x1 and y0 <= py <= y1): skipped['no plane here'] += 1; continue
@@ -68,6 +68,8 @@ for f in board.GetFootprints():
             if placed: break
         if not placed: skipped['no room: ' + f.GetReference()] += 1
 pcbnew.ZONE_FILLER(board).Fill(board.Zones())
+for z in board.Zones():
+    if z.GetZoneName() in ('GND_F', 'GND_B'): z.UnFill(); z.SetIsFilled(False)     # outer pours stay unfilled until routing is done
 pcbnew.SaveBoard(K + 'Nosh.kicad_pcb', board)
 print('vias added:', dict(added), 'total', sum(added.values()))
 print('skipped:', dict(skipped))
