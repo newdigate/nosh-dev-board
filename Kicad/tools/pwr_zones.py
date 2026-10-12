@@ -29,3 +29,6 @@ for z in board.Zones(): print(z.GetZoneName(), z.GetNetname(), board.GetLayerNam
 #   PWR_WL_3V3  - west extension x 85.6-110 x 38-48 for U11/U12, south lip to y 50.4 for FB10/R51/R52
 #   PWR_VDD_SOC - trimmed to x >= 69.6, lobe to R6, north pocket for C16/C18/C21/C22 (tools/dcdc_block2.py)
 #   PWR_DCDC_IN / _ANA / _DIG - fanout2.py / dcdc_block2.py
+#   PWR_5V      - stops at x 23.2 south-west (the 1.8 V regulator block there is +3V3); D2 tongue x 17-21
+#   PWR_SDRAM_3V3 - bottom strip y > 56.2 (x < 41) given back to +3V3; notch x 42.5-45 y 15-16.6 for R36;
+#                 C82 notch widened to x 24.9

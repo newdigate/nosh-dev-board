@@ -19,8 +19,10 @@ planes = collections.defaultdict(list)
 for z in b.Zones():
     if z.GetIsRuleArea() or not z.GetNetname(): continue
     for l in PLANE_L:
-        if z.IsOnLayer(l): planes[z.GetNetname()].append(z.GetFilledPolysList(l))
-def in_plane(net, x, y): return any(ps.Contains(VECTOR2I(FromMM(x), FromMM(y))) for ps in planes.get(net, ()))
+        if z.IsOnLayer(l):
+            ps = z.GetFilledPolysList(l)
+            if ps.OutlineCount(): planes[z.GetNetname()].append((ps, max(range(ps.OutlineCount()), key=lambda i: ps.Outline(i).Area())))   # the main outline only: islands of fill round a stray via do not count
+def in_plane(net, x, y): return any(ps.Contains(VECTOR2I(FromMM(x), FromMM(y)), main) for ps, main in planes.get(net, ()))
 novia = [z for z in list(b.Zones()) + [z for f in b.GetFootprints() for z in f.Zones()] if z.GetIsRuleArea() and z.GetDoNotAllowVias()]
 def in_novia(x, y, own_plane=False): return any(z.Outline().Collide(VECTOR2I(FromMM(x), FromMM(y)), FromMM(VIA_D / 2 + CLR)) for z in novia if not (own_plane and z.GetZoneName() == 'KO_DCDC_JOG'))
 eb = b.GetBoardEdgesBoundingBox(); EX0, EY0, EX1, EY1 = ToMM(eb.GetLeft()) + 0.6, ToMM(eb.GetTop()) + 0.6, ToMM(eb.GetRight()) - 0.6, ToMM(eb.GetBottom()) - 0.6
@@ -98,16 +100,18 @@ def cluster_has_plane_via(p, net):
             if k in seen: continue
             seen.add(k)
             if y.Type() == pcbnew.PCB_VIA_T and in_plane(net, ToMM(y.GetPosition().x), ToMM(y.GetPosition().y)): return True
-            if y.Type() == pcbnew.PCB_PAD_T and y.GetAttribute() == pcbnew.PAD_ATTRIB_PTH: return True
+            if y.Type() == pcbnew.PCB_PAD_T and y.GetAttribute() == pcbnew.PAD_ATTRIB_PTH and in_plane(net, ToMM(y.GetPosition().x), ToMM(y.GetPosition().y)): return True
             todo.append(y)
     return False
 nets_by_name = b.GetNetInfo().NetsByName(); placed = collections.Counter(); failed = []; new_items = []
 for f in b.GetFootprints():
     for p in f.Pads():
         net = p.GetNetname()
-        if net not in planes or (ONLY and net not in ONLY) or p.GetAttribute() != pcbnew.PAD_ATTRIB_SMD: continue
+        if net not in planes or (ONLY and net not in ONLY) or p.GetAttribute() not in (pcbnew.PAD_ATTRIB_SMD, pcbnew.PAD_ATTRIB_PTH): continue
+        pth = p.GetAttribute() == pcbnew.PAD_ATTRIB_PTH
+        if pth and in_plane(net, ToMM(p.GetPosition().x), ToMM(p.GetPosition().y)): continue       # a through-hole pad inside its plane is connected already
         if cluster_has_plane_via(p, net): continue
-        ref = f.GetReference() + '.' + p.GetNumber(); layer = pcbnew.B_Cu if f.IsFlipped() else pcbnew.F_Cu
+        ref = f.GetReference() + '.' + p.GetNumber(); layer = pcbnew.F_Cu if (pth or not f.IsFlipped()) else pcbnew.B_Cu
         px, py = ToMM(p.GetPosition().x), ToMM(p.GetPosition().y); w = 0.2 if net in WIDE else 0.15
         best = None; WHYC.clear()
         for r in [k * 0.05 for k in range(6, 61)]:                                   # rings 0.3 .. 3.0 mm

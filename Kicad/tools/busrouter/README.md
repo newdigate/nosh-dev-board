@@ -100,3 +100,11 @@ need their cap vias (sites exist, the greedy router does not reach them).
   pipeline so other nets' vias cannot cut the 1.1 mm lobes; the rule areas are removed when the result is applied.
   VDD_SOC also has a pocket under its north caps (C16/C18/C21/C22) through a via-free neck at column 9.
   Result on the fan-out-first board: 166 open (DC-DC block and VDD_SOC fully tied in).
+
+- `plane_cleanup.py in out NET[,NET]` — removes a plane net's floating copper: track/via clusters that reach no via
+  inside the net's MAIN plane fill and no through-hole pad that sits inside it. KiCad keeps a tiny island of fill
+  round a stray via, so "inside the fill" must be tested against the largest outline; for GND (two full planes
+  tied by hundreds of vias) that test is wrong, so GND is left out. plane_vias.py uses the same test.
+  Island reshaping (2026-10-12): +5V gives back x 23-40 south-west to the 1.8 V regulator block (U8, C72-C74,
+  C81, R104, R29), SDRAM_3V3 loses its bottom strip (y > 56.2 for x < 41) and gets a notch for R36; the D2 tongue
+  is 4 mm wide so a +3V3 strip still reaches the C82 notch. Board: 158 open, +3V3 fully tied in.
