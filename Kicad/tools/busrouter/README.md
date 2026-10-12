@@ -65,3 +65,12 @@ genroute (31.2 -> 36.9 mm, 6 vias), which let DCDC_LP (U3/T3) and DCDC_LN (U4/T4
 (widen by hand); DCDC_IN PWR island under L5/M5/N5 (C23/C24 still need vias, no free site yet); VDD_SOC island
 trimmed to x >= 69.6; the three duplicate/too-close GND stitch vias cleaned up. 98 -> 95 open, DRC otherwise as before.
 The C145 move and the SEMC_A3 cut were NOT applied: both collide with existing copper on the routed board.
+
+## Fan-out first (branch fanout-first, 2026-10-12)
+
+Start from the placed board with no routing. `../fanout2.py` moves the DC-DC block to U1's south edge, builds
+PWR islands for DCDC_IN / DCDC_ANA / DCDC_DIG (plus a VDD_SOC lobe for R6) with via-free corridors through the
+lattice, and gives every ring >= 2 ball a via on a free cell (power balls first). Then `bga_escape.py` with
+everything negotiable at 0.1 mm (3 seeds + a second pass) and `widen_power.py` afterwards. Result: all 247
+connected balls out of the field (194 escapes, 7 plane vias, 46 on planes), DRC clean. Lesson: route the power
+escapes with the rest and widen afterwards; wide tracks routed first cut diagonally across the outer-ring lanes.

@@ -1,0 +1,2719 @@
+{
+ "A1": {
+  "net": "GND",
+  "dest": [
+   67.75,
+   33.02,
+   "C49"
+  ],
+  "side": "N",
+  "dist": 3.4,
+  "nother": 257
+ },
+ "A2": {
+  "net": "SEMC_A1",
+  "dest": [
+   32.1,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 35.1,
+  "nother": 2
+ },
+ "A3": {
+  "net": "SEMC_A0",
+  "dest": [
+   32.9,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 35.1,
+  "nother": 2
+ },
+ "A4": {
+  "net": "LCM_PWR_EN",
+  "dest": [
+   51.5,
+   13.75,
+   "TP50"
+  ],
+  "side": "N",
+  "dist": 27.4,
+  "nother": 2
+ },
+ "A5": {
+  "net": "BT_UART_RTS",
+  "dest": [
+   90.82,
+   41.15,
+   "U11"
+  ],
+  "side": "E",
+  "dist": 22.7,
+  "nother": 1
+ },
+ "A6": {
+  "net": "BT_UART_RXD",
+  "dest": [
+   101.23,
+   40.44,
+   "U12"
+  ],
+  "side": "E",
+  "dist": 32.0,
+  "nother": 2
+ },
+ "A8": {
+  "net": "MIPI_DSI_D0N",
+  "dest": [
+   62.9,
+   5.93,
+   "J7"
+  ],
+  "side": "N",
+  "dist": 30.8,
+  "nother": 1
+ },
+ "A9": {
+  "net": "MIPI_DSI_CLKN",
+  "dest": [
+   65.9,
+   5.93,
+   "J7"
+  ],
+  "side": "N",
+  "dist": 30.3,
+  "nother": 1
+ },
+ "A10": {
+  "net": "MIPI_DSI_D1N",
+  "dest": [
+   64.4,
+   5.93,
+   "J7"
+  ],
+  "side": "N",
+  "dist": 30.8,
+  "nother": 1
+ },
+ "A14": {
+  "net": "BT_CFG5",
+  "dest": [
+   78.0,
+   31.01,
+   "R97"
+  ],
+  "side": "N",
+  "dist": 5.0,
+  "nother": 1
+ },
+ "A15": {
+  "net": "BT_CFG2",
+  "dest": [
+   76.25,
+   31.26,
+   "R94"
+  ],
+  "side": "N",
+  "dist": 4.4,
+  "nother": 1
+ },
+ "A16": {
+  "net": "M2_SDIO_D3",
+  "dest": [
+   129.75,
+   43.77,
+   "J6"
+  ],
+  "side": "E",
+  "dist": 52.8,
+  "nother": 1
+ },
+ "A17": {
+  "net": "GND",
+  "dest": [
+   77.73,
+   34.25,
+   "C35"
+  ],
+  "side": "N",
+  "dist": 1.5,
+  "nother": 257
+ },
+ "B1": {
+  "net": "SEMC_A5",
+  "dest": [
+   31.3,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 34.8,
+  "nother": 2
+ },
+ "B2": {
+  "net": "SEMC_A10",
+  "dest": [
+   33.7,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 33.4,
+  "nother": 2
+ },
+ "B3": {
+  "net": "SEMC_A8",
+  "dest": [
+   33.7,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 34.0,
+  "nother": 2
+ },
+ "B4": {
+  "net": "SEMC_A9",
+  "dest": [
+   34.5,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 34.0,
+  "nother": 2
+ },
+ "B6": {
+  "net": "BT_UART_CTS",
+  "dest": [
+   101.23,
+   39.79,
+   "U12"
+  ],
+  "side": "E",
+  "dist": 31.8,
+  "nother": 1
+ },
+ "B7": {
+  "net": "GND",
+  "dest": [
+   71.23,
+   34.25,
+   "C40"
+  ],
+  "side": "N",
+  "dist": 2.3,
+  "nother": 257
+ },
+ "B8": {
+  "net": "MIPI_DSI_D0P",
+  "dest": [
+   63.4,
+   5.93,
+   "J7"
+  ],
+  "side": "N",
+  "dist": 31.5,
+  "nother": 1
+ },
+ "B9": {
+  "net": "MIPI_DSI_CLKP",
+  "dest": [
+   66.4,
+   5.93,
+   "J7"
+  ],
+  "side": "N",
+  "dist": 31.0,
+  "nother": 1
+ },
+ "B10": {
+  "net": "MIPI_DSI_D1P",
+  "dest": [
+   64.9,
+   5.93,
+   "J7"
+  ],
+  "side": "N",
+  "dist": 31.5,
+  "nother": 1
+ },
+ "B14": {
+  "net": "BT_CFG4",
+  "dest": [
+   76.24,
+   32.75,
+   "R96"
+  ],
+  "side": "N",
+  "dist": 3.7,
+  "nother": 1
+ },
+ "B15": {
+  "net": "M2_SDIO_D2",
+  "dest": [
+   130.25,
+   43.77,
+   "J6"
+  ],
+  "side": "E",
+  "dist": 54.0,
+  "nother": 1
+ },
+ "B16": {
+  "net": "M2_SDIO_CMD",
+  "dest": [
+   131.75,
+   43.77,
+   "J6"
+  ],
+  "side": "E",
+  "dist": 54.6,
+  "nother": 2
+ },
+ "B17": {
+  "net": "M2_SDIO_D1",
+  "dest": [
+   130.75,
+   43.77,
+   "J6"
+  ],
+  "side": "E",
+  "dist": 52.9,
+  "nother": 1
+ },
+ "C1": {
+  "net": "SEMC_A6",
+  "dest": [
+   32.1,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 34.1,
+  "nother": 2
+ },
+ "C2": {
+  "net": "SEMC_A2",
+  "dest": [
+   31.3,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 35.6,
+  "nother": 2
+ },
+ "C3": {
+  "net": "SEMC_A12",
+  "dest": [
+   36.1,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 31.8,
+  "nother": 2
+ },
+ "C4": {
+  "net": "SEMC_A11",
+  "dest": [
+   35.3,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 33.4,
+  "nother": 2
+ },
+ "C5": {
+  "net": "SEMC_A3",
+  "dest": [
+   30.5,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 38.8,
+  "nother": 2
+ },
+ "C7": {
+  "net": "BT_CFG10",
+  "dest": [
+   81.24,
+   34.75,
+   "R102"
+  ],
+  "side": "E",
+  "dist": 11.1,
+  "nother": 1
+ },
+ "C8": {
+  "net": "GND",
+  "dest": [
+   71.23,
+   34.25,
+   "C40"
+  ],
+  "side": "N",
+  "dist": 3.0,
+  "nother": 257
+ },
+ "C9": {
+  "net": "BT_CFG11",
+  "dest": [
+   86.25,
+   37.49,
+   "R103"
+  ],
+  "side": "E",
+  "dist": 14.3,
+  "nother": 1
+ },
+ "C10": {
+  "net": "GND",
+  "dest": [
+   72.77,
+   34.25,
+   "C39"
+  ],
+  "side": "N",
+  "dist": 3.0,
+  "nother": 257
+ },
+ "C11": {
+  "net": "LPSPI3_SIN",
+  "dest": [
+   82.95,
+   66.27,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 30.5,
+  "nother": 1
+ },
+ "C12": {
+  "net": "GND",
+  "dest": [
+   72.77,
+   34.25,
+   "C39"
+  ],
+  "side": "N",
+  "dist": 3.4,
+  "nother": 257
+ },
+ "C13": {
+  "net": "BT_CFG3",
+  "dest": [
+   79.49,
+   29.5,
+   "R95"
+  ],
+  "side": "N",
+  "dist": 8.8,
+  "nother": 1
+ },
+ "C14": {
+  "net": "GND",
+  "dest": [
+   77.73,
+   34.25,
+   "C35"
+  ],
+  "side": "N",
+  "dist": 3.4,
+  "nother": 257
+ },
+ "C15": {
+  "net": "M2_SDIO_D0",
+  "dest": [
+   131.25,
+   43.77,
+   "J6"
+  ],
+  "side": "E",
+  "dist": 54.8,
+  "nother": 2
+ },
+ "C16": {
+  "net": "USB2_DN",
+  "dest": [
+   135.55,
+   36.1,
+   "L3"
+  ],
+  "side": "E",
+  "dist": 58.0,
+  "nother": 1
+ },
+ "C17": {
+  "net": "USB2_DP",
+  "dest": [
+   135.55,
+   35.3,
+   "L3"
+  ],
+  "side": "E",
+  "dist": 57.2,
+  "nother": 1
+ },
+ "D1": {
+  "net": "SEMC_D10",
+  "dest": [
+   43.3,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 23.5,
+  "nother": 1
+ },
+ "D2": {
+  "net": "SEMC_D9",
+  "dest": [
+   42.5,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 25.0,
+  "nother": 1
+ },
+ "D3": {
+  "net": "SEMC_A7",
+  "dest": [
+   32.9,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 35.1,
+  "nother": 2
+ },
+ "D4": {
+  "net": "GND",
+  "dest": [
+   71.23,
+   34.25,
+   "C40"
+  ],
+  "side": "N",
+  "dist": 4.9,
+  "nother": 257
+ },
+ "D5": {
+  "net": "SEMC_A4",
+  "dest": [
+   30.5,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 39.0,
+  "nother": 2
+ },
+ "D7": {
+  "net": "BT_CFG9",
+  "dest": [
+   75.49,
+   51.25,
+   "R101"
+  ],
+  "side": "S",
+  "dist": 14.2,
+  "nother": 1
+ },
+ "D9": {
+  "net": "BT_UART_TXD",
+  "dest": [
+   90.17,
+   41.15,
+   "U11"
+  ],
+  "side": "E",
+  "dist": 18.4,
+  "nother": 2
+ },
+ "D10": {
+  "net": "LPSPI3_SOUT",
+  "dest": [
+   82.95,
+   68.81,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 32.4,
+  "nother": 2
+ },
+ "D12": {
+  "net": "NVCC_DISP1",
+  "dest": [
+   73.73,
+   34.25,
+   "C39"
+  ],
+  "side": "N",
+  "dist": 3.8,
+  "nother": 2
+ },
+ "D14": {
+  "net": "NVCC_SD1",
+  "dest": [
+   76.77,
+   34.25,
+   "C35"
+  ],
+  "side": "N",
+  "dist": 3.8,
+  "nother": 5
+ },
+ "D15": {
+  "net": "M2_SDIO_CLK",
+  "dest": [
+   132.25,
+   43.77,
+   "J6"
+  ],
+  "side": "E",
+  "dist": 55.7,
+  "nother": 1
+ },
+ "D16": {
+  "net": "USB2_VBUS",
+  "dest": [
+   83.64,
+   41.05,
+   "U3"
+  ],
+  "side": "E",
+  "dist": 6.8,
+  "nother": 7
+ },
+ "D17": {
+  "net": "USB1_VBUS",
+  "dest": [
+   80.52,
+   31.75,
+   "C51"
+  ],
+  "side": "N",
+  "dist": 6.6,
+  "nother": 5
+ },
+ "E1": {
+  "net": "SEMC_D12",
+  "dest": [
+   45.7,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 21.5,
+  "nother": 1
+ },
+ "E2": {
+  "net": "SEMC_D11",
+  "dest": [
+   44.9,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 23.0,
+  "nother": 1
+ },
+ "E3": {
+  "net": "SEMC_D8",
+  "dest": [
+   40.9,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 27.5,
+  "nother": 1
+ },
+ "E4": {
+  "net": "SEMC_D3",
+  "dest": [
+   45.7,
+   19.1,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 29.8,
+  "nother": 1
+ },
+ "E5": {
+  "net": "SEMC_WE",
+  "dest": [
+   38.5,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 30.6,
+  "nother": 2
+ },
+ "E6": {
+  "net": "SEMC_CS0",
+  "dest": [
+   36.1,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 33.8,
+  "nother": 2
+ },
+ "E7": {
+  "net": "NVCC_DISP2",
+  "dest": [
+   70.27,
+   34.25,
+   "C40"
+  ],
+  "side": "N",
+  "dist": 4.6,
+  "nother": 2
+ },
+ "E8": {
+  "net": "BT_CFG6",
+  "dest": [
+   81.25,
+   49.49,
+   "R98"
+  ],
+  "side": "E",
+  "dist": 14.7,
+  "nother": 1
+ },
+ "E9": {
+  "net": "BT_CFG8",
+  "dest": [
+   83.74,
+   34.75,
+   "R100"
+  ],
+  "side": "E",
+  "dist": 12.4,
+  "nother": 1
+ },
+ "E10": {
+  "net": "LPSPI3_SCK",
+  "dest": [
+   80.41,
+   68.81,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 31.0,
+  "nother": 1
+ },
+ "E11": {
+  "net": "LPSPI3_CS",
+  "dest": [
+   80.41,
+   66.27,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 28.3,
+  "nother": 1
+ },
+ "E12": {
+  "net": "BT_CFG1",
+  "dest": [
+   81.25,
+   44.74,
+   "R93"
+  ],
+  "side": "E",
+  "dist": 9.1,
+  "nother": 1
+ },
+ "E14": {
+  "net": "SD_CMD",
+  "dest": [
+   100.25,
+   19.49,
+   "R53"
+  ],
+  "side": "E",
+  "dist": 31.0,
+  "nother": 2
+ },
+ "E15": {
+  "net": "SD_DAT0",
+  "dest": [
+   102.76,
+   21.25,
+   "R54"
+  ],
+  "side": "E",
+  "dist": 31.3,
+  "nother": 2
+ },
+ "E16": {
+  "net": "USB1_DN",
+  "dest": [
+   135.55,
+   50.4,
+   "L4"
+  ],
+  "side": "E",
+  "dist": 59.1,
+  "nother": 1
+ },
+ "E17": {
+  "net": "USB1_DP",
+  "dest": [
+   135.55,
+   49.6,
+   "L4"
+  ],
+  "side": "E",
+  "dist": 58.2,
+  "nother": 1
+ },
+ "F1": {
+  "net": "SEMC_D13",
+  "dest": [
+   47.3,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 20.4,
+  "nother": 1
+ },
+ "F2": {
+  "net": "SEMC_D1",
+  "dest": [
+   48.1,
+   19.1,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 27.5,
+  "nother": 1
+ },
+ "F3": {
+  "net": "SEMC_D0",
+  "dest": [
+   49.7,
+   19.1,
+   "U9"
+  ],
+  "side": "N",
+  "dist": 27.0,
+  "nother": 1
+ },
+ "F4": {
+  "net": "SEMC_D5",
+  "dest": [
+   43.3,
+   19.1,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 32.1,
+  "nother": 1
+ },
+ "F5": {
+  "net": "SEMC_DM0",
+  "dest": [
+   39.3,
+   19.1,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 35.9,
+  "nother": 1
+ },
+ "F6": {
+  "net": "NVCC_EMC1",
+  "dest": [
+   69.0,
+   28.02,
+   "C41"
+  ],
+  "side": "N",
+  "dist": 11.6,
+  "nother": 4
+ },
+ "F7": {
+  "net": "NVCC_EMC1",
+  "dest": [
+   69.0,
+   28.02,
+   "C41"
+  ],
+  "side": "N",
+  "dist": 11.7,
+  "nother": 4
+ },
+ "F8": {
+  "net": "BT_CFG7",
+  "dest": [
+   75.39,
+   52.6,
+   "R99"
+  ],
+  "side": "S",
+  "dist": 13.7,
+  "nother": 1
+ },
+ "F9": {
+  "net": "VDD_MIPI_1P8",
+  "dest": [
+   67.75,
+   33.98,
+   "C49"
+  ],
+  "side": "N",
+  "dist": 7.0,
+  "nother": 2
+ },
+ "F10": {
+  "net": "VDD_MIPI_1P0",
+  "dest": [
+   73.25,
+   57.26,
+   "R4"
+  ],
+  "side": "S",
+  "dist": 17.7,
+  "nother": 2
+ },
+ "F11": {
+  "net": "GND",
+  "dest": [
+   72.77,
+   34.25,
+   "C39"
+  ],
+  "side": "N",
+  "dist": 5.4,
+  "nother": 257
+ },
+ "F12": {
+  "net": "GND",
+  "dest": [
+   72.77,
+   34.25,
+   "C39"
+  ],
+  "side": "N",
+  "dist": 5.6,
+  "nother": 257
+ },
+ "F13": {
+  "net": "GND",
+  "dest": [
+   72.77,
+   34.25,
+   "C39"
+  ],
+  "side": "N",
+  "dist": 5.9,
+  "nother": 257
+ },
+ "F14": {
+  "net": "SD_CLK",
+  "dest": [
+   88.74,
+   29.0,
+   "R56"
+  ],
+  "side": "E",
+  "dist": 16.6,
+  "nother": 1
+ },
+ "F15": {
+  "net": "FLEXSPI_A_D0",
+  "dest": [
+   82.25,
+   25.95,
+   "U2"
+  ],
+  "side": "N",
+  "dist": 14.7,
+  "nother": 1
+ },
+ "F16": {
+  "net": "FLEXSPI_A_D3",
+  "dest": [
+   82.25,
+   23.41,
+   "U2"
+  ],
+  "side": "N",
+  "dist": 16.8,
+  "nother": 1
+ },
+ "F17": {
+  "net": "FLEXSPI_A_SS0",
+  "dest": [
+   85.5,
+   47.49,
+   "R14"
+  ],
+  "side": "E",
+  "dist": 10.6,
+  "nother": 2
+ },
+ "G1": {
+  "net": "SEMC_D14",
+  "dest": [
+   48.1,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 20.1,
+  "nother": 1
+ },
+ "G2": {
+  "net": "SEMC_BA0",
+  "dest": [
+   35.3,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 31.2,
+  "nother": 2
+ },
+ "G3": {
+  "net": "GND",
+  "dest": [
+   71.23,
+   34.25,
+   "C40"
+  ],
+  "side": "N",
+  "dist": 7.4,
+  "nother": 257
+ },
+ "G4": {
+  "net": "SEMC_D2",
+  "dest": [
+   47.3,
+   19.1,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 29.7,
+  "nother": 1
+ },
+ "G5": {
+  "net": "SEMC_CKE",
+  "dest": [
+   36.9,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 33.4,
+  "nother": 2
+ },
+ "G6": {
+  "net": "NVCC_EMC1",
+  "dest": [
+   69.0,
+   28.02,
+   "C41"
+  ],
+  "side": "N",
+  "dist": 12.4,
+  "nother": 4
+ },
+ "G7": {
+  "net": "GND",
+  "dest": [
+   71.23,
+   34.25,
+   "C40"
+  ],
+  "side": "N",
+  "dist": 6.2,
+  "nother": 257
+ },
+ "G8": {
+  "net": "GND",
+  "dest": [
+   71.23,
+   34.25,
+   "C40"
+  ],
+  "side": "N",
+  "dist": 6.2,
+  "nother": 257
+ },
+ "G9": {
+  "net": "GND",
+  "dest": [
+   71.23,
+   34.25,
+   "C40"
+  ],
+  "side": "N",
+  "dist": 6.2,
+  "nother": 257
+ },
+ "G10": {
+  "net": "GND",
+  "dest": [
+   72.77,
+   34.25,
+   "C39"
+  ],
+  "side": "N",
+  "dist": 6.2,
+  "nother": 257
+ },
+ "G11": {
+  "net": "GND",
+  "dest": [
+   72.77,
+   34.25,
+   "C39"
+  ],
+  "side": "N",
+  "dist": 6.2,
+  "nother": 257
+ },
+ "G12": {
+  "net": "VDD_USB_3P3",
+  "dest": [
+   90.02,
+   57.25,
+   "FB4"
+  ],
+  "side": "E",
+  "dist": 23.0,
+  "nother": 3
+ },
+ "G13": {
+  "net": "NVCC_SD2",
+  "dest": [
+   85.5,
+   48.51,
+   "R14"
+  ],
+  "side": "E",
+  "dist": 13.1,
+  "nother": 10
+ },
+ "G14": {
+  "net": "FLEXSPI_A_CLK",
+  "dest": [
+   82.25,
+   24.68,
+   "U2"
+  ],
+  "side": "N",
+  "dist": 16.9,
+  "nother": 1
+ },
+ "G15": {
+  "net": "GND",
+  "dest": [
+   81.36,
+   42.0,
+   "U3"
+  ],
+  "side": "E",
+  "dist": 4.8,
+  "nother": 257
+ },
+ "G16": {
+  "net": "ADC_VREFH",
+  "dest": [
+   77.52,
+   32.5,
+   "C14"
+  ],
+  "side": "N",
+  "dist": 7.9,
+  "nother": 2
+ },
+ "G17": {
+  "net": "SD_PWREN_B",
+  "dest": [
+   40.99,
+   57.75,
+   "R58"
+  ],
+  "side": "W",
+  "dist": 41.2,
+  "nother": 2
+ },
+ "H1": {
+  "net": "SEMC_D15",
+  "dest": [
+   49.7,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 19.1,
+  "nother": 1
+ },
+ "H2": {
+  "net": "SEMC_BA1",
+  "dest": [
+   34.5,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 32.0,
+  "nother": 2
+ },
+ "H3": {
+  "net": "SEMC_D7",
+  "dest": [
+   40.9,
+   19.1,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 34.4,
+  "nother": 1
+ },
+ "H4": {
+  "net": "SEMC_D6",
+  "dest": [
+   42.5,
+   19.1,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 33.7,
+  "nother": 1
+ },
+ "H5": {
+  "net": "SEMC_D4",
+  "dest": [
+   44.9,
+   19.1,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 32.6,
+  "nother": 1
+ },
+ "H6": {
+  "net": "NVCC_EMC2",
+  "dest": [
+   66.75,
+   57.98,
+   "C43"
+  ],
+  "side": "S",
+  "dist": 17.0,
+  "nother": 3
+ },
+ "H7": {
+  "net": "GND",
+  "dest": [
+   71.23,
+   34.25,
+   "C40"
+  ],
+  "side": "N",
+  "dist": 7.0,
+  "nother": 257
+ },
+ "H8": {
+  "net": "VDD_SOC_IN",
+  "dest": [
+   72.77,
+   32.5,
+   "C16"
+  ],
+  "side": "N",
+  "dist": 8.8,
+  "nother": 11
+ },
+ "H9": {
+  "net": "VDD_SOC_IN",
+  "dest": [
+   72.77,
+   32.5,
+   "C16"
+  ],
+  "side": "N",
+  "dist": 8.7,
+  "nother": 11
+ },
+ "H10": {
+  "net": "VDD_SOC_IN",
+  "dest": [
+   72.77,
+   32.5,
+   "C16"
+  ],
+  "side": "N",
+  "dist": 8.7,
+  "nother": 11
+ },
+ "H11": {
+  "net": "GND",
+  "dest": [
+   72.77,
+   34.25,
+   "C39"
+  ],
+  "side": "N",
+  "dist": 7.0,
+  "nother": 257
+ },
+ "H12": {
+  "net": "VDD_USB_1P8",
+  "dest": [
+   75.25,
+   34.23,
+   "C47"
+  ],
+  "side": "N",
+  "dist": 7.0,
+  "nother": 2
+ },
+ "H13": {
+  "net": "SD_DAT1",
+  "dest": [
+   104.92,
+   16.93,
+   "J5"
+  ],
+  "side": "E",
+  "dist": 38.4,
+  "nother": 1
+ },
+ "H14": {
+  "net": "FLEXSPI_A_D2",
+  "dest": [
+   74.75,
+   24.68,
+   "U2"
+  ],
+  "side": "N",
+  "dist": 16.6,
+  "nother": 1
+ },
+ "H15": {
+  "net": "FLEXSPI_A_D1",
+  "dest": [
+   74.75,
+   23.41,
+   "U2"
+  ],
+  "side": "N",
+  "dist": 17.9,
+  "nother": 1
+ },
+ "J1": {
+  "net": "SEMC_DM1",
+  "dest": [
+   38.5,
+   30.6,
+   "U9"
+  ],
+  "side": "W",
+  "dist": 29.4,
+  "nother": 1
+ },
+ "J2": {
+  "net": "SEMC_DQS",
+  "dest": [
+   64.12,
+   49.8,
+   "C145"
+  ],
+  "side": "W",
+  "dist": 8.1,
+  "nother": 1
+ },
+ "J3": {
+  "net": "SEMC_CLK",
+  "dest": [
+   54.51,
+   38.2,
+   "R42"
+  ],
+  "side": "W",
+  "dist": 13.2,
+  "nother": 2
+ },
+ "J4": {
+  "net": "SEMC_RAS",
+  "dest": [
+   36.9,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 31.1,
+  "nother": 2
+ },
+ "J5": {
+  "net": "SEMC_CAS",
+  "dest": [
+   37.7,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 31.1,
+  "nother": 2
+ },
+ "J6": {
+  "net": "NVCC_EMC2",
+  "dest": [
+   66.75,
+   57.98,
+   "C43"
+  ],
+  "side": "S",
+  "dist": 16.2,
+  "nother": 3
+ },
+ "J7": {
+  "net": "GND",
+  "dest": [
+   71.23,
+   34.25,
+   "C40"
+  ],
+  "side": "N",
+  "dist": 7.8,
+  "nother": 257
+ },
+ "J8": {
+  "net": "VDD_SOC_IN",
+  "dest": [
+   73.22,
+   50.25,
+   "C15"
+  ],
+  "side": "S",
+  "dist": 8.5,
+  "nother": 11
+ },
+ "J9": {
+  "net": "VDD_SOC_IN",
+  "dest": [
+   73.22,
+   50.25,
+   "C15"
+  ],
+  "side": "S",
+  "dist": 8.3,
+  "nother": 11
+ },
+ "J10": {
+  "net": "VDD_SOC_IN",
+  "dest": [
+   73.22,
+   50.25,
+   "C15"
+  ],
+  "side": "S",
+  "dist": 8.3,
+  "nother": 11
+ },
+ "J11": {
+  "net": "GND",
+  "dest": [
+   81.36,
+   42.0,
+   "U3"
+  ],
+  "side": "E",
+  "dist": 7.8,
+  "nother": 257
+ },
+ "J12": {
+  "net": "SAI1_TX_SYNC",
+  "dest": [
+   94.01,
+   46.0,
+   "R83"
+  ],
+  "side": "E",
+  "dist": 20.0,
+  "nother": 2
+ },
+ "J13": {
+  "net": "VDDA_ADC_3P3",
+  "dest": [
+   91.75,
+   30.27,
+   "C9"
+  ],
+  "side": "E",
+  "dist": 20.3,
+  "nother": 4
+ },
+ "J14": {
+  "net": "SD_DAT2",
+  "dest": [
+   97.22,
+   16.93,
+   "J5"
+  ],
+  "side": "E",
+  "dist": 32.9,
+  "nother": 1
+ },
+ "J15": {
+  "net": "SD_DAT3",
+  "dest": [
+   98.01,
+   19.25,
+   "R55"
+  ],
+  "side": "E",
+  "dist": 31.1,
+  "nother": 2
+ },
+ "J16": {
+  "net": "SD_CD_B",
+  "dest": [
+   106.83,
+   6.42,
+   "J5"
+  ],
+  "side": "N",
+  "dist": 46.0,
+  "nother": 3
+ },
+ "J17": {
+  "net": "WL_RST_B",
+  "dest": [
+   91.01,
+   55.5,
+   "R45"
+  ],
+  "side": "E",
+  "dist": 18.5,
+  "nother": 2
+ },
+ "K2": {
+  "net": "SEMC_D16",
+  "dest": [
+   49.7,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 16.7,
+  "nother": 1
+ },
+ "K3": {
+  "net": "SEMC_D18",
+  "dest": [
+   47.3,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 19.9,
+  "nother": 1
+ },
+ "K4": {
+  "net": "SEMC_D17",
+  "dest": [
+   48.1,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 19.9,
+  "nother": 1
+ },
+ "K5": {
+  "net": "SEMC_D28",
+  "dest": [
+   45.7,
+   54.6,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 25.9,
+  "nother": 1
+ },
+ "K6": {
+  "net": "GND",
+  "dest": [
+   65.08,
+   49.8,
+   "C145"
+  ],
+  "side": "S",
+  "dist": 8.3,
+  "nother": 257
+ },
+ "K7": {
+  "net": "GND",
+  "dest": [
+   71.23,
+   34.25,
+   "C40"
+  ],
+  "side": "N",
+  "dist": 8.6,
+  "nother": 257
+ },
+ "K8": {
+  "net": "DCDC_DIG",
+  "dest": [
+   72.67,
+   51.9,
+   "C30"
+  ],
+  "side": "S",
+  "dist": 9.2,
+  "nother": 6
+ },
+ "K9": {
+  "net": "DCDC_DIG",
+  "dest": [
+   72.67,
+   51.9,
+   "C30"
+  ],
+  "side": "S",
+  "dist": 9.1,
+  "nother": 6
+ },
+ "K10": {
+  "net": "VDD_SOC_IN",
+  "dest": [
+   73.22,
+   50.25,
+   "C15"
+  ],
+  "side": "S",
+  "dist": 7.5,
+  "nother": 11
+ },
+ "K11": {
+  "net": "GND",
+  "dest": [
+   74.78,
+   50.25,
+   "C15"
+  ],
+  "side": "S",
+  "dist": 7.5,
+  "nother": 257
+ },
+ "K12": {
+  "net": "SAI1_TX_BCLK",
+  "dest": [
+   93.51,
+   49.5,
+   "R82"
+  ],
+  "side": "E",
+  "dist": 20.3,
+  "nother": 2
+ },
+ "K13": {
+  "net": "SAI1_RXD0",
+  "dest": [
+   97.76,
+   67.7,
+   "U15"
+  ],
+  "side": "E",
+  "dist": 33.6,
+  "nother": 2
+ },
+ "K14": {
+  "net": "SAI1_TXD0",
+  "dest": [
+   98.25,
+   64.75,
+   "TP69"
+  ],
+  "side": "E",
+  "dist": 31.3,
+  "nother": 2
+ },
+ "K15": {
+  "net": "VDDA_1P8",
+  "dest": [
+   79.25,
+   58.23,
+   "FB2"
+  ],
+  "side": "S",
+  "dist": 15.6,
+  "nother": 5
+ },
+ "K17": {
+  "net": "BACKLIGHT_CTL",
+  "dest": [
+   79.25,
+   12.75,
+   "TP51"
+  ],
+  "side": "N",
+  "dist": 30.1,
+  "nother": 2
+ },
+ "L2": {
+  "net": "SEMC_D30",
+  "dest": [
+   48.1,
+   54.6,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 21.4,
+  "nother": 1
+ },
+ "L3": {
+  "net": "GND",
+  "dest": [
+   65.08,
+   49.8,
+   "C145"
+  ],
+  "side": "S",
+  "dist": 6.6,
+  "nother": 257
+ },
+ "L4": {
+  "net": "SEMC_D26",
+  "dest": [
+   43.3,
+   54.6,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 27.0,
+  "nother": 1
+ },
+ "L5": {
+  "net": "DCDC_IN",
+  "dest": [
+   68.4,
+   52.12,
+   "C23"
+  ],
+  "side": "S",
+  "dist": 8.5,
+  "nother": 7
+ },
+ "L6": {
+  "net": "GND",
+  "dest": [
+   65.08,
+   49.8,
+   "C145"
+  ],
+  "side": "S",
+  "dist": 7.7,
+  "nother": 257
+ },
+ "L7": {
+  "net": "DCDC_DIG_SENSE",
+  "dest": [
+   78.0,
+   51.24,
+   "R8"
+  ],
+  "side": "S",
+  "dist": 10.8,
+  "nother": 1
+ },
+ "L8": {
+  "net": "DCDC_DIG",
+  "dest": [
+   72.67,
+   51.9,
+   "C30"
+  ],
+  "side": "S",
+  "dist": 8.4,
+  "nother": 6
+ },
+ "L10": {
+  "net": "GND",
+  "dest": [
+   74.78,
+   50.25,
+   "C15"
+  ],
+  "side": "S",
+  "dist": 6.9,
+  "nother": 257
+ },
+ "L11": {
+  "net": "GND",
+  "dest": [
+   74.78,
+   50.25,
+   "C15"
+  ],
+  "side": "S",
+  "dist": 6.8,
+  "nother": 257
+ },
+ "L12": {
+  "net": "GPIO_AD_13",
+  "dest": [
+   90.57,
+   66.27,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 27.8,
+  "nother": 1
+ },
+ "L13": {
+  "net": "LPUART1_TXD",
+  "dest": [
+   76.16,
+   59.01,
+   "J11"
+  ],
+  "side": "S",
+  "dist": 15.4,
+  "nother": 3
+ },
+ "L14": {
+  "net": "GPIO_AD_26",
+  "dest": [
+   93.11,
+   66.27,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 28.4,
+  "nother": 1
+ },
+ "L15": {
+  "net": "GND",
+  "dest": [
+   81.36,
+   42.0,
+   "U3"
+  ],
+  "side": "E",
+  "dist": 4.8,
+  "nother": 257
+ },
+ "L16": {
+  "net": "SAI1_RX_BCLK",
+  "dest": [
+   87.24,
+   47.75,
+   "R84"
+  ],
+  "side": "E",
+  "dist": 10.5,
+  "nother": 1
+ },
+ "L17": {
+  "net": "BT_DEV_WAKE",
+  "dest": [
+   93.42,
+   41.15,
+   "U11"
+  ],
+  "side": "E",
+  "dist": 15.2,
+  "nother": 2
+ },
+ "M1": {
+  "net": "SEMC_D20",
+  "dest": [
+   44.9,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 20.7,
+  "nother": 1
+ },
+ "M2": {
+  "net": "SEMC_D27",
+  "dest": [
+   44.9,
+   54.6,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 23.8,
+  "nother": 1
+ },
+ "M3": {
+  "net": "SEMC_D23",
+  "dest": [
+   40.9,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 26.3,
+  "nother": 1
+ },
+ "M4": {
+  "net": "SEMC_D29",
+  "dest": [
+   47.3,
+   54.6,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 23.1,
+  "nother": 1
+ },
+ "M5": {
+  "net": "DCDC_IN",
+  "dest": [
+   68.4,
+   52.12,
+   "C23"
+  ],
+  "side": "S",
+  "dist": 7.7,
+  "nother": 7
+ },
+ "M6": {
+  "net": "DCDC_ANA_SENSE",
+  "dest": [
+   70.6,
+   52.79,
+   "R7"
+  ],
+  "side": "S",
+  "dist": 8.4,
+  "nother": 1
+ },
+ "M7": {
+  "net": "DCDC_ANA",
+  "dest": [
+   70.39,
+   51.15,
+   "R5"
+  ],
+  "side": "S",
+  "dist": 6.8,
+  "nother": 7
+ },
+ "M8": {
+  "net": "DCDC_ANA",
+  "dest": [
+   70.39,
+   51.15,
+   "R5"
+  ],
+  "side": "S",
+  "dist": 6.8,
+  "nother": 7
+ },
+ "M11": {
+  "net": "VDDA_1P8",
+  "dest": [
+   79.25,
+   58.23,
+   "FB2"
+  ],
+  "side": "S",
+  "dist": 14.9,
+  "nother": 5
+ },
+ "M12": {
+  "net": "NVCC_GPIO",
+  "dest": [
+   90.5,
+   53.25,
+   "TP30"
+  ],
+  "side": "E",
+  "dist": 18.4,
+  "nother": 4
+ },
+ "M13": {
+  "net": "USER_LED",
+  "dest": [
+   79.0,
+   53.74,
+   "R89"
+  ],
+  "side": "S",
+  "dist": 10.1,
+  "nother": 1
+ },
+ "M14": {
+  "net": "BT_RST_B",
+  "dest": [
+   60.25,
+   61.76,
+   "R48"
+  ],
+  "side": "S",
+  "dist": 23.4,
+  "nother": 2
+ },
+ "M15": {
+  "net": "LPUART1_RXD",
+  "dest": [
+   76.16,
+   56.47,
+   "J11"
+  ],
+  "side": "S",
+  "dist": 12.1,
+  "nother": 3
+ },
+ "M16": {
+  "net": "SAI1_RX_SYNC",
+  "dest": [
+   86.24,
+   45.0,
+   "R85"
+  ],
+  "side": "E",
+  "dist": 8.7,
+  "nother": 1
+ },
+ "M17": {
+  "net": "WIFI_WAKE_B",
+  "dest": [
+   101.23,
+   41.09,
+   "U12"
+  ],
+  "side": "E",
+  "dist": 23.1,
+  "nother": 2
+ },
+ "N1": {
+  "net": "SEMC_D21",
+  "dest": [
+   43.3,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 22.4,
+  "nother": 1
+ },
+ "N2": {
+  "net": "SEMC_D24",
+  "dest": [
+   40.9,
+   54.6,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 27.2,
+  "nother": 1
+ },
+ "N4": {
+  "net": "DCDC_MODE",
+  "dest": [
+   86.5,
+   28.25,
+   "TP44"
+  ],
+  "side": "E",
+  "dist": 25.1,
+  "nother": 4
+ },
+ "N5": {
+  "net": "DCDC_IN",
+  "dest": [
+   68.4,
+   52.12,
+   "C23"
+  ],
+  "side": "S",
+  "dist": 6.9,
+  "nother": 7
+ },
+ "N6": {
+  "net": "GPIO_LPSR_00",
+  "dest": [
+   85.49,
+   68.81,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 28.5,
+  "nother": 1
+ },
+ "N7": {
+  "net": "LPI2C5_SDA",
+  "dest": [
+   77.87,
+   66.27,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 22.4,
+  "nother": 5
+ },
+ "N8": {
+  "net": "LPI2C5_SCL",
+  "dest": [
+   77.87,
+   68.81,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 24.5,
+  "nother": 5
+ },
+ "N11": {
+  "net": "VDDA_1P0",
+  "dest": [
+   73.0,
+   55.73,
+   "C13"
+  ],
+  "side": "S",
+  "dist": 10.5,
+  "nother": 2
+ },
+ "N12": {
+  "net": "CTP_INT",
+  "dest": [
+   84.5,
+   8.0,
+   "TP55"
+  ],
+  "side": "N",
+  "dist": 38.5,
+  "nother": 2
+ },
+ "N13": {
+  "net": "USB_OTG2_OC",
+  "dest": [
+   83.24,
+   45.0,
+   "R24"
+  ],
+  "side": "E",
+  "dist": 8.0,
+  "nother": 3
+ },
+ "N15": {
+  "net": "SAI1_MCLK",
+  "dest": [
+   103.25,
+   61.5,
+   "TP66"
+  ],
+  "side": "E",
+  "dist": 31.1,
+  "nother": 2
+ },
+ "N16": {
+  "net": "BT_WAKE_B",
+  "dest": [
+   98.5,
+   35.5,
+   "TP59"
+  ],
+  "side": "E",
+  "dist": 23.0,
+  "nother": 2
+ },
+ "N17": {
+  "net": "WIFI_RST_B",
+  "dest": [
+   89.52,
+   41.15,
+   "U11"
+  ],
+  "side": "E",
+  "dist": 11.8,
+  "nother": 1
+ },
+ "P1": {
+  "net": "SEMC_DM2",
+  "dest": [
+   39.3,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 26.5,
+  "nother": 1
+ },
+ "P2": {
+  "net": "SEMC_D31",
+  "dest": [
+   49.7,
+   54.6,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 18.8,
+  "nother": 1
+ },
+ "P3": {
+  "net": "DCDC_PSWITCH",
+  "dest": [
+   67.0,
+   53.52,
+   "C45"
+  ],
+  "side": "S",
+  "dist": 7.5,
+  "nother": 3
+ },
+ "P4": {
+  "net": "GND",
+  "dest": [
+   65.08,
+   49.8,
+   "C145"
+  ],
+  "side": "S",
+  "dist": 4.8,
+  "nother": 257
+ },
+ "P6": {
+  "net": "BOOT_MODE0",
+  "dest": [
+   73.49,
+   50.9,
+   "R90"
+  ],
+  "side": "S",
+  "dist": 6.3,
+  "nother": 3
+ },
+ "P7": {
+  "net": "NVCC_LPSR",
+  "dest": [
+   57.92,
+   58.01,
+   "J1"
+  ],
+  "side": "S",
+  "dist": 17.3,
+  "nother": 6
+ },
+ "P11": {
+  "net": "VDD_LPSR_DIG",
+  "dest": [
+   67.08,
+   50.6,
+   "C7"
+  ],
+  "side": "S",
+  "dist": 8.0,
+  "nother": 1
+ },
+ "P12": {
+  "net": "VDD_LPSR_ANA",
+  "dest": [
+   76.77,
+   49.75,
+   "C6"
+  ],
+  "side": "S",
+  "dist": 4.4,
+  "nother": 1
+ },
+ "P13": {
+  "net": "LCD_TE",
+  "dest": [
+   77.01,
+   10.5,
+   "R67"
+  ],
+  "side": "N",
+  "dist": 35.5,
+  "nother": 2
+ },
+ "P14": {
+  "net": "GND",
+  "dest": [
+   77.73,
+   49.75,
+   "C6"
+  ],
+  "side": "S",
+  "dist": 4.1,
+  "nother": 257
+ },
+ "P16": {
+  "net": "GPIO_AD_11",
+  "dest": [
+   88.03,
+   66.27,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 22.8,
+  "nother": 1
+ },
+ "P17": {
+  "net": "GPIO_AD_12",
+  "dest": [
+   90.57,
+   68.81,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 25.9,
+  "nother": 1
+ },
+ "R1": {
+  "net": "SEMC_D19",
+  "dest": [
+   45.7,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 20.2,
+  "nother": 1
+ },
+ "R2": {
+  "net": "SEMC_D25",
+  "dest": [
+   42.5,
+   54.6,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 25.1,
+  "nother": 1
+ },
+ "R4": {
+  "net": "GND",
+  "dest": [
+   65.08,
+   49.8,
+   "C145"
+  ],
+  "side": "S",
+  "dist": 4.2,
+  "nother": 257
+ },
+ "R6": {
+  "net": "GPIO_LPSR_01",
+  "dest": [
+   85.49,
+   66.27,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 25.1,
+  "nother": 1
+ },
+ "R7": {
+  "net": "GND",
+  "dest": [
+   71.12,
+   51.9,
+   "C30"
+  ],
+  "side": "S",
+  "dist": 5.2,
+  "nother": 257
+ },
+ "R12": {
+  "net": "VDD_LPSR_IN",
+  "dest": [
+   86.08,
+   57.75,
+   "R31"
+  ],
+  "side": "S",
+  "dist": 16.0,
+  "nother": 3
+ },
+ "R13": {
+  "net": "LCD_RST_B",
+  "dest": [
+   67.3,
+   5.0,
+   "D9"
+  ],
+  "side": "N",
+  "dist": 42.5,
+  "nother": 2
+ },
+ "R14": {
+  "net": "CTP_RST_B",
+  "dest": [
+   76.5,
+   15.5,
+   "TP54"
+  ],
+  "side": "N",
+  "dist": 31.3,
+  "nother": 2
+ },
+ "R15": {
+  "net": "USB_OTG2_ID",
+  "dest": [
+   88.99,
+   27.0,
+   "R18"
+  ],
+  "side": "E",
+  "dist": 23.3,
+  "nother": 3
+ },
+ "R17": {
+  "net": "GPIO_AD_10",
+  "dest": [
+   88.03,
+   68.81,
+   "J10"
+  ],
+  "side": "S",
+  "dist": 24.0,
+  "nother": 1
+ },
+ "T1": {
+  "net": "SEMC_D22",
+  "dest": [
+   42.5,
+   43.1,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 23.5,
+  "nother": 1
+ },
+ "T2": {
+  "net": "SEMC_DM3",
+  "dest": [
+   38.5,
+   54.6,
+   "U10"
+  ],
+  "side": "W",
+  "dist": 28.8,
+  "nother": 1
+ },
+ "T3": {
+  "net": "DCDC_LP",
+  "dest": [
+   65.7,
+   52.5,
+   "L1"
+  ],
+  "side": "S",
+  "dist": 5.1,
+  "nother": 1
+ },
+ "T4": {
+  "net": "DCDC_LN",
+  "dest": [
+   68.7,
+   52.5,
+   "L1"
+  ],
+  "side": "S",
+  "dist": 4.9,
+  "nother": 1
+ },
+ "T5": {
+  "net": "SWO",
+  "dest": [
+   55.38,
+   61.91,
+   "J1"
+  ],
+  "side": "S",
+  "dist": 19.6,
+  "nother": 1
+ },
+ "T6": {
+  "net": "SWCLK",
+  "dest": [
+   56.65,
+   61.91,
+   "J1"
+  ],
+  "side": "S",
+  "dist": 19.3,
+  "nother": 1
+ },
+ "T7": {
+  "net": "BOOT_MODE1",
+  "dest": [
+   67.76,
+   57.25,
+   "R11"
+  ],
+  "side": "S",
+  "dist": 10.0,
+  "nother": 3
+ },
+ "T8": {
+  "net": "WAKEUP",
+  "dest": [
+   63.72,
+   59.11,
+   "SW3"
+  ],
+  "side": "S",
+  "dist": 13.7,
+  "nother": 3
+ },
+ "T9": {
+  "net": "PMIC_STBY_REQ",
+  "dest": [
+   70.26,
+   61.0,
+   "R10"
+  ],
+  "side": "S",
+  "dist": 13.5,
+  "nother": 2
+ },
+ "T10": {
+  "net": "POR_B",
+  "dest": [
+   44.8,
+   67.5,
+   "D1"
+  ],
+  "side": "W",
+  "dist": 34.4,
+  "nother": 5
+ },
+ "T11": {
+  "net": "GND",
+  "dest": [
+   74.78,
+   50.25,
+   "C15"
+  ],
+  "side": "S",
+  "dist": 2.9,
+  "nother": 257
+ },
+ "T12": {
+  "net": "GND",
+  "dest": [
+   74.78,
+   50.25,
+   "C15"
+  ],
+  "side": "S",
+  "dist": 2.7,
+  "nother": 257
+ },
+ "T13": {
+  "net": "RTC_XTALI",
+  "dest": [
+   70.96,
+   56.37,
+   "Y2"
+  ],
+  "side": "S",
+  "dist": 9.7,
+  "nother": 2
+ },
+ "T14": {
+  "net": "VDD_SNVS_DIG",
+  "dest": [
+   75.5,
+   52.02,
+   "C4"
+  ],
+  "side": "S",
+  "dist": 4.4,
+  "nother": 1
+ },
+ "T16": {
+  "net": "Net-(U1E-XTALO)",
+  "dest": [
+   82.27,
+   57.94,
+   "Y1"
+  ],
+  "side": "S",
+  "dist": 11.3,
+  "nother": 2
+ },
+ "T17": {
+  "net": "WL_DEV_WAKE",
+  "dest": [
+   94.07,
+   41.15,
+   "U11"
+  ],
+  "side": "E",
+  "dist": 16.9,
+  "nother": 2
+ },
+ "U1": {
+  "net": "GND",
+  "dest": [
+   65.08,
+   49.8,
+   "C145"
+  ],
+  "side": "S",
+  "dist": 1.5,
+  "nother": 257
+ },
+ "U3": {
+  "net": "DCDC_LP",
+  "dest": [
+   65.7,
+   52.5,
+   "L1"
+  ],
+  "side": "S",
+  "dist": 4.4,
+  "nother": 1
+ },
+ "U4": {
+  "net": "DCDC_LN",
+  "dest": [
+   68.7,
+   52.5,
+   "L1"
+  ],
+  "side": "S",
+  "dist": 4.2,
+  "nother": 1
+ },
+ "U5": {
+  "net": "TDI",
+  "dest": [
+   54.11,
+   61.91,
+   "J1"
+  ],
+  "side": "S",
+  "dist": 20.0,
+  "nother": 1
+ },
+ "U6": {
+  "net": "JTAG_MOD",
+  "dest": [
+   62.49,
+   52.9,
+   "R13"
+  ],
+  "side": "S",
+  "dist": 8.4,
+  "nother": 1
+ },
+ "U7": {
+  "net": "SWDIO",
+  "dest": [
+   57.92,
+   61.91,
+   "J1"
+  ],
+  "side": "S",
+  "dist": 18.4,
+  "nother": 1
+ },
+ "U9": {
+  "net": "PMIC_ON_REQ",
+  "dest": [
+   50.0,
+   68.25,
+   "TP39"
+  ],
+  "side": "S",
+  "dist": 29.6,
+  "nother": 2
+ },
+ "U10": {
+  "net": "ONOFF",
+  "dest": [
+   65.44,
+   65.03,
+   "SW2"
+  ],
+  "side": "S",
+  "dist": 18.2,
+  "nother": 3
+ },
+ "U11": {
+  "net": "VDD_SNVS_ANA",
+  "dest": [
+   87.02,
+   55.75,
+   "C3"
+  ],
+  "side": "E",
+  "dist": 15.3,
+  "nother": 2
+ },
+ "U12": {
+  "net": "VDD_SNVS_IN",
+  "dest": [
+   74.02,
+   53.9,
+   "C1"
+  ],
+  "side": "S",
+  "dist": 5.5,
+  "nother": 3
+ },
+ "U13": {
+  "net": "RTC_XTALO",
+  "dest": [
+   69.23,
+   57.75,
+   "C144"
+  ],
+  "side": "S",
+  "dist": 11.1,
+  "nother": 2
+ },
+ "U14": {
+  "net": "VDD_SNVS_ANA",
+  "dest": [
+   87.02,
+   55.75,
+   "C3"
+  ],
+  "side": "E",
+  "dist": 13.2,
+  "nother": 2
+ },
+ "U16": {
+  "net": "Net-(U1E-XTALI)",
+  "dest": [
+   81.17,
+   56.54,
+   "Y1"
+  ],
+  "side": "S",
+  "dist": 8.9,
+  "nother": 2
+ },
+ "U17": {
+  "net": "GND",
+  "dest": [
+   77.73,
+   49.75,
+   "C6"
+  ],
+  "side": "S",
+  "dist": 1.5,
+  "nother": 257
+ }
+}

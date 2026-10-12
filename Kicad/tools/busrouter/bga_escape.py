@@ -14,7 +14,9 @@ DEST = json.load(open(sys.argv[3])) if len(sys.argv) > 3 else {}
 R = (63.0, 33.0, 81.0, 51.0); BAND = 0.4                 # strip window; escapes end in a BAND-wide strip outside it
 WX0, WY0, WX1, WY1 = R[0] - 4, R[1] - 4, R[2] + 4, R[3] + 4
 BOARDWIDE = os.environ.get('WINDOW') == 'board'           # route each escape all the way to the net's own copper anywhere on the board
-TRK = 0.1
+TRK = float(os.environ.get('TRK', '0.1'))               # track width of the escapes
+NETSEL = re.compile(os.environ['NETSEL']) if os.environ.get('NETSEL') else None   # only balls of matching nets
+MAXRING = int(os.environ.get('MAXRING', '99'))            # only balls up to this ring (0 = outer)
 LIMIT = int(os.environ.get('LIMIT', '3000000')); DEBUG = os.environ.get('DEBUG') == '1'
 board = pcbnew.LoadBoard(IN)
 pcbnew.ZONE_FILLER(board).Fill(board.Zones())
@@ -342,7 +344,9 @@ def fanout_via(name):
     return None
 todo = []; done = {}
 for name, (p, net, ring, x, y) in BALL.items():
-    if net.startswith('SEMC'): continue
+    if os.environ.get('SKIP_SEMC') == '1' and net.startswith('SEMC'): continue
+    if NETSEL and not NETSEL.match(net): continue
+    if ring > MAXRING: continue
     comps = islands(net)
     mine = next((c for c in comps if (net, 'pad', 'U1', name) in c['members']), None)
     if mine is None: continue
