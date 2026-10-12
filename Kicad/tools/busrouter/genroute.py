@@ -319,12 +319,13 @@ def route_net(net):
     src = set().union(*[c['cells'] for c in base]); segs_all = []; vias_all = []; failed = []
     for c in sorted(rest, key=lambda c: len(c['cells'])):
         pv = plane_via_targets(net, c['cells']) if has_plane else set()
+        pv = {c_ for c_ in pv if all(math.hypot(wx(c_[1]) - vx, wy(c_[2]) - vy) > 0.6 for vx, vy in vias_all)}   # not on a via this call just placed
         tg = pv if pv else src
         path, exp = route(net, list(c['cells']), list(tg))
         if path is None:
             cc = next(iter(c['cells'])); failed.append((wx(cc[1]), wy(cc[2]))); continue
         segs, vias = path_to_geometry(path); end = path[-1]
-        if pv and end in pv: vias.append((wx(end[1]), wy(end[2])))           # drop into the plane
+        if pv and end in pv and not any(math.hypot(vx - wx(end[1]), vy - wy(end[2])) < 0.1 for vx, vy in vias): vias.append((wx(end[1]), wy(end[2])))           # drop into the plane (unless the path already ended with a via there)
         segs_all += segs; vias_all += vias
         if not has_plane or not pv:
             src |= c['cells']

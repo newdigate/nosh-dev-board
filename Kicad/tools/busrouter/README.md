@@ -42,3 +42,20 @@ default project settings over `Kicad/Nosh.kicad_pro`. Copy the file into `Kicad/
 
 2026-10-11: Freerouting (20 + 12 passes) then one greedy pass at 0.1 mm left 98 open connections (57 power, 41 signal),
 DRC clean. Re-routing round the BGA first, or in other orders, did not do better.
+
+## BGA escape rework (2026-10-12, not applied)
+
+- `bga_strip.py in out [x0 y0 x1 y1]` — clears the copper in a window round U1 (default the package + 2 mm) except the
+  SDRAM bus, the fan-out vias and their dog-bones; `WHOLE=1` removes the whole route chains touching the window.
+- `bga_escape.py in out [dest.json]` — negotiated escape router: rings 0/1 leave from the pad on F.Cu, inner rings from
+  their fan-out via on SIG/B.Cu through the lattice channels (one 0.1 mm track per channel); plane nets get a via into
+  the plane outside the field; targets are a band outside the window on the destination side and/or the net's own
+  copper. Env: `SEED`, `WIDEN` (rounds of trouble before more sides are allowed), `ROUNDS`, `MODE=pref`, `WINDOW=board`.
+  On the cleared field it places 130-138 of 146 escapes, DRC clean, in 2-5 min; the EVKB escapes the same part the same way.
+- `unlock_old.py board base out` — lock only SDRAM, fan-out and new copper (for a Freerouting pass on the rest).
+
+Result: every way of joining the escapes back to the rest of the board (greedy genroute with cut route ends, with
+whole chains removed, board-wide negotiation, Freerouting with the escapes locked) ended at 109-173 open against
+98 on the committed board, because the 2 mm ring round the chip saturates: radial escapes and tangential joins
+cannot share it. The committed board was left as it was. Sealed balls without a rework: DCDC_MODE N4, DCDC_PSWITCH
+P3 (inside the SDRAM lanes), DCDC_DIG K8/K9/L8 and DCDC_ANA M7/M8 (need PWR islands), GND corners A1/U1.
