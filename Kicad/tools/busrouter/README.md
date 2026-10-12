@@ -91,3 +91,12 @@ over 1.1 mm wide PWR lobes that jog under L1; a no-via strip (67.4..73.8 x 49.0.
 changes out of the jog zone and a top-layer keep-out keeps through-traffic off the cap columns; L1, R7, R90, R37,
 R13, TP40, C44, C50, C144 moved out of the way. Result 178 open, DRC clean; DCDC_IN connected, DCDC_ANA/DIG still
 need their cap vias (sites exist, the greedy router does not reach them).
+
+- `plane_vias.py in out [NETS]` — for every pad of a plane net not yet tied to its plane, the nearest via site
+  within 3 mm that lies inside the net's filled plane, keeps the JLCPCB clearances from everything (0.2 mm
+  hole-to-copper, 0.554 mm to the net's own vias), is outside no-via areas (except the islands' own region
+  KO_DCDC_JOG) and can be reached by a straight track on the pad's layer. `DEBUG=REF,...` prints why a pad found
+  nothing. The whole DC-DC lobe region (67.4..73.8 x 49.0..64.5) is a no-via area for the routers during the
+  pipeline so other nets' vias cannot cut the 1.1 mm lobes; the rule areas are removed when the result is applied.
+  VDD_SOC also has a pocket under its north caps (C16/C18/C21/C22) through a via-free neck at column 9.
+  Result on the fan-out-first board: 166 open (DC-DC block and VDD_SOC fully tied in).
