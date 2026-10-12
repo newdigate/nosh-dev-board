@@ -83,3 +83,11 @@ the gap above each; the negotiation never settled that 15-into-16 chain by itsel
 ring of lattice cells via-free (a routed via in a ring-0/1 gap cell sealed the ring-1 exits). `bustune.py` meandered
 six short data nets; SEMC_D16 stays 29 mm short of U10's clock (no straight segment with room). The cleared balls were
 then re-escaped with `bga_escape.py` and the power tracks widened with `widen_power.py`.
+
+Rest of the board (fan-out-first, 2026-10-12): stitch_planes (261 vias), then genroute greedy at 0.1 mm: ~176 open.
+Freerouting on the same board: 315 open (it fights the locked 0.1 mm copper), not used. The DC-DC block was
+re-placed a second time (tools/dcdc_block2.py): caps and R5/R6 south of the escape fan (y 58-64) in four columns
+over 1.1 mm wide PWR lobes that jog under L1; a no-via strip (67.4..73.8 x 49.0..51.6) keeps the escapes' layer
+changes out of the jog zone and a top-layer keep-out keeps through-traffic off the cap columns; L1, R7, R90, R37,
+R13, TP40, C44, C50, C144 moved out of the way. Result 178 open, DRC clean; DCDC_IN connected, DCDC_ANA/DIG still
+need their cap vias (sites exist, the greedy router does not reach them).

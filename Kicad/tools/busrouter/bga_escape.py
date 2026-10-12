@@ -259,7 +259,10 @@ def path_to_geometry(path):
         pts.append(run[-1])
         for a, b_ in zip(pts, pts[1:]): segs.append((a[0], wx(a[1]), wy(a[2]), wx(b_[1]), wy(b_[2])))
     for a, b_ in zip(path, path[1:]):
-        if a[0] != b_[0]: flush(run); vias.append((wx(a[1]), wy(a[2]))); run = [b_]
+        if a[0] != b_[0]:
+            flush(run)
+            if not (vias and vias[-1][0] == wx(a[1]) and vias[-1][1] == wy(a[2])): vias.append((wx(a[1]), wy(a[2])))   # two layer changes at one cell = one via
+            run = [b_]
         else: run.append(b_)
     flush(run); return segs, vias
 def fix(net, segs, vias):

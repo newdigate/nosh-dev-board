@@ -258,7 +258,10 @@ def path_to_geometry(path):
         pts.append(run[-1])
         for a, b_ in zip(pts, pts[1:]): segs.append((a[0], wx(a[1]), wy(a[2]), wx(b_[1]), wy(b_[2])))
     for a, b_ in zip(path, path[1:]):
-        if a[0] != b_[0]: flush(run); vias.append((wx(a[1]), wy(a[2]))); run = [b_]
+        if a[0] != b_[0]:
+            flush(run)
+            if not (vias and vias[-1][0] == wx(a[1]) and vias[-1][1] == wy(a[2])): vias.append((wx(a[1]), wy(a[2])))   # two layer changes at one cell = one via
+            run = [b_]
         else: run.append(b_)
     flush(run); return segs, vias
 GREEDY = os.environ.get('GREEDY') == '1'          # every new link becomes fixed at once: one pass, no conflicts possible
@@ -325,6 +328,8 @@ def route_net(net):
         if path is None:
             cc = next(iter(c['cells'])); failed.append((wx(cc[1]), wy(cc[2]))); continue
         segs, vias = path_to_geometry(path); end = path[-1]
+        if GREEDY:                                   # later islands of this call must keep hole spacing from these vias
+            for vx, vy in vias: paint(via_static, disc_cells(vx, vy, VIA_H / 2 + 0.254 + VIA_H / 2)); bump(via_fix, disc_cells(vx, vy, VIA_D / 2 + CLR + VIA_D / 2), 1)
         if pv and end in pv and not any(math.hypot(vx - wx(end[1]), vy - wy(end[2])) < 0.1 for vx, vy in vias): vias.append((wx(end[1]), wy(end[2])))           # drop into the plane (unless the path already ended with a via there)
         segs_all += segs; vias_all += vias
         if not has_plane or not pv:
