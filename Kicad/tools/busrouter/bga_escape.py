@@ -370,6 +370,7 @@ for name in todo:
     via = fanout_via(name) if ring >= 2 else None
     SRC[name] = cells_of([(l, sp) for l, sp in item_cells(via) if l in (1, 2)]) if via else cells_of(item_cells((net, 'pad', 'U1', name)))
     PREF[name] = DEST.get(name, {}).get('side') or geo_side(x, y)
+    if os.environ.get('PREFSIDE') and re.match(os.environ['PREFSIDE'].split(':')[0], net): PREF[name] = os.environ['PREFSIDE'].split(':')[1]   # e.g. PREFSIDE='^SEMC_:W'
 # 1. balls of a net with a plane: a via into the plane (fixed at once; local, no competition)
 for name in list(todo):
     p, net, ring, x, y = BALL[name]

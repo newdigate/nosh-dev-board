@@ -9,7 +9,9 @@ VIA_D, VIA_H, TRK, CLR, HOLE_CLR = 0.45, 0.3, 0.15, 0.13, 0.2
 W, H = 153.9, 81.8
 # plane net -> region (x0, y0, x1, y1) where a zone of that net exists
 PLANES = {'GND': (0, 0, W, H), '+3V3': (0, 0, W, H), '+5V': (0.5, 58.5, 40.0, 81.3), 'SDRAM_3V3': [(26.0, 15.0, 54.5, 58.0), (22.3, 31.5, 26.0, 58.0)],
-          'WL_3V3': (110.0, 6.0, 140.0, 48.0), 'VDD_SOC_IN': (66.5, 36.5, 77.5, 47.5)}
+          'WL_3V3': (110.0, 6.0, 140.0, 48.0), 'VDD_SOC_IN': [(69.6, 36.5, 77.5, 47.5), (72.9, 47.5, 73.5, 54.0)],
+          'DCDC_IN': [(68.1, 43.7, 68.7, 49.5), (67.9, 49.5, 70.3, 54.5)], 'DCDC_ANA': [(69.65, 44.45, 71.1, 45.2), (70.5, 45.2, 71.1, 49.5), (70.5, 49.5, 71.5, 55.7)],
+          'DCDC_DIG': [(71.3, 42.9, 72.7, 44.3), (72.1, 44.3, 72.7, 49.5), (71.7, 49.5, 72.7, 60.8)]}   # fanout2.py islands
 nets = {n.GetNetname(): n for n in board.GetNetInfo().NetsByName().values()}
 
 # obstacles: every pad (bbox) and every via/track, with the net so same-net items are allowed to touch

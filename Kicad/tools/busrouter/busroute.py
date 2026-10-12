@@ -166,6 +166,8 @@ for l in range(3):
         paint(static[l], rect_cells(68.2, 49.3, X1, Y1)); paint(static[l], rect_cells(64.5, 50.6, 68.2, Y1))
     else: paint(static[l], rect_cells(64.5, 49.3, X1, Y1))
 paint(via_static, rect_cells(64.4, 29.0, 65.75, 55.0))          # the escape band west of BGA column 1: nothing lands in front of the balls
+for _r in ((65.6, 35.6, 66.4, 48.4), (77.6, 35.6, 78.4, 48.4), (65.6, 35.6, 78.4, 36.4), (65.6, 47.6, 78.4, 48.4)):
+    paint(via_static, rect_cells(*_r))                             # the outer ring of lattice cells: the ring-1 balls' top-layer exits, no vias there
 ZONE = [zone_of(i) for i in range(NX)]
 FACS = {}
 for cls, (appr, chip) in RULES.items():

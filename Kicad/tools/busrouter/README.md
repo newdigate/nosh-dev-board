@@ -74,3 +74,12 @@ lattice, and gives every ring >= 2 ball a via on a free cell (power balls first)
 everything negotiable at 0.1 mm (3 seeds + a second pass) and `widen_power.py` afterwards. Result: all 247
 connected balls out of the field (194 escapes, 7 plane vias, 46 on planes), DRC clean. Lesson: route the power
 escapes with the rest and widen afterwards; wide tracks routed first cut diagonally across the outer-ring lanes.
+
+SDRAM bus on the fan-out-first board: strip the SDRAM balls' escapes back to the fan-out (the escape router's lane
+order is arbitrary) and clear the non-SDRAM escapes that wandered into the NW corner (`WHOLE=1 bga_strip.py ... 62 32
+70 44`), run `sdram_prebuild.py`, then `west_stubs.py` (fixed top-layer exits for the ring-1 balls of column 2 through
+the gap above each; the negotiation never settled that 15-into-16 chain by itself), then `busroute_multi.sh` with
+8 seeds x 150 rounds: 5 of 8 converged (seed 51 kept: U9 22-67 mm, U10 20-69 mm). `busroute.py` now keeps the outer
+ring of lattice cells via-free (a routed via in a ring-0/1 gap cell sealed the ring-1 exits). `bustune.py` meandered
+six short data nets; SEMC_D16 stays 29 mm short of U10's clock (no straight segment with room). The cleared balls were
+then re-escaped with `bga_escape.py` and the power tracks widened with `widen_power.py`.
