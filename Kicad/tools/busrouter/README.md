@@ -59,3 +59,9 @@ whole chains removed, board-wide negotiation, Freerouting with the escapes locke
 98 on the committed board, because the 2 mm ring round the chip saturates: radial escapes and tangential joins
 cannot share it. The committed board was left as it was. Sealed balls without a rework: DCDC_MODE N4, DCDC_PSWITCH
 P3 (inside the SDRAM lanes), DCDC_DIG K8/K9/L8 and DCDC_ANA M7/M8 (need PWR islands), GND corners A1/U1.
+
+Applied to the board (2026-10-12, option 1 reduced): SEMC_D30's top-layer run under U3/U4 cut and re-joined by
+genroute (31.2 -> 36.9 mm, 6 vias), which let DCDC_LP (U3/T3) and DCDC_LN (U4/T4) reach L1 as 0.1 mm placeholders
+(widen by hand); DCDC_IN PWR island under L5/M5/N5 (C23/C24 still need vias, no free site yet); VDD_SOC island
+trimmed to x >= 69.6; the three duplicate/too-close GND stitch vias cleaned up. 98 -> 95 open, DRC otherwise as before.
+The C145 move and the SEMC_A3 cut were NOT applied: both collide with existing copper on the routed board.
