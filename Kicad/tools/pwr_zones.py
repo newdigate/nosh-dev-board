@@ -22,3 +22,10 @@ zone('PWR_VDD_SOC', 'VDD_SOC_IN', (66.5, 36.5, 77.5, 47.5), 2)     # MCU core ba
 pcbnew.ZONE_FILLER(board).Fill(board.Zones())
 pcbnew.SaveBoard(K + 'Nosh.kicad_pcb', board)
 for z in board.Zones(): print(z.GetZoneName(), z.GetNetname(), board.GetLayerName(z.GetFirstLayer()), 'filled area mm2', round(z.GetFilledArea() / 1e12, 1))
+
+# 2026-10-12 (fanout-first branch): the islands were reshaped on the board itself, not here:
+#   PWR_5V      - tongue north to D2 (x 17-22), south-centre strip for U6/U7/D4, tongue to J10.2, 2 mm corridor
+#                 x 78.5-80.5 up to a patch x 79.5-83.6 x 29.5-43 for U3/D3 (keeps clear of +3V3 pads and vias)
+#   PWR_WL_3V3  - west extension x 85.6-110 x 38-48 for U11/U12, south lip to y 50.4 for FB10/R51/R52
+#   PWR_VDD_SOC - trimmed to x >= 69.6, lobe to R6, north pocket for C16/C18/C21/C22 (tools/dcdc_block2.py)
+#   PWR_DCDC_IN / _ANA / _DIG - fanout2.py / dcdc_block2.py
