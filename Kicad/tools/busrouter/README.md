@@ -180,3 +180,18 @@ power nets at 0.2 mm, plane_vias. Two genroute fixes came out of it: an island w
 (a ball and its escape) is now a routing *target* and a net with one such island plus one outside counts as open
 (before, every strap and cap that only had its escape to reach was silently skipped), and the VDD_SOC neck mouth
 is via-free outright. Result: 78 -> 75 open (34 at the grid, 41 elsewhere), DRC clean apart from J2/J3.
+
+### U15 west pads (2026-10-13)
+
+The codec's pads 16-20 (0.4 mm pitch) with the I2C pull-ups 0.5 mm in front of them defeated every router: each
+run sent one exit along the pad row and sealed the rest. `busrouter/u15_exits.py` lays the five exits by hand
+(R74/R75 swap places so each pull-up sits beside its own pad; SDA/SCL go straight to them; RXD0 goes north and
+joins its existing via; TXD0 drops to SIG at (96.45, 68.1) and runs 5 mm west under the pull-ups; CODEC_1V8 goes
+south) and removes the old CODEC_1V8 exit and NVCC_SD1's pieces in the corridor. With the exits in place the other
+ends were the problem: the band-end stubs of SAI1_RXD0/TXD0 at (80-81, 42) had been boxed in by the east-band
+re-route (genroute's DEBUG dump now names the fixed items in the window: BT_CFG11's track, the SD_DAT3/SD_CD_B/
+LPUART1_TXD/GND vias). A negotiation over the whole east-south quadrant with the exits pinned (`cluster_route.sh`
+takes `PVB=` as the fixed-copper base; `esc/dec/u15/pvb.kicad_pcb` = blk7/pv + the exits) connected both, dropping
+VDDA_1P8, WL_DEV_WAKE, SAI1_RX_SYNC, +1V8, LPUART1_TXD, BT_CFG7 and SD_DAT3 copper, which `esc/restore.py` put back
+where it still fitted (two DRC-driven passes). Result: 75 -> 71 open (35 at the grid, 36 elsewhere); the codec
+pocket is closed (RXD0, TXD0, SDA, SCL, CODEC_1V8); BT_CFG7 (2), SD_DAT3, LPUART1_TXD and +1V8 (R5) lost a link each.

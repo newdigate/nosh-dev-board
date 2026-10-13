@@ -381,6 +381,14 @@ def dump(net, cells, targets, cx, cy, R=1.5):
                 else: ch = '.'
                 row += ch
             print('   ' + row)
+    # what the foreign copper in the window is: fixed items (pads, vias, tracks of other nets) by cell count
+    win = {(l, i, j) for l in range(3) for j in range(j0, j1 + 1) for i in range(i0, i1 + 1) if fixc[l][j * NX + i] and (l, i, j) not in own}
+    hits = collections.Counter()
+    for key, cl in item_fix.items():
+        if key[0] == net: continue
+        n = sum(1 for l, sp in cl for jj, a, b_ in sp if j0 <= jj <= j1 for ii in range(max(a, i0), min(b_, i1) + 1) if (l, ii, jj) in win)
+        if n: hits[key[:4] if key[1] == 'pad' else (key[0], key[1], round(key[2], 1), round(key[3], 1))] += n
+    print('   foreign fixed items in the window:', ', '.join('%s x%d' % (k, n) for k, n in hits.most_common(14)))
 FIELD = [float(v) for v in os.environ['FIELD'].split(',')] if os.environ.get('FIELD') else None   # x0,y0,x1,y1: islands centred here are left alone
 def in_field(c):
     if not FIELD: return False
