@@ -195,3 +195,24 @@ takes `PVB=` as the fixed-copper base; `esc/dec/u15/pvb.kicad_pcb` = blk7/pv + t
 VDDA_1P8, WL_DEV_WAKE, SAI1_RX_SYNC, +1V8, LPUART1_TXD, BT_CFG7 and SD_DAT3 copper, which `esc/restore.py` put back
 where it still fitted (two DRC-driven passes). Result: 75 -> 71 open (35 at the grid, 36 elsewhere); the codec
 pocket is closed (RXD0, TXD0, SDA, SCL, CODEC_1V8); BT_CFG7 (2), SD_DAT3, LPUART1_TXD and +1V8 (R5) lost a link each.
+
+### Targeted re-escape of the stuck balls (2026-10-13)
+
+Of the 247 connected balls, 114 are escaped and connected, 58 are the SDRAM bus, 10 became single-pad when the
+header went, 42 are unconnected, and ~45 are open at the grid - but only 15 never left the chip: A1/A4/U1/U17
+(ring 0, no via by design) and D4, D12, D14, E7, D10, D7, E14, J14, N12, N7, N8, whose dog-bone via is there and
+whose escape stopped inside the grid. The others have their escape and lack the continuation outside.
+- `busrouter/ball_strip.py in out BALLS` strips the copper hanging off given balls back to the dog-bone;
+  `WIN=x0,y0,x1,y1` limits that to the escape inside the box (a connected neighbour's route beyond it stays).
+- Re-escaping the 15 alone fails outright (their lanes are taken by fixed neighbours). Re-escaping them with the
+  non-bus, non-plane, single-ball neighbours within one cell (40 balls, 40 nets) in band mode places all 40 in
+  6 s (seed 3). WINDOW=board (escapes routed all the way to their destination) does not converge for a group
+  that size; a radius-2 neighbourhood (73 balls, with multi-ball power nets) loses more than it gains.
+- The continuation is the hard half: the new band ends sit elsewhere than the old route ends, so local_links +
+  greedy reconnect only part of them; putting back the broken nets' old copper where it still fits (esc/restore.py,
+  DRC-driven, two passes) recovers most. Results against 71 (35 at the grid): radius-1 whole-island strip +
+  repair 66 (29 / 37); escape-only strip (WIN) + repair 66 (28 / 38) - applied. The grid is down to 28 open
+  connections; the balls that moved out are BT_CFG1, CTP_INT, LPI2C5_SDA, NVCC_DISP1, NVCC_SD1, SD_CMD, SD_DAT2,
+  USB_OTG2_OC; seven neighbours (BT_CFG8/11, NVCC_LPSR, SD_CLK, SD_DAT1, USER_LED, VDD_LPSR_DIG) now wait for their
+  continuation at the band instead, and BT_CFG1, LPI2C5_SCL, NVCC_DISP2, SAI1_RXD0, SD_DAT0/2, USB_OTG2_OC each
+  lost an outside link.

@@ -378,7 +378,7 @@ for name in todo:
 for name in list(todo):
     p, net, ring, x, y = BALL[name]
     if net not in planes: continue
-    pv = {c for c in plane_via_targets(net, SRC[name], 1.6) if not (FIELD[0] <= wx(c[1]) <= FIELD[2] and FIELD[1] <= wy(c[2]) <= FIELD[3])}
+    pv = {c for c in plane_via_targets(net, SRC[name], float(os.environ.get('PLANE_R', '1.6'))) if not (FIELD[0] <= wx(c[1]) <= FIELD[2] and FIELD[1] <= wy(c[2]) <= FIELD[3])}   # PLANE_R: how far a plane ball may reach for its via
     own = set()
     for key, cells, xy, through in core[net]:
         if key[1] in ('gtrk', 'gvia'): own.update(cells_of(cells))
