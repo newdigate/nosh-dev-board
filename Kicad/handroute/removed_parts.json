@@ -1,0 +1,2293 @@
+{
+ "parts": [
+  {
+   "ref": "TP32",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 96.25,
+   "y": 44.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "NVCC_SD2",
+     "x": 96.25,
+     "y": 44.25,
+     "box": [
+      95.75,
+      43.75,
+      96.75,
+      44.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP13",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 60.0,
+   "y": 10.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "WL_3V3",
+     "x": 60.0,
+     "y": 10.0,
+     "box": [
+      59.5,
+      9.5,
+      60.5,
+      10.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP51",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 79.25,
+   "y": 12.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "BACKLIGHT_CTL",
+     "x": 79.25,
+     "y": 12.75,
+     "box": [
+      78.75,
+      12.25,
+      79.75,
+      13.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP40",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 64.0,
+   "y": 57.2,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "PMIC_STBY_REQ",
+     "x": 64.0,
+     "y": 57.2,
+     "box": [
+      63.5,
+      56.7,
+      64.5,
+      57.7
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP26",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 80.0,
+   "y": 60.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "VDDA_1P8",
+     "x": 80.0,
+     "y": 60.5,
+     "box": [
+      79.5,
+      60.0,
+      80.5,
+      61.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP63",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 83.0,
+   "y": 60.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "LPUART1_RXD",
+     "x": 83.0,
+     "y": 60.5,
+     "box": [
+      82.5,
+      60.0,
+      83.5,
+      61.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP47",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 90.5,
+   "y": 46.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "USB_OTG2_OC",
+     "x": 90.5,
+     "y": 46.75,
+     "box": [
+      90.0,
+      46.25,
+      91.0,
+      47.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP4",
+   "fpid": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+   "value": "TestPoint",
+   "x": 24.0,
+   "y": 10.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "GND",
+     "x": 24.0,
+     "y": 10.0,
+     "box": [
+      23.0,
+      9.0,
+      25.0,
+      11.0
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP28",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 86.0,
+   "y": 60.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "VDD_LPSR_IN",
+     "x": 86.0,
+     "y": 60.25,
+     "box": [
+      85.5,
+      59.75,
+      86.5,
+      60.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP55",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 84.5,
+   "y": 8.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "CTP_INT",
+     "x": 84.5,
+     "y": 8.0,
+     "box": [
+      84.0,
+      7.5,
+      85.0,
+      8.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP42",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 47.0,
+   "y": 12.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "BOOT_MODE1",
+     "x": 47.0,
+     "y": 12.0,
+     "box": [
+      46.5,
+      11.5,
+      47.5,
+      12.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "J10",
+   "fpid": "Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical",
+   "value": "EXPANSION",
+   "x": 70.2475,
+   "y": 68.8074,
+   "rot": 90.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "+3V3",
+     "x": 70.2475,
+     "y": 68.8074,
+     "box": [
+      69.3975,
+      67.9574,
+      71.0975,
+      69.6574
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "2",
+     "net": "+5V",
+     "x": 70.2475,
+     "y": 66.2674,
+     "box": [
+      69.3975,
+      65.4174,
+      71.0975,
+      67.1174
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "3",
+     "net": "GND",
+     "x": 72.7875,
+     "y": 68.8074,
+     "box": [
+      71.9375,
+      67.9574,
+      73.6375,
+      69.6574
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "4",
+     "net": "GND",
+     "x": 72.7875,
+     "y": 66.2674,
+     "box": [
+      71.9375,
+      65.4174,
+      73.6375,
+      67.1174
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "5",
+     "net": "LPUART1_TXD",
+     "x": 75.3275,
+     "y": 68.8074,
+     "box": [
+      74.4775,
+      67.9574,
+      76.1775,
+      69.6574
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "6",
+     "net": "LPUART1_RXD",
+     "x": 75.3275,
+     "y": 66.2674,
+     "box": [
+      74.4775,
+      65.4174,
+      76.1775,
+      67.1174
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "7",
+     "net": "LPI2C5_SCL",
+     "x": 77.8675,
+     "y": 68.8074,
+     "box": [
+      77.0175,
+      67.9574,
+      78.7175,
+      69.6574
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "8",
+     "net": "LPI2C5_SDA",
+     "x": 77.8675,
+     "y": 66.2674,
+     "box": [
+      77.0175,
+      65.4174,
+      78.7175,
+      67.1174
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "9",
+     "net": "LPSPI3_SCK",
+     "x": 80.4075,
+     "y": 68.8074,
+     "box": [
+      79.5575,
+      67.9574,
+      81.2575,
+      69.6574
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "10",
+     "net": "LPSPI3_CS",
+     "x": 80.4075,
+     "y": 66.2674,
+     "box": [
+      79.5575,
+      65.4174,
+      81.2575,
+      67.1174
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "11",
+     "net": "LPSPI3_SOUT",
+     "x": 82.9475,
+     "y": 68.8074,
+     "box": [
+      82.0975,
+      67.9574,
+      83.7975,
+      69.6574
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "12",
+     "net": "LPSPI3_SIN",
+     "x": 82.9475,
+     "y": 66.2674,
+     "box": [
+      82.0975,
+      65.4174,
+      83.7975,
+      67.1174
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "13",
+     "net": "GPIO_LPSR_00",
+     "x": 85.4875,
+     "y": 68.8074,
+     "box": [
+      84.6375,
+      67.9574,
+      86.3375,
+      69.6574
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "14",
+     "net": "GPIO_LPSR_01",
+     "x": 85.4875,
+     "y": 66.2674,
+     "box": [
+      84.6375,
+      65.4174,
+      86.3375,
+      67.1174
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "15",
+     "net": "GPIO_AD_10",
+     "x": 88.0275,
+     "y": 68.8074,
+     "box": [
+      87.1775,
+      67.9574,
+      88.8775,
+      69.6574
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "16",
+     "net": "GPIO_AD_11",
+     "x": 88.0275,
+     "y": 66.2674,
+     "box": [
+      87.1775,
+      65.4174,
+      88.8775,
+      67.1174
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "17",
+     "net": "GPIO_AD_12",
+     "x": 90.5675,
+     "y": 68.8074,
+     "box": [
+      89.7175,
+      67.9574,
+      91.4175,
+      69.6574
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "18",
+     "net": "GPIO_AD_13",
+     "x": 90.5675,
+     "y": 66.2674,
+     "box": [
+      89.7175,
+      65.4174,
+      91.4175,
+      67.1174
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "19",
+     "net": "GND",
+     "x": 93.1075,
+     "y": 68.8074,
+     "box": [
+      92.2575,
+      67.9574,
+      93.9575,
+      69.6574
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    },
+    {
+     "num": "20",
+     "net": "GPIO_AD_26",
+     "x": 93.1075,
+     "y": 66.2674,
+     "box": [
+      92.2575,
+      65.4174,
+      93.9575,
+      67.1174
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP38",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 28.25,
+   "y": 79.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "WAKEUP",
+     "x": 28.25,
+     "y": 79.5,
+     "box": [
+      27.75,
+      79.0,
+      28.75,
+      80.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP36",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 38.25,
+   "y": 75.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "POR_B",
+     "x": 38.25,
+     "y": 75.0,
+     "box": [
+      37.75,
+      74.5,
+      38.75,
+      75.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP9",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 44.0,
+   "y": 10.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "+3V3",
+     "x": 44.0,
+     "y": 10.0,
+     "box": [
+      43.5,
+      9.5,
+      44.5,
+      10.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP18",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 76.75,
+   "y": 3.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "LCD_IOVCC_1V8",
+     "x": 76.75,
+     "y": 3.75,
+     "box": [
+      76.25,
+      3.25,
+      77.25,
+      4.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP54",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 76.5,
+   "y": 15.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "CTP_RST_B",
+     "x": 76.5,
+     "y": 15.5,
+     "box": [
+      76.0,
+      15.0,
+      77.0,
+      16.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP65",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 76.5,
+   "y": 8.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "LPI2C5_SCL",
+     "x": 76.5,
+     "y": 8.25,
+     "box": [
+      76.0,
+      7.75,
+      77.0,
+      8.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP57",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 59.0,
+   "y": 66.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "BT_RST_B",
+     "x": 59.0,
+     "y": 66.0,
+     "box": [
+      58.5,
+      65.5,
+      59.5,
+      66.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP20",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 83.75,
+   "y": 28.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "USB1_VBUS",
+     "x": 83.75,
+     "y": 28.5,
+     "box": [
+      83.25,
+      28.0,
+      84.25,
+      29.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP1",
+   "fpid": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+   "value": "TestPoint",
+   "x": 12.0,
+   "y": 10.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "GND",
+     "x": 12.0,
+     "y": 10.0,
+     "box": [
+      11.0,
+      9.0,
+      13.0,
+      11.0
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP67",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 96.5,
+   "y": 49.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "SAI1_TX_BCLK",
+     "x": 96.5,
+     "y": 49.5,
+     "box": [
+      96.0,
+      49.0,
+      97.0,
+      50.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP35",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 86.0,
+   "y": 24.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "VDDA_ADC_3P3",
+     "x": 86.0,
+     "y": 24.75,
+     "box": [
+      85.5,
+      24.25,
+      86.5,
+      25.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP37",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 19.5,
+   "y": 79.5,
+   "rot": 90.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "ONOFF",
+     "x": 19.5,
+     "y": 79.5,
+     "box": [
+      19.0,
+      79.0,
+      20.0,
+      80.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP71",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 97.75,
+   "y": 41.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "BT_UART_TXD",
+     "x": 97.75,
+     "y": 41.25,
+     "box": [
+      97.25,
+      40.75,
+      98.25,
+      41.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP66",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 103.25,
+   "y": 61.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "SAI1_MCLK",
+     "x": 103.25,
+     "y": 61.5,
+     "box": [
+      102.75,
+      61.0,
+      103.75,
+      62.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP69",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 98.25,
+   "y": 64.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "SAI1_TXD0",
+     "x": 98.25,
+     "y": 64.75,
+     "box": [
+      97.75,
+      64.25,
+      98.75,
+      65.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP5",
+   "fpid": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+   "value": "TestPoint",
+   "x": 28.0,
+   "y": 10.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "GND",
+     "x": 28.0,
+     "y": 10.0,
+     "box": [
+      27.0,
+      9.0,
+      29.0,
+      11.0
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP62",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 75.25,
+   "y": 72.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "LPUART1_TXD",
+     "x": 75.25,
+     "y": 72.25,
+     "box": [
+      74.75,
+      71.75,
+      75.75,
+      72.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP22",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 60.25,
+   "y": 12.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "DCDC_IN",
+     "x": 60.25,
+     "y": 12.75,
+     "box": [
+      59.75,
+      12.25,
+      60.75,
+      13.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP31",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 27.75,
+   "y": 70.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "NVCC_SD1",
+     "x": 27.75,
+     "y": 70.0,
+     "box": [
+      27.25,
+      69.5,
+      28.25,
+      70.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP64",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 79.75,
+   "y": 3.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "LPI2C5_SDA",
+     "x": 79.75,
+     "y": 3.0,
+     "box": [
+      79.25,
+      2.5,
+      80.25,
+      3.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP48",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 40.0,
+   "y": 60.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "SD_PWREN_B",
+     "x": 40.0,
+     "y": 60.0,
+     "box": [
+      39.5,
+      59.5,
+      40.5,
+      60.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP45",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 28.5,
+   "y": 64.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "BUCK_EN",
+     "x": 28.5,
+     "y": 64.5,
+     "box": [
+      28.0,
+      64.0,
+      29.0,
+      65.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP17",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 81.0,
+   "y": 6.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "LCD_5V",
+     "x": 81.0,
+     "y": 6.0,
+     "box": [
+      80.5,
+      5.5,
+      81.5,
+      6.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP16",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 118.25,
+   "y": 55.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "AUD_VDDA",
+     "x": 118.25,
+     "y": 55.75,
+     "box": [
+      117.75,
+      55.25,
+      118.75,
+      56.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP46",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 92.5,
+   "y": 24.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "OTG2_VBUS_EN",
+     "x": 92.5,
+     "y": 24.75,
+     "box": [
+      92.0,
+      24.25,
+      93.0,
+      25.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP34",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 89.75,
+   "y": 59.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "VDD_USB_3P3",
+     "x": 89.75,
+     "y": 59.5,
+     "box": [
+      89.25,
+      59.0,
+      90.25,
+      60.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP2",
+   "fpid": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+   "value": "TestPoint",
+   "x": 16.0,
+   "y": 10.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "GND",
+     "x": 16.0,
+     "y": 10.0,
+     "box": [
+      15.0,
+      9.0,
+      17.0,
+      11.0
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP27",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 20.0,
+   "y": 37.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "VDD_SNVS_IN",
+     "x": 20.0,
+     "y": 37.75,
+     "box": [
+      19.5,
+      37.25,
+      20.5,
+      38.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP6",
+   "fpid": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+   "value": "TestPoint",
+   "x": 32.0,
+   "y": 10.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "GND",
+     "x": 32.0,
+     "y": 10.0,
+     "box": [
+      31.0,
+      9.0,
+      33.0,
+      11.0
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP10",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 68.0,
+   "y": 2.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "+1V8",
+     "x": 68.0,
+     "y": 2.25,
+     "box": [
+      67.5,
+      1.75,
+      68.5,
+      2.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP44",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 86.5,
+   "y": 28.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "DCDC_MODE",
+     "x": 86.5,
+     "y": 28.25,
+     "box": [
+      86.0,
+      27.75,
+      87.0,
+      28.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP11",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 17.5,
+   "y": 41.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "VLDO_3V3",
+     "x": 17.5,
+     "y": 41.5,
+     "box": [
+      17.0,
+      41.0,
+      18.0,
+      42.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP19",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 73.75,
+   "y": 4.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "CTP_3V3",
+     "x": 73.75,
+     "y": 4.75,
+     "box": [
+      73.25,
+      4.25,
+      74.25,
+      5.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP41",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 52.75,
+   "y": 67.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "BOOT_MODE0",
+     "x": 52.75,
+     "y": 67.75,
+     "box": [
+      52.25,
+      67.25,
+      53.25,
+      68.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP39",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 50.0,
+   "y": 68.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "PMIC_ON_REQ",
+     "x": 50.0,
+     "y": 68.25,
+     "box": [
+      49.5,
+      67.75,
+      50.5,
+      68.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP8",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 40.0,
+   "y": 10.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "+5V",
+     "x": 40.0,
+     "y": 10.0,
+     "box": [
+      39.5,
+      9.5,
+      40.5,
+      10.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP60",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 97.75,
+   "y": 38.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "WL_DEV_WAKE",
+     "x": 97.75,
+     "y": 38.25,
+     "box": [
+      97.25,
+      37.75,
+      98.25,
+      38.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP3",
+   "fpid": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+   "value": "TestPoint",
+   "x": 20.0,
+   "y": 10.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "GND",
+     "x": 20.0,
+     "y": 10.0,
+     "box": [
+      19.0,
+      9.0,
+      21.0,
+      11.0
+     ],
+     "layers": [
+      "F.Cu",
+      "B.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP52",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 64.75,
+   "y": 4.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "LCD_RST_B",
+     "x": 64.75,
+     "y": 4.5,
+     "box": [
+      64.25,
+      4.0,
+      65.25,
+      5.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP49",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 144.5,
+   "y": 29.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "SD_CD_B",
+     "x": 144.5,
+     "y": 29.0,
+     "box": [
+      144.0,
+      28.5,
+      145.0,
+      29.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP21",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 88.75,
+   "y": 32.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "USB2_VBUS",
+     "x": 88.75,
+     "y": 32.5,
+     "box": [
+      88.25,
+      32.0,
+      89.25,
+      33.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP59",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 98.5,
+   "y": 35.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "BT_WAKE_B",
+     "x": 98.5,
+     "y": 35.5,
+     "box": [
+      98.0,
+      35.0,
+      99.0,
+      36.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP14",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 60.25,
+   "y": 7.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "SDRAM_3V3",
+     "x": 60.25,
+     "y": 7.25,
+     "box": [
+      59.75,
+      6.75,
+      60.75,
+      7.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP53",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 81.0,
+   "y": 10.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "LCD_TE",
+     "x": 81.0,
+     "y": 10.0,
+     "box": [
+      80.5,
+      9.5,
+      81.5,
+      10.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP29",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 41.25,
+   "y": 14.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "NVCC_LPSR",
+     "x": 41.25,
+     "y": 14.75,
+     "box": [
+      40.75,
+      14.25,
+      41.75,
+      15.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP50",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 51.5,
+   "y": 13.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "LCM_PWR_EN",
+     "x": 51.5,
+     "y": 13.75,
+     "box": [
+      51.0,
+      13.25,
+      52.0,
+      14.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP24",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 86.0,
+   "y": 32.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "DCDC_ANA",
+     "x": 86.0,
+     "y": 32.25,
+     "box": [
+      85.5,
+      31.75,
+      86.5,
+      32.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP61",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 93.5,
+   "y": 32.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "BT_DEV_WAKE",
+     "x": 93.5,
+     "y": 32.75,
+     "box": [
+      93.0,
+      32.25,
+      94.0,
+      33.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP7",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 23.25,
+   "y": 50.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "DC_IN_F",
+     "x": 23.25,
+     "y": 50.0,
+     "box": [
+      22.75,
+      49.5,
+      23.75,
+      50.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP70",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 101.0,
+   "y": 64.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "SAI1_RXD0",
+     "x": 101.0,
+     "y": 64.5,
+     "box": [
+      100.5,
+      64.0,
+      101.5,
+      65.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP43",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 57.5,
+   "y": 6.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "DCDC_PSWITCH",
+     "x": 57.5,
+     "y": 6.5,
+     "box": [
+      57.0,
+      6.0,
+      58.0,
+      7.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP30",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 90.5,
+   "y": 53.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "NVCC_GPIO",
+     "x": 90.5,
+     "y": 53.25,
+     "box": [
+      90.0,
+      52.75,
+      91.0,
+      53.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP56",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 93.25,
+   "y": 55.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "WL_RST_B",
+     "x": 93.25,
+     "y": 55.75,
+     "box": [
+      92.75,
+      55.25,
+      93.75,
+      56.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP33",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 54.5,
+   "y": 5.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "NVCC_EMC1",
+     "x": 54.5,
+     "y": 5.75,
+     "box": [
+      54.0,
+      5.25,
+      55.0,
+      6.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP12",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 25.25,
+   "y": 26.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "VSD_3V3",
+     "x": 25.25,
+     "y": 26.25,
+     "box": [
+      24.75,
+      25.75,
+      25.75,
+      26.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP23",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 56.5,
+   "y": 71.75,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "DCDC_DIG",
+     "x": 56.5,
+     "y": 71.75,
+     "box": [
+      56.0,
+      71.25,
+      57.0,
+      72.25
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP68",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 99.0,
+   "y": 46.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "SAI1_TX_SYNC",
+     "x": 99.0,
+     "y": 46.0,
+     "box": [
+      98.5,
+      45.5,
+      99.5,
+      46.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP25",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 8.0,
+   "y": 14.5,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "VDD_SOC_IN",
+     "x": 8.0,
+     "y": 14.5,
+     "box": [
+      7.5,
+      14.0,
+      8.5,
+      15.0
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP72",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 105.0,
+   "y": 45.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "BT_UART_RXD",
+     "x": 105.0,
+     "y": 45.25,
+     "box": [
+      104.5,
+      44.75,
+      105.5,
+      45.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP15",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 115.25,
+   "y": 49.25,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "CODEC_1V8",
+     "x": 115.25,
+     "y": 49.25,
+     "box": [
+      114.75,
+      48.75,
+      115.75,
+      49.75
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "TP58",
+   "fpid": "TestPoint:TestPoint_Pad_D1.0mm",
+   "value": "TestPoint",
+   "x": 102.0,
+   "y": 48.0,
+   "rot": 0.0,
+   "side": "F",
+   "pads": [
+    {
+     "num": "1",
+     "net": "WIFI_WAKE_B",
+     "x": 102.0,
+     "y": 48.0,
+     "box": [
+      101.5,
+      47.5,
+      102.5,
+      48.5
+     ],
+     "layers": [
+      "F.Cu"
+     ]
+    }
+   ]
+  }
+ ],
+ "nets": [
+  "+1V8",
+  "+3V3",
+  "+5V",
+  "AUD_VDDA",
+  "BACKLIGHT_CTL",
+  "BOOT_MODE0",
+  "BOOT_MODE1",
+  "BT_DEV_WAKE",
+  "BT_RST_B",
+  "BT_UART_RXD",
+  "BT_UART_TXD",
+  "BT_WAKE_B",
+  "BUCK_EN",
+  "CODEC_1V8",
+  "CTP_3V3",
+  "CTP_INT",
+  "CTP_RST_B",
+  "DCDC_ANA",
+  "DCDC_DIG",
+  "DCDC_IN",
+  "DCDC_MODE",
+  "DCDC_PSWITCH",
+  "DC_IN_F",
+  "GND",
+  "GPIO_AD_10",
+  "GPIO_AD_11",
+  "GPIO_AD_12",
+  "GPIO_AD_13",
+  "GPIO_AD_26",
+  "GPIO_LPSR_00",
+  "GPIO_LPSR_01",
+  "LCD_5V",
+  "LCD_IOVCC_1V8",
+  "LCD_RST_B",
+  "LCD_TE",
+  "LCM_PWR_EN",
+  "LPI2C5_SCL",
+  "LPI2C5_SDA",
+  "LPSPI3_CS",
+  "LPSPI3_SCK",
+  "LPSPI3_SIN",
+  "LPSPI3_SOUT",
+  "LPUART1_RXD",
+  "LPUART1_TXD",
+  "NVCC_EMC1",
+  "NVCC_GPIO",
+  "NVCC_LPSR",
+  "NVCC_SD1",
+  "NVCC_SD2",
+  "ONOFF",
+  "OTG2_VBUS_EN",
+  "PMIC_ON_REQ",
+  "PMIC_STBY_REQ",
+  "POR_B",
+  "SAI1_MCLK",
+  "SAI1_RXD0",
+  "SAI1_TXD0",
+  "SAI1_TX_BCLK",
+  "SAI1_TX_SYNC",
+  "SDRAM_3V3",
+  "SD_CD_B",
+  "SD_PWREN_B",
+  "USB1_VBUS",
+  "USB2_VBUS",
+  "USB_OTG2_OC",
+  "VDDA_1P8",
+  "VDDA_ADC_3P3",
+  "VDD_LPSR_IN",
+  "VDD_SNVS_IN",
+  "VDD_SOC_IN",
+  "VDD_USB_3P3",
+  "VLDO_3V3",
+  "VSD_3V3",
+  "WAKEUP",
+  "WIFI_WAKE_B",
+  "WL_3V3",
+  "WL_DEV_WAKE",
+  "WL_RST_B"
+ ]
+}

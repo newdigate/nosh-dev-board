@@ -150,3 +150,13 @@ need their cap vias (sites exist, the greedy router does not reach them).
   `WINDOW=board MODE=pref NETSEL=... PREFSIDE=NET:N bga_escape.py` the ball is re-escaped straight to the net's own
   copper anywhere (VDD_MIPI_1P8, NVCC_DISP1 and LCD_RST_B, whose first escapes ended sealed in the band, 4 s).
 - `tools/rest_moves.py` also drops any routed copper under a moved part's courtyard (re-routed afterwards).
+- `tools/strip_parts.py in out [REFS]` (2026-10-13): takes the expansion header J10 and every test point off a
+  copy of the board (recorded in out.removed.json so they can be put back), keeps the routes that met at a removed
+  pad by joining their ends (a pad used as a junction splits the net otherwise), drops the copper of nets left with
+  one pad (header-only GPIOs keep just their fan-out) and prunes dangling branches - a track end counts as attached
+  when it sits on a pad, a via, or the middle of another track (genroute joins islands mid-segment). Phases run in
+  fresh interpreters: pcbnew cannot iterate a board after Remove() nor reload one it just saved. Result: 102 -> 126
+  open on removal, a greedy pass brings it to 80 (45 at the grid, 35 elsewhere); the regional negotiations gain
+  nothing on top of that (each stage drops more conflicting copper than it routes), so the greedy board is the one
+  to compare. genroute also keeps the VDD_SOC neck mouth (71.0-72.2 x 33.4-36.6) via-free outright: a via in the
+  pocket beside the join cut the neck although it sat in a wide region.

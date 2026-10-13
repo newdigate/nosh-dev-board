@@ -123,6 +123,9 @@ for z in board.Zones():
             if not blocked and run is not None: spans.append((j, run, i - 1)); run = None
         if run is not None: spans.append((j, run, b_))
     paint(via_static, spans)
+# the VDD_SOC neck (0.8 mm wide, x 71.2-72.0, y 33.8-36.5) joins a wide pocket: a via in the pocket beside the join cuts
+# it although the via itself sits in a wide region, so the neck and its mouth are via-free outright (as KO_SOC_NECK was)
+for x0, y0, x1, y1 in ((71.0, 33.4, 72.2, 36.6),): paint(via_static, rect_cells(x0 - VIA_D / 2 - 0.2, y0, x1 + VIA_D / 2 + 0.2, y1))
 # ---- copper: everything is fixed (hard for other nets, own-exempt)
 nets_by_name = board.GetNetInfo().NetsByName()
 def pad_layers(p): return [l for L, l in LAY.items() if p.IsOnLayer(l)]
