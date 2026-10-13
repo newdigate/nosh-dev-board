@@ -6,7 +6,8 @@ through the plane); the router joins the islands, or drops a 0.45/0.3 via into t
 negotiated (PathFinder, as busroute.py). Tracks on F.Cu, SIG and B.Cu only. Through-hole pads keep 0.2 mm,
 keep-out areas and the board edge are respected.
 env: GREEDY=1 (fix each link at once, no negotiation), FIELD=x0,y0,x1,y1 (islands centred in this box are left to the
-escape router), DEBUG=1 (grid map round every unreached island), EXP (A* expansion budget, default 6e6), SEED, U1_FIRST=1.
+escape router), DEBUG=1 (grid map round every unreached island), EXP (A* expansion budget, default 6e6), SEED, U1_FIRST=1,
+FIRST=regex (route these nets first each round), BANDCOST=x0,x1,k (steps in these columns cost k times more).
 """
 import sys, os, math, re, time, array, collections, ctypes, random
 import pcbnew
@@ -252,6 +253,10 @@ def addr(buf):
         c = (ctypes.c_char * len(buf)).from_buffer(buf); _keep.append(c); return ctypes.addressof(c)
     return buf.buffer_info()[0]
 FAC = [array.array('f', [1.0] * NX), array.array('f', [1.15] * NX), array.array('f', [1.0] * NX)]
+if os.environ.get('BANDCOST'):                     # BANDCOST=x0,x1,k: every step in these columns costs k times more (crossing a band is cheap, running along it is not)
+    _bx0, _bx1, _bk = (float(v) for v in os.environ['BANDCOST'].split(','))
+    for _l in range(3):
+        for _i in range(max(0, gx(_bx0)), min(NX - 1, gx(_bx1)) + 1): FAC[_l][_i] *= _bk
 VIACOST = array.array('f', [0.8] * NX)
 GR = GridS(); GR.nx, GR.ny, GR.g, GR.x0, GR.y0 = NX, NY, G, X0, Y0
 for l in range(3):
@@ -387,7 +392,7 @@ def route_net(net):
     if len(comps) <= 1: return [], [], []
     has_plane = net in planes
     base = [c for c in comps if c['plane']] if has_plane else []
-    if not base: base = [max(comps, key=lambda c: len(c['cells']))]
+    if not base: base = [c for c in comps if in_field(c)] or [max(comps, key=lambda c: len(c['cells']))]   # the ball's escape is fixed copper: route the others to it
     rest = [c for c in comps if c not in base and c['has_pad'] and not in_field(c)]   # islands inside FIELD are the escape router's
     src = set().union(*[c['cells'] for c in base]); segs_all = []; vias_all = []; failed = []
     for c in sorted(rest, key=lambda c: len(c['cells'])):
@@ -453,7 +458,11 @@ for n in nets:
             DEAD.append(item_obj[key])
         core[n] = [it for it in core[n] if it[0] not in set(c['members'])]
 print('dead fragments removed: %d items' % len(DEAD), flush=True)
-open_nets = [n for n in nets if sum(1 for c in islands(n) if c['has_pad'] and not in_field(c)) > 1 or (n in planes and any(c['has_pad'] and not c['plane'] and not in_field(c) for c in islands(n)))]
+def is_open(n):                                        # more than one pad island, at least one of them outside the field (a field island is a fine target)
+    cs = [c for c in islands(n) if c['has_pad']]
+    if n in planes: return any(not c['plane'] and not in_field(c) for c in cs)
+    return len(cs) > 1 and any(not in_field(c) for c in cs)
+open_nets = [n for n in nets if is_open(n)]
 print('nets selected %d, with open connections %d' % (len(nets), len(open_nets)), flush=True)
 todo = set(open_nets); best = None; conf = {}; fails = {}; FAILS_PREV = None; FULL = set(); RIP_R = 1.5
 def nets_near(pts, r=RIP_R):
@@ -468,6 +477,7 @@ def nets_near(pts, r=RIP_R):
 for rnd in range(1, ROUNDS + 1):
     t1 = time.time(); fails = {}; failpts = []
     order = sorted(todo); random.Random(rnd + int(os.environ.get('SEED', '0'))).shuffle(order)
+    if os.environ.get('FIRST'): order.sort(key=lambda n: not re.match(os.environ['FIRST'], n))   # FIRST=regex: these nets are routed before the others each round
     if os.environ.get('U1_FIRST') == '1':          # nets with an MCU ball first: their escapes are the scarce resource
         u1n = {p_.GetNetname() for f_ in board.GetFootprints() if f_.GetReference() == 'U1' for p_ in f_.Pads()} if rnd == 1 and 'U1N' not in globals() else globals().get('U1N')
         globals()['U1N'] = u1n; order.sort(key=lambda n: n not in u1n)

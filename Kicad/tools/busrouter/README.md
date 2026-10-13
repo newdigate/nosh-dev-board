@@ -160,3 +160,23 @@ need their cap vias (sites exist, the greedy router does not reach them).
   nothing on top of that (each stage drops more conflicting copper than it routes), so the greedy board is the one
   to compare. genroute also keeps the VDD_SOC neck mouth (71.0-72.2 x 33.4-36.6) via-free outright: a via in the
   pocket beside the join cut the neck although it sat in a wide region.
+
+### East band (2026-10-13)
+
+What was in the way was not routing but parts: the band x 78.9-84 beside the field held U3 (USB2 VBUS switch) with
+R23/R24, D3/C51 (USB1 VBUS schottky) and six BOOT_CFG pull-downs plus R39, and the corridor east of it (x 84-90)
+carried U11 (BT UART level shifter), the SD/codec/M.2 traffic and three power snakes (NVCC_SD2 39 mm, USB2_VBUS 21,
+DCDC_ANA to C26 19 mm of north-south track). Clearing the band's routed copper and re-routing with any order or
+band cost (genroute FIRST, BANDCOST) gave 79-92 against 78, so the parts were moved (`tools/move_out.py`: first free
+spot of a box, courtyards + 0.25 mm, old plane stubs and routed copper under the new courtyard dropped):
+- U3, R23, R24, D3, C51 into the free south-east pocket (87-96 x 58-63); the +5V patch at 79.5-83.6 x 29.5-43 is
+  gone and a +5V tongue 80.5-96.3 x 57.8-63.4 feeds them (the +5V island is one piece again);
+- R93, R95, R98, R100, R102, R103 and R39 to the north-east (90.5-97.5 x 18.5-29.3);
+- the six SD-card nets (SD_CMD, SD_CLK, SD_DAT0-3) re-escaped north (net_strip + bga_escape MODE=pref PREFSIDE=N)
+  so they run along the top to the socket instead of through the band.
+Then `busrouter/band_strip.py` (the routed copper inside the band; WHOLE=1 takes whole signal routes that cross
+it, power nets keep their pieces) and greedy at 0.1 mm with FIRST=the band-end nets, BANDCOST=78.9,84,4, then the
+power nets at 0.2 mm, plane_vias. Two genroute fixes came out of it: an island whose centroid lies in the FIELD box
+(a ball and its escape) is now a routing *target* and a net with one such island plus one outside counts as open
+(before, every strap and cap that only had its escape to reach was silently skipped), and the VDD_SOC neck mouth
+is via-free outright. Result: 78 -> 75 open (34 at the grid, 41 elsewhere), DRC clean apart from J2/J3.
