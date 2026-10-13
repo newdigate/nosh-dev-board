@@ -5,6 +5,8 @@ existing copper is grouped into connected islands (vias inside a filled plane zo
 through the plane); the router joins the islands, or drops a 0.45/0.3 via into the net's plane. New copper is
 negotiated (PathFinder, as busroute.py). Tracks on F.Cu, SIG and B.Cu only. Through-hole pads keep 0.2 mm,
 keep-out areas and the board edge are respected.
+env: GREEDY=1 (fix each link at once, no negotiation), FIELD=x0,y0,x1,y1 (islands centred in this box are left to the
+escape router), DEBUG=1 (grid map round every unreached island), EXP (A* expansion budget, default 6e6), SEED, U1_FIRST=1.
 """
 import sys, os, math, re, time, array, collections, ctypes, random
 import pcbnew
@@ -64,6 +66,14 @@ def poly_cells(poly, extra):
             if not inside and run is not None: out.append((j, run, i - 1)); run = None
         if run is not None: out.append((j, run, b_))
     return out
+def inside_runs(poly, j, a, b_):
+    out = []; run = None
+    for i in range(a, b_ + 1):
+        ins = poly.Contains(VECTOR2I(FromMM(wx(i)), FromMM(wy(j))))
+        if ins and run is None: run = i
+        if not ins and run is not None: out.append((run, i - 1)); run = None
+    if run is not None: out.append((run, b_))
+    return out
 def bump(grid, spans, d):
     for j, a, b_ in spans:
         base = j * NX
@@ -93,18 +103,40 @@ for z in list(board.Zones()) + [z for f in board.GetFootprints() for z in f.Zone
         for L, l in LAY.items():
             if z.IsOnLayer(l): paint(static[LIDX[L]], poly_cells(o, TRK / 2 + CLR))
     if z.GetDoNotAllowVias(): paint(via_static, poly_cells(o, VIA_D / 2 + CLR))
+# ---- the 1.1 mm PWR lobes of the DC-DC block: no foreign via inside a lobe, none biting its edge by more than 0.2 mm
+# (a via with its 0.2 mm clearance cuts an 1.1 mm lobe; the rule areas that protected them during the pipeline are
+# dropped when a result is applied, so the rule lives here too; wide parts of the same zones stay usable)
+LOBE_R = VIA_D / 2 + 0.2
+for z in board.Zones():
+    if z.GetIsRuleArea() or not z.IsOnLayer(board.GetLayerID('PWR')) or z.GetNetname() not in ('DCDC_IN', 'DCDC_ANA', 'DCDC_DIG', 'VDD_SOC_IN'): continue
+    o = z.Outline(); bbx = o.BBox(); spans = []
+    for j, a, b_ in rect_cells(ToMM(bbx.GetLeft()) - 0.5, ToMM(bbx.GetTop()) - 0.5, ToMM(bbx.GetRight()) + 0.5, ToMM(bbx.GetBottom()) + 0.5):
+        run = None
+        for i in range(a, b_ + 1):
+            P = VECTOR2I(FromMM(wx(i)), FromMM(wy(j))); blocked = False
+            if o.Collide(P, FromMM(LOBE_R)):
+                if o.Contains(P):
+                    ok = lambda dx, dy: o.Contains(VECTOR2I(FromMM(wx(i) + dx), FromMM(wy(j) + dy)))
+                    blocked = not ((ok(LOBE_R + 0.5, 0) or ok(-LOBE_R - 0.5, 0)) and (ok(0, LOBE_R + 0.5) or ok(0, -LOBE_R - 0.5)))
+                else: blocked = o.Collide(P, FromMM(LOBE_R - 0.2))
+            if blocked and run is None: run = i
+            if not blocked and run is not None: spans.append((j, run, i - 1)); run = None
+        if run is not None: spans.append((j, run, b_))
+    paint(via_static, spans)
 # ---- copper: everything is fixed (hard for other nets, own-exempt)
 nets_by_name = board.GetNetInfo().NetsByName()
 def pad_layers(p): return [l for L, l in LAY.items() if p.IsOnLayer(l)]
 for f in board.GetFootprints():
+    seen_num = collections.Counter()
     for p in f.Pads():
         net = p.GetNetname(); x, y = ToMM(p.GetPosition().x), ToMM(p.GetPosition().y)
+        seen_num[p.GetNumber()] += 1                      # a pin and its tab share a number: the key must still be unique or one halo reads as foreign
         pth = p.GetAttribute() in (pcbnew.PAD_ATTRIB_PTH, pcbnew.PAD_ATTRIB_NPTH); hole = ToMM(p.GetDrillSize().x) if p.GetDrillSize().x else 0.0
         poly = p.GetEffectivePolygon(pcbnew.F_Cu if p.IsOnLayer(pcbnew.F_Cu) else pcbnew.B_Cu) if hasattr(p, 'GetEffectivePolygon') else None
         bx = p.GetBoundingBox(); px0, py0, px1, py1 = ToMM(bx.GetLeft()), ToMM(bx.GetTop()), ToMM(bx.GetRight()), ToMM(bx.GetBottom())
         extra = TRK / 2 + (PTH_CLR if pth else CLR)
         spans = disc_cells(x, y, (px1 - px0) / 2 + extra) if (p.GetShape() == pcbnew.PAD_SHAPE_CIRCLE or (p.GetShape() == pcbnew.PAD_SHAPE_OVAL and abs((px1 - px0) - (py1 - py0)) < 0.01)) else rect_cells(px0 - extra, py0 - extra, px1 + extra, py1 + extra)
-        key = ('pad', f.GetReference(), p.GetNumber())
+        key = ('pad', f.GetReference(), p.GetNumber(), seen_num[p.GetNumber()])
         lays = [LAYER_OF[l] for l in pad_layers(p)] if p.GetAttribute() != pcbnew.PAD_ATTRIB_NPTH else [0, 1, 2]
         cells = [(l, spans) for l in lays]
         if hole:
@@ -121,7 +153,10 @@ for f in board.GetFootprints():
                 ux, uy = (math.cos(a), -math.sin(a)) if sx > sy else (math.sin(a), math.cos(a))
                 csp = capsule_cells(x - ux * half, y - uy * half, x + ux * half, y + uy * half, min(sx, sy) / 2 - 0.02)
             elif shp == pcbnew.PAD_SHAPE_OVAL: csp = disc_cells(x, y, sx / 2 - 0.02)
-            else: csp = rect_cells(px0 + 0.02, py0 + 0.02, px1 - 0.02, py1 - 0.02)
+            else:
+                csp = rect_cells(px0 + 0.02, py0 + 0.02, px1 - 0.02, py1 - 0.02)
+                if poly is not None and shp != pcbnew.PAD_SHAPE_RECT:      # rounded corners are not copper: a route ending there connects nothing
+                    csp = [(j, a2, b2) for j, a, b_ in csp for a2, b2 in inside_runs(poly, j, a, b_)]
             core[net].append(((net,) + key, [(l, csp) for l in lays], (x, y), pth))
 for t in board.GetTracks():
     net = t.GetNetname()
@@ -152,9 +187,12 @@ planes = collections.defaultdict(list)
 for z in board.Zones():
     if z.GetIsRuleArea() or not z.GetNetname(): continue
     for l in PLANE_L:
-        if z.IsOnLayer(l): planes[z.GetNetname()].append(z.GetFilledPolysList(l))
-def in_plane(net, x, y):
-    return any(ps.Contains(VECTOR2I(FromMM(x), FromMM(y))) for ps in planes.get(net, ()))
+        if z.IsOnLayer(l):
+            ps = z.GetFilledPolysList(l)
+            if ps.OutlineCount(): planes[z.GetNetname()].append((ps, max(range(ps.OutlineCount()), key=lambda i: ps.Outline(i).Area())))
+def in_plane(net, x, y):                              # the plane's main outline only: a scrap of fill round a lone pad (J10.1 inside the +5V island) is not the plane; GND is a web on two layers, any piece counts
+    P = VECTOR2I(FromMM(x), FromMM(y))
+    return any(ps.Contains(P) if net == 'GND' else ps.Contains(P, main) for ps, main in planes.get(net, ()))
 # ---- islands per net
 def routed_items(net):
     out = []
@@ -221,7 +259,7 @@ N3 = 3 * N
 WB = [array.array('d', bytes(8 * N3)), array.array('i', bytes(4 * N3)), bytearray(N3), array.array('H', bytes(2 * N3)),
       array.array('H', bytes(2 * N)), array.array('H', bytes(2 * N)), array.array('H', bytes(2 * N3)), bytearray(N3)]
 W = WorkS(*[addr(b_) for b_ in WB])
-OUTCAP = 600000
+OUTCAP = 600000; EXP = int(os.environ.get('EXP', '6000000'))     # expansion budget per search
 via_cells = {}; routed_cells = {}; added = collections.defaultdict(lambda: ([], []))
 def own_spans(net):
     out = array.array('i')
@@ -245,7 +283,7 @@ def route(net, sources, targets):
     out = array.array('i', bytes(4 * 3 * OUTCAP)); n = c_int(0); exp = c_int(0)
     as32 = lambda a: ctypes.cast(a.buffer_info()[0], P32)
     lib.route(byref(GR), byref(W), len(sources), as32(srcs), len(targets), as32(tg), len(own) // 5, as32(own) if len(own) else None,
-              hx, hy, 6000000, as32(out), OUTCAP, byref(n), byref(exp))
+              hx, hy, EXP, as32(out), OUTCAP, byref(n), byref(exp))
     if n.value < 0: return None, exp.value
     return [(out[3 * p], out[3 * p + 1], out[3 * p + 2]) for p in range(n.value)], exp.value
 def path_to_geometry(path):
@@ -311,6 +349,35 @@ def plane_via_targets(net, cells, radius=4.0):
             out.update((l, i, j) for l in range(3))
     return out
 PLANE_VIA_TARGET = set()
+def dump(net, cells, targets, cx, cy, R=1.5):
+    """DEBUG: map of the grid round a failed island: T island, t target, # static, F other nets' copper, o own copper, c routed, . free; v = no via"""
+    own = set(); o = own_spans(net)
+    for q in range(0, len(o), 5):
+        code, l, j, a, b_ = o[q:q + 5]
+        if code in (3, 0): own.update((l, i, j) for i in range(a, b_ + 1))
+    i0, i1, j0, j1 = gx(cx - R), gx(cx + R), gy(cy - R), gy(cy + R)
+    print('   island %s round (%.2f, %.2f): %d cells, %d target cells; window x %.2f..%.2f y %.2f..%.2f' % (net, cx, cy, len(cells), len(targets), wx(i0), wx(i1), wy(j0), wy(j1)))
+    for l in range(3):
+        print('   layer %d' % l)
+        for j in range(j0, j1 + 1):
+            row = ''
+            for i in range(i0, i1 + 1):
+                k = j * NX + i
+                if (l, i, j) in cells: ch = 'T'
+                elif (l, i, j) in targets: ch = 't'
+                elif static[l][k]: ch = '#'
+                elif fixc[l][k] and (l, i, j) not in own: ch = 'F'
+                elif fixc[l][k]: ch = 'o'
+                elif cnt[l][k]: ch = 'c'
+                elif via_static[k] or via_fix[k]: ch = 'v'
+                else: ch = '.'
+                row += ch
+            print('   ' + row)
+FIELD = [float(v) for v in os.environ['FIELD'].split(',')] if os.environ.get('FIELD') else None   # x0,y0,x1,y1: islands centred here are left alone
+def in_field(c):
+    if not FIELD: return False
+    cx = sum(wx(i) for _, i, _ in c['cells']) / len(c['cells']); cy = sum(wy(j) for _, _, j in c['cells']) / len(c['cells'])
+    return FIELD[0] <= cx <= FIELD[2] and FIELD[1] <= cy <= FIELD[3]
 def route_net(net):
     """join the net's islands; returns (segs, vias, failed_islands) - partial success is kept"""
     comps = islands(net)
@@ -318,7 +385,7 @@ def route_net(net):
     has_plane = net in planes
     base = [c for c in comps if c['plane']] if has_plane else []
     if not base: base = [max(comps, key=lambda c: len(c['cells']))]
-    rest = [c for c in comps if c not in base and c['has_pad']]
+    rest = [c for c in comps if c not in base and c['has_pad'] and not in_field(c)]   # islands inside FIELD are the escape router's
     src = set().union(*[c['cells'] for c in base]); segs_all = []; vias_all = []; failed = []
     for c in sorted(rest, key=lambda c: len(c['cells'])):
         pv = plane_via_targets(net, c['cells']) if has_plane else set()
@@ -326,7 +393,9 @@ def route_net(net):
         tg = pv if pv else src
         path, exp = route(net, list(c['cells']), list(tg))
         if path is None:
-            cc = next(iter(c['cells'])); failed.append((wx(cc[1]), wy(cc[2]))); continue
+            cc = next(iter(c['cells'])); failed.append((wx(cc[1]), wy(cc[2])))
+            if os.environ.get('DEBUG'): dump(net, c['cells'], tg, sum(wx(i) for _, i, _ in c['cells']) / len(c['cells']), sum(wy(j) for _, _, j in c['cells']) / len(c['cells']))
+            continue
         segs, vias = path_to_geometry(path); end = path[-1]
         if GREEDY:                                   # later islands of this call must keep hole spacing from these vias
             for vx, vy in vias: paint(via_static, disc_cells(vx, vy, VIA_H / 2 + 0.254 + VIA_H / 2)); bump(via_fix, disc_cells(vx, vy, VIA_D / 2 + CLR + VIA_D / 2), 1)
@@ -335,12 +404,15 @@ def route_net(net):
         if not has_plane or not pv:
             src |= c['cells']
             for l, x0, y0, x1, y1 in segs: src.update((l, gx(x0 + (x1 - x0) * k / 20), gy(y0 + (y1 - y0) * k / 20)) for k in range(21))
+    if failed and os.environ.get('DEBUG') and len(src) < 4000:
+        _e = max(src, key=lambda c: abs(wx(c[1]) - 72) + abs(wy(c[2]) - 42)); dump(net, src, set(), wx(_e[1]), wy(_e[2]), 2.0)   # the base island too, round its end farthest from the MCU
     return segs_all, vias_all, failed
 def net_conflicts(net):
     hits = []
     for k, cells in routed_cells.items():
         if k[0] != net: continue
         for l, sp in cells: bump(cnt[l], sp, -1)
+        bump(via_soft, via_cells[k], -1)
     for sg in added.get(net, ([], []))[0]:
         if len(sg) > 5: continue                     # negotiable copper from the input already passed DRC; only new, on-grid segments are checked
         l, x0, y0, x1, y1 = sg[:5]
@@ -348,9 +420,13 @@ def net_conflicts(net):
         for s in range(n + 1):
             i, j = gx(x0 + (x1 - x0) * s / n), gy(y0 + (y1 - y0) * s / n); k = j * NX + i
             if cnt[l][k]: hits.append((l, k))
+    for v in added.get(net, ([], []))[1]:            # a via on another net's negotiable copper or too close to another new via (vias were never checked: shorts on write-back)
+        k = gy(v[1]) * NX + gx(v[0])
+        if via_soft[k] or any(cnt[l][k] for l in range(3)): hits.append((0, k))
     for k, cells in routed_cells.items():
         if k[0] != net: continue
         for l, sp in cells: bump(cnt[l], sp, 1)
+        bump(via_soft, via_cells[k], 1)
     return hits
 # ---- which nets
 POWER = re.compile(r'^(GND$|\+|VDD|NVCC|DCDC|SDRAM_3V3|WL_3V3|VSD|VLDO|USB\d_VBUS|USB\d_CON_VBUS|DC_IN|AUD_VDDA|CODEC_1V8|LCD_5V|LCD_IOVCC|CTP_3V3|ADC_VREFH)')
@@ -374,7 +450,7 @@ for n in nets:
             DEAD.append(item_obj[key])
         core[n] = [it for it in core[n] if it[0] not in set(c['members'])]
 print('dead fragments removed: %d items' % len(DEAD), flush=True)
-open_nets = [n for n in nets if sum(1 for c in islands(n) if c['has_pad']) > 1 or (n in planes and any(c['has_pad'] and not c['plane'] for c in islands(n)))]
+open_nets = [n for n in nets if sum(1 for c in islands(n) if c['has_pad'] and not in_field(c)) > 1 or (n in planes and any(c['has_pad'] and not c['plane'] and not in_field(c) for c in islands(n)))]
 print('nets selected %d, with open connections %d' % (len(nets), len(open_nets)), flush=True)
 todo = set(open_nets); best = None; conf = {}; fails = {}; FAILS_PREV = None; FULL = set(); RIP_R = 1.5
 def nets_near(pts, r=RIP_R):
@@ -414,12 +490,20 @@ for rnd in range(1, ROUNDS + 1):
 score, rnd, keep, fails, conf = best
 print('keeping round %d: %d nets failed, %d conflicting' % (rnd, len(fails), len(conf)))
 for n, w in sorted(fails.items()): print('   failed %-16s %s' % (n, w))
-# write every net's final copper; a net still conflicting keeps its original (negotiable) copper if it had any
+# final pass: back to the kept round, then the nets still conflicting are re-routed one by one at prohibitive pressure
+# against everything else; a net that still conflicts loses its negotiable copper (writing the old copper back would
+# short the routes made through its cells) and stays open
+for net in list(added): uncommit(net)
+for net, (segs, vias) in keep.items(): commit(net, segs, vias)
+GR.pres = 1e6; dropped = []
+for net in sorted(conf):
+    uncommit(net); segs, vias, failed = route_net(net); commit(net, segs, vias)
+    if net_conflicts(net): uncommit(net); dropped.append(net)
+if conf: print('final pass: %d conflicting nets re-routed, %d dropped (open): %s' % (len(conf) - len(dropped), len(dropped), dropped))
 n_items = 0
 for t in SOFT_OBJ: board.Remove(t)
-for net in set(keep) | set(SOFT):
-    segs, vias = (SOFT[net] if net in conf else keep.get(net, ([], [])))
-    if net in conf and net not in SOFT: continue
+for net in list(added):
+    segs, vias = added[net]
     ni = nets_by_name[net]
     for sg in segs:
         l, x0, y0, x1, y1 = sg[:5]; w = sg[5] if len(sg) > 5 else TRK
@@ -435,4 +519,4 @@ pcbnew.ZONE_FILLER(board).Fill(board.Zones())
 for z in board.Zones():
     if z.GetZoneName() in ('GND_F', 'GND_B'): z.UnFill(); z.SetIsFilled(False)
 pcbnew.SaveBoard(OUT, board)
-print('items written %d (still conflicting, kept as before: %s) -> %s' % (n_items, sorted(conf), OUT))
+print('items written %d (nets left open by the final pass: %s) -> %s' % (n_items, sorted(dropped), OUT))

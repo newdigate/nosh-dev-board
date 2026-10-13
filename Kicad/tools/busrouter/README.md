@@ -108,3 +108,45 @@ need their cap vias (sites exist, the greedy router does not reach them).
   Island reshaping (2026-10-12): +5V gives back x 23-40 south-west to the 1.8 V regulator block (U8, C72-C74,
   C81, R104, R29), SDRAM_3V3 loses its bottom strip (y > 56.2 for x < 41) and gets a notch for R36; the D2 tongue
   is 4 mm wide so a +3V3 strip still reaches the C82 notch. Board: 158 open, +3V3 fully tied in.
+
+### Decoupling, shields and the rest (2026-10-12)
+
+- `local_links.py in out drc.json [max_mm] [NETS]` — closes the short ratsnest lines of a DRC report (the
+  `unconnected_items` of `kicad-cli pcb drc --format json`): for every pair whose two ends are within 3 mm (5 mm
+  for the USB shield nets) a straight or L-shaped track on a layer both ends share, else a via beside the midpoint
+  with a track from each end (0.2 mm power / 0.15 mm signal, JLCPCB clearances, the via's hole outside the pad
+  copper). A foreign via may not sit in a 1.1 mm PWR lobe nor bite its edge by more than 0.2 mm (an early version
+  dropped two GND vias in the DC-DC lobes and necked DCDC_ANA to 0.25 mm). The report's pairs form a spanning
+  tree, so closing them never doubles a connection; pads stacked top/bottom (TP over cap, ferrite over cap),
+  connector shell tabs and pads beside a locked track end are the typical hits. 157 -> 120 open in one pass.
+- genroute.py grew `FIELD=x0,y0,x1,y1` (islands centred in the BGA field are left to the escape router instead of
+  failing every round), `DEBUG=1` (an ASCII map of the grid round every unreached island and round the far end of
+  the base island: `T` island, `F` other nets' copper, `o` own, `c` negotiable routes, `v` no-via), `EXP` (A*
+  budget) and a final pass: after the best round, nets still conflicting are re-routed one by one at prohibitive
+  pressure and a net that still conflicts loses its negotiable copper instead of being written back over the
+  routes made through its cells (that wrote shorts before). Pad keys are now unique per pad: a pin and its tab
+  share a number (U8's +1V8 tab) and the second one's halo read as foreign copper, sealing the pad.
+- Why the greedy pass left ~80 pairs outside the field: a greedy route cannot be moved, and early routes ran along
+  component pads (CODEC_1V8 down the west side of the codec's 0.4 mm pads sealed pads 16-19) and along the escape
+  band as north-south highways, boxing in the escape ends. Negotiating the whole board at once (every greedy route
+  negotiable, 64 nets) churned: rip-ups round boxed-in islands grew to 70+ nets a round and never settled.
+  Per-region negotiation works: `esc/cluster_route.sh in tag x0 y0 x1 y1 NETS [rounds]` makes only the greedy
+  copper touching the window negotiable (base = blk7/pv, the pre-greedy board; plane and SEMC copper stays fixed)
+  and routes the region's open nets; `esc/rest_pipeline.sh` runs south, north, east1, east2 in turn.
+- `tools/rest_moves.py`: R74/R75 (LPI2C5 pull-ups) 0.5 mm west of U15 (at x 96.0 they left a 0.65 mm corridor in
+  front of the codec's west pads: two tracks, and pads 17/18/19 needed three), their old +3V3 stubs removed; the
+  VDD_SOC_IN island gets a tongue 73.5-78.3 x 50.0-52.8 under C17/R8 (only GND vias there).
+- Result of the round (2026-10-13): 157 -> 102 open, DRC clean apart from the known J2/J3 library hole clearances.
+  Done: VDDA_1P8, VDD_USB_3P3, NVCC_GPIO, +1V8 (U8 tab), VDD_SOC_IN (C17/R8 via the tongue), VDD_MIPI_1P8,
+  VDD_MIPI_1P0, NVCC_DISP1, VDDA_1P0, VDD_SNVS_IN, DCDC_MODE, both USB shields, J10's +3V3 pin, LCD_RST_B,
+  the DC-DC block signals (PMIC_*, ONOFF, WAKEUP, BOOT_MODE*, JTAG, RTC_XTALI), M2_SDIO_D0. What the region
+  negotiations could not settle was reverted rather than written back: the east band (SAI1_*, SD_DAT*, FLEXSPI_A_*,
+  USB1_DP/DN, BT/WIFI wake lines - escape ends sealed by earlier greedy highways at x 79.5-81), U15's west pads
+  16-19 (still boxed after the R74/R75 move and the NVCC_SD1 clean-up; needs a look by hand), VDDA_ADC_3P3 at
+  FB1/TP35 and the two USB2 switch pads, USB2_CON_DN at U4, GND R96 (no via site inside the band's web).
+  43 of the 102 pairs end at the ball grid (the hand-route list); genroute's lobe rule and the main-outline plane
+  test now hold without the KO_* rule areas, and net_strip.py + bga_escape WINDOW=board re-escape a sealed ball.
+- `net_strip.py in out NET[,NET]` strips a net back to its fan-out via and dog-bone; with
+  `WINDOW=board MODE=pref NETSEL=... PREFSIDE=NET:N bga_escape.py` the ball is re-escaped straight to the net's own
+  copper anywhere (VDD_MIPI_1P8, NVCC_DISP1 and LCD_RST_B, whose first escapes ended sealed in the band, 4 s).
+- `tools/rest_moves.py` also drops any routed copper under a moved part's courtyard (re-routed afterwards).
