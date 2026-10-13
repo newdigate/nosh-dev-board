@@ -8,7 +8,7 @@ from pcbnew import ToMM
 from PIL import Image, ImageDraw, ImageFont
 K = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..') + '/'
 SRC = sys.argv[1] if len(sys.argv) > 1 else K + 'Nosh.kicad_pcb'
-OUT = sys.argv[2] if len(sys.argv) > 2 else K + 'handroute/'
+OUT = (sys.argv[2].rstrip('/') + '/') if len(sys.argv) > 2 else K + 'handroute/'
 CLI = '/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli'
 ROWS = 'ABCDEFGHJKLMNPRTU'
 POWER = re.compile(r'^(\+|GND$|NVCC_|VDD|ADC_VREFH|SDRAM_3V3|USB2_VBUS|DCDC_(IN|DIG|ANA|LP|LN)$)')
