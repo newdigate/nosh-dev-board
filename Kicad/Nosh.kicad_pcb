@@ -5005,177 +5005,6 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
-		(layer "F.Cu")
-		(uuid "1c453f6c-da84-4514-9ff3-6b5d06800448")
-		(at 73.05 62.7 -90)
-		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
-		(tags "resistor")
-		(property "Reference" "R6"
-			(at -2.525 0 0)
-			(layer "F.SilkS")
-			(uuid "b48d67fd-d784-4c89-9254-ec210e2c7824")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "0R"
-			(at 0 1.65 270)
-			(layer "F.Fab")
-			(uuid "540e5072-c2a3-472d-adea-f2c2ea26b8c9")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "ceba856f-20bb-46cc-9e98-f8fdabcc6b83")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "783ea812-dd7f-429e-9447-4d76322a2b8a")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "51bddd4b-ba44-47a9-a525-c9ff92dff9e7")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "LCSC" "C17477"
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "215ce21b-80a4-43bf-b0d3-dd867ad5ab02")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "0805W8F0000T5E"
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "6deaa84d-a2b0-4e30-a86b-f446027239ab")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(path "/539ad118-2dc0-4db2-94ce-7f260505cd91/539ad118-2dc0-4db2-94ce-7f260505cd91")
-		(attr smd)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -0.227064 0.735)
-			(end 0.227064 0.735)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "d309e91b-53ea-4d28-9074-2e6f82f74b74")
-		)
-		(fp_line
-			(start -0.227064 -0.735)
-			(end 0.227064 -0.735)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "c2dbf9bd-190f-48c4-b72f-cb5524c895a5")
-		)
-		(fp_rect
-			(start -1.68 -0.95)
-			(end 1.68 0.95)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "746db482-26b6-457a-93a3-0ecf96f7d768")
-		)
-		(fp_rect
-			(start -1 -0.625)
-			(end 1 0.625)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "98dbe080-7b90-48cd-8127-6f0170ce7fe6")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 270)
-			(layer "F.Fab")
-			(uuid "8094bc0d-c044-4916-a777-0c350a2e2c0d")
-			(effects
-				(font
-					(size 0.5 0.5)
-					(thickness 0.08)
-				)
-			)
-		)
-		(pad "1" smd roundrect
-			(at -0.9125 0 270)
-			(size 1.025 1.4)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.243902)
-			(net "DCDC_DIG")
-			(uuid "57f612dd-af67-479e-b8c0-c531261e61f0")
-		)
-		(pad "2" smd roundrect
-			(at 0.9125 0 270)
-			(size 1.025 1.4)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.243902)
-			(net "VDD_SOC_IN")
-			(uuid "9497bc5b-847d-457f-b7db-591128425f5e")
-		)
-		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
 	(footprint "Resistor_SMD:R_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "1ded0192-cbaf-41f8-891f-c53be3d005ef")
@@ -28874,6 +28703,128 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(footprint "Nosh:NetTie-2_SMD_0805"
+		(layer "F.Cu")
+		(uuid "a4c1898f-696b-4acc-860f-28d1d374ec2c")
+		(at 73.05 62.7 -90)
+		(descr "Net tie, 2 pin, on an 0805 (2012 Metric) land pattern: a drop-in for an 0805 0R link. The 0.55 mm copper bridge runs along one side of the pad gap (local y -0.05 to 0.5) so a via can sit in the other half")
+		(tags "net tie 0805")
+		(property "Reference" "NT1"
+			(at -2.525 0 0)
+			(layer "F.SilkS")
+			(uuid "238f5a04-9984-4cd9-be4d-efd10019de5a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "NetTie_2"
+			(at 0 1.65 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5860259e-6b06-4fbc-8576-251bf5c521be")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "887f2046-000e-44e3-87a6-47b2dfda446d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4a405596-e100-4d0a-9427-6a981f6bdc29")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/539ad118-2dc0-4db2-94ce-7f260505cd91/539ad118-2dc0-4db2-94ce-7f260505cd91")
+		(attr smd exclude_from_pos_files exclude_from_bom)
+		(net_tie_pad_groups "1, 2")
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_poly
+			(pts
+				(xy -0.5 -0.05) (xy 0.5 -0.05) (xy 0.5 0.5) (xy -0.5 0.5)
+			)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+			(fill yes)
+			(layer "F.Cu")
+			(uuid "0dde5beb-9146-4558-8a9d-abd712d2e717")
+		)
+		(fp_rect
+			(start -1.68 -0.95)
+			(end 1.68 0.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "207d016b-bdad-4d83-99f5-d61ba7b2026b")
+		)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "dcdeccc3-d8c5-4885-bb7a-f4c13ffc7423")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(uuid "f9c31b3b-f7e5-4282-ae3d-60482b2849f6")
+			(effects
+				(font
+					(size 0.5 0.5)
+					(thickness 0.08)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -0.9125 0 270)
+			(size 1.025 1.4)
+			(layers "F.Cu")
+			(roundrect_rratio 0.243902)
+			(net "DCDC_DIG")
+			(uuid "9a0fc972-3740-4383-bfcf-749e4d97db20")
+		)
+		(pad "2" smd roundrect
+			(at 0.9125 0 270)
+			(size 1.025 1.4)
+			(layers "F.Cu")
+			(roundrect_rratio 0.243902)
+			(net "VDD_SOC_IN")
+			(uuid "cae542f3-d42d-495b-af67-fbbdf2b4cfae")
+		)
+		(embedded_fonts no)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")

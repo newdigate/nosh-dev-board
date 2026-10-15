@@ -692,6 +692,148 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:NetTie_2"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "NT"
+				(at 0 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "NetTie_2"
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Net tie, 2 pins"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "net tie short"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Net*Tie*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "NetTie_2_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "NetTie_2_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -8011,7 +8153,7 @@
 		)
 		(uuid "c94ef343-13fb-4e41-bc36-690ef1ddcb92")
 	)
-	(text "0R links per EVKB: R6 (R1853) DCDC_DIG -> VDD_SOC_IN; R7/R8 (R2134/R2106) close the DCDC feedback."
+	(text "Links per EVKB: net tie NT1 (R1853 0R + J14) DCDC_DIG -> VDD_SOC_IN; R7/R8 (R2134/R2106) close the DCDC feedback."
 		(exclude_from_sim no)
 		(at 304.8 66.04 0)
 		(effects
@@ -8136,6 +8278,26 @@
 	(no_connect
 		(at 19.05 41.91)
 		(uuid "aaee2b57-c8f9-44ad-acfd-0cd3f20f8a0b")
+	)
+	(wire
+		(pts
+			(xy 322.58 36.83) (xy 322.58 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f7b39ff-4cf2-4f72-9415-4c590facab95")
+	)
+	(wire
+		(pts
+			(xy 322.58 43.18) (xy 322.58 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be8a96fb-7b70-4f6c-909f-f229e70b5fec")
 	)
 	(wire
 		(pts
@@ -13008,18 +13170,18 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 322.58 40.64 0)
+		(lib_id "Device:NetTie_2")
+		(at 322.58 40.64 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "051a8ce8-d659-4e0e-82aa-5776150a6551")
-		(property "Reference" "R6"
-			(at 324.61 39.37 0)
+		(property "Reference" "NT1"
+			(at 324.61 39.37 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13029,8 +13191,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0R"
-			(at 324.61 41.91 0)
+		(property "Value" "NetTie_2"
+			(at 324.61 41.91 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13040,8 +13202,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 322.58 40.64 90)
+		(property "Footprint" "Nosh:NetTie-2_SMD_0805"
+			(at 322.58 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13062,29 +13224,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 322.58 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17477"
-			(at 322.58 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0805W8F0000T5E"
+		(property "Description" "Net tie DCDC_DIG -> VDD_SOC_IN (EVKB: R1853 0R + J14)"
 			(at 322.58 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -13104,7 +13244,7 @@
 		(instances
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/539ad118-2dc0-4db2-94ce-7f260505cd91"
-					(reference "R6")
+					(reference "NT1")
 					(unit 1)
 				)
 			)
