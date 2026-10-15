@@ -79807,12 +79807,28 @@
 		(uuid "5a198c3c-b6b3-45f1-8f55-45e486003f66")
 	)
 	(segment
+		(start 76.384314 27.4)
+		(end 77.15 27.4)
+		(width 0.1)
+		(layer "B.Cu")
+		(net "BT_UART_RTS")
+		(uuid "5c8809cf-7e32-4029-be92-d33b2c31bd12")
+	)
+	(segment
 		(start 74.2 29.45)
 		(end 75.31 28.34)
 		(width 0.1)
 		(layer "B.Cu")
 		(net "BT_UART_RTS")
 		(uuid "6d135ec2-60b5-49fa-9ef9-504dc471217f")
+	)
+	(segment
+		(start 77.15 27.4)
+		(end 77.2 27.35)
+		(width 0.1)
+		(layer "B.Cu")
+		(net "BT_UART_RTS")
+		(uuid "71cd7142-b4d4-49c1-904d-ef48334fd243")
 	)
 	(segment
 		(start 73.48 29.85)
