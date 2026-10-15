@@ -334,3 +334,11 @@
 	(layer "GND2")
 	(constraint disallow track)
 )
+
+# Fine-pitch ground pins: J7's 0.5 mm pitch leaves no room for side spokes between neighbouring pins, and U1's
+# corner ball A1 is boxed in by the SDRAM escape tracks. Each has its own ground track or via as well, so one
+# resolved spoke is enough there; every other pad keeps the board minimum of 2.
+# (min_resolved_spokes takes a bare number; net names are A.NetName - A.Net is the net number.)
+(rule "Nosh: one thermal spoke is enough on the J7 and U1 ground pins"
+	(constraint min_resolved_spokes 1)
+	(condition "A.NetName == 'GND' && (A.memberOfFootprint('J7') || A.memberOfFootprint('U1'))"))
