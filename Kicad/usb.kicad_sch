@@ -4296,29 +4296,6 @@
 			)
 		)
 	)
-	(global_label "USB2_CON_ID"
-		(shape passive)
-		(at 40.64 105.41 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ae8ca97d-6567-4676-b5db-4e4afc9abcd0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 40.64 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "USB1_CON_DP"
 		(shape passive)
 		(at 281.94 73.66 0)
@@ -4401,29 +4378,6 @@
 		(uuid "ba33a1d1-82ed-4975-965d-fc25ebaa55e1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 81.28 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "USB_OTG2_ID"
-		(shape passive)
-		(at 40.64 113.03 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ba4171a3-d818-4f44-8219-d51ff3e8e4df")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 40.64 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4687,7 +4641,7 @@
 			)
 		)
 	)
-	(global_label "USB2_CON_ID"
+	(global_label "USB_OTG2_ID"
 		(shape passive)
 		(at 134.62 63.5 180)
 		(fields_autoplaced yes)
@@ -4710,7 +4664,7 @@
 			)
 		)
 	)
-	(global_label "USB2_CON_ID"
+	(global_label "USB_OTG2_ID"
 		(shape passive)
 		(at 48.26 66.04 0)
 		(fields_autoplaced yes)
@@ -6880,109 +6834,6 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/673c32ea-7602-41d8-9d30-6b4783b9a0e9"
 					(reference "R25")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 40.64 109.22 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "bcda910d-f5f9-4979-8ac8-d1adb7a724d8")
-		(property "Reference" "R17"
-			(at 42.67 107.95 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 42.67 110.49 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 40.64 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 40.64 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 40.64 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17168"
-			(at 40.64 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF0000TCE"
-			(at 40.64 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e23d3d76-242a-49c2-83ba-ea531c2243ab")
-		)
-		(pin "2"
-			(uuid "ff0ad930-7423-4628-bdaf-9af9559a38e0")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/673c32ea-7602-41d8-9d30-6b4783b9a0e9"
-					(reference "R17")
 					(unit 1)
 				)
 			)

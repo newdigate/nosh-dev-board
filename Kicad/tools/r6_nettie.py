@@ -86,7 +86,7 @@ if old:
     nets = {p.GetNumber(): p.GetNetname() for p in old.Pads()}
     new = pcbnew.FootprintLoad(K + 'Nosh.pretty', FP); new.SetFPID(pcbnew.LIB_ID('Nosh', FP))
     new.SetPosition(pos); new.SetOrientation(ori); new.SetPath(path)
-    new.SetReference('NT1'); new.SetValue('NetTie_2')
+    new.SetReference('NT1'); new.SetValue('NetTie_2'); new.SetField('Description', 'Net tie DCDC_DIG -> VDD_SOC_IN (EVKB: R1853 0R + J14)')   # as on the symbol (schematic parity)
     new.Reference().SetPosition(rpos); new.Reference().SetTextAngle(rang); new.Reference().SetVisible(rvis)
     for p in new.Pads(): p.SetNet(b.FindNet(nets[p.GetNumber()]))
     b.Add(new); b.Remove(old); b.Save(pcb)          # no iteration after Remove (pcbnew's SWIG objects go stale)

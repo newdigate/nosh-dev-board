@@ -1728,7 +1728,7 @@
 		)
 		(uuid "4ba6151b-2c8c-4642-83bb-d8aff42764a8")
 	)
-	(text "CTP I2C on LPI2C5 with 2.2k pull-ups to +3V3 (EVKB: two 4.7k pairs in parallel, R1026/R1027 + R1323/R1324) (NVCC_LPSR = 3.3V on both boards). LCM_PWR_EN 10k pull-up to +3V3 (EVKB R1825); R67/R64/R72/R76/R77 are the EVKB 0R isolation links."
+	(text "CTP I2C on LPI2C5 with 2.2k pull-ups to +3V3 (EVKB: two 4.7k pairs in parallel, R1026/R1027 + R1323/R1324) (NVCC_LPSR = 3.3V on both boards). LCM_PWR_EN 10k pull-up to +3V3 (EVKB R1825); R67 (DNP) is the EVKB TE isolation link; the EVKB 0R links on the other control lines are replaced by direct connections."
 		(exclude_from_sim no)
 		(at 90.17 257.81 0)
 		(effects
@@ -1773,7 +1773,7 @@
 		)
 		(uuid "8844fb2b-33a8-4090-ac94-296bb2f698a7")
 	)
-	(text "RAIL LINKS  (EVKB R1827/R1826/R846)"
+	(text "RAILS  (EVKB links R1827/R1826/R846 omitted: +1V8 / +3V3 / +5V go straight to the panel and touch controller)"
 		(exclude_from_sim no)
 		(at 25.4 246.38 0)
 		(effects
@@ -1887,7 +1887,7 @@
 		(at 53.34 91.44)
 		(uuid "b99f9e00-36c1-43a3-8f48-a363cdb663f4")
 	)
-	(global_label "LCM_PWR_EN_C"
+	(global_label "LCM_PWR_EN"
 		(shape passive)
 		(at 53.34 101.6 180)
 		(fields_autoplaced yes)
@@ -1979,7 +1979,7 @@
 			)
 		)
 	)
-	(global_label "CTP_INT_C"
+	(global_label "CTP_INT"
 		(shape passive)
 		(at 53.34 119.38 180)
 		(fields_autoplaced yes)
@@ -2015,29 +2015,6 @@
 		(uuid "184ce1fb-977a-4eef-8fd3-2b0db44f97f0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 99.06 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+1V8"
-		(shape passive)
-		(at 38.1 260.35 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "19d18519-47fa-4d5b-b724-5cf4286670d5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 38.1 260.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2140,7 +2117,7 @@
 			)
 		)
 	)
-	(global_label "CTP_RST_B_C"
+	(global_label "CTP_RST_B"
 		(shape passive)
 		(at 53.34 116.84 180)
 		(fields_autoplaced yes)
@@ -2186,7 +2163,7 @@
 			)
 		)
 	)
-	(global_label "LCD_5V"
+	(global_label "+5V"
 		(shape passive)
 		(at 53.34 83.82 180)
 		(fields_autoplaced yes)
@@ -2209,7 +2186,7 @@
 			)
 		)
 	)
-	(global_label "LCD_IOVCC_1V8"
+	(global_label "+1V8"
 		(shape passive)
 		(at 53.34 96.52 180)
 		(fields_autoplaced yes)
@@ -2222,29 +2199,6 @@
 		(uuid "39b598a6-d3f3-4335-a3af-671f7b15147c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 53.34 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "LCD_IOVCC_1V8"
-		(shape passive)
-		(at 38.1 267.97 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3b24d993-4e6f-4b34-8036-c726a96463c0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 38.1 267.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2324,7 +2278,7 @@
 			)
 		)
 	)
-	(global_label "LCD_5V"
+	(global_label "+5V"
 		(shape passive)
 		(at 53.34 86.36 180)
 		(fields_autoplaced yes)
@@ -2393,29 +2347,6 @@
 			)
 		)
 	)
-	(global_label "LCM_PWR_EN"
-		(shape passive)
-		(at 50.8 217.17 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5e0735bd-b967-4830-b1c5-1bd354da4dc1")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 217.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "MIPI_DSI_D1P"
 		(shape passive)
 		(at 99.06 93.98 0)
@@ -2429,29 +2360,6 @@
 		(uuid "617b0bef-3471-453b-8cb7-6ec13b419520")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 99.06 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+5V"
-		(shape passive)
-		(at 63.5 260.35 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "61d7489d-3e40-4066-9235-cd30a73b3708")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.5 260.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2508,7 +2416,7 @@
 			)
 		)
 	)
-	(global_label "BACKLIGHT_CTL_C"
+	(global_label "BACKLIGHT_CTL"
 		(shape passive)
 		(at 53.34 104.14 180)
 		(fields_autoplaced yes)
@@ -2646,29 +2554,6 @@
 			)
 		)
 	)
-	(global_label "LCM_PWR_EN_C"
-		(shape passive)
-		(at 50.8 224.79 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "89458c2f-5588-4e3e-8fef-c67024936752")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 224.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "GND"
 		(shape passive)
 		(at 72.39 134.62 270)
@@ -2682,29 +2567,6 @@
 		(uuid "8ed7c433-68e9-48b4-922d-55a9afcc899d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 72.39 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "CTP_INT_C"
-		(shape passive)
-		(at 157.48 224.79 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "91876ef6-33f3-4b05-b13b-120452da4d66")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 157.48 224.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2784,75 +2646,6 @@
 			)
 		)
 	)
-	(global_label "BACKLIGHT_CTL_C"
-		(shape passive)
-		(at 38.1 224.79 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ab0400d8-93d8-4d04-aade-4c6558174426")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 38.1 224.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "CTP_RST_B_C"
-		(shape passive)
-		(at 144.78 224.79 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ae0f43c9-0f95-4371-9633-6e9a2fc057ee")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 144.78 224.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "CTP_INT"
-		(shape passive)
-		(at 157.48 217.17 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b04a333e-bc02-4c6c-8511-e9dfe08ac985")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 157.48 217.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "GND"
 		(shape passive)
 		(at 226.06 114.3 270)
@@ -2876,29 +2669,6 @@
 			)
 		)
 	)
-	(global_label "CTP_3V3"
-		(shape passive)
-		(at 50.8 267.97 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b1d6c806-b433-43c2-8456-464ae1d7e91d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 267.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "GND"
 		(shape passive)
 		(at 205.74 114.3 270)
@@ -2912,29 +2682,6 @@
 		(uuid "b3ba7d51-d3b8-40b9-9c4c-8f96dfb2bd31")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 205.74 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "LCD_5V"
-		(shape passive)
-		(at 63.5 267.97 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b73e9f9b-26cb-4581-807d-61937e9e6062")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.5 267.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2991,29 +2738,6 @@
 			)
 		)
 	)
-	(global_label "CTP_RST_B"
-		(shape passive)
-		(at 144.78 217.17 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c2684a9f-efb3-4d51-b0df-bd6df0dec774")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 144.78 217.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "GND"
 		(shape passive)
 		(at 90.17 134.62 270)
@@ -3060,7 +2784,7 @@
 			)
 		)
 	)
-	(global_label "CTP_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 53.34 99.06 180)
 		(fields_autoplaced yes)
@@ -3073,29 +2797,6 @@
 		(uuid "cd567d76-45c4-4459-8904-01da922dc9c6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 53.34 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+3V3"
-		(shape passive)
-		(at 50.8 260.35 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d065886e-249f-41f2-8069-b6981410a077")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 260.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3129,29 +2830,6 @@
 			)
 		)
 	)
-	(global_label "BACKLIGHT_CTL"
-		(shape passive)
-		(at 38.1 217.17 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "dfcec70b-a5b1-4bf8-bf04-0ec87787d3e0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 38.1 217.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "LCD_TE_1V8"
 		(shape passive)
 		(at 53.34 109.22 180)
@@ -3175,7 +2853,7 @@
 			)
 		)
 	)
-	(global_label "LCM_PWR_EN_C"
+	(global_label "LCM_PWR_EN"
 		(shape passive)
 		(at 63.5 224.79 270)
 		(fields_autoplaced yes)
@@ -3309,109 +2987,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 157.48 220.98 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0e5ccb52-21ff-4337-be4e-918ae97b8726")
-		(property "Reference" "R77"
-			(at 159.51 219.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 159.51 222.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 157.48 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 157.48 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 157.48 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17168"
-			(at 157.48 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF0000TCE"
-			(at 157.48 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "22438e92-4a1f-4018-b2b6-dac6f1d7a134")
-		)
-		(pin "2"
-			(uuid "ff828312-9118-402a-98fd-5ef5b5caac47")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
-					(reference "R77")
-					(unit 1)
 				)
 			)
 		)
@@ -3853,109 +3428,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 50.8 220.98 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3a842645-8fa5-47f6-806b-b3c662d2428c")
-		(property "Reference" "R72"
-			(at 52.83 219.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 52.83 222.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 50.8 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 50.8 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17168"
-			(at 50.8 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF0000TCE"
-			(at 50.8 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "11583778-3dbc-463a-9e13-98d62facd656")
-		)
-		(pin "2"
-			(uuid "6d232888-f381-4605-890a-3b46970f129a")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
-					(reference "R72")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:Fiducial")
 		(at 205.74 149.86 0)
 		(unit 1)
@@ -4316,109 +3788,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 144.78 220.98 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6f7b47cf-ae86-4e8f-b731-f4f38651c87f")
-		(property "Reference" "R76"
-			(at 146.81 219.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 146.81 222.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 144.78 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 144.78 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 144.78 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17168"
-			(at 144.78 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF0000TCE"
-			(at 144.78 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e2b4a274-30ec-4243-b1af-a26c5d6f08cf")
-		)
-		(pin "2"
-			(uuid "8c1e76ad-d226-4f3f-867e-d5f474fe4cd6")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
-					(reference "R76")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:Fiducial")
 		(at 205.74 137.16 0)
 		(unit 1)
@@ -4641,315 +4010,6 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
 					(reference "FID6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 38.1 220.98 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8cd66c4d-9ece-44ef-b058-fca3cdff3557")
-		(property "Reference" "R64"
-			(at 40.13 219.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 40.13 222.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 38.1 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 38.1 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17168"
-			(at 38.1 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF0000TCE"
-			(at 38.1 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a8d52c85-1672-4fc9-a904-380ba5fef61f")
-		)
-		(pin "2"
-			(uuid "74948284-b48d-4abe-afaa-4443b7333062")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
-					(reference "R64")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 50.8 264.16 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "aaa92d2d-8356-4066-9664-28a7374acce8")
-		(property "Reference" "R70"
-			(at 52.83 262.89 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 52.83 265.43 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 50.8 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 50.8 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17168"
-			(at 50.8 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF0000TCE"
-			(at 50.8 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a34afe5a-4751-4b89-b009-a1cdaa25ba19")
-		)
-		(pin "2"
-			(uuid "eaa3f1a5-7080-4efd-8b16-603227740fc6")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
-					(reference "R70")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 38.1 264.16 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b4536691-6ebe-4efd-a3bd-654af6e4641b")
-		(property "Reference" "R69"
-			(at 40.13 262.89 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 40.13 265.43 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 38.1 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 38.1 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17168"
-			(at 38.1 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF0000TCE"
-			(at 38.1 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c23ca5f6-3801-4bce-97a7-bbe8695a6f6a")
-		)
-		(pin "2"
-			(uuid "9eee9e57-d740-4515-86c0-51c86450c626")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
-					(reference "R69")
 					(unit 1)
 				)
 			)
@@ -5535,109 +4595,6 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
 					(reference "J7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 63.5 264.16 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "edb2eb24-b630-4749-abca-3de289c75a17")
-		(property "Reference" "R71"
-			(at 65.53 262.89 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 65.53 265.43 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 63.5 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 63.5 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 63.5 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17168"
-			(at 63.5 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF0000TCE"
-			(at 63.5 264.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7ded9a5e-718c-45af-9ec9-e93785f870aa")
-		)
-		(pin "2"
-			(uuid "61bfcee5-642b-48f2-a5f6-f0c7e1378c74")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/b32e0a29-65bf-4695-b3c6-79257b1bba82"
-					(reference "R71")
 					(unit 1)
 				)
 			)

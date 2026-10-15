@@ -7593,7 +7593,7 @@
 		)
 		(uuid "11f05e84-60de-49da-a2e1-94e498a6a4fd")
 	)
-	(text "VDD_MIPI_1P0 is fed from the internal VDDA_1P0 LDO output via R4 (0R). VBUS caps are the EVKB C252/C251."
+	(text "VDD_MIPI_1P0 is fed directly from the internal VDDA_1P0 LDO output (one net, VDDA_1P0). VBUS caps are the EVKB C252/C251."
 		(exclude_from_sim no)
 		(at 22.86 173.99 0)
 		(effects
@@ -7900,29 +7900,6 @@
 	)
 	(global_label "VDDA_1P0"
 		(shape passive)
-		(at 101.6 105.41 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "13a0817f-712f-4ffd-902a-921d16254053")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 101.6 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "VDD_MIPI_1P0"
-		(shape passive)
 		(at 111.76 105.41 90)
 		(fields_autoplaced yes)
 		(effects
@@ -8220,7 +8197,7 @@
 			)
 		)
 	)
-	(global_label "VDD_MIPI_1P0"
+	(global_label "VDDA_1P0"
 		(shape passive)
 		(at 120.65 41.91 180)
 		(fields_autoplaced yes)
@@ -8634,29 +8611,6 @@
 			)
 		)
 	)
-	(global_label "VDD_MIPI_1P0"
-		(shape passive)
-		(at 40.64 149.86 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c8e230c5-952c-4510-a114-95e99a6148d2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 40.64 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "VDD_USB_3P3"
 		(shape passive)
 		(at 50.8 113.03 270)
@@ -8772,29 +8726,6 @@
 			)
 		)
 	)
-	(global_label "VDD_MIPI_1P0"
-		(shape passive)
-		(at 101.6 113.03 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f20a1907-1357-4bc5-a359-ca1097129a08")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 101.6 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "MIPI_DSI_D0P"
 		(shape passive)
 		(at 158.75 54.61 0)
@@ -8814,85 +8745,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 40.64 149.86 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "142346eb-fdea-4cc2-a780-8d85ec4029fd")
-		(property "Reference" "#FLG22"
-			(at 40.64 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 42.67 147.32 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 40.64 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 40.64 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 40.64 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7f159cea-86d9-48f2-865c-fd4067008de2")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/dea222f5-bd68-485d-9aaa-a8f980f19bdc"
-					(reference "#FLG22")
-					(unit 1)
 				)
 			)
 		)
@@ -9104,109 +8956,6 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/dea222f5-bd68-485d-9aaa-a8f980f19bdc"
 					(reference "C50")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 101.6 109.22 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "47a6888d-efc7-4db6-b349-6eaf05a59425")
-		(property "Reference" "R4"
-			(at 103.63 107.95 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 103.63 110.49 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 101.6 109.22 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 101.6 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 101.6 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17168"
-			(at 101.6 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF0000TCE"
-			(at 101.6 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2de0b4f4-6fe4-4cdb-8363-57b77620a64c")
-		)
-		(pin "2"
-			(uuid "ba07b8dd-db08-4434-9e17-9ed352665f6b")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/dea222f5-bd68-485d-9aaa-a8f980f19bdc"
-					(reference "R4")
 					(unit 1)
 				)
 			)

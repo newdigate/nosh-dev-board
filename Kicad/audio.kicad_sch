@@ -1319,7 +1319,7 @@
 		)
 		(uuid "e8db7a5f-ee2c-4f7a-b7b1-2418c4a88b94")
 	)
-	(text "Supplies per datasheet Fig. 20: VDDD = external 1.8 V (CODEC_1V8 via R79) + 100nF; VDDIO = +3V3 + 100nF; VDDA = +3V3 through FB11 + 4.7uF + 100nF; VAG 100nF."
+	(text "Supplies per datasheet Fig. 20: VDDD = external 1.8 V (+1V8) + 100nF; VDDIO = +3V3 + 100nF; VDDA = +3V3 through FB11 + 4.7uF + 100nF; VAG 100nF."
 		(exclude_from_sim no)
 		(at 149.86 52.07 0)
 		(effects
@@ -1614,29 +1614,6 @@
 			)
 		)
 	)
-	(global_label "CODEC_1V8"
-		(shape passive)
-		(at 185.42 175.26 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "492c583f-d72e-4723-b876-75220f3f5bc8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 185.42 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "AUD_LO_R"
 		(shape passive)
 		(at 175.26 252.73 90)
@@ -1903,29 +1880,6 @@
 		(uuid "8a0bc7e3-14fd-473d-aced-96a5e1b7cbaf")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 271.78 256.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "CODEC_1V8"
-		(shape passive)
-		(at 165.1 179.07 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "8da22d52-96b4-4121-8ba1-15585ea56dd4")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 165.1 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2304,7 +2258,7 @@
 			)
 		)
 	)
-	(global_label "CODEC_1V8"
+	(global_label "+1V8"
 		(shape passive)
 		(at 175.26 171.45 90)
 		(fields_autoplaced yes)
@@ -2350,7 +2304,7 @@
 			)
 		)
 	)
-	(global_label "CODEC_1V8"
+	(global_label "+1V8"
 		(shape passive)
 		(at 101.6 73.66 90)
 		(fields_autoplaced yes)
@@ -2478,29 +2432,6 @@
 		(uuid "e40b8bec-1744-4769-9f3a-4effe471042c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 218.44 171.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+1V8"
-		(shape passive)
-		(at 165.1 171.45 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e62ac7bd-622a-4db4-94c5-b500b1d6e759")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 165.1 171.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3056,109 +2987,6 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/8bc99f59-4af2-430a-8ae1-1c10df9cfcb3"
 					(reference "C129")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 165.1 175.26 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4f9933f5-932f-451a-afda-d5a400bb3aa6")
-		(property "Reference" "R79"
-			(at 167.13 173.99 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 167.13 176.53 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 165.1 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 165.1 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 165.1 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17168"
-			(at 165.1 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF0000TCE"
-			(at 165.1 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "08635490-9e06-4d73-8181-b17165ae598b")
-		)
-		(pin "2"
-			(uuid "d39d81ba-09c4-42bb-875f-8ca06a5f9605")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/8bc99f59-4af2-430a-8ae1-1c10df9cfcb3"
-					(reference "R79")
 					(unit 1)
 				)
 			)
@@ -4228,85 +4056,6 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/8bc99f59-4af2-430a-8ae1-1c10df9cfcb3"
 					(reference "C127")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 185.42 175.26 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "bcf64d42-10e9-443b-afb4-624d15dc8d7d")
-		(property "Reference" "#FLG28"
-			(at 185.42 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 187.45 172.72 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 185.42 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 185.42 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 185.42 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fd400e6e-c695-4014-9158-c49a8bfceb8b")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/8bc99f59-4af2-430a-8ae1-1c10df9cfcb3"
-					(reference "#FLG28")
 					(unit 1)
 				)
 			)
