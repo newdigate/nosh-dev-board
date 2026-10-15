@@ -112815,6 +112815,22 @@
 		(uuid "c6ec1e7f-d663-4b9d-ac6a-426f4a485377")
 	)
 	(segment
+		(start 70.75 56.27)
+		(end 71.38 56.27)
+		(width 0.15)
+		(layer "B.Cu")
+		(net "RTC_XTALI")
+		(uuid "0bae938b-2c7a-444b-aaf1-4ffd74baa4cd")
+	)
+	(segment
+		(start 71.38 56.27)
+		(end 71.53 56.42)
+		(width 0.15)
+		(layer "B.Cu")
+		(net "RTC_XTALI")
+		(uuid "aa77d0f5-1650-4479-ad01-f2ba12b6a4a0")
+	)
+	(segment
 		(start 76.21 51.9587)
 		(end 76.21 49.93)
 		(width 0.1)
