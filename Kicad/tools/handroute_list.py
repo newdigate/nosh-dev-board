@@ -189,7 +189,7 @@ o = ['# Open connections to hand-route', '',
      'Balls are 0.8 mm pitch, A1 at (%.1f, %.1f), rows A–U top to bottom, columns 1–17 left to right. Coordinates are mm from the board origin (top-left, y down).' % ballpos('A1'),
      '', '- **Fan-out via** is the dog-bone via already on that ball: start there. "none" means the ball has no fan-out yet (the outer two rings escape on F.Cu).',
      "- **Other end** is where KiCad's ratsnest line lands (a pad, or the end of copper already routed on that net) and the pads it is part of.",
-     '- Inside the grid only 0.1 mm tracks fit between the fan-out vias; no tracks on GND1, PWR or GND2.', '']
+     '- Inside the grid only 0.13 mm tracks (the board minimum) fit between the fan-out vias; no tracks on GND1, PWR or GND2.', '']
 for side in ('inside', 'S', 'E', 'N', 'W'):
     rs = [r for r in rows if r['side'] == side]
     if not rs: continue
@@ -207,6 +207,6 @@ if others:
     for r in others:
         if r.get('note'): o += ['', '%d: %s.' % (r['id'], r['note'][0].upper() + r['note'][1:])]
     o.append('')
-o.append('⚡ = power net (route wider than 0.1 mm once outside the grid where there is room).')
+o.append('⚡ = power net (route wider than 0.13 mm once outside the grid where there is room).')
 open(OUT + 'bga_handroute.md', 'w').write('\n'.join(o) + '\n')
 print('%d BGA connections (%s), %d elsewhere, %d open in total -> %sbga_handroute.md, bga_open.png, board_open.png' % (len(rows), dict(collections.Counter(r['side'] for r in rows)), len(others), len(drc['unconnected_items']), OUT))
