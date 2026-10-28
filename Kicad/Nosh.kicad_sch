@@ -328,52 +328,6 @@
 		)
 	)
 	(sheet
-		(at 116.84 209.55)
-		(size 63.5 38.1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.0006)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "a3d63a64-49b4-4ae9-b3d4-999297ed3002")
-		(property "Sheetname" "Test points"
-			(at 119.38 208.28 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "testpoints.kicad_sch"
-			(at 119.38 248.92 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7"
-					(page "12")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 208.28 152.4)
 		(size 63.5 38.1)
 		(exclude_from_sim no)

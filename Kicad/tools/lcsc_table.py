@@ -5,7 +5,7 @@ Usage: python3 Kicad/tools/lcsc_table.py   (paths are relative to this file)
 import re, csv, collections, os
 K = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..') + '/'
 rows = []
-for sh in ['power', 'core', 'gpio', 'usb', 'supply', 'sdram', 'm2', 'sdcard', 'lcd', 'audio', 'testpoints']:
+for sh in ['power', 'core', 'gpio', 'usb', 'supply', 'sdram', 'm2', 'sdcard', 'lcd', 'audio']:
     S = open(K + sh + '.kicad_sch').read()
     for m in re.finditer(r'\n\t\(symbol\n\t\t\(lib_id "[^"]+"\)', S):
         e = re.compile(r'\n\t\(').search(S, m.start() + 3).start(); blk = S[m.start():e]

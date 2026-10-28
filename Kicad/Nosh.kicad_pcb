@@ -72777,14 +72777,6 @@
 		(uuid "da6cba17-de83-4129-ac1b-4fc3a1d3786e")
 	)
 	(segment
-		(start 85.8 48.35)
-		(end 85.9 48.25)
-		(width 0.13)
-		(layer "F.Cu")
-		(net "NVCC_SD2")
-		(uuid "dc8499f6-01c8-4685-84f7-2cea963ac95b")
-	)
-	(segment
 		(start 83.797781 23.952219)
 		(end 82.25 22.404437)
 		(width 0.3)
@@ -98161,14 +98153,6 @@
 		(uuid "d0ebf722-964d-4762-880b-82d1ca31b7e0")
 	)
 	(segment
-		(start 81.766975 38.985)
-		(end 81.91 38.985)
-		(width 0.13)
-		(layer "In2.Cu")
-		(net "SD_DAT1")
-		(uuid "d96ba710-7b8c-40f8-9a19-adab39022a22")
-	)
-	(segment
 		(start 81.480668 40.349332)
 		(end 81.265 40.133664)
 		(width 0.13)
@@ -100871,14 +100855,6 @@
 		(layer "F.Cu")
 		(net "SD_CD_B")
 		(uuid "ccd93f67-ed3e-4160-bfeb-5e47f8832983")
-	)
-	(segment
-		(start 78.05 41.55)
-		(end 78.828787 41.55)
-		(width 0.13)
-		(layer "F.Cu")
-		(net "SD_CD_B")
-		(uuid "e635421f-9ed3-4600-8686-193df5d6fd12")
 	)
 	(segment
 		(start 144.299999 31)
@@ -103841,14 +103817,6 @@
 		(uuid "88468011-d1a1-4640-a51e-760e2996055a")
 	)
 	(segment
-		(start 82.475 39.835)
-		(end 82.59 39.72)
-		(width 0.15)
-		(layer "In2.Cu")
-		(net "BACKLIGHT_CTL")
-		(uuid "9a3ca5e9-61fa-452a-a3f3-469ccc143a09")
-	)
-	(segment
 		(start 94.428874 26.84)
 		(end 95.578874 26.84)
 		(width 0.13)
@@ -106719,14 +106687,6 @@
 		(layer "B.Cu")
 		(net "WIFI_WAKE_B")
 		(uuid "12405a5c-e057-445d-972f-c707e679adfb")
-	)
-	(segment
-		(start 90.83 46.71)
-		(end 90.84 46.7)
-		(width 0.13)
-		(layer "B.Cu")
-		(net "WIFI_WAKE_B")
-		(uuid "12ca84d2-cea4-4b03-b109-067ac2e5f5b9")
 	)
 	(segment
 		(start 94.05 40.5)
@@ -119087,14 +119047,6 @@
 		(layer "F.Cu")
 		(net "AUD_LRCLK")
 		(uuid "bcaef9ca-b52a-4212-8c43-0ae391bcdc4e")
-	)
-	(segment
-		(start 92.123959 46.375)
-		(end 92.615 46.375)
-		(width 0.15)
-		(layer "F.Cu")
-		(net "AUD_LRCLK")
-		(uuid "d2508e63-d7df-4213-8872-0a3ba1a7ba1a")
 	)
 	(segment
 		(start 91.723959 46.375)
