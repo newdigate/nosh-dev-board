@@ -3176,7 +3176,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 119.38 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -3536,7 +3536,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 106.68 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -3639,7 +3639,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 63.5 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -4048,7 +4048,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 132.08 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -4151,7 +4151,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 76.2 220.98 0)
 			(hide yes)
 			(show_name no)

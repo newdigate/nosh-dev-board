@@ -12847,7 +12847,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 365.76 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -12950,7 +12950,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 182.88 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -13053,7 +13053,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 177.8 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -13237,7 +13237,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 91.44 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14429,7 +14429,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 355.6 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -14532,7 +14532,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 81.28 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14635,7 +14635,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 116.84 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14738,7 +14738,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 304.8 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -14841,7 +14841,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 132.08 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15047,7 +15047,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 304.8 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -15150,7 +15150,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 55.88 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -15356,7 +15356,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 71.12 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15459,7 +15459,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 66.04 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -15641,7 +15641,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 35.56 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15823,7 +15823,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 132.08 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -16005,7 +16005,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 223.52 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -16108,7 +16108,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 106.68 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -16211,7 +16211,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 257.3 116.84 90)
 			(hide yes)
 			(show_name no)
@@ -17300,7 +17300,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 45.72 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -17403,7 +17403,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 353.06 40.64 90)
 			(hide yes)
 			(show_name no)
@@ -17506,7 +17506,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 55.88 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -17791,7 +17791,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 237.19 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -17894,7 +17894,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 266.7 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19189,7 +19189,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 213.36 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -19474,7 +19474,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 257.3 132.08 90)
 			(hide yes)
 			(show_name no)
@@ -19656,7 +19656,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 152.4 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -19759,7 +19759,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 284.48 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19862,7 +19862,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 86.36 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -20068,7 +20068,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 270.2 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -20171,7 +20171,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 121.92 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -20377,7 +20377,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm"
+		(property "Footprint" "Nosh:Crystal_SMD_3215-2Pin_3.2x1.5mm_JLC"
 			(at 264.16 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -20480,7 +20480,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 337.82 40.64 90)
 			(hide yes)
 			(show_name no)
@@ -21775,7 +21775,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 167.64 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -21878,7 +21878,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 167.64 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -21981,7 +21981,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 25.4 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -22084,7 +22084,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 96.52 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -22290,7 +22290,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 45.72 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -22393,7 +22393,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Nosh:R_0402_1005Metric_JLC"
 			(at 234.44 116.84 90)
 			(hide yes)
 			(show_name no)
@@ -22496,7 +22496,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 76.2 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -22702,7 +22702,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 35.56 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -22805,7 +22805,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 142.24 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -22908,7 +22908,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
 			(at 314.96 109.22 0)
 			(hide yes)
 			(show_name no)
