@@ -5773,7 +5773,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_Micro-AB_Molex_47590-0001"
+		(property "Footprint" "Nosh:USB_Micro-AB_Molex_47590-0001_JLC"
 			(at 40.64 60.96 0)
 			(hide yes)
 			(show_name no)
