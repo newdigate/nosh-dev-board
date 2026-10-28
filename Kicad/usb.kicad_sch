@@ -4926,7 +4926,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 111.76 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -5029,7 +5029,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ferrite bead"
 			(at 68.58 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -5132,7 +5132,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "USB 2.0 ESD protection array for D+/D-/ID/VBUS, SLP1616P6 (as on MIMXRT1170-EVKB U20/U28)"
 			(at 365.76 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -5571,7 +5571,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "USB 2.0 ESD protection array for D+/D-/ID/VBUS, SLP1616P6 (as on MIMXRT1170-EVKB U20/U28)"
 			(at 144.78 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -5689,7 +5689,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "N-MOSFET transistor, source/gate/drain"
 			(at 81.28 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -5795,7 +5795,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "USB Micro Type B connector"
 			(at 40.64 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -5910,7 +5910,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 175.26 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6116,7 +6116,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 101.6 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -6219,7 +6219,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 101.6 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -6431,7 +6431,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "USB 2.0-only 16P Type-C Receptacle connector"
 			(at 266.7 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -6579,7 +6579,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 111.76 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -6791,7 +6791,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 312.42 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6894,7 +6894,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 322.58 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -7203,7 +7203,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ferrite bead"
 			(at 337.82 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -7488,7 +7488,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 50.8 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -7694,7 +7694,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 312.42 139.7 0)
 			(hide yes)
 			(show_name no)

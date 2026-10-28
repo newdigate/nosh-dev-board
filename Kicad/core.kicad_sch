@@ -8804,7 +8804,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Four pin crystal, GND on pins 2 and 4"
 			(at 87.63 60.96 0)
 			(hide yes)
 			(show_name no)

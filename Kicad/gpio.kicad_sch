@@ -15716,7 +15716,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 355.6 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -16231,7 +16231,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "512Mbit 3.3V Quad-SPI NOR flash, WSON-8 8x6mm (as on MIMXRT1170-EVKB U23)"
 			(at 330.2 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -18945,7 +18945,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 350.52 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -19151,7 +19151,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 375.92 226.06 0)
 			(hide yes)
 			(show_name no)
@@ -19254,7 +19254,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ferrite bead"
 			(at 370.84 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -19357,7 +19357,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 350.52 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -20181,7 +20181,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Schottky diode"
 			(at 350.52 236.22 0)
 			(hide yes)
 			(show_name no)
@@ -23183,7 +23183,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 330.2 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -23519,7 +23519,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "2x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
 			(at 330.2 172.72 0)
 			(hide yes)
 			(show_name no)

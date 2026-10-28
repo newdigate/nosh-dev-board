@@ -14451,7 +14451,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 355.6 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -14760,7 +14760,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 304.8 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -18019,7 +18019,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Push button switch, generic, two pins"
 			(at 340.36 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -20399,7 +20399,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Two pin crystal"
 			(at 264.16 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -21591,7 +21591,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Push button switch, generic, two pins"
 			(at 330.2 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -21694,7 +21694,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Push button switch, generic, two pins"
 			(at 391.16 109.22 0)
 			(hide yes)
 			(show_name no)

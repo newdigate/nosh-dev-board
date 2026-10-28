@@ -2475,7 +2475,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 35.56 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -2681,7 +2681,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 86.36 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -2784,7 +2784,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Micro SD Card Socket with card detection pins"
 			(at 60.96 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -2914,7 +2914,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 45.72 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -3017,7 +3017,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "-4.3A Id, -12V Vds, 50mOhm Rds, P-Channel HEXFET Power MOSFET, SOT-23"
 			(at 130.81 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -3123,7 +3123,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 220.98 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -3511,7 +3511,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 152.4 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -3614,7 +3614,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 25.4 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -3820,7 +3820,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 60.96 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -3923,7 +3923,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 162.56 60.96 0)
 			(hide yes)
 			(show_name no)

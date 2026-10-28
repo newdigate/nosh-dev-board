@@ -5791,7 +5791,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 304.8 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -6256,7 +6256,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ferrite bead"
 			(at 76.2 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -7339,7 +7339,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Resistor"
 			(at 111.76 129.54 0)
 			(hide yes)
 			(show_name no)
