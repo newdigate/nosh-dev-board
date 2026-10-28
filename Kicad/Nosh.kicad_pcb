@@ -67809,14 +67809,6 @@
 		(uuid "0e1cb3ca-bea3-402c-a441-aa6ecc529fa0")
 	)
 	(via
-		(at 44.5 53.2)
-		(size 0.45)
-		(drill 0.3)
-		(layers "F.Cu" "B.Cu")
-		(net "+1V8")
-		(uuid "1dd3e085-56ff-47fe-b824-15e722a3217c")
-	)
-	(via
 		(at 96.9 69.35)
 		(size 0.45)
 		(drill 0.3)
@@ -80169,14 +80161,6 @@
 		(uuid "1b1195bc-a33b-4e39-8a84-ea4cc3b64356")
 	)
 	(segment
-		(start 71.686786 29.728609)
-		(end 71.686786 29.78)
-		(width 0.13)
-		(layer "F.Cu")
-		(net "MIPI_DSI_CLKN")
-		(uuid "256ea29d-0baf-457e-8bdd-152bff8cb388")
-	)
-	(segment
 		(start 73.17 21.18)
 		(end 73.17 10.45)
 		(width 0.13)
@@ -87575,14 +87559,6 @@
 		(layer "In2.Cu")
 		(net "USB2_VBUS")
 		(uuid "cd8d2d5c-6a51-4234-b554-e2166d927b15")
-	)
-	(segment
-		(start 83.59 38.53)
-		(end 83.59 38.726397)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "USB1_VBUS")
-		(uuid "0026705d-4904-4c85-ab20-73c2f0bf1fc6")
 	)
 	(segment
 		(start 84.55 45.3)
@@ -98153,14 +98129,6 @@
 		(uuid "02bd095a-33c0-472c-8ff0-2f0b695535f6")
 	)
 	(segment
-		(start 84.715 38.503025)
-		(end 84.715 38.45)
-		(width 0.13)
-		(layer "In2.Cu")
-		(net "SD_DAT2")
-		(uuid "078fc6c7-9999-4996-9f85-3118682e317f")
-	)
-	(segment
 		(start 90.735 32.871899)
 		(end 90.735 34.513026)
 		(width 0.13)
@@ -98279,14 +98247,6 @@
 		(layer "In2.Cu")
 		(net "SD_DAT2")
 		(uuid "859930d7-8902-4fe4-9a11-c2908a3c1177")
-	)
-	(segment
-		(start 89.685 31.821899)
-		(end 89.685 31.8)
-		(width 0.13)
-		(layer "In2.Cu")
-		(net "SD_DAT2")
-		(uuid "8ac4e700-3c3f-4cf8-8a41-a901c13069a5")
 	)
 	(segment
 		(start 76.4 42.4)
@@ -108705,14 +108665,6 @@
 		(uuid "7eeb7d24-ffdb-42f8-8313-991cf681f288")
 	)
 	(segment
-		(start 62.423457 54.695)
-		(end 63.2 54.695)
-		(width 0.3)
-		(layer "In2.Cu")
-		(net "DCDC_PSWITCH")
-		(uuid "837cb20b-64f0-428e-aa59-2ea94266bde0")
-	)
-	(segment
 		(start 53.172121 48.219228)
 		(end 51.985 47.032107)
 		(width 0.3)
@@ -117463,14 +117415,6 @@
 		(layer "F.Cu")
 		(net "WL_DEV_WAKE_1V8")
 		(uuid "3894a26b-bb47-4959-bb11-291fb05542f0")
-	)
-	(segment
-		(start 118 37.286899)
-		(end 118 37.18)
-		(width 0.13)
-		(layer "F.Cu")
-		(net "WL_DEV_WAKE_1V8")
-		(uuid "556d89f3-a0be-4956-82cd-9971cf0d4774")
 	)
 	(segment
 		(start 94.7164 36.158099)
