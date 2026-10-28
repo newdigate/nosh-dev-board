@@ -6409,7 +6409,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
+		(property "Footprint" "Nosh:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal_JLC"
 			(at 266.7 71.12 0)
 			(hide yes)
 			(show_name no)
