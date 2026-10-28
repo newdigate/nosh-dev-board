@@ -2965,6 +2965,7 @@
 	(symbol
 		(lib_id "Transistor_FET:IRLML6401")
 		(at 130.81 60.96 0)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
