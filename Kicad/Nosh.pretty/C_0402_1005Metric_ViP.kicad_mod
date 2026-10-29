@@ -1,0 +1,73 @@
+(footprint "C_0402_1005Metric_ViP"
+	(version 20260206)
+	(generator "pcbnew")
+	(layer "F.Cu")
+	(descr "Capacitor SMD 0402 (1005 Metric) for via-in-pad under U1 (MIMXRT1176, 0.8 mm ball pitch): pad centres 0.8 mm apart so each pad sits on a fan-out via of the BGA via lattice, as on the MIMXRT1170-EVKB. Pads 0.5 x 0.55 mm. Courtyard 1.4 x 0.66 mm so caps fit on adjacent lattice rows. Reference on F.Fab only (no silk under the BGA). Needs filled and capped vias (JLCPCB POFV, free on 6+ layers).")
+	(tags "capacitor via-in-pad BGA")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 0.25 0.25)
+				(thickness 0.04)
+			)
+		)
+	)
+	(property "Value" "C_0402_1005Metric_ViP"
+		(at 0 0.6 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 0.25 0.25)
+				(thickness 0.04)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -0.7 -0.33)
+		(end 0.7 0.33)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+	)
+	(fp_rect
+		(start -0.5 -0.25)
+		(end 0.5 0.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+	)
+	(pad "1" smd roundrect
+		(at -0.4 0)
+		(size 0.5 0.55)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+	)
+	(pad "2" smd roundrect
+		(at 0.4 0)
+		(size 0.5 0.55)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
