@@ -16005,7 +16005,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
+		(property "Footprint" "Nosh:C_0402_1005Metric_ViP"
 			(at 223.52 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -19189,7 +19189,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
+		(property "Footprint" "Nosh:C_0402_1005Metric_ViP"
 			(at 213.36 170.18 0)
 			(hide yes)
 			(show_name no)
