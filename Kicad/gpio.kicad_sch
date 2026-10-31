@@ -19644,7 +19644,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
+		(property "Footprint" "Nosh:C_0402_1005Metric_ViP"
 			(at 153.365 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -20056,7 +20056,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
+		(property "Footprint" "Nosh:C_0402_1005Metric_ViP"
 			(at 199.085 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -21557,7 +21557,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
+		(property "Footprint" "Nosh:C_0402_1005Metric_ViP"
 			(at 168.605 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -21866,7 +21866,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
+		(property "Footprint" "Nosh:C_0402_1005Metric_ViP"
 			(at 209.245 171.45 0)
 			(hide yes)
 			(show_name no)
