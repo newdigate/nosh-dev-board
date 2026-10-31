@@ -11663,7 +11663,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:C_0402_1005Metric_JLC"
+		(property "Footprint" "Nosh:C_0402_1005Metric_ViP"
 			(at 35.56 109.22 0)
 			(hide yes)
 			(show_name no)
