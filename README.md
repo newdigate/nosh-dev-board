@@ -122,7 +122,7 @@ python3 Kicad/tools/lcsc_table.py
 |---|---|---|---|
 | SGTL5000XNLA3R2 codec | C2651833 | ~1.1 k | CS4272 (TSSOP-28, Teensy driver, line level only, 5 V analog) |
 | Würth 68714014022 LCD FPC | C6264899 | ~75 | any 40-pin 0.5 mm top-contact ZIF with the same land pattern |
-| CUI SJ-3523-SMT jacks | C4991872 | ~800 | — |
+| Same Sky (CUI) SJ-3524-SMT jacks J8/J9 | C20182907 | ~800 | SJ-3523-SMT (C4991872, same pads minus the TN switch pad) when it is back in stock; SHOU HAN PJ-320D (C431535, ~70 k) needs a new footprint |
 | TE 2199230-4 M.2 socket | C2977809 | ~5 k | — |
 | AS4C32M16SB-6TIN SDRAM U9/U10 | C1351095 | 0, four pre-ordered | W9825G6KH-6 (C62246, ~8.8 k): 256 Mb, 64 MB total, SEMC COL=9 |
 | YIYUAN SMTSOM2.520BTR M.2 nut H5, 2 mm | C5301776 | 0 | SMTSOM2.525BTR, 2.5 mm (C49236513, ~4.7 k): same land, the card end sits 0.5 mm higher |

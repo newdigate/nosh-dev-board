@@ -1087,6 +1087,170 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Nosh:Jack_3.5mm_TRS_SW"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at -5.08 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Jack 3.5mm"
+				(at -5.08 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Nosh:Jack_3.5mm_CUI_SJ-3524-SMT_Horizontal_JLC"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2401251802_CUI-SJ-3524-SMT-TR_C20182907.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "3.5 mm stereo (TRS) jack with tip switch, right angle SMD, Same Sky (CUI) SJ-3524-SMT. JLCPCB C20182907. TN = tip normally-closed switch contact, left unconnected"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "audio jack 3.5mm stereo TRS switch"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Jack_3.5mm_TRS_SW_0_1"
+				(rectangle
+					(start -5.08 5.08)
+					(end 5.08 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Jack_3.5mm_TRS_SW_1_1"
+				(pin passive line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "R"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "R"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "T"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "T"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+					(pin passive line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "TN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "TN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:PWR_FLAG"
 			(power global)
 			(pin_numbers
@@ -1340,6 +1504,14 @@
 			(justify left bottom)
 		)
 		(uuid "fde026fe-1681-4439-aa0d-e524da7b2af3")
+	)
+	(no_connect
+		(at 256.54 256.54)
+		(uuid "24fd7c0d-5ff0-4c7f-b71a-fbf71943abb8")
+	)
+	(no_connect
+		(at 187.96 256.54)
+		(uuid "03e0d026-23f0-400f-9b17-bb9001cf4b8b")
 	)
 	(no_connect
 		(at 116.84 106.68)
@@ -3199,7 +3371,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Nosh:Jack_3.5mm_TRS")
+		(lib_id "Nosh:Jack_3.5mm_TRS_SW")
 		(at 195.58 256.54 0)
 		(unit 1)
 		(body_style 1)
@@ -3231,7 +3403,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:Jack_3.5mm_CUI_SJ-3523-SMT_Horizontal_JLC"
+		(property "Footprint" "Nosh:Jack_3.5mm_CUI_SJ-3524-SMT_Horizontal_JLC"
 			(at 195.58 256.54 0)
 			(hide yes)
 			(show_name no)
@@ -3242,7 +3414,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2401251802_CUI-SJ-3524-SMT-TR_C20182907.pdf"
 			(at 195.58 256.54 0)
 			(hide yes)
 			(show_name no)
@@ -3264,7 +3436,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4991872"
+		(property "LCSC" "C20182907"
 			(at 195.58 256.54 0)
 			(hide yes)
 			(show_name no)
@@ -3275,7 +3447,7 @@
 				)
 			)
 		)
-		(property "MPN" "SJ-3523-SMT-TR"
+		(property "MPN" "SJ-3524-SMT-TR"
 			(at 195.58 256.54 0)
 			(hide yes)
 			(show_name no)
@@ -3294,6 +3466,9 @@
 		)
 		(pin "S"
 			(uuid "cb8488d5-bffa-44a7-8729-8ab9950b456b")
+		)
+		(pin "TN"
+			(uuid "0854ff0e-f3e9-4347-b26c-8fece9b5121a")
 		)
 		(instances
 			(project "Nosh"
@@ -3590,7 +3765,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Nosh:Jack_3.5mm_TRS")
+		(lib_id "Nosh:Jack_3.5mm_TRS_SW")
 		(at 264.16 256.54 0)
 		(unit 1)
 		(body_style 1)
@@ -3622,7 +3797,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nosh:Jack_3.5mm_CUI_SJ-3523-SMT_Horizontal_JLC"
+		(property "Footprint" "Nosh:Jack_3.5mm_CUI_SJ-3524-SMT_Horizontal_JLC"
 			(at 264.16 256.54 0)
 			(hide yes)
 			(show_name no)
@@ -3633,7 +3808,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2401251802_CUI-SJ-3524-SMT-TR_C20182907.pdf"
 			(at 264.16 256.54 0)
 			(hide yes)
 			(show_name no)
@@ -3655,7 +3830,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4991872"
+		(property "LCSC" "C20182907"
 			(at 264.16 256.54 0)
 			(hide yes)
 			(show_name no)
@@ -3666,7 +3841,7 @@
 				)
 			)
 		)
-		(property "MPN" "SJ-3523-SMT-TR"
+		(property "MPN" "SJ-3524-SMT-TR"
 			(at 264.16 256.54 0)
 			(hide yes)
 			(show_name no)
@@ -3685,6 +3860,9 @@
 		)
 		(pin "S"
 			(uuid "48d0bb74-6bae-449c-913b-4432f1a97a93")
+		)
+		(pin "TN"
+			(uuid "5ce6b630-c927-4294-bc9e-07dfa67a504b")
 		)
 		(instances
 			(project "Nosh"
