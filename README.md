@@ -43,7 +43,7 @@ All assignments are the EVKB's unless marked.
 | M.2 SDIO (uSDHC1, 1.8 V) | GPIO_SD_B1_00..05; `WIFI_RST_B` GPIO_AD_16, `WL_RST_B` GPIO_AD_31, `BT_RST_B` GPIO_AD_15, `WL_DEV_WAKE` GPIO_AD_07, `BT_DEV_WAKE` GPIO_AD_28, `BT_WAKE_B` GPIO_AD_27, `WIFI_WAKE_B` GPIO_AD_29 |
 | BT HCI UART (LPUART2) | GPIO_DISP_B2_10..13 |
 | microSD (uSDHC2, 3.3 V) — *Nosh* | GPIO_SD_B2_00..05; `SD_CD_B` GPIO_AD_34, `SD_PWREN_B` GPIO_AD_35 |
-| QSPI flash (FlexSPI1 A) | GPIO_SD_B2_06..11 |
+| QSPI flash (FlexSPI1 A) | GPIO_SD_B2_06..11; read strobe (DQS) on GPIO_EMC_B2_18, see below |
 | SDRAM (SEMC) | GPIO_EMC_B1/B2 |
 | LCD (MIPI DSI) | D0 A8/B8, D1 A10/B10, CLK A9/B9; reset GPIO_AD_02, backlight GPIO_AD_30, panel power GPIO_DISP_B2_15, TE GPIO_AD_05 |
 | Touch + codec I2C (LPI2C5) | GPIO_LPSR_04 SDA / GPIO_LPSR_05 SCL; touch INT GPIO_AD_00, touch RST GPIO_AD_01 |
@@ -266,6 +266,24 @@ Row bits (13), bank bits (2), bus width (32 bit, `PS=2`), CAS latency 3 and the 
 stay as on the EVKB. Change it in the SDK board init (`BOARD_InitSemc`), in the DCD used for XIP boot
 (the `SEMC->SDRAMCR0` and `SEMC->BR[0]` writes), and in the linker script's SDRAM region length. If
 the Winbond fallback (W9825G6KH-6) is ever fitted, use the EVKB values again.
+
+### FlexSPI read strobe: use GPIO_EMC_B2_18 as the DQS pad, not GPIO_SD_B2_05
+
+The flash has no DQS pin; the FlexSPI reaches 133 MHz only in `RXCLKSRC = 1` (read strobe looped
+back through the DQS *pad*), while the internal loopback (`RXCLKSRC = 0`) is limited to 60 MHz
+(data sheet Tables 53/54). The default DQS pad GPIO_SD_B2_05 is the SD card's command line on Nosh
+(USDHC2_CMD has no other location), so it cannot be used for the loopback. Ball N3 = GPIO_EMC_B2_18
+is unconnected on the board and is the alternate FLEXSPI1_A_DQS pad (ALT6, select-input daisy 0):
+
+| | ROM boot (FCB) | Application |
+|---|---|---|
+| `readSampleClkSrc` | `kFLEXSPIReadSampleClk_LoopbackInternally` (0), ≤ 60 MHz | `kFLEXSPIReadSampleClk_LoopbackFromDqsPad` (1), 133 MHz |
+| DQS pad | none | `IOMUXC_GPIO_EMC_B2_18_FLEXSPI1_A_DQS` (pad left floating, no pull) |
+
+The ROM only knows the primary DQS pad, so the FCB stays on the internal loopback at 60 MHz; after
+boot the application re-initialises FlexSPI1 with the DQS input muxed to GPIO_EMC_B2_18 (the EVKB
+SDK's `flexspi_nor` examples do the same re-init at `kFLEXSPIReadSampleClk_LoopbackFromDqsPad`;
+only the IOMUXC line changes). Do not route anything to N3.
 
 ## Repository layout
 
