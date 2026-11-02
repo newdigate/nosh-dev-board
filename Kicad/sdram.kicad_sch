@@ -1645,7 +1645,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "SDRAM supply: +3V3 -> FB9 120R -> SDRAM_3V3 (EVKB L25/C297/C224)"
+	(text "SDRAM supply: +3V3 plane directly (the EVKB L25 bead and the SDRAM_3V3 island were merged 2026-11-02 so the SEMC bus on In2 no longer crosses a plane edge)"
 		(exclude_from_sim no)
 		(at 63.5 170.18 0)
 		(effects
@@ -1771,7 +1771,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 83.82 71.12 90)
 		(fields_autoplaced yes)
@@ -1863,7 +1863,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 261.62 71.12 90)
 		(fields_autoplaced yes)
@@ -1909,7 +1909,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 274.32 71.12 90)
 		(fields_autoplaced yes)
@@ -2047,7 +2047,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 304.8 80.01 90)
 		(fields_autoplaced yes)
@@ -2093,7 +2093,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 121.92 80.01 90)
 		(fields_autoplaced yes)
@@ -2162,7 +2162,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 111.76 80.01 90)
 		(fields_autoplaced yes)
@@ -2530,7 +2530,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 345.44 80.01 90)
 		(fields_autoplaced yes)
@@ -2599,7 +2599,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 314.96 80.01 90)
 		(fields_autoplaced yes)
@@ -2622,7 +2622,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 81.28 71.12 90)
 		(fields_autoplaced yes)
@@ -3013,29 +3013,6 @@
 			)
 		)
 	)
-	(global_label "+3V3"
-		(shape passive)
-		(at 76.2 186.69 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "55c4f8fd-21cc-490f-8225-8ba75601d6a6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "SEMC_DM2"
 		(shape passive)
 		(at 281.94 119.38 0)
@@ -3151,7 +3128,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 335.28 80.01 90)
 		(fields_autoplaced yes)
@@ -3266,7 +3243,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 73.66 71.12 90)
 		(fields_autoplaced yes)
@@ -3289,7 +3266,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 78.74 71.12 90)
 		(fields_autoplaced yes)
@@ -3312,7 +3289,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 71.12 71.12 90)
 		(fields_autoplaced yes)
@@ -3325,29 +3302,6 @@
 		(uuid "73b37e7a-c37c-433d-b21d-ce3dd0620209")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 71.12 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "SDRAM_3V3"
-		(shape passive)
-		(at 76.2 194.31 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "74127c56-47c8-4e70-9263-89e36d28be68")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2 194.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3381,7 +3335,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 172.72 80.01 90)
 		(fields_autoplaced yes)
@@ -3450,7 +3404,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 152.4 80.01 90)
 		(fields_autoplaced yes)
@@ -3565,7 +3519,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 355.6 80.01 90)
 		(fields_autoplaced yes)
@@ -3818,7 +3772,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 375.92 80.01 90)
 		(fields_autoplaced yes)
@@ -4002,7 +3956,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 132.08 80.01 90)
 		(fields_autoplaced yes)
@@ -4094,7 +4048,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 96.52 186.69 90)
 		(fields_autoplaced yes)
@@ -4255,7 +4209,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 325.12 80.01 90)
 		(fields_autoplaced yes)
@@ -4347,7 +4301,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 162.56 80.01 90)
 		(fields_autoplaced yes)
@@ -4554,7 +4508,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 142.24 80.01 90)
 		(fields_autoplaced yes)
@@ -4577,7 +4531,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 365.76 80.01 90)
 		(fields_autoplaced yes)
@@ -4600,7 +4554,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 264.16 71.12 90)
 		(fields_autoplaced yes)
@@ -4623,7 +4577,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 86.36 186.69 90)
 		(fields_autoplaced yes)
@@ -4669,30 +4623,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
-		(shape passive)
-		(at 111.76 190.5 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d47b6536-da73-4fb0-87a9-8b060802d91e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 111.76 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 68.58 71.12 90)
 		(fields_autoplaced yes)
@@ -4715,7 +4646,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 271.78 71.12 90)
 		(fields_autoplaced yes)
@@ -4784,7 +4715,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 266.7 71.12 90)
 		(fields_autoplaced yes)
@@ -4853,7 +4784,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 276.86 71.12 90)
 		(fields_autoplaced yes)
@@ -4945,7 +4876,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 182.88 80.01 90)
 		(fields_autoplaced yes)
@@ -5014,7 +4945,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 269.24 71.12 90)
 		(fields_autoplaced yes)
@@ -5083,7 +5014,7 @@
 			)
 		)
 	)
-	(global_label "SDRAM_3V3"
+	(global_label "+3V3"
 		(shape passive)
 		(at 76.2 71.12 90)
 		(fields_autoplaced yes)
@@ -6196,109 +6127,6 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/762d4c7d-1f2d-4512-9145-83d13d1277ef"
 					(reference "U10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:FerriteBead")
-		(at 76.2 190.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "50fc751f-ce7f-4af5-a38d-eba2d0d4bc73")
-		(property "Reference" "FB9"
-			(at 78.23 189.23 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "120R"
-			(at 78.23 191.77 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
-			(at 76.2 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 76.2 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ferrite bead"
-			(at 76.2 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C14709"
-			(at 76.2 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "BLM18PG121SN1D"
-			(at 76.2 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "005ab23a-1203-4fc6-93b3-536312fa5b0c")
-		)
-		(pin "2"
-			(uuid "f1a6ff20-0f2f-4101-aadd-1822acd338ab")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/762d4c7d-1f2d-4512-9145-83d13d1277ef"
-					(reference "FB9")
 					(unit 1)
 				)
 			)
@@ -7485,85 +7313,6 @@
 			(project "Nosh"
 				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/762d4c7d-1f2d-4512-9145-83d13d1277ef"
 					(reference "C96")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 111.76 190.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ca021491-87fe-4c6c-a0cc-9197b7ac257b")
-		(property "Reference" "#FLG24"
-			(at 111.76 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 113.79 187.96 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 111.76 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 111.76 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 111.76 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7adc1849-4c9d-476b-8421-9393655d5757")
-		)
-		(instances
-			(project "Nosh"
-				(path "/9f9f77a2-152f-463d-9b48-dc8efe8becf7/762d4c7d-1f2d-4512-9145-83d13d1277ef"
-					(reference "#FLG24")
 					(unit 1)
 				)
 			)

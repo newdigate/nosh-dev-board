@@ -348,7 +348,7 @@ into `Nosh.kicad_pro` (KiCad overwrites that file whenever it saves the project,
 before running it). The MCU has a dog-bone fan-out: 145 vias (0.45 mm pad on a 0.2 mm hole, the EVKB via; JLCPCB charges a small per-board extra for holes under 0.3 mm, but the 0.2 mm hole leaves 0.2 mm for an inner-layer track between two fan-out vias on the 0.8 mm pitch against 0.1 mm with the free 0.3 mm hole; everything else uses the free 0.45/0.3) for
 every connected ball from the third ring inwards, the outer two rings escape on the top layer, and the
 bottom-side decoupling sits in a ring around the via field. The PWR layer carries a +3V3 plane with
-+5V (supply corner, y >= 58.5), SDRAM_3V3 (x 26-54.5, y 15-58 under U9/U10), WL_3V3 (M.2) and VDD_SOC_IN (MCU core) islands; GND1 and
++5V (supply corner, y >= 58.5), WL_3V3 (M.2) and VDD_SOC_IN (MCU core) islands (the SDRAM_3V3 island under U9/U10 and its FB9 bead were merged into +3V3 on 2026-11-02 so the SEMC address lines on In2 no longer cross a plane edge); GND1 and
 GND2 are solid. The fan-out vias and islands are not yet joined to anything, so DRC reports them as
 dangling or isolated until routing starts.
 
