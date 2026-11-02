@@ -2887,6 +2887,95 @@
 			)
 		)
 	)
+	(footprint "Nosh:TestPoint_Pad_D1.0mm_JLC"
+		(layer "F.Cu")
+		(uuid "0f9554b2-b204-4709-a59b-9b30759e6710")
+		(at 109.3 55.5)
+		(descr "JLC: no silk ring (0.15 mm silk-to-pad rule). SMD pad as test Point, diameter 1.0mm")
+		(tags "test point SMD pad")
+		(property "Reference" "TP7"
+			(at 0 -1.448 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "b6ac46f7-ba25-4520-971b-b3f495356f57")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 0 1.55 0)
+			(layer "F.Fab")
+			(uuid "a48c4891-fdca-4563-911e-467e526ae062")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "41536117-add9-442a-9a4a-1d92629e3c4f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Test point, bare pad (no part)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a3c42432-6618-4932-972d-87c84b2d02c5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/539ad118-2dc0-4db2-94ce-7f260505cd91/539ad118-2dc0-4db2-94ce-7f260505cd91")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 1 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "ca643d07-ccc2-4fac-92f0-09f07182bea0")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -1.45 0)
+			(layer "F.Fab")
+			(uuid "05224db4-c025-4aa6-aa17-8cb652082b67")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd circle
+			(at 0 0)
+			(size 1 1)
+			(layers "F.Cu" "F.Mask")
+			(net "POR_B")
+			(uuid "9c2fc7ec-1b2f-4122-86b5-2aea57a354f2")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Nosh:R_0402_1005Metric_JLC"
 		(layer "F.Cu")
 		(uuid "100ef2ce-754c-4a91-a533-d9ebdfff45fa")
@@ -10176,6 +10265,97 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(footprint "Nosh:TestPoint_THTPad_D2.0mm_Drill1.0mm_JLC"
+		(layer "F.Cu")
+		(uuid "368ee8a8-8d61-4b69-b795-59c742b5f08a")
+		(at 104 56)
+		(descr "JLC: no silk ring (0.15 mm silk-to-pad rule). THT pad as test Point, diameter 2.0mm, hole diameter 1.0mm")
+		(tags "test point THT pad")
+		(property "Reference" "TP2"
+			(at 0 -1.998 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "1e8b6714-fa61-46da-b020-b86ed9a90d60")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 0 2.05 0)
+			(layer "F.Fab")
+			(uuid "12c2bbdc-493e-4c33-b510-77d548d6dccf")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "adeba29b-d243-47d5-811c-f6aae4e215d5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Test point, 2.0 mm plated hole (scope ground)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e2a08244-f7f1-45c3-b5fb-689be41334b2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 1.5 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "0ebfc90e-f91e-4416-b085-c7d2b0054ef3")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -2 0)
+			(layer "F.Fab")
+			(uuid "a72a46b3-4d6d-4702-846e-bbf9d64514e1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 2 2)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "2aa578b1-dd11-4112-8d79-fc6ecf8f67cd")
+		)
+		(embedded_fonts no)
 	)
 	(footprint "LED_SMD:LED_0603_1608Metric"
 		(layer "F.Cu")
@@ -17988,6 +18168,95 @@
 			)
 		)
 	)
+	(footprint "Nosh:TestPoint_Pad_D1.0mm_JLC"
+		(layer "F.Cu")
+		(uuid "695e41d0-3b2a-41a2-a56f-dae6d15254d4")
+		(at 25 60.5)
+		(descr "JLC: no silk ring (0.15 mm silk-to-pad rule). SMD pad as test Point, diameter 1.0mm")
+		(tags "test point SMD pad")
+		(property "Reference" "TP4"
+			(at 0 -1.448 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "0595de8b-1bbd-47bc-ad0b-9f1bc169cb1d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 0 1.55 0)
+			(layer "F.Fab")
+			(uuid "ae688b5d-1607-4141-99ba-6ce4008c3cfa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1a83a9ac-bcac-4a37-bce8-c0cd2d9c6acd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Test point, bare pad (no part)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d170c273-1f31-4cab-91a1-1bf4962605eb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 1 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "60d4026f-79b1-43d0-b44d-9759186f9fa9")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -1.45 0)
+			(layer "F.Fab")
+			(uuid "51cdaff3-2b57-42c0-ac21-c1a19f66d6ca")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd circle
+			(at 0 0)
+			(size 1 1)
+			(layers "F.Cu" "F.Mask")
+			(net "+3V3")
+			(uuid "d0350ee3-7ce7-42a9-91f3-5e6751049e2e")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Nosh:C_0402_1005Metric_JLC"
 		(layer "F.Cu")
 		(uuid "6a632f6d-1b92-48d9-aba0-049a9c357316")
@@ -23336,6 +23605,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -23347,6 +23617,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -23565,6 +23836,95 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(footprint "Nosh:TestPoint_Pad_D1.0mm_JLC"
+		(layer "F.Cu")
+		(uuid "9710f723-16af-4a72-83c1-c9e9d0ad2fb9")
+		(at 44.7 65.099999)
+		(descr "JLC: no silk ring (0.15 mm silk-to-pad rule). SMD pad as test Point, diameter 1.0mm")
+		(tags "test point SMD pad")
+		(property "Reference" "TP5"
+			(at 0 -1.448 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "3a1b0103-f6cf-47ea-9e74-522c865046ad")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 0 1.55 0)
+			(layer "F.Fab")
+			(uuid "78763567-0ab1-400f-b424-5a91c6154022")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "452c09a8-1a5f-4aea-a7e5-0fec15551fdb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Test point, bare pad (no part)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "25c9e2ac-1252-477a-9ba8-f5372861a900")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 1 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "b23a5ddb-b814-4237-9874-353c4ad7bd0e")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -1.45 0)
+			(layer "F.Fab")
+			(uuid "98848248-9ff9-4d00-88f0-1ff104d23680")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd circle
+			(at 0 0)
+			(size 1 1)
+			(layers "F.Cu" "F.Mask")
+			(net "+1V8")
+			(uuid "81188a77-e0a9-40b4-92cd-41f49fc5431e")
+		)
+		(embedded_fonts no)
 	)
 	(footprint "Nosh:R_0402_1005Metric_JLC"
 		(layer "F.Cu")
@@ -24531,7 +24891,7 @@
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U16"
-			(at 0 2.545 180)
+			(at -3 0 180)
 			(layer "F.SilkS")
 			(uuid "71b5cde4-beb6-493f-adfc-e4461a60a2eb")
 			(effects
@@ -28018,6 +28378,95 @@
 			)
 		)
 	)
+	(footprint "Nosh:TestPoint_Pad_D1.0mm_JLC"
+		(layer "F.Cu")
+		(uuid "b960cd4e-181a-4176-a6b2-782c664bdd26")
+		(at 17.5 60)
+		(descr "JLC: no silk ring (0.15 mm silk-to-pad rule). SMD pad as test Point, diameter 1.0mm")
+		(tags "test point SMD pad")
+		(property "Reference" "TP3"
+			(at 0 -1.448 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "67ab27d5-0d15-4d88-b0fd-3ea59b198915")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 0 1.55 0)
+			(layer "F.Fab")
+			(uuid "08b2c5c8-db56-4842-a786-0110b44a6648")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a542d2a8-4f6e-4d8d-8de4-fc76e58adcf8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Test point, bare pad (no part)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "32081974-0737-4c52-8759-0ddced7c8a30")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 1 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "ea56ed4d-abb5-4dd2-96ff-960226813120")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -1.45 0)
+			(layer "F.Fab")
+			(uuid "696ef2a5-b303-4f62-a069-64c36afca5c6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd circle
+			(at 0 0)
+			(size 1 1)
+			(layers "F.Cu" "F.Mask")
+			(net "+5V")
+			(uuid "71f1bace-c014-4c70-8d96-a17700ea3532")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Nosh:Jack_3.5mm_CUI_SJ-3523-SMT_Horizontal_JLC"
 		(layer "F.Cu")
 		(uuid "b9df3500-a12d-47eb-b0a6-f2f6cf62a584")
@@ -30115,6 +30564,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -30126,6 +30576,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -39461,6 +39912,97 @@
 			)
 		)
 	)
+	(footprint "Nosh:TestPoint_THTPad_D2.0mm_Drill1.0mm_JLC"
+		(layer "F.Cu")
+		(uuid "f25624aa-eff3-40f6-a842-9c34444621bc")
+		(at 18 63)
+		(descr "JLC: no silk ring (0.15 mm silk-to-pad rule). THT pad as test Point, diameter 2.0mm, hole diameter 1.0mm")
+		(tags "test point THT pad")
+		(property "Reference" "TP1"
+			(at 0 -1.998 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "0817bc01-91e3-4d37-9b1d-d98dd8f6cd1a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 0 2.05 0)
+			(layer "F.Fab")
+			(uuid "a0c22969-4902-4637-aa2e-6edfdc9f7a4a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8798a7de-34b4-44b8-bec5-5d16c630680e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Test point, 2.0 mm plated hole (scope ground)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c833645b-2a2d-408f-9109-29dc70791de7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f/7ba5e26f-a6f0-4d35-9981-360c60d8ab4f")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 1.5 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "6a989466-2d6e-4524-bf6a-943fef660413")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -2 0)
+			(layer "F.Fab")
+			(uuid "bc6866f1-629f-497b-94be-e11fc2e8fbc7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 2 2)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "fa1af431-2efc-4684-bcab-c37346485dc1")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Nosh:R_0402_1005Metric_JLC"
 		(layer "F.Cu")
 		(uuid "f330d9a7-4c06-42c6-8c43-b62809a859d6")
@@ -44970,6 +45512,100 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(footprint "Nosh:TestPoint_Pad_D1.0mm_JLC"
+		(layer "B.Cu")
+		(uuid "2e44e896-c9c1-46b7-a3fe-b8bcfc31cc01")
+		(at 73.3 61.5 180)
+		(descr "JLC: no silk ring (0.15 mm silk-to-pad rule). SMD pad as test Point, diameter 1.0mm")
+		(tags "test point SMD pad")
+		(property "Reference" "TP6"
+			(at 0 1.448 0)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "1af4dc31-acf2-4514-8645-f0269e5d71d6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 0 -1.55 0)
+			(layer "B.Fab")
+			(uuid "6fc06690-984b-4e59-a5bf-c945605de397")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "300789bb-67f7-4824-9165-e563d1936445")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Description" "Test point, bare pad (no part)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "5530574a-ec58-41ba-a680-96a5d49d53f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(path "/539ad118-2dc0-4db2-94ce-7f260505cd91/539ad118-2dc0-4db2-94ce-7f260505cd91")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 1 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "B.CrtYd")
+			(uuid "177849e2-d587-4c41-b547-9817a7410c57")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 1.45 0)
+			(layer "B.Fab")
+			(uuid "7833d28a-000e-4e83-9457-9831162b6ac3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(pad "1" smd circle
+			(at 0 0 180)
+			(size 1 1)
+			(layers "B.Cu" "B.Mask")
+			(net "DCDC_DIG")
+			(uuid "f5613d23-69d6-4b46-8e5b-eed883147420")
+		)
+		(embedded_fonts no)
 	)
 	(footprint "Nosh:C_0402_1005Metric_ViP"
 		(layer "B.Cu")
@@ -56425,6 +57061,14 @@
 		(uuid "7631690b-f1ec-4fce-8bc0-7c0f73f13b01")
 	)
 	(via
+		(at 25 60.5)
+		(size 0.45)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net "+3V3")
+		(uuid "7758a6a5-a7cc-4d16-8de1-a0653a408bb1")
+	)
+	(via
 		(at 69.2 46.4)
 		(size 0.45)
 		(drill 0.2)
@@ -65265,6 +65909,14 @@
 		(uuid "58c42222-635f-48b9-a8b3-c75e13d29663")
 	)
 	(segment
+		(start 43.7 65.099999)
+		(end 44.7 65.099999)
+		(width 0.3)
+		(layer "F.Cu")
+		(net "+1V8")
+		(uuid "596707c4-b8ce-4272-853a-c4f83e758f75")
+	)
+	(segment
 		(start 61 10.1)
 		(end 63.4 7.7)
 		(width 0.3)
@@ -71185,6 +71837,14 @@
 		(uuid "6f2472e7-39bf-4ba1-8288-96afd37387fe")
 	)
 	(segment
+		(start 107.91 54)
+		(end 108.3 53.6)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "POR_B")
+		(uuid "72b3f4f0-999c-400d-8e1c-6bf85f9ac97f")
+	)
+	(segment
 		(start 72.4 53.75)
 		(end 72.33 53.68)
 		(width 0.13)
@@ -71247,6 +71907,22 @@
 		(layer "F.Cu")
 		(net "POR_B")
 		(uuid "b5d440d4-100c-4a10-8251-b534c7fcdc16")
+	)
+	(segment
+		(start 108.3 53.6)
+		(end 109.3 53.6)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "POR_B")
+		(uuid "c2c30950-2356-4bfa-91f0-0562a5dcee6e")
+	)
+	(segment
+		(start 109.3 53.6)
+		(end 109.3 55.5)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "POR_B")
+		(uuid "eda6564d-aac4-408c-844f-296246f94b64")
 	)
 	(segment
 		(start 71.655 49.981126)
@@ -96989,6 +97665,14 @@
 		(uuid "f58413ec-f4d9-46f1-b2e9-b460913ae701")
 	)
 	(segment
+		(start 71.94 61.48)
+		(end 73.3 61.5)
+		(width 0.3)
+		(layer "B.Cu")
+		(net "DCDC_DIG")
+		(uuid "fc705dac-a90b-42f4-8187-92602b9903b2")
+	)
+	(segment
 		(start 71.6 44)
 		(end 71.6 43.2)
 		(width 0.3)
@@ -110611,6 +111295,14 @@
 		(layers "F.Cu" "B.Cu")
 		(net "+5V")
 		(uuid "03f18a55-93c6-4c24-a355-5035922833cd")
+	)
+	(via
+		(at 17.5 60)
+		(size 0.45)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net "+5V")
+		(uuid "0487c098-1f05-42b9-ac33-32d6ae1fecd0")
 	)
 	(via
 		(at 86.55 61.75)

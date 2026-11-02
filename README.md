@@ -206,11 +206,22 @@ recovery path if a bad image ever makes an SWD attach awkward.
 
 ### Test points
 
-None. The 72 bare-pad test points of the first layout were removed with J10 (a9f1b1f) to free
-routing room. If bring-up probing is wanted before fabrication, the design review suggests a
-handful of 1.0 mm pads on +5V, +3V3, +1V8, DCDC_DIG, POR_B and the LPUART1 console; SWD/SWO are on
-J1, LPUART1 on J11 (GPIO_AD_24/25, 3.3 V). Nothing should be probed on the SDRAM, FlexSPI, USB data,
-MIPI DSI or crystal nets, where a pad stub would degrade the signal.
+Seven bare pads for bring-up, none in the BOM or placement files (`Nosh:TestPoint_*_JLC` footprints,
+the KiCad ones without the silk ring that would break JLCPCB's 0.15 mm silk-to-pad rule):
+
+| Ref | Net | Where | Pad |
+|---|---|---|---|
+| TP1 | GND | west edge by J4 (18.0, 63.0) | 2.0 mm plated hole, solder a wire loop for the scope ground |
+| TP2 | GND | south of U16 / SW1 (104.0, 56.0) | 2.0 mm plated hole |
+| TP3 | +5V | by J4 (17.5, 60.0) | 1.0 mm pad on a via into the +5V plane |
+| TP4 | +3V3 | (25.0, 60.5) | 1.0 mm pad on a via into the +3V3 plane |
+| TP5 | +1V8 | east of U8 (44.7, 65.1) | 1.0 mm pad |
+| TP6 | DCDC_DIG | **bottom side**, beside C31 under U1 (73.3, 61.5) | 1.0 mm pad |
+| TP7 | POR_B | south-east of U16 (109.3, 55.5) | 1.0 mm pad |
+
+The 72 test points of the first layout were removed with J10 (a9f1b1f). SWD/SWO are on J1, the LPUART1
+console on J11 (GPIO_AD_24/25, 3.3 V). Nothing is probed on the SDRAM, FlexSPI, USB data, MIPI DSI or
+crystal nets, where a pad stub would degrade the signal.
 
 ### SDRAM configuration: 10 column address bits, not 9
 
