@@ -1442,7 +1442,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Regulator_Linear:AMS1117-1.8"
+		(symbol "Nosh:TLV1117LV-18"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1458,7 +1458,7 @@
 					)
 				)
 			)
-			(property "Value" "AMS1117-1.8"
+			(property "Value" "TLV1117LV-18"
 				(at 0 3.175 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1480,7 +1480,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "http://www.advanced-monolithic.com/pdf/ds1117.pdf"
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv1117lv.pdf"
 				(at 2.54 -6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1491,7 +1491,7 @@
 					)
 				)
 			)
-			(property "Description" "1A Low Dropout regulator, positive, 1.8V fixed output, SOT-223"
+			(property "Description" "1A low-dropout regulator, 1.8V fixed, 2-5.5V in, stable with ceramic output caps (0 ohm ESR), no minimum load, SOT-223"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1524,7 +1524,7 @@
 					)
 				)
 			)
-			(symbol "AMS1117-1.8_0_1"
+			(symbol "TLV1117LV-18_0_1"
 				(rectangle
 					(start -5.08 -5.08)
 					(end 5.08 1.905)
@@ -1537,7 +1537,7 @@
 					)
 				)
 			)
-			(symbol "AMS1117-1.8_1_1"
+			(symbol "TLV1117LV-18_1_1"
 				(pin power_in line
 					(at 0 -7.62 90)
 					(length 2.54)
@@ -1916,7 +1916,7 @@
 		)
 		(uuid "a8bb8cc3-d700-4e6a-9053-df02288c90c2")
 	)
-	(text "1.8V LDO  (AMS1117-1.8, 1A)"
+	(text "1.8V LDO  (TLV1117LV-18, 1A, ceramic-stable)"
 		(exclude_from_sim no)
 		(at 25.4 187.96 0)
 		(effects
@@ -1974,7 +1974,7 @@
 		)
 		(uuid "fcf3e6c8-f827-471f-9844-e3d8658c7b5b")
 	)
-	(text " - +1V8: AMS1117-1.8 from +3V3 (EVKB U1, J53/J56 1-2). The MCU DCDC 1.8V output is therefore NOT used: R5 on the Power sheet is DNP (EVKB J56 2-3 would select it)."
+	(text " - +1V8: TLV1117LV-18 from +3V3 (EVKB U1, J53/J56 1-2). The MCU DCDC 1.8V output is therefore NOT used: R5 on the Power sheet is DNP (EVKB J56 2-3 would select it)."
 		(exclude_from_sim no)
 		(at 25.4 256.53 0)
 		(effects
@@ -3866,7 +3866,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Regulator_Linear:AMS1117-1.8")
+		(lib_id "Nosh:TLV1117LV-18")
 		(at 71.12 210.82 0)
 		(unit 1)
 		(body_style 1)
@@ -3887,7 +3887,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "AMS1117-1.8"
+		(property "Value" "TLV1117LV-18"
 			(at 73.66 222.25 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3909,7 +3909,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv1117lv.pdf"
 			(at 71.12 210.82 0)
 			(hide yes)
 			(show_name no)
@@ -3920,7 +3920,7 @@
 				)
 			)
 		)
-		(property "Description" "1A Low Dropout regulator, positive, 1.8V fixed output, SOT-223"
+		(property "Description" "1A low-dropout regulator, 1.8V fixed, 2-5.5V in, stable with ceramic output caps (0 ohm ESR), no minimum load, SOT-223"
 			(at 71.12 210.82 0)
 			(hide yes)
 			(show_name no)
@@ -3931,7 +3931,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C6185"
+		(property "LCSC" "C80105"
 			(at 71.12 210.82 0)
 			(hide yes)
 			(show_name no)
@@ -3942,7 +3942,7 @@
 				)
 			)
 		)
-		(property "MPN" "AMS1117-1.8"
+		(property "MPN" "TLV1117LV18DCYR"
 			(at 71.12 210.82 0)
 			(hide yes)
 			(show_name no)

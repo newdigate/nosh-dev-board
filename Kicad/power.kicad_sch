@@ -7957,7 +7957,7 @@
 		)
 		(uuid "036b1240-4b72-4bea-ab63-5285858a2b30")
 	)
-	(text "R5 (R1851, DCDC_ANA -> +1V8) is DNP: +1V8 comes from the AMS1117 on the Supply sheet (EVKB J56 1-2)."
+	(text "R5 (R1851, DCDC_ANA -> +1V8) is DNP: +1V8 comes from the TLV1117LV on the Supply sheet (EVKB J56 1-2)."
 		(exclude_from_sim no)
 		(at 304.8 69.85 0)
 		(effects

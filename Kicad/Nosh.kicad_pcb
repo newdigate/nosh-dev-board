@@ -20387,7 +20387,7 @@
 				)
 			)
 		)
-		(property "Value" "AMS1117-1.8"
+		(property "Value" "TLV1117LV-18"
 			(at 0 4.5 0)
 			(layer "F.Fab")
 			(uuid "e9e515f5-aa58-4b21-92d7-ef82ed735097")
@@ -20398,7 +20398,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv1117lv.pdf"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20411,7 +20411,7 @@
 				)
 			)
 		)
-		(property "Description" "1A Low Dropout regulator, positive, 1.8V fixed output, SOT-223"
+		(property "Description" "1A low-dropout regulator, 1.8V fixed, 2-5.5V in, stable with ceramic output caps (0 ohm ESR), no minimum load, SOT-223"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20424,7 +20424,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C6185"
+		(property "LCSC" "C80105"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -20436,7 +20436,7 @@
 				)
 			)
 		)
-		(property "MPN" "AMS1117-1.8"
+		(property "MPN" "TLV1117LV18DCYR"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
