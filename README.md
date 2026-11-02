@@ -22,9 +22,9 @@ unconnected MCU balls and undriven-input notes on open pins.
 | USB2 (OTG2) | micro-AB **host/OTG** port | the port `USBHost_t36` drives; TPS2553 VBUS switch (~1.1 A) with hardware ID gating, RClamp0854P ESD |
 | USB1 (OTG1) | USB-C **device** port | Rd-only UFP (500 mA), RClamp0854P ESD |
 | M.2 Key E | uSDHC1 @ 1.8 V + LPUART2 | for u-blox MAYA-W1 / NXP IW416; 74AVC8T245 level shifters; TE 2199230-4 socket (EVKB part); retention nut H5, M2.5 SMT 2 mm (EVKB BH1) |
-| microSD | uSDHC2 @ 3.3 V | its own bus — the EVKB shares one with the M.2 slot |
+| microSD | uSDHC2 @ 3.3 V, TPD1E05U06 ESD diode on each of the six lines | its own bus — the EVKB shares one with the M.2 slot |
 | LCD + touch | 40-pin 0.5 mm FPC (Würth 68714014022), MIPI DSI 2 lanes | Rocktech RK055HDMIPI4MA0 (720×1280, HX8394, GT911 touch on LPI2C5), EVKB J48 pinout and GPIO map |
-| Audio | NXP SGTL5000 codec (QFN-20) on SAI1 + LPI2C5, 3.5 mm line-out and line-in jacks | the Teensy Audio Shield codec: Teensy Audio library `AudioControlSGTL5000` and the NXP SDK `sgtl5000` driver both apply; I2C 0x0A; same SAI1 pins as the EVKB codec |
+| Audio | NXP SGTL5000 codec (QFN-20) on SAI1 + LPI2C5, 3.5 mm line-out and line-in jacks with TPD1E10B06 bidirectional ESD on the jack side of the coupling caps | the Teensy Audio Shield codec: Teensy Audio library `AudioControlSGTL5000` and the NXP SDK `sgtl5000` driver both apply; I2C 0x0A; same SAI1 pins as the EVKB codec |
 | Power | 5 V barrel jack or USB-C → MP2143 3.3 V buck → TLV1117LV 1.8 V; AP2112K SNVS LDO | EVKB-style rail tree, on-chip DCDC for the core; 3 A polyfuse, SMAJ6.0A TVS, SS54 reverse-polarity diode, TPS259531 eFuse (5.7 V clamp, 3.6 A limit), jack rated 8 A; red power LED on +3V3 |
 | Debug | 10-pin 1.27 mm SWD/JTAG header, reset / ONOFF / WAKEUP buttons, 2-way boot-mode DIP, user LED on GPIO_AD_04, 3-pin debug UART header J11 | JTAG on GPIO_LPSR_10..15, VTref = NVCC_LPSR (3.3 V); LPUART1 console on J11 |
 | Expansion | none | the 2×10 header J10 was taken off during layout (commit a9f1b1f) to free routing room; see [Expansion header (removed)](#expansion-header-removed) |
