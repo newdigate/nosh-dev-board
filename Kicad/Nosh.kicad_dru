@@ -315,6 +315,7 @@
 # Outer-layer GND pours must stay clear of the impedance-controlled pairs: the JLCPCB impedance
 # figures assume plain microstrip, and copper alongside the pair lowers its impedance.
 (rule "Nosh: Pour to USB / MIPI pairs"
+	(layer outer)
 	(condition "A.Type == 'Zone' && B.Type == 'Track' && (B.NetClass == 'USB_90' || B.NetClass == 'MIPI_100')")
 	(constraint clearance (min 0.5mm))
 )
