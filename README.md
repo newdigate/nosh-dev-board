@@ -6,9 +6,11 @@ library, `MipiDisplay` and the NXP SDK board files — runs with the same pin as
 Where Nosh departs from the EVKB it is for JLCPCB availability or because an EVKB block was
 not wanted; every departure is listed below.
 
-**Status:** schematic capture complete for the blocks listed (KiCad 10, `Kicad/`). PCB layout
-has not started. Full-hierarchy ERC is clean apart from the expected unconnected MCU balls
-(68) and 8 undriven-input notes on open pins.
+**Status:** schematic and PCB layout complete (KiCad 10, `Kicad/`): 6-layer JLCPCB stackup, fully
+routed, DRC clean with schematic parity. The findings of the 2026-10-28 design review are closed
+on the `review-fixes` branch (decoupling moved to the chips, DC-jack OVP, reset supervisor, RTC
+load caps, MIPI pair matching and the rest; see the git log). ERC is clean apart from the expected
+unconnected MCU balls and undriven-input notes on open pins.
 
 ## What is on the board
 
@@ -24,8 +26,8 @@ has not started. Full-hierarchy ERC is clean apart from the expected unconnected
 | LCD + touch | 40-pin 0.5 mm FPC (Würth 68714014022), MIPI DSI 2 lanes | Rocktech RK055HDMIPI4MA0 (720×1280, HX8394, GT911 touch on LPI2C5), EVKB J48 pinout and GPIO map |
 | Audio | NXP SGTL5000 codec (QFN-20) on SAI1 + LPI2C5, 3.5 mm line-out and line-in jacks | the Teensy Audio Shield codec: Teensy Audio library `AudioControlSGTL5000` and the NXP SDK `sgtl5000` driver both apply; I2C 0x0A; same SAI1 pins as the EVKB codec |
 | Power | 5 V barrel jack or USB-C → MP2143 3.3 V buck → TLV1117LV 1.8 V; AP2112K SNVS LDO | EVKB-style rail tree, on-chip DCDC for the core; 3 A polyfuse, SMAJ6.0A TVS, SS54 reverse-polarity diode, TPS259531 eFuse (5.7 V clamp, 3.6 A limit), jack rated 8 A; red power LED on +3V3 |
-| Debug | 10-pin 1.27 mm SWD/JTAG header, reset / ONOFF / WAKEUP buttons, 2-way boot-mode DIP, user LED on GPIO_AD_04, 3-pin debug UART header J11, 72 test points | JTAG on GPIO_LPSR_10..15, VTref = NVCC_LPSR (3.3 V); LPUART1 console on J11, J10 pins 5/6 and TP62/TP63 |
-| Expansion | 2×10 2.54 mm header J10 | LPUART1 console, LPI2C5, LPSPI3, FLEXCAN3 / LPUART12 pins, 4 ADC / PWM pins, 1 PWM pin, +3V3, +5V, 3 × GND; see [Expansion header J10](#expansion-header-j10) |
+| Debug | 10-pin 1.27 mm SWD/JTAG header, reset / ONOFF / WAKEUP buttons, 2-way boot-mode DIP, user LED on GPIO_AD_04, 3-pin debug UART header J11 | JTAG on GPIO_LPSR_10..15, VTref = NVCC_LPSR (3.3 V); LPUART1 console on J11 |
+| Expansion | none | the 2×10 header J10 was taken off during layout (commit a9f1b1f) to free routing room; see [Expansion header (removed)](#expansion-header-removed) |
 | Mechanical | board outline = the RK055HDMIPI4MA0 adapter outline; 4 × M3 mounting holes H1–H4 on the adapter's standoff positions; 6 fiducials, FID1–FID3 on the top side and FID4–FID6 on the bottom for the bottom-side assembly pass | 3.53 mm plated holes with 5.6 mm GND pads (NXP's .635" M3 standoff land, as on the EVKB); hole coordinates from the adapter design files or measurement before layout |
 
 Sheets: `power` (MCU supplies, DCDC, reset/boot), `core` (crystals, USB/MIPI supplies),
@@ -49,39 +51,18 @@ All assignments are the EVKB's unless marked.
 | Touch + codec I2C (LPI2C5) | GPIO_LPSR_04 SDA / GPIO_LPSR_05 SCL; touch INT GPIO_AD_00, touch RST GPIO_AD_01 |
 | Audio (SAI1) | MCLK GPIO_AD_17, RX_SYNC/RX_BCLK GPIO_AD_18/19 (DNP links), RXD0 GPIO_AD_20, TXD0 GPIO_AD_21, TX_BCLK GPIO_AD_22, TX_SYNC GPIO_AD_23 |
 | Boot mode | GPIO_LPSR_02/03 (DIP switch, 100 k pull-downs); BOOT_CFG pins GPIO_DISP_B1_06..11 / GPIO_DISP_B2_00..05 pulled down (100 k), so internal boot is from FlexSPI1 QSPI NOR |
-| Debug console (LPUART1) | GPIO_AD_24 TXD / GPIO_AD_25 RXD on J11 (1 GND, 2 TXD, 3 RXD), J10 pins 5 / 6 and TP62 / TP63 |
-| Expansion SPI (LPSPI3) — *Nosh* | SCK GPIO_DISP_B1_04, SOUT GPIO_DISP_B1_06, SIN GPIO_DISP_B1_05, CS GPIO_DISP_B1_03 (GPIO-driven) |
+| Debug console (LPUART1) | GPIO_AD_24 TXD / GPIO_AD_25 RXD on J11 (1 GND, 2 TXD, 3 RXD) |
+| LPSPI3 — *Nosh* | not brought out (J10 removed); GPIO_DISP_B1_06 carries the BT_CFG0 strap (net LPSPI3_SOUT, R92), GPIO_DISP_B1_03..05 are unconnected |
 | User LED | GPIO_AD_04 (GPIO9_IO03, the SDK's BOARD_USER_LED), high = on; direct drive, 1 k series, red 0603 (the EVKB buffers it with a BC817) |
 
-## Expansion header J10
+## Expansion header (removed)
 
-2 × 10, 2.54 mm pin header (hanxia HX PZ2.54-2x10P ZZ, JLCPCB C42372518), fitted by JLCPCB's
-through-hole assembly like the other THT connectors. All signals are **3.3 V and not 5 V tolerant**.
-
-| Pins (odd / even) | Signals | MCU pads | Other functions on these pins |
-|---|---|---|---|
-| 1 / 2 | +3V3 / +5V | — | +3V3 is the main rail, off while the SoC is powered down by ONOFF; +5V is the diode-OR'd input rail |
-| 3 / 4 | GND / GND | — | |
-| 5 / 6 | LPUART1_TXD / LPUART1_RXD | GPIO_AD_24 / GPIO_AD_25 | SDK debug console; FLEXPWM2_PWM0_A / B, ADC2_CH6A / B, LPI2C4 |
-| 7 / 8 | LPI2C5_SCL / LPI2C5_SDA | GPIO_LPSR_05 / GPIO_LPSR_04 | shared with the touch panel and the codec, 2.2 k pull-ups fitted (the EVKB's Arduino I2C bus) |
-| 9 / 10 | LPSPI3_SCK / LPSPI3_CS | GPIO_DISP_B1_04 / GPIO_DISP_B1_03 | CS is a plain GPIO (GPIO10_IO24); QTimer TMR2, LPI2C3_SDA on B1_03 |
-| 11 / 12 | LPSPI3_SOUT / LPSPI3_SIN | GPIO_DISP_B1_06 / GPIO_DISP_B1_05 | SOUT is also boot strap BOOT_CFG1[0] (100 k pull-down) |
-| 13 / 14 | GPIO_LPSR_00 / GPIO_LPSR_01 | GPIO_LPSR_00 / GPIO_LPSR_01 | FLEXCAN3_TX / RX (add a transceiver), LPUART12_TXD / RXD, PDM_CLK / DATA0, MQS right / left |
-| 15 / 16 | GPIO_AD_10 / GPIO_AD_11 | GPIO_AD_10 / GPIO_AD_11 | ADC1_CH2A / CH2B, FLEXPWM2_PWM0_X / PWM1_X, GPT3, FlexIO2 D10 / D11 |
-| 17 / 18 | GPIO_AD_12 / GPIO_AD_13 | GPIO_AD_12 / GPIO_AD_13 | ADC1 and ADC2 CH3A / CH3B, FLEXPWM2_PWM2_X / PWM3_X, GPT1 capture, FlexIO2 D12 / D13 |
-| 19 / 20 | GND / GPIO_AD_26 | — / GPIO_AD_26 | FLEXPWM2_PWM1_A, LPUART1_CTS_B, LPSPI2_SOUT, FlexIO2 D26 |
-
-- **ADC range.** ADC_VREFH is 1.8 V, so the analog inputs read 0–1.8 V full scale. The pads
-  themselves tolerate 3.3 V.
-- **Why LPSPI3 and a GPIO chip select.** No complete LPSPI instance is free on 3.3 V pins that are
-  not boot straps. NVCC_DISP1 is therefore 3.3 V on Nosh, and the chip select is a GPIO, because
-  LPSPI3's hardware PCS0 pin (GPIO_DISP_B1_07) is boot strap BOOT_CFG1[1], encrypted XIP. A
-  module's pull-up on that pin would stop the board booting.
-- **Keep pull-ups off pin 11.** SOUT is BOOT_CFG1[0]; SPI slaves never drive it, so the strap reads 0.
-- **SDK examples.** EVKB examples on LPI2C5 (the Arduino I2C bus) work unchanged. LPSPI examples
-  written for the EVKB's Arduino SPI (LPSPI1) need the instance and pin mux changed to LPSPI3.
-- If the header ends up between the board and the display, swap to a right-angle header at the
-  board edge during layout.
+The 2×10 2.54 mm header J10 (LPUART1, LPI2C5, LPSPI3, FLEXCAN3/LPUART12, four ADC/PWM pins) was
+taken off the board during layout (a9f1b1f, schematic cadd849) to free routing room around the
+MCU. The pins it used are now unconnected and available if a header is ever added back:
+GPIO_AD_10..13, GPIO_AD_26, GPIO_LPSR_00/01 (FLEXCAN3_TX/RX, PDM, MQS) and GPIO_DISP_B1_03..05.
+GPIO_DISP_B1_06 (LPSPI3_SOUT) stays a boot strap (BOOT_CFG1[0], R92) and must not be pulled up.
+NVCC_DISP1 is still 3.3 V. LPUART1 and LPI2C5 remain reachable on J11 and the LCD/codec nets.
 
 ## Differences from the MIMXRT1170-EVKB
 
@@ -93,13 +74,13 @@ through-hole assembly like the other THT connectors. All signals are **3.3 V and
 | SD card bus | shared with the M.2 slot | separate uSDHC2 | independent Wi-Fi and SD |
 | M.2 BT HCI UART | needs NXP's "HCI UART rework" (mount the shifter-output 0 R links, cut the shared Arduino / Ethernet-PHY loads, set a jumper) | hard-wired, no rework | see below |
 | QSPI flash | W25Q512NWEIQ (1.8 V) | W25Q512JVEIQ (3.3 V) | NVCC_SD2 at 3.3 V keeps the SD bus simple |
-| NVCC_DISP1 | 1.8 V (RGMII Ethernet PHY on GPIO_DISP_B1) | 3.3 V | no Ethernet; the bank carries the J10 SPI at 3.3 V |
+| NVCC_DISP1 | 1.8 V (RGMII Ethernet PHY on GPIO_DISP_B1) | 3.3 V | no Ethernet; the bank carries the BOOT_CFG / BT_CFG straps at 3.3 V |
 | Boot configuration | DIP switch SW2 + 47 k pull-downs on the 12 BOOT_CFG pins | fixed 100 k pull-downs, no switch | always internal boot from QSPI NOR; reflash through the serial downloader (BOOT_MODE DIP) instead of changing boot devices |
-| Arduino headers | four Arduino Uno R3 headers | one 2×10 expansion header J10 | the Arduino SPI pins (GPIO_AD_28..31) carry the M.2 and backlight signals here |
+| Arduino headers | four Arduino Uno R3 headers | none (J10 removed during layout) | the Arduino SPI pins (GPIO_AD_28..31) carry the M.2 and backlight signals here |
 | LCD backlight / 2.8 V | on-board boost and LDO | none | the RK055HDMIPI4MA0 adapter (NXP SPF-39012) generates its own rails and drives its own backlight from the 5 V on FPC pins 39/40 — keep its jumpers J3/J5/J6 at the default 1-2 |
 | LCD TE | 74AVC8T245 level shifter to GPIO_AD_05 | DNP 0 R | DSI video mode never uses TE; add a shifter if needed |
 | Audio | WM8962 (0.5 mm WLCSP-49) with speaker outputs, electret mic and headphone jack with detect | SGTL5000 (QFN-20) with line out and line in | Teensy Audio library support; the QFN routes on standard 6-layer rules where the WLCSP needed via-in-pad; no mic, speakers or jack detect wanted |
-| Not fitted at all | Ethernet (1G + 100M), CAN transceivers, camera, PMIC, LPC55 debug probe, PDM mics, accelerometer | — | use an external SWD probe; FLEXCAN3 and PDM pins are on J10 |
+| Not fitted at all | Ethernet (1G + 100M), CAN transceivers, camera, PMIC, LPC55 debug probe, PDM mics, accelerometer | — | use an external SWD probe; the FLEXCAN3 / PDM pins (GPIO_LPSR_00/01) are unconnected |
 
 **No M.2 HCI UART rework.** NXP's EdgeFast Bluetooth
 [hardware rework guide](https://mcuxpresso.nxp.com/mcuxsdk/25.09.00/html/middleware/edgefast_bluetooth/docs/HWRGEFBTPALUG/topics/RT1170EVKB_Murata_M2.html)
@@ -225,24 +206,11 @@ recovery path if a bad image ever makes an SWD attach awkward.
 
 ### Test points
 
-The `testpoints` sheet carries 72 test points, each a global label onto an existing net. They are
-bare copper pads (KiCad `TestPoint` footprints, flagged exclude-from-BOM / exclude-from-POS and
-`in_bom = no` on the symbols), so they add nothing to the JLCPCB order. The signal test points are
-1.0 mm round pads (`TestPoint_Pad_D1.0mm`, the practical minimum for a probe tip or a 1 mm pogo pin);
-the six ground ones are 2.0 mm plated holes.
-
-| Refs | Group | Nets |
-|---|---|---|
-| TP1–TP6 | Ground | GND; 2.0 mm plated holes, solder a wire loop for the scope ground lead |
-| TP7–TP21 | Supply rails | DC_IN_F, +5V, +3V3, +1V8, VLDO_3V3, VSD_3V3, WL_3V3, SDRAM_3V3, CODEC_1V8, AUD_VDDA, LCD_5V, LCD_IOVCC_1V8, CTP_3V3, USB1_VBUS, USB2_VBUS |
-| TP22–TP35 | MCU power domains | DCDC_IN, DCDC_DIG, DCDC_ANA, VDD_SOC_IN, VDDA_1P8, VDD_SNVS_IN, VDD_LPSR_IN, NVCC_LPSR, NVCC_GPIO, NVCC_SD1, NVCC_SD2, NVCC_EMC1, VDD_USB_3P3, VDDA_ADC_3P3 |
-| TP36–TP49 | Reset / boot / power control | POR_B, ONOFF, WAKEUP, PMIC_ON_REQ, PMIC_STBY_REQ, BOOT_MODE0, BOOT_MODE1, DCDC_PSWITCH, DCDC_MODE, BUCK_EN, OTG2_VBUS_EN, USB_OTG2_OC, SD_PWREN_B, SD_CD_B |
-| TP50–TP61 | Peripheral control (MCU side, 3.3 V) | LCM_PWR_EN, BACKLIGHT_CTL, LCD_RST_B, LCD_TE, CTP_RST_B, CTP_INT, WL_RST_B, BT_RST_B, WIFI_WAKE_B, BT_WAKE_B, WL_DEV_WAKE, BT_DEV_WAKE |
-| TP62–TP72 | Buses | LPUART1_TXD / LPUART1_RXD (TP62 / TP63), LPI2C5_SDA / SCL, SAI1_MCLK, SAI1_TX_BCLK, SAI1_TX_SYNC, SAI1_TXD0, SAI1_RXD0, BT_UART_TXD / RXD |
-
-LPUART1 (GPIO_AD_24/25, the SDK's default debug console, 3.3 V) has its own header J11 and is
-also on J10 pins 5/6 and TP62/TP63. Nothing is probed on the SDRAM, FlexSPI, USB data,
-MIPI DSI or crystal nets, where a pad stub would degrade the signal; SWD/SWO are on J1.
+None. The 72 bare-pad test points of the first layout were removed with J10 (a9f1b1f) to free
+routing room. If bring-up probing is wanted before fabrication, the design review suggests a
+handful of 1.0 mm pads on +5V, +3V3, +1V8, DCDC_DIG, POR_B and the LPUART1 console; SWD/SWO are on
+J1, LPUART1 on J11 (GPIO_AD_24/25, 3.3 V). Nothing should be probed on the SDRAM, FlexSPI, USB data,
+MIPI DSI or crystal nets, where a pad stub would degrade the signal.
 
 ### SDRAM configuration: 10 column address bits, not 9
 
@@ -356,10 +324,10 @@ zones. Rerunning it discards manual board edits, so from here on edit the board 
 | Rules | min track/clearance 0.09 mm, via 0.45/0.3 mm, hole clearance 0.2 mm, edge clearance 0.3 mm (+ `Nosh.kicad_dru`) |
 | Net classes | USB_90 (0.13/0.11 mm), MIPI_100 (0.11/0.13 mm), SDRAM (0.1 mm), Power (0.3 mm); the diff-pair figures are estimates for this stackup, check them with the JLCPCB impedance calculator |
 
-Floor plan (viewed from the top): test points in three rows along the north edge; U10/U9 SDRAM west of the
+Floor plan (viewed from the top, as first placed; J10 and the test points were removed later, a9f1b1f): U10/U9 SDRAM west of the
 MCU (SEMC balls face west); U2 flash and the M.2 level shifters east; J6 M.2 socket north-east with the card
 over H5; J5 microSD, J2 micro-AB and J3 USB-C on the east edge; J8/J9 audio jacks on the south edge with
-U15 above them; J10 expansion header inboard; J1 SWD and J11 UART on the south edge; J4 barrel jack on the
+U15 above them; J1 SWD and J11 UART on the south edge; J4 barrel jack on the
 west edge with the supply chain beside it; SW1–SW3 in the south-west corner; SW4 boot DIP inboard north.
 Bottom side: J7 display FPC at the north edge (opening north, pin 1 west as on the EVKB J48), the MCU
 decoupling under the BGA, FID4–FID6.
@@ -377,7 +345,7 @@ Floor-plan search (2026-10-08, `tools/floorplan/`, see its README): a simulated-
 macro parts scored on airwire length plus crossing airwires. Moving the SDRAM to another side of the MCU or
 the M.2 slot west came out equal or worse than the EVKB-style plan, so the sides stay. A polish with the
 floor plan locked moved the small blocks: U2 flash north of the MCU, J5 microSD on the north edge east of
-J7, U11/U12 level shifters east, J10 header turned horizontal south-east, U15 codec beside the jacks, J1/J11
+J7, U11/U12 level shifters east, the (since removed) J10 header turned horizontal south-east, U15 codec beside the jacks, J1/J11
 headers south-west. Macro rats-nest 5331 -> 4677 mm, crossings 1976 -> 1507, full rats-nest 4839 -> 4683 mm.
 
 ### SDRAM placement and routing plan (2026-10-10, EVKB arrangement)
