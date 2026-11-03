@@ -8,9 +8,10 @@ not wanted; every departure is listed below.
 
 **Status:** schematic and PCB layout complete (KiCad 10, `Kicad/`): 6-layer JLCPCB stackup, fully
 routed, DRC clean with schematic parity. The findings of the 2026-10-28 design review are closed
-on the `review-fixes` branch (decoupling moved to the chips, DC-jack OVP, reset supervisor, RTC
-load caps, MIPI pair matching and the rest; see the git log). ERC is clean apart from the expected
-unconnected MCU balls and undriven-input notes on open pins.
+and merged to `main` on 2026-11-03 (decoupling moved to the chips, DC-jack OVP, reset supervisor,
+RTC load caps, MIPI pair matching, ESD on the jacks, P-FET reverse-polarity switch and the rest;
+see the git log). ERC is clean apart from the expected unconnected MCU balls and undriven-input
+notes on open pins. The JLCPCB order files are in `fab/`; see [Fabrication outputs](#fabrication-outputs).
 
 ## What is on the board
 
@@ -31,8 +32,7 @@ unconnected MCU balls and undriven-input notes on open pins.
 | Mechanical | board outline = the RK055HDMIPI4MA0 adapter outline; 4 × M3 mounting holes H1–H4 on the adapter's standoff positions; 6 fiducials, FID1–FID3 on the top side and FID4–FID6 on the bottom for the bottom-side assembly pass | 3.53 mm plated holes with 5.6 mm GND pads (NXP's .635" M3 standoff land, as on the EVKB); hole coordinates from the adapter design files or measurement before layout |
 
 Sheets: `power` (MCU supplies, DCDC, reset/boot), `core` (crystals, USB/MIPI supplies),
-`gpio` (GPIO banks, flash, SWD, boot), `usb`, `supply`, `sdram`, `m2`, `sdcard`, `lcd`, `audio`,
-`testpoints`.
+`gpio` (GPIO banks, flash, SWD, boot), `usb`, `supply`, `sdram`, `m2`, `sdcard`, `lcd`, `audio`.
 
 ## Pin map (for software)
 
@@ -97,12 +97,31 @@ HCI works but HFP voice over the PCM path is not possible without a board change
 
 The board is intended for JLCPCB assembly. Every component carries hidden `LCSC` and `MPN`
 fields (U1 also `MPN_Alt`/`LCSC_Alt`), and `Kicad/tools/data/lcsc_parts.csv` is the generated
-summary: one line per order code with quantity and references, DNP parts marked. Current count:
-262 fitted parts on 61 order codes, 21 of them JLCPCB *Basic*. Regenerate it with
+summary: one line per order code with quantity and references, DNP parts marked. Current count
+(2026-11-03): 268 fitted parts on 70 order codes, 24 of them JLCPCB *Basic*; 8 DNP parts. Regenerate
+it with
 
 ```bash
 python3 Kicad/tools/lcsc_table.py
 ```
+
+### Fabrication outputs
+
+`fab/` holds the JLCPCB order files, regenerated from the board with
+
+```bash
+python3 Kicad/tools/fab_export.py
+```
+
+(`--no-tht` leaves the two through-hole parts, J4 and J11, off the BOM and CPL for hand soldering).
+It writes `Nosh-gerbers.zip` (6 copper layers, paste, silk, mask, edge cuts, one Excellon drill
+file with its map), `Nosh-bom.csv` and `Nosh-cpl.csv` in JLCPCB's column formats, and
+`fab/README.md` with the order settings (6 layers, 1.6 mm, ENIG, epoxy-filled-and-capped vias for
+the via-in-pad caps, both-side assembly, stencil, BGA X-ray) and the export summary. Before paying:
+consign or reserve U1 and the U9/U10 SDRAM (JLCPCB stock 0), export the position file with DNP
+excluded (the script does), and check every polarised part's rotation in JLCPCB's placement
+preview, since the CPL carries KiCad rotations. No impedance control was computed for the USB
+and MIPI pairs; order it on JLC06161H-3313 or accept the 0.13 mm / 0.11–0.13 mm geometry as is.
 
 ### MCU availability (read before ordering)
 
@@ -270,7 +289,7 @@ only the IOMUXC line changes). Do not route anything to N3.
 Kicad/
   Nosh.kicad_pro / Nosh.kicad_sch        project and root sheet (A3, one block per sub-sheet)
   Nosh.kicad_dru                         JLCPCB design rules, loaded automatically (see below)
-  power core gpio usb supply sdram m2 sdcard lcd audio testpoints .kicad_sch
+  power core gpio usb supply sdram m2 sdcard lcd audio .kicad_sch
   Nosh.kicad_sym                         project symbols (MCU, flash, SDRAM, level shifters, sockets, …)
   Nosh.pretty/                           project footprints:
     slp1616p6                            RClamp0854P — EVKB IPC-D-356 land (U20/U28)
@@ -283,7 +302,9 @@ Kicad/
     gen_rt1176_symbol.py                 regenerates the MIMXRT1176DVMAA symbol from data/rt1176_{pins,mux}.json
     lcsc_table.py                        regenerates data/lcsc_parts.csv from the schematic fields
     build_board.py                       stage-1 board generator (rebuilds Nosh.kicad_pcb from the netlist; see PCB layout)
+    fab_export.py                        writes the JLCPCB Gerber zip, BOM and CPL into fab/ (see Fabrication outputs)
     data/                                pin/mux tables, lcsc_parts.csv
+fab/                                     JLCPCB order files from fab_export.py: Nosh-gerbers.zip, Nosh-bom.csv, Nosh-cpl.csv, README.md
 ```
 
 ## Working on the schematic
