@@ -14,6 +14,9 @@ see the git log). ERC is clean apart from the expected unconnected MCU balls and
 notes on open pins. The JLCPCB order files are in `fab/`; see [Fabrication outputs](#fabrication-outputs).
 Ordered 2026-11-03: JLCPCB Y95-2611336A, 5 PCBs + 2 assembled (settings in `fab/README.md`).
 
+![nosh pcb top side](docs/nosh.top.png)
+![nosh pcb bottom side](docs/nosh-bottom.png)
+
 ## What is on the board
 
 | Block | Choice | Notes |
