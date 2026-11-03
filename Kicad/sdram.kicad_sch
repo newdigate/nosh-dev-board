@@ -507,7 +507,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.lcsc.com/datasheet/C1351095.pdf"
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C1349997.pdf"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -518,7 +518,7 @@
 					)
 				)
 			)
-			(property "Description" "SDR SDRAM x16, JEDEC TSOP-II-54 pinout (A0..A12, BA0/1). Fitted: Alliance AS4C32M16SB-6TIN 512Mb (32Mx16, 13 row x 10 col, 166MHz CL3, JLCPCB C1351095). Pin-compatible: Winbond W9825G6KH-6 256Mb (C62246), ISSI IS42S16320F-6TL 512Mb"
+			(property "Description" "SDR SDRAM x16, JEDEC TSOP-II-54 pinout (A0..A12, BA0/1). Fitted: Alliance AS4C32M16SC-7TIN 512Mb (32Mx16, 13 row x 10 col, 133MHz CL3, JLCPCB C1349997; replaced the out-of-stock AS4C32M16SB-6TIN 2026-11-03). Pin-compatible: Winbond W9825G6KH-6 256Mb (C62246), ISSI IS42S16320F-6TL 512Mb"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1669,7 +1669,7 @@
 		)
 		(uuid "2ed0ad1d-2b15-4bad-9478-e9a00aa66b44")
 	)
-	(text "Layout: length-match CLK/addr/data within the SEMC group, keep both chips close to the BGA, 0.1uF at every VDD/VDDQ pin. JLCPCB: C1351095 (Extended part: one-time loading fee per PCBA order; 4 pre-ordered Oct 2026)."
+	(text "Layout: length-match CLK/addr/data within the SEMC group, keep both chips close to the BGA, 0.1uF at every VDD/VDDQ pin. JLCPCB: C1349997 AS4C32M16SC-7TIN (Extended part: one-time loading fee per PCBA order; 4 ordered 2026-11-03 after the C1351095 -6TIN pre-order stayed out of stock)."
 		(exclude_from_sim no)
 		(at 25.4 225.8 0)
 		(effects
@@ -1703,7 +1703,7 @@
 		)
 		(uuid "d6b46973-c298-4d0b-8e2b-89a2b6900da9")
 	)
-	(text "JEDEC x16 TSOP-II-54 pinout, A0..A12 + BA0/1: the 512Mb AS4C32M16SB is 13 row x 10 column bits, so set SEMC SDRAMCR0[COL]=10b (10 bits; the EVKB's 256Mb parts use 11b = 9 bits) and 128 MB on CS0 (BR0 = 0x8000001F, EVKB 0x8000001D) in the SDK board init, DCD and linker script. See README, SDRAM configuration. -6 grade = 166MHz (CL3), matching the EVKB SEMC clock. Pin-compatible: W9825G6KH-6 (256Mb, C62246), IS42S16320F-6TL (512Mb)."
+	(text "JEDEC x16 TSOP-II-54 pinout, A0..A12 + BA0/1: the 512Mb AS4C32M16SC is 13 row x 10 column bits, so set SEMC SDRAMCR0[COL]=10b (10 bits; the EVKB's 256Mb parts use 11b = 9 bits) and 128 MB on CS0 (BR0 = 0x8000001F, EVKB 0x8000001D) in the SDK board init, DCD and linker script. See README, SDRAM configuration. -7 grade = 133MHz (tCK 7.5 ns at CL3): run SEMC_CLK_ROOT at 132 MHz (SYS_PLL2 528 MHz / 4, the reset default), not the EVKB 166/198 MHz; timing in README. Pin-compatible: W9825G6KH-6 (256Mb, C62246), IS42S16320F-6TL (512Mb)."
 		(exclude_from_sim no)
 		(at 25.4 219.2 0)
 		(effects
@@ -1726,7 +1726,7 @@
 		)
 		(uuid "e9fdd91d-fbdc-4427-9fd3-c3b5aef51f37")
 	)
-	(text "2x AS4C32M16SB-6TIN (512Mb, 32Mx16, JLCPCB C1351095) on SEMC as a 32-bit SDRAM, 128 MB total. Same arrangement as the MIMXRT1170-EVKB (U13 = D0..15, U25 = D16..31), which fits 2x W9825G6KH-5I (256Mb, 64 MB)."
+	(text "2x AS4C32M16SC-7TIN (512Mb, 32Mx16, 133MHz, JLCPCB C1349997) on SEMC as a 32-bit SDRAM, 128 MB total. Same arrangement as the MIMXRT1170-EVKB (U13 = D0..15, U25 = D16..31), which fits 2x W9825G6KH-5I (256Mb, 64 MB)."
 		(exclude_from_sim no)
 		(at 25.4 215.9 0)
 		(effects
@@ -5895,7 +5895,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "AS4C32M16SB-6TIN"
+		(property "Value" "AS4C32M16SC-7TIN"
 			(at 281.94 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5917,7 +5917,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C1351095.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C1349997.pdf"
 			(at 269.24 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -5928,7 +5928,7 @@
 				)
 			)
 		)
-		(property "Description" "512Mb (32Mx16) SDR SDRAM, 166MHz CL3, TSOP-II-54"
+		(property "Description" "512Mb (32Mx16) SDR SDRAM, 133MHz CL3 (tCK 7.5 ns), TSOP-II-54"
 			(at 269.24 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -5939,7 +5939,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1351095"
+		(property "LCSC" "C1349997"
 			(at 269.24 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -5950,7 +5950,7 @@
 				)
 			)
 		)
-		(property "MPN" "AS4C32M16SB-6TIN"
+		(property "MPN" "AS4C32M16SC-7TIN"
 			(at 269.24 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6257,7 +6257,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "AS4C32M16SB-6TIN"
+		(property "Value" "AS4C32M16SC-7TIN"
 			(at 88.9 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6279,7 +6279,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C1351095.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C1349997.pdf"
 			(at 76.2 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6290,7 +6290,7 @@
 				)
 			)
 		)
-		(property "Description" "512Mb (32Mx16) SDR SDRAM, 166MHz CL3, TSOP-II-54"
+		(property "Description" "512Mb (32Mx16) SDR SDRAM, 133MHz CL3 (tCK 7.5 ns), TSOP-II-54"
 			(at 76.2 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6301,7 +6301,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1351095"
+		(property "LCSC" "C1349997"
 			(at 76.2 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6312,7 +6312,7 @@
 				)
 			)
 		)
-		(property "MPN" "AS4C32M16SB-6TIN"
+		(property "MPN" "AS4C32M16SC-7TIN"
 			(at 76.2 96.52 0)
 			(hide yes)
 			(show_name no)

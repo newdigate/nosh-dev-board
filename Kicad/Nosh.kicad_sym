@@ -10006,7 +10006,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C1351095.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C1349997.pdf"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10017,7 +10017,7 @@
 				)
 			)
 		)
-		(property "Description" "SDR SDRAM x16, JEDEC TSOP-II-54 pinout (A0..A12, BA0/1). Fitted: Alliance AS4C32M16SB-6TIN 512Mb (32Mx16, 13 row x 10 col, 166MHz CL3, JLCPCB C1351095). Pin-compatible: Winbond W9825G6KH-6 256Mb (C62246), ISSI IS42S16320F-6TL 512Mb"
+		(property "Description" "SDR SDRAM x16, JEDEC TSOP-II-54 pinout (A0..A12, BA0/1). Fitted: Alliance AS4C32M16SC-7TIN 512Mb (32Mx16, 13 row x 10 col, 133MHz CL3, JLCPCB C1349997; replaced the out-of-stock AS4C32M16SB-6TIN 2026-11-03). Pin-compatible: Winbond W9825G6KH-6 256Mb (C62246), ISSI IS42S16320F-6TL 512Mb"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

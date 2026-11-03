@@ -35,6 +35,23 @@ def run(cmd):
     return r.stdout
 
 
+def via_summary(board):
+    """(n at 0.45/0.2, n at 0.45/0.3, n at 0.5/0.3) from the board file text; other sizes abort so the README stays truthful."""
+    import re
+    s = open(board).read()
+    counts = {}
+    for m in re.finditer(r'\n\t\(via\b', s):
+        blk = s[m.start():s.find('\n\t(', m.start() + 3)]
+        size = re.search(r'\(size ([\d.]+)\)', blk).group(1)
+        drill = re.search(r'\(drill ([\d.]+)\)', blk)
+        key = (float(size), float(drill.group(1)) if drill else None)
+        counts[key] = counts.get(key, 0) + 1
+    known = {(0.45, 0.2), (0.45, 0.3), (0.5, 0.3)}
+    if set(counts) - known:
+        sys.exit('unexpected via sizes, update the README text in fab_export.py: %s' % sorted(set(counts) - known))
+    return counts.get((0.45, 0.2), 0), counts.get((0.45, 0.3), 0), counts.get((0.5, 0.3), 0)
+
+
 def read_parts(path):
     """lcsc_parts.csv -> {ref: (lcsc, mpn)} for fitted refs only (DNP refs carry a '(DNP)' suffix)."""
     parts = {}
@@ -115,14 +132,23 @@ def main():
                 % (len(os.listdir(gdir)), len(groups), len(rows), len(rows), top, bot,
                    '' if a.no_tht else '; through-hole parts included: ' + ', '.join(tht)))
         f.write('## JLCPCB order settings\n\n'
-                '- 6 layers, 1.6 mm, 1 oz outer and inner copper, ENIG (0.8 mm BGA), green or any colour.\n'
-                '- Stackup: JLC06161H-3313 or the default 6-layer stackup; no impedance control was computed for the USB (90 R) and MIPI (100 R) pairs.\n'
+                '- 6 layers, 1.6 mm, FR4 TG155 (chosen over TG135 for the two lead-free reflow passes and hand rework), 1 oz outer / 0.5 oz inner copper (0.5 oz inner keeps the 0.09 mm inner spacing allowed), any colour.\n'
+                '- Order options worth the free day each: Confirm Production File = Yes, Confirm Parts Placement = Yes (rotation preview); Depanel boards & edge rail = Yes (JLCPCB rails go on the long edges; J5 pads sit 0.3 mm from the north V-score).\n'
+                '- Surface finish: ENIG, 1U" gold (0.025 um, the IPC-4552 minimum and JLCPCB\'s standard). The gold is sacrificial and dissolves into the joint,'
+                ' so 2U" adds nothing to wetting and only moves the small 0402 / 0.4 mm QFN joints toward Au embrittlement; thicker gold is for wiping contacts, which this board has none of.'
+                ' OSP is also offered on 6 layers but was rejected: two reflow passes (70 bottom-side parts), hand soldering of J4/J11, test points and rework all want a finish that survives handling.\n'
+                '- Stackup: Specify Stackup = Yes, JLC06161H-3313 (3313 prepreg, 0.0994 mm outer dielectric, 0.5 oz inner, finished 1.54 mm +-10%%). JLCPCB impedance calculator, 2026-11-03, L1 over L2:'
+                ' the USB pairs (0.13 mm / 0.11 mm gap) come out ~85 R (USB 2.0 wants 90 +-15%%) and the MIPI pairs (0.13 / 0.13) ~90 R (D-PHY 80-125 R), so no impedance-control order is needed.'
+                ' The 7628 and 2116 stackups put 0.21-0.22 mm under the outer layers (our pairs would read ~115-120 R) and 1080 only 0.076 mm (~75 R); do not pick those.\n'
                 '- Via covering: "Epoxy Filled & Capped" (the 6-layer default) - the board has via-in-pad under the decoupling capacitors.\n'
-                '- Min track / spacing 0.13 / 0.09 mm, min via 0.45 / 0.2 mm (the 0.2 mm drills may carry a surcharge).\n'
+                '- Min track / spacing: the 0.09 / 0.09 mm tier (board minimum 0.13 mm track, 0.09 mm spacing).\n'
+                '- Min via hole size / diameter: choose "0.2 mm / (0.3/0.35 mm)". The board has %d vias at 0.2 mm drill in a 0.45 mm pad (0.125 mm ring),'
+                ' %d at 0.3 mm drill in 0.45 mm (0.075 mm ring) and %d at 0.3 mm in 0.5 mm; the 0.2 mm drills carry JLCPCB\'s small-via surcharge. Smallest component hole 0.6 mm.\n'
                 '- Assembly: both sides, standard parts; order the stencil for both sides; add BGA X-ray inspection.\n'
                 '- Consigned / pre-ordered parts: U1 MIMXRT1176DVMAA (C1020237, reserved in the parts library) and U9/U10 AS4C32M16SB-6TIN (C1351095, four pre-ordered).\n'
                 '- Through-hole: J4 barrel jack and J11 UART header are the only THT parts; run with `--no-tht` to leave them off the BOM/CPL and hand-solder them.\n'
-                '- Rotation: the CPL carries KiCad rotations. Check every polarised part (SOT-23 family, QFN, WSON, TSSOP, TSOP, SOT-223, SOD/SMA diodes, BGA) in the JLCPCB placement preview before paying.\n')
+                '- Rotation: the CPL carries KiCad rotations. Check every polarised part (SOT-23 family, QFN, WSON, TSSOP, TSOP, SOT-223, SOD/SMA diodes, BGA) in the JLCPCB placement preview before paying.\n'
+                % via_summary(a.board))
     print('fab/: %d gerber files, %d BOM rows, %d placements (%d top / %d bottom)%s' % (len(os.listdir(gdir)), len(groups), len(rows), top, bot, ', THT left out' if a.no_tht else ''))
 
 

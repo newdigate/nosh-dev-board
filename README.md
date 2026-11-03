@@ -18,7 +18,7 @@ notes on open pins. The JLCPCB order files are in `fab/`; see [Fabrication outpu
 | Block | Choice | Notes |
 |---|---|---|
 | MCU | MIMXRT1176DVMAA (rev-B DVMAB accepted alternate), MAPBGA-289 | 12-unit symbol generated from `tools/data/*.json`; KiCad stock footprint `Package_BGA:MAPBGA-289_14x14mm_Layout17x17_P0.8mm` (0.32 mm pads, EVKB uses 0.33 mm) |
-| SDRAM | 2 × Alliance AS4C32M16SB-6TIN (512 Mb) on SEMC, 32-bit, **128 MB** | same JEDEC x16 TSOP-54 footprint and arrangement as the EVKB; 13 row × 10 column, so the firmware SEMC setup changes: 10 column bits and 128 MB on chip select 0, see "SDRAM configuration" below |
+| SDRAM | 2 × Alliance AS4C32M16SC-7TIN (512 Mb, 133 MHz) on SEMC, 32-bit, **128 MB** | same JEDEC x16 TSOP-54 footprint and arrangement as the EVKB; 13 row × 10 column and a -7 speed grade, so the firmware SEMC setup changes: 10 column bits, 128 MB on chip select 0 and a 132 MHz SEMC clock, see "SDRAM configuration" below |
 | Flash | Winbond W25Q512JVEIQ, 512 Mb QSPI, 3.3 V | FlexSPI1 port A (GPIO_SD_B2_06..11) |
 | USB2 (OTG2) | micro-AB **host/OTG** port | the port `USBHost_t36` drives; TPS2553 VBUS switch (~1.1 A) with hardware ID gating, RClamp0854P ESD, low-DCR 120 Ω VBUS bead; ≈4.6 V at the connector when sourcing 1 A from the jack |
 | USB1 (OTG1) | USB-C **device** port | Rd-only UFP (500 mA), RClamp0854P ESD |
@@ -68,7 +68,7 @@ NVCC_DISP1 is still 3.3 V. LPUART1 and LPI2C5 remain reachable on J11 and the LC
 
 | Block | EVKB | Nosh | Why |
 |---|---|---|---|
-| SDRAM | 2 × W9825G6KH-5I, 64 MB | 2 × AS4C32M16SB-6TIN, 128 MB | pin-compatible 512 Mb parts, 166 MHz; four pre-ordered at JLCPCB (C1351095, Oct 2026). W9825G6KH-6 (C62246, in stock) drops in for 64 MB |
+| SDRAM | 2 × W9825G6KH-5I, 64 MB | 2 × AS4C32M16SC-7TIN, 128 MB | pin-compatible 512 Mb parts, 133 MHz (SEMC at 132 instead of 198 MHz); four ordered at JLCPCB on 2026-11-03 (C1349997) after the -6TIN pre-order (C1351095) stayed out of stock. W9825G6KH-6 (C62246, in stock) drops in for 64 MB at 166 MHz |
 | USB ports | two micro-AB OTG ports | micro-AB host + USB-C device | one port is enough for the host library; USB-C for programming |
 | USB VBUS switch | NX5P3090UK (0.4 mm WLCSP) | TPS2553DBVR (SOT-23-6), RILIM 22 k ≈ 1.1 A | no stock, hard package; same EN/FAULT/ILIM topology |
 | SD card bus | shared with the M.2 slot | separate uSDHC2 | independent Wi-Fi and SD |
@@ -143,7 +143,7 @@ and MIPI pairs; order it on JLC06161H-3313 or accept the 0.13 mm / 0.11–0.13 m
 | Würth 68714014022 LCD FPC | C6264899 | ~75 | any 40-pin 0.5 mm top-contact ZIF with the same land pattern |
 | Same Sky (CUI) SJ-3524-SMT jacks J8/J9 | C20182907 | ~800 | SJ-3523-SMT (C4991872, same pads minus the TN switch pad) when it is back in stock; SHOU HAN PJ-320D (C431535, ~70 k) needs a new footprint |
 | TE 2199230-4 M.2 socket | C2977809 | ~5 k | — |
-| AS4C32M16SB-6TIN SDRAM U9/U10 | C1351095 | 0, four pre-ordered | W9825G6KH-6 (C62246, ~8.8 k): 256 Mb, 64 MB total, SEMC COL=9 |
+| AS4C32M16SC-7TIN SDRAM U9/U10 | C1349997 | 13 (four ordered 2026-11-03); the -6TIN (C1351095) stayed at 0 | W9825G6KH-6 (C62246, 61) or W9825G6KH-6I (C97572, 267): 256 Mb, 64 MB total, SEMC COL=9, 166 MHz. W989D6DBGX6I (C2641243, 8 k) is a 512 Mb 1.8 V LPSDR in VFBGA-54: only for a re-layout |
 | YIYUAN SMTSOM2.520BTR M.2 nut H5, 2 mm | C5301776 | 0 | SMTSOM2.525BTR, 2.5 mm (C49236513, ~4.7 k): same land, the card end sits 0.5 mm higher |
 
 Fine-pitch note: the MCU is 0.8 mm BGA; everything else is 0.4 mm QFN or coarser.
@@ -244,7 +244,7 @@ crystal nets, where a pad stub would degrade the signal.
 
 ### SDRAM configuration: 10 column address bits, not 9
 
-The EVKB's W9825G6KH (256 Mb, 16M × 16) has 13 row × 9 column bits per bank. Nosh's AS4C32M16SB
+The EVKB's W9825G6KH (256 Mb, 16M × 16) has 13 row × 9 column bits per bank. Nosh's AS4C32M16SC
 (512 Mb, 32M × 16) has 13 row × **10** column bits per bank, the same 4 banks and the same A0–A12
 pins (A12 on pin 36). The hardware is identical; only the SEMC setup differs. Every EVKB-derived
 SDRAM init must change in two places, or the upper half of each chip is unreachable and addresses
@@ -260,10 +260,38 @@ alias:
 | SDK `memsize_kbytes` | 64 × 1024 | 128 × 1024 |
 | SDRAM region | 0x8000_0000–0x83FF_FFFF | 0x8000_0000–0x87FF_FFFF |
 
-Row bits (13), bank bits (2), bus width (32 bit, `PS=2`), CAS latency 3 and the 166 MHz SEMC clock
-stay as on the EVKB. Change it in the SDK board init (`BOARD_InitSemc`), in the DCD used for XIP boot
-(the `SEMC->SDRAMCR0` and `SEMC->BR[0]` writes), and in the linker script's SDRAM region length. If
-the Winbond fallback (W9825G6KH-6) is ever fitted, use the EVKB values again.
+Row bits (13), bank bits (2), bus width (32 bit, `PS=2`) and CAS latency 3 stay as on the EVKB. Change
+it in the SDK board init (`BOARD_InitSemc`), in the DCD used for XIP boot (the `SEMC->SDRAMCR0` and
+`SEMC->BR[0]` writes), and in the linker script's SDRAM region length. If the Winbond fallback
+(W9825G6KH-6) is ever fitted, use the EVKB values again.
+
+### SEMC clock: 132 MHz for the -7 speed grade
+
+The fitted AS4C32M16SC-**7**TIN is a 133 MHz part (tCK 7.5 ns at CL3, datasheet Table 13), not the
+166 MHz -6 grade the layout was planned for, so the SEMC clock must come down from the EVKB's
+198 MHz (SYS_PLL2_PFD1 594 MHz ÷ 3). Use `SEMC_CLK_ROOT` = `SYS_PLL2_CLK` (528 MHz, mux `101`) ÷ 4 =
+**132 MHz**, which is also the root's reset default (RM, CLOCK_ROOT4). SDK: `rootCfg.mux =
+kCLOCK_SEMC_ClockRoot_MuxSysPll2Out; rootCfg.div = 4;` and pass 132 MHz as the SEMC clock to
+`SEMC_ConfigureSDRAM`. The routing margin only improves: the bus was length-matched for 166 MHz.
+
+Timing minimums from the AS4C32M16SC-7 datasheet (ns unless noted), for `semc_sdram_config_t`:
+
+| Parameter | SDK field | -7 value |
+|---|---|---|
+| tRP precharge to activate | `tPrecharge2Act_Ns` | 15 |
+| tRCD activate to read/write | `tAct2ReadWrite_Ns` | 15 |
+| tRFC refresh recovery | `tRefreshRecovery_Ns`, `tRefresh2Refresh_Ns` | 66 |
+| tWR write recovery | `tWriteRecovery_Ns` | 15 |
+| tRAS activate to precharge | `tAct2Prechage_Ns` | 44 (max 120 µs) |
+| tXSR self-refresh exit | `tSelfRefRecovery_Ns` | 75 |
+| tRRD activate to activate, other bank | `tAct2Act_Ns` | 15 |
+| tMRD mode register set | fixed in the driver | 2 clocks |
+| tREF, 8192 rows in 64 ms | `refreshPeriod_nsPerRow`, `refreshUrgThreshold` | 7812 |
+| tCK at CL3 / CL2 | SEMC clock period | ≥ 7.5 / ≥ 10 |
+| tAC3, tOH | output valid / hold | 5.4 max / 2.7 min |
+
+At 132 MHz (7.58 ns) these round to 2 clocks for tRP, tRCD, tRRD and tWR, 6 for tRAS, 9 for tRFC
+and 10 for tXSR. With the Winbond fallback the EVKB's 166 MHz value and timings apply.
 
 ### FlexSPI read strobe: use GPIO_EMC_B2_18 as the DQS pad, not GPIO_SD_B2_05
 
@@ -402,7 +430,7 @@ could not untangle it, which is what prompted the change.
 Routed 2026-10-10 by `tools/busrouter/` (C search core, negotiated congestion, many seeds in parallel; see its README):
 all 60 SEMC nets including DQS, DRC clean. Length matching uses per-pin flight length (`buslength.py`: copper path
 from the MCU ball to each chip pin, 0.8 mm per via) against the clock at the same chip. The target is +-25 mm
-(about 170 ps; the SDR timing margin at 166 MHz is roughly 1 ns, so this is conservative). Address trunks join their
+(about 170 ps; the SDR timing margin at 166 MHz is roughly 1 ns, and more at the 132 MHz now used, so this is conservative). Address trunks join their
 chip-to-chip link in the half of the channel that balances the two pins; the clock branches were lengthened with
 meanders to the centre of each chip's window (U9 50.6 mm, U10 48.5 mm), a few short data lines were meandered up
 and D16 was routed through a waypoint. Result: every pin of both chips is within -24.3..+24.5 mm of its clock;
