@@ -4996,7 +4996,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "300R"
+		(property "Value" "120R"
 			(at 70.61 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5040,7 +5040,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C2649308"
+		(property "LCSC" "C14709"
 			(at 68.58 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -5051,7 +5051,7 @@
 				)
 			)
 		)
-		(property "MPN" "742792641"
+		(property "MPN" "BLM18PG121SN1D"
 			(at 68.58 60.96 0)
 			(hide yes)
 			(show_name no)
