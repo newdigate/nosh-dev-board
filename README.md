@@ -12,6 +12,7 @@ and merged to `main` on 2026-11-03 (decoupling moved to the chips, DC-jack OVP, 
 RTC load caps, MIPI pair matching, ESD on the jacks, P-FET reverse-polarity switch and the rest;
 see the git log). ERC is clean apart from the expected unconnected MCU balls and undriven-input
 notes on open pins. The JLCPCB order files are in `fab/`; see [Fabrication outputs](#fabrication-outputs).
+Ordered 2026-11-03: JLCPCB Y95-2611336A, 5 PCBs + 2 assembled (settings in `fab/README.md`).
 
 ## What is on the board
 

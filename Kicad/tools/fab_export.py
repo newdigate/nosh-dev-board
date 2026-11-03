@@ -145,7 +145,11 @@ def main():
                 '- Min via hole size / diameter: choose "0.2 mm / (0.3/0.35 mm)". The board has %d vias at 0.2 mm drill in a 0.45 mm pad (0.125 mm ring),'
                 ' %d at 0.3 mm drill in 0.45 mm (0.075 mm ring) and %d at 0.3 mm in 0.5 mm; the 0.2 mm drills carry JLCPCB\'s small-via surcharge. Smallest component hole 0.6 mm.\n'
                 '- Assembly: both sides, standard parts; order the stencil for both sides; add BGA X-ray inspection.\n'
-                '- Consigned / pre-ordered parts: U1 MIMXRT1176DVMAA (C1020237, reserved in the parts library) and U9/U10 AS4C32M16SB-6TIN (C1351095, four pre-ordered).\n'
+                '- Consigned / pre-ordered parts: U1 MIMXRT1176DVMAA (C1020237, reserved in the parts library) and U9/U10 AS4C32M16SC-7TIN (C1349997, four ordered 2026-11-03 after the -6TIN C1351095 stayed out of stock).\n'
+                '\n## Order placed 2026-11-03\n\n'
+                'JLCPCB order Y95-2611336A, $477.79 incl. $30.57 shipping: 5 PCBs ($132.93) + 2 assembled both sides ($311.91). Dimension 153.9 x 91.8 mm = board + 5 mm rails on the long edges,'
+                ' FR4 TG155, JLC06161H-3313, ENIG 1U", 1 oz / 0.5 oz, epoxy filled & capped, 0.2 mm / (0.3/0.35 mm) vias, black, flying probe + 4-wire Kelvin, mark removed, no impedance control,'
+                ' Confirm Production File = No, build 7-8 + 4-5 days. Ordered without the placement-confirmation and depanel options: snap the rails off by hand (J5 pads are 0.3 mm from the north V-score).\n'
                 '- Through-hole: J4 barrel jack and J11 UART header are the only THT parts; run with `--no-tht` to leave them off the BOM/CPL and hand-solder them.\n'
                 '- Rotation: the CPL carries KiCad rotations. Check every polarised part (SOT-23 family, QFN, WSON, TSSOP, TSOP, SOT-223, SOD/SMA diodes, BGA) in the JLCPCB placement preview before paying.\n'
                 % via_summary(a.board))
