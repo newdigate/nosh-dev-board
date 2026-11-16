@@ -161,6 +161,22 @@ from the NXP CMSIS pack, J-Link has it built in. Images must start with the FCB 
 data at `0x30000000` — any SDK `flexspi_nor` link target does this, and the EVKB FCB (written
 for the 1.8 V W25Q512NW) drives our 3.3 V W25Q512JV unchanged (same command set, same QE bit).
 
+### Boot-mode switch SW4
+
+SW4 is a 2-way slide DIP (KingTek DSHP02TS): position 1 (pads 1/4, R11) drives BOOT_MODE1,
+position 2 (pads 2/3, R12) drives BOOT_MODE0; both straps have 100 k pull-downs, so "off" is 0.
+
+| BOOT_MODE[1:0] | SW4 | ROM behaviour |
+|---|---|---|
+| 00 | both off | "boot from fuses". On Nosh this parks both cores in the ROM (CM7 at 0x00223104, CM4 at 0x0023f040) with no serial downloader and nothing on USB. Measured 2026-11-16, reproduces on every reset. **Not a usable setting; do not leave SW4 at 00.** |
+| 01 | pos 2 on | serial downloader on USB1/J3, enumerates as `SE Blank RT Family` 1fc9:013d |
+| 10 | pos 1 on | internal boot from the W25Q512 on FlexSPI1 |
+
+The mode the ROM latched can be read back over SWD from `SRC_SBMR2` (0x40C0400C, BMOD in
+bits 25:24). A board that powers up but never enumerates on J3 is a charge-only USB-C cable
+until proven otherwise: the first one on the bench carried VBUS and no data lines.
+See `docs/bringup-2026-11-16.md` for the full first-boot report.
+
 ### SWD header J1 (standard Cortex 10-pin, 1.27 mm)
 
 | Pin | Signal | Pin | Signal |
