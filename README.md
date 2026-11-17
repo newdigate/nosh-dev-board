@@ -161,6 +161,25 @@ from the NXP CMSIS pack, J-Link has it built in. Images must start with the FCB 
 data at `0x30000000` — any SDK `flexspi_nor` link target does this, and the EVKB FCB (written
 for the 1.8 V W25Q512NW) drives our 3.3 V W25Q512JV unchanged (same command set, same QE bit).
 
+### Powering the board: USB-C J3 or the 5 V barrel jack J4
+
+Both inputs feed the one `+5V` rail, so the board does not care which it gets and both may be
+connected at once. The jack path is F1 (3 A polyfuse), Q4 (IRLML6401 P-FET reverse-polarity
+switch), D12 (SMAJ6.0A TVS) and U17 (TPS259531 eFuse: 5.7 V clamp, 3.6 A limit, auto-retry);
+each USB VBUS reaches `+5V` through an OR-ing diode (D3/D4), so the higher source wins and
+nothing flows back into the other. Everything on the board hangs off `+5V`: the MP2143 3.3 V
+buck and the 1.8 V LDO behind it, the USB host port J2 (its TPS2553 switch sources up to
+~1.1 A to a peripheral from `+5V`), and the RK055 panel's 5 V main supply and backlight boost
+on J7 pins 39/40.
+
+USB-C with Rd-only CC is nominally 500 mA and was enough for the whole 2026-11-16 bring-up
+(MCU, 128 MB SDRAM fill, microSD, codec, SWD) with nothing else attached. Plug in the jack
+(centre-positive 5 V, 2-3 A) when the RK055 panel is connected, when J2 hosts anything beyond
+a keyboard or mouse (sticks and hubs draw hundreds of mA; the schematic note says "use the jack
+for USB-host peripherals"), when an M.2 radio is fitted and transmitting, or when chasing
+brown-outs or resets under load. A wrong adapter is survivable: reverse polarity is blocked by
+Q4 and anything above ~5.7 V is clamped by the eFuse.
+
 ### Boot-mode switch SW4
 
 SW4 is a 2-way slide DIP (KingTek DSHP02TS): position 1 (pads 1/4, R11) drives BOOT_MODE1,
