@@ -168,7 +168,7 @@ position 2 (pads 2/3, R12) drives BOOT_MODE0; both straps have 100 k pull-downs,
 
 | BOOT_MODE[1:0] | SW4 | ROM behaviour |
 |---|---|---|
-| 00 | both off | "boot from fuses". On Nosh this parks both cores in the ROM (CM7 at 0x00223104, CM4 at 0x0023f040) with no serial downloader and nothing on USB. Measured 2026-11-16, reproduces on every reset. **Not a usable setting; do not leave SW4 at 00.** |
+| 00 | both off | "boot from fuses" (blank fuses: the RM says this falls through to the serial downloader). On the first bench day it looked like both cores parked in the ROM with nothing on USB, but every observation went through pyOCD, whose built-in RT1176 target parks both cores on trap vectors (CM7 0x223105, CM4 0x23F041) and masks their reset requests on every connect, and the USB cable in use was charge-only. **Unverified without the probe; re-test before relying on it.** |
 | 01 | pos 2 on | serial downloader on USB1/J3, enumerates as `SE Blank RT Family` 1fc9:013d |
 | 10 | pos 1 on | internal boot from the W25Q512 on FlexSPI1 |
 
