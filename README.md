@@ -379,10 +379,45 @@ is unconnected on the board and is the alternate FLEXSPI1_A_DQS pad (ALT6, selec
 | `readSampleClkSrc` | `kFLEXSPIReadSampleClk_LoopbackInternally` (0), ≤ 60 MHz | `kFLEXSPIReadSampleClk_LoopbackFromDqsPad` (1), 133 MHz |
 | DQS pad | none | `IOMUXC_GPIO_EMC_B2_18_FLEXSPI1_A_DQS` (pad left floating, no pull) |
 
-The ROM only knows the primary DQS pad, so the FCB stays on the internal loopback at 60 MHz; after
+The ROM only knows the primary DQS pad, so the FCB stays on the internal loopback. Use the ROM's
+50 MHz step (`serialClkFreq = 2`): on the board it gives 49.5 MHz (SYS_PLL2_PFD2 / 8), while the
+"60 MHz" step gives 66 MHz (SYS_PLL2 / 8), over the limit. After
 boot the application re-initialises FlexSPI1 with the DQS input muxed to GPIO_EMC_B2_18 (the EVKB
 SDK's `flexspi_nor` examples do the same re-init at `kFLEXSPIReadSampleClk_LoopbackFromDqsPad`;
 only the IOMUXC line changes). Do not route anything to N3.
+
+State on 2026-11-19: both halves are in the core (`teensy-cores/imxrt1176`). `bootdata.c` gives
+Nosh the internal-loopback boot header (before that it used the EVKB's DQS-pad values, and
+`SD.begin()` made every later read from flash return junk, which only firmware that executes from
+flash notices). `startup.c` then moves the strobe to GPIO_EMC_B2_18 and sets 132 MHz
+(`flexspi1_dqs_to_emc_b2_18()`, run from ITCM in the reset handler). Checked on board 2 with the
+SD card running: FlexSPI1 `MCR0` RXCLKSRC = 1, clock root SYS_PLL2 / 4, DQS select input 0, and the
+whole 420 KB image read back over SWD three times with no differing byte.
+
+## Potential improvements for the next revision
+
+Nothing here is needed for the current boards to work; these are changes worth weighing if the
+board is respun.
+
+### Free the default FlexSPI DQS pad (GPIO_SD_B2_05) from the SD card
+
+**The conflict.** The ROM and the stock boot header reach 133 MHz on the flash by looping the read
+strobe through GPIO_SD_B2_05, which must float. Nosh uses that pad as the microSD CMD line, so the
+flash boots on the internal loopback at 49.5 MHz and full speed depends on the core moving the
+strobe to GPIO_EMC_B2_18 during startup (see *FlexSPI read strobe* above; done and working).
+
+**The change.** Take the SD card off GPIO_SD_B2_05 so the pad can float as on the EVKB.
+
+| For | Against |
+|---|---|
+| Flash at 133 MHz from reset with the EVKB's boot header: no Nosh-specific header, no re-initialisation step in the core | USDHC2_CMD has no other pad, so this is not a re-route: the card has to move to another controller |
+| The boot ROM, a debugger's flash loader and third-party images (Zephyr, the SDK examples) work unmodified | The only other controller, uSDHC1 on GPIO_SD_B1, is the M.2 SDIO Wi-Fi slot. Sharing it gives up independent Wi-Fi and SD, the reason Nosh split them; moving the M.2 slot to uSDHC2 needs 1.8 V on NVCC_SD2, which the 3.3 V flash on the same bank rules out unless the flash becomes the 1.8 V W25Q512NW |
+| No SD traffic next to the flash's sampling path | A new layout around the MCU's SD_B1/SD_B2 escape, a new BOM line and a new bring-up, for a gain the firmware route also gives |
+
+**Cheaper alternative on the same respin.** Keep the pinout and add a DNP 0402 footprint from ball
+N3 (GPIO_EMC_B2_18) to ground (the same idea as the load capacitor on the SEMC DQS pad, C145), so
+the loopback delay can be tuned if 132 MHz on the bare pad turns out marginal. One board reads its flash back without
+error at room temperature; no margin test (temperature, more boards) has been done.
 
 ## Repository layout
 
