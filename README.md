@@ -4,7 +4,8 @@ A development board for the NXP **i.MX RT1176** crossover MCU, modelled closely 
 MIMXRT1170-EVKB (Rev C3) so that EVKB software — `USBHost_t36`, the M2Radio Wi-Fi/BT
 library, `MipiDisplay` and the NXP SDK board files — runs with the same pin assignments.
 Where Nosh departs from the EVKB it is for JLCPCB availability or because an EVKB block was
-not wanted; every departure is listed below.
+not wanted; every departure is listed below. For what EVKB firmware has to change, see
+[`docs/evkb-vs-nosh-firmware-porting.md`](docs/evkb-vs-nosh-firmware-porting.md).
 
 **Status:** schematic and PCB layout complete (KiCad 10, `Kicad/`): 6-layer JLCPCB stackup, fully
 routed, DRC clean with schematic parity. The findings of the 2026-10-28 design review are closed
@@ -13,6 +14,25 @@ RTC load caps, MIPI pair matching, ESD on the jacks, P-FET reverse-polarity swit
 see the git log). ERC is clean apart from the expected unconnected MCU balls and undriven-input
 notes on open pins. The JLCPCB order files are in `fab/`; see [Fabrication outputs](#fabrication-outputs).
 Ordered 2026-11-03: JLCPCB Y95-2611336A, 5 PCBs + 2 assembled (settings in `fab/README.md`).
+
+**Bring-up (from 2026-11-16):** two assembled boards run; the full record is
+[`docs/bringup-2026-11-16.md`](docs/bringup-2026-11-16.md). Working so far:
+
+- Board 1: MCU, 128 MB SDRAM, QSPI boot, SWD and the J11 console; microSD; SGTL5000 line out;
+  USB device (CDC) on J3 and USB host (HID) on J2; an IW416 M.2 card (Embedded Artists 1XK) with
+  Bluetooth A2DP, Wi-Fi DHCP and lwIP TCP.
+- Board 2: the RK055 MIPI panel and GT911 touch, including scanout under heavy SDRAM load at
+  16 and 32 bpp with no FIFO underruns; line in by a J8-to-J9 loopback recording; the RTC and the
+  32 kHz crystal; SW2 (ONOFF, including power-off and power-on) and SW3 (WAKEUP); the CM4 core.
+- Not yet tested: the power path under stress (eFuse trip, J3 and J4 together, the host-port
+  current limit, the reset supervisor threshold) and low-power modes.
+
+**Known issue, the RTC runs slow.** Y2 (32.768 kHz) measured −102 ppm (8.8 s/day): the RT1176
+adds trimmable load capacitance of its own on RTC_XTALI/O, so the 10 pF C143/C144 over-load the
+7 pF crystal. Firmware fixes it on the current boards: trim code 9 in IOMUXC_SNVS_GPR GPR34 plus
++2 counts of SNVS LPCALB/HPCALB gives about −5 ppm (bring-up sections 6t and 6x); the core does
+not apply it yet. For the next order, see C143/C144 under
+[Other parts worth checking](#other-parts-worth-checking-before-an-order).
 
 ![nosh pcb top side](docs/nosh.top.png)
 ![nosh pcb bottom side](docs/nosh-bottom.png)
@@ -148,6 +168,7 @@ and MIPI pairs; order it on JLC06161H-3313 or accept the 0.13 mm / 0.11–0.13 m
 | Same Sky (CUI) SJ-3524-SMT jacks J8/J9 | C20182907 | ~800 | SJ-3523-SMT (C4991872, same pads minus the TN switch pad) when it is back in stock; SHOU HAN PJ-320D (C431535, ~70 k) needs a new footprint |
 | TE 2199230-4 M.2 socket | C2977809 | ~5 k | — |
 | AS4C32M16SC-7TIN SDRAM U9/U10 | C1349997 | 13 (four ordered 2026-11-03); the -6TIN (C1351095) stayed at 0 | W9825G6KH-6 (C62246, 61) or W9825G6KH-6I (C97572, 267): 256 Mb, 64 MB total, SEMC COL=9, 166 MHz. W989D6DBGX6I (C2641243, 8 k) is a 512 Mb 1.8 V LPSDR in VFBGA-54: only for a re-layout |
+| RTC load caps C143/C144, 10 pF | — | — | about 5 pF: with the RT1176's internal load capacitance, 10 pF pulls Y2 to −102 ppm (bring-up 6t). An estimate; fit one board and measure before changing the BOM. Y1's 4.7 pF C53/C54 run it +19 ppm fast and may want a step up |
 | YIYUAN SMTSOM2.520BTR M.2 nut H5, 2 mm | C5301776 | 0 | SMTSOM2.525BTR, 2.5 mm (C49236513, ~4.7 k): same land, the card end sits 0.5 mm higher |
 
 Fine-pitch note: the MCU is 0.8 mm BGA; everything else is 0.4 mm QFN or coarser.
@@ -243,6 +264,19 @@ pyocd gdbserver -t <target>
 If the flash is blank or holds a bad image the ROM may sit in its serial-downloader loop; add
 `--connect under-reset` if a plain attach fails. OpenOCD has no mainline RT1170 FlexSPI
 driver, so pyOCD is the practical choice for generic probes.
+
+Two pyOCD behaviours found in bring-up (sections 6d and 6r of the bring-up doc):
+
+- pyOCD's RT1176 target installs trap code on both cores and masks reset requests in SRC_SRMR on
+  every connect, so after a plain `pyocd flash` the new image does not start until SW1 or a power
+  cycle.
+- The probe's nRESET (J1.10 → D1 → POR_B) never pulled the line low on the bench, so a probe reset
+  does not reset the board.
+
+[`tools/`](tools/README.md) has scripts that deal with both: `nosh_flash.sh ELF` builds the boot
+image, flashes it at 0x30000000 and starts it from the host with `nosh_reset.py` (no SW1), and
+`pyocd_notrap.py` is the pyOCD user script that stops the trap and the reset masking. All of them
+attach without halting a running image.
 
 ### No probe: the ROM serial downloader over USB-C
 
@@ -365,13 +399,19 @@ Kicad/
     L_CommonModeChoke_Murata_DLW21       USB chokes — EVKB IPC-D-356 land
     MountingHole_3.53mm_M3_Pad           M3 standoff hole, NXP spacer_139t land (EVKB IPC-D-356)
     SMTSO_M2.5_Hole4.22mm_Pad6.2mm       M.2 retention nut H5 — YIYUAN SMTSO land = EVKB BH1, 4-segment paste ring
-  tools/
+  tools/                                 board-generation and layout scripts, among them:
     gen_rt1176_symbol.py                 regenerates the MIMXRT1176DVMAA symbol from data/rt1176_{pins,mux}.json
     lcsc_table.py                        regenerates data/lcsc_parts.csv from the schematic fields
     build_board.py                       stage-1 board generator (rebuilds Nosh.kicad_pcb from the netlist; see PCB layout)
     fab_export.py                        writes the JLCPCB Gerber zip, BOM and CPL into fab/ (see Fabrication outputs)
+    floorplan/, busrouter/, …            placement search, SDRAM bus routing and the fanout / zone / clean-up passes
     data/                                pin/mux tables, lcsc_parts.csv
 fab/                                     JLCPCB order files from fab_export.py: Nosh-gerbers.zip, Nosh-bom.csv, Nosh-cpl.csv, README.md
+tools/                                   bench scripts for SWD flashing and host-side reset (pyOCD), see tools/README.md
+docs/
+  bringup-2026-11-16.md                  bring-up record of both boards, test by test
+  evkb-vs-nosh-firmware-porting.md       what EVKB firmware must change for Nosh, with a per-pad table
+  nosh.top.png, nosh-bottom.png          board renders
 ```
 
 ## Working on the schematic
