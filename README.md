@@ -24,6 +24,12 @@ Ordered 2026-11-03: JLCPCB Y95-2611336A, 5 PCBs + 2 assembled (settings in `fab/
 - Board 2: the RK055 MIPI panel and GT911 touch, including scanout under heavy SDRAM load at
   16 and 32 bpp with no FIFO underruns; line in by a J8-to-J9 loopback recording; the RTC and the
   32 kHz crystal; SW2 (ONOFF, including power-off and power-on) and SW3 (WAKEUP); the CM4 core.
+- An application on board 2: `dj_deck` (evkb `examples/audio`), a one-deck DJ player on the RK055
+  with touch. It loads WAV, AIFF, FLAC and MP3 from the SD card into SDRAM and plays them with a
+  scrolling waveform, beat grid, pitch fader, cue and scratch; an AUTO switch plays the next
+  file in the folder, loaded early beside the playing track when both fit. An 8 s MP3 decodes
+  in about 0.25 s after the decoder work of 2026-11-20 (bring-up sections 6y and 6z). AUTO has
+  passed its QEMU gate but has not been tried by touch on the board yet.
 - Not yet tested: the power path under stress (eFuse trip, J3 and J4 together, the host-port
   current limit, the reset supervisor threshold) and low-power modes.
 
