@@ -1,0 +1,137 @@
+"""Read Nosh.kicad_pcb (read-only) and write mech/board.json + mech/board_table.md.
+
+Run with KiCad's bundled python:
+/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 \
+    /Users/nicholasnewdigate/Development/nosh-dev-board/mech/board_table.py
+
+Board frame: origin at the board's NW corner, x east, y south (KiCad y-down), mm.
+"""
+import json
+import os
+import re
+import pcbnew
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+PCB = os.path.join(HERE, '..', 'Kicad', 'Nosh.kicad_pcb')
+W, H = 153.9, 81.8
+mm = pcbnew.ToMM
+
+WANT = re.compile(r'^(J\d+|SW\d+|H\d+|U1|D6|D7|D10|D11)$')
+
+# Heights above the board face and plug-side openings that the STEP cannot give.
+# src: 'datasheet' = read from the maker's drawing in this session,
+#      'assumed'   = recalled / generic value, not re-read; confirm before relying on it.
+EXTRA = {
+    'J2': dict(height=2.8, height_src='assumed', opening=[7.5, 2.8], opening_src='assumed'),
+    'J8': dict(height=5.0, height_src='assumed', opening=[6.0, 5.0], opening_src='assumed'),
+    'J9': dict(height=5.0, height_src='assumed', opening=[6.0, 5.0], opening_src='assumed'),
+    'J6': dict(height=4.2, height_src='assumed'),
+    'J7': dict(height=2.0, height_src='assumed'),
+    'H5': dict(height=2.0, height_src='assumed'),
+    'U1': dict(height=1.5, height_src='assumed'),
+}
+
+
+def fab_box(fp):
+    lay = pcbnew.B_Fab if fp.IsFlipped() else pcbnew.F_Fab
+    box = None
+    for g in fp.GraphicalItems():
+        if g.GetLayer() != lay or g.GetClass() != 'PCB_SHAPE':
+            continue
+        b = g.GetBoundingBox()
+        r = [mm(b.GetLeft()), mm(b.GetTop()), mm(b.GetRight()), mm(b.GetBottom())]
+        box = r if box is None else [min(box[0], r[0]), min(box[1], r[1]),
+                                     max(box[2], r[2]), max(box[3], r[3])]
+    if box is None:  # no fab drawing: fall back to the pads
+        for p in fp.Pads():
+            b = p.GetBoundingBox()
+            r = [mm(b.GetLeft()), mm(b.GetTop()), mm(b.GetRight()), mm(b.GetBottom())]
+            box = r if box is None else [min(box[0], r[0]), min(box[1], r[1]),
+                                         max(box[2], r[2]), max(box[3], r[3])]
+    return [round(v, 3) for v in box]
+
+
+def edge_of(b):
+    """Edge a body touches (within 1 mm) and how far it sticks out past it."""
+    d = {'W': b[0], 'N': b[1], 'E': W - b[2], 'S': H - b[3]}
+    e = min(d, key=d.get)
+    if d[e] > 1.0:
+        return None, 0.0
+    return e, round(max(0.0, -d[e]), 3)
+
+
+def main():
+    board = pcbnew.LoadBoard(PCB)
+    bb = board.GetBoardEdgesBoundingBox()
+    out = {
+        'outline': [W, H],
+        'outline_bbox_incl_line_width': [round(mm(bb.GetWidth()), 3), round(mm(bb.GetHeight()), 3)],
+        'thickness': mm(board.GetDesignSettings().GetBoardThickness()),
+        'holes': {}, 'parts': {}, 'footprints': [],
+    }
+    for fp in board.GetFootprints():
+        ref = fp.GetReference()
+        q = fp.GetPosition()
+        out['footprints'].append([ref, round(mm(q.x), 4), round(mm(q.y), 4),
+                                  'BOT' if fp.IsFlipped() else 'TOP'])
+        if not WANT.match(ref):
+            continue
+        p = fp.GetPosition()
+        at = [round(mm(p.x), 3), round(mm(p.y), 3)]
+        if ref in ('H1', 'H2', 'H3', 'H4'):
+            out['holes'][ref] = at
+            continue
+        body = fab_box(fp)
+        edge, protrude = edge_of(body)
+        d = dict(value=fp.GetValue(), side='BOT' if fp.IsFlipped() else 'TOP', edge=edge,
+                 at=at, rot=fp.GetOrientationDegrees(), body=body, protrude=protrude,
+                 height=None, height_src=None, opening=None, opening_src=None,
+                 model=bool(list(fp.Models())))
+        d.update(EXTRA.get(ref, {}))
+        # The Fab outline of J2 and J5 also draws the plug / card. Real overhangs, from the
+        # makers' drawings as recorded when the connectors were placed (2026-10-28):
+        if ref == 'J2':
+            d['protrude'] = 0.70    # mouth over the east edge
+        if ref == 'J5':
+            d['protrude'] = 1.075   # locked card past the north edge; the body itself is inside
+        out['parts'][ref] = d
+    # keep heights already measured from the STEP by build_enclosure.py
+    jpath = os.path.join(HERE, 'board.json')
+    if os.path.exists(jpath):
+        old = json.load(open(jpath)).get('parts', {})
+        for ref, d in out['parts'].items():
+            o = old.get(ref, {})
+            if o.get('height_src') == 'STEP':
+                d['height'], d['height_src'] = o['height'], 'STEP'
+            if o.get('opening_src') == 'STEP':
+                d['opening'], d['opening_src'] = o['opening'], 'STEP'
+    json.dump(out, open(jpath, 'w'), indent=1, sort_keys=True)
+
+    def key(r):
+        m = re.match(r'([A-Z]+)(\d+)', r)
+        return (m.group(1), int(m.group(2)))
+    rows = ['# Nosh board table', '',
+            'Generated by `mech/board_table.py` from `Kicad/Nosh.kicad_pcb` (read-only). Board frame:',
+            'origin NW corner, x east, y south, mm. Body = footprint Fab outline. Height is above the',
+            "board face the part sits on. Source: STEP = measured from the 3D model, assumed = not",
+            're-read from a datasheet in this session. Past edge: Fab outline, except J2 (mouth, 0.70) and',
+            'J5 (locked card, 1.075), which are the values from the makers\' drawings.', '',
+            'Outline %.1f x %.1f, thickness %.2f. Holes: %s' % (
+                W, H, out['thickness'],
+                ', '.join('%s (%.2f, %.2f)' % (k, v[0], v[1]) for k, v in sorted(out['holes'].items()))),
+            '',
+            '| Ref | Part | Side | Edge | Centre x, y | Body x0..x1, y0..y1 | Past edge | Height | Opening w x h |',
+            '|---|---|---|---|---|---|---|---|---|']
+    for ref in sorted(out['parts'], key=key):
+        d = out['parts'][ref]
+        b = d['body']
+        rows.append('| %s | %s | %s | %s | %.2f, %.2f | %.2f..%.2f, %.2f..%.2f | %s | %s | %s |' % (
+            ref, d['value'], d['side'], d['edge'] or '-', d['at'][0], d['at'][1], b[0], b[2], b[1], b[3],
+            ('%.2f' % d['protrude']) if d['edge'] else '-',
+            ('%.2f (%s)' % (d['height'], d['height_src'])) if d['height'] is not None else '?',
+            ('%.1f x %.1f (%s)' % (d['opening'][0], d['opening'][1], d['opening_src'])) if d['opening'] else '-'))
+    open(os.path.join(HERE, 'board_table.md'), 'w').write('\n'.join(rows) + '\n')
+    print('\n'.join(rows[9:]))
+
+
+main()

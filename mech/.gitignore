@@ -1,0 +1,6 @@
+# Python caches and Blender backup files
+__pycache__/
+*.blend1
+# Rebuilt by the scripts in blender/ (see blender/README.md); 60-90 MB each
+blender/build/
+blender/nosh_presentation.blend
