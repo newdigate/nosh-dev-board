@@ -7,9 +7,10 @@ Where Nosh departs from the EVKB it is for JLCPCB availability or because an EVK
 not wanted; every departure is listed below. For what EVKB firmware has to change, see
 [`docs/evkb-vs-nosh-firmware-porting.md`](docs/evkb-vs-nosh-firmware-porting.md).
 
-[![Nosh video on YouTube: 1 GHz open-source dev board](docs/nosh-video-thumbnail.png)](https://youtu.be/uoSS72InCTg)
+<a href="https://youtu.be/uoSS72InCTg"><img src="docs/nosh-video-thumbnail.png" alt="Nosh video on YouTube: 1 GHz open-source dev board" width="49%"></a>
+<a href="https://youtu.be/qf1vRax-e-w"><img src="docs/nosh-video-why-thumbnail.png" alt="Nosh video on YouTube: why I built it" width="49%"></a>
 
-Video: [Nosh on YouTube](https://youtu.be/uoSS72InCTg).
+Videos: [Nosh on YouTube](https://youtu.be/uoSS72InCTg) and [Why I built it](https://youtu.be/qf1vRax-e-w).
 
 **Status:** schematic and PCB layout complete (KiCad 10, `Kicad/`): 6-layer JLCPCB stackup, fully
 routed, DRC clean with schematic parity. The findings of the 2026-10-28 design review are closed
